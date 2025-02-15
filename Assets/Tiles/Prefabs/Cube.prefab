@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5292805845449259895}
   - component: {fileID: 1450390987255305624}
   - component: {fileID: 5437280665611621743}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,3 +123,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   width: 1
   height: 1
+  letterTileObject: {fileID: 0}

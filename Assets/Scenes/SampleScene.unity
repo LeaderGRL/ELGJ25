@@ -406,10 +406,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9de801394dc4fda4089e60d17439c88d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  camera: {fileID: 330585545}
   width: 8
   height: 8
   tilePrefabs:
-  - {fileID: 0}
+  - {fileID: 1010969201747375324, guid: 86da03221e65d9846bda32cca226df2f, type: 3}
+  OnTileClicked:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &687105349
 Transform:
   m_ObjectHideFlags: 0
