@@ -175,7 +175,6 @@ public class Board : MonoBehaviour
 
     private void SetTileLayer(Vector2Int position, string layerName)
     {
-        Debug.Log("Setting layer to " + layerName);
         if (tiles.TryGetValue(position, out GameObject tile))
         {
             tile.layer = LayerMask.NameToLayer(layerName);

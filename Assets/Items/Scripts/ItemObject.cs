@@ -16,7 +16,4 @@ public class ItemObject : ScriptableObject
     public List<ItemEffectObject> itemEffects;
 }
 
-public class Item : MonoBehaviour
-{
-    public ItemObject itemObject;
-}
+
