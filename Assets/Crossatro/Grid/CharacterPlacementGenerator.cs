@@ -4,41 +4,75 @@ using Random = UnityEngine.Random;
 
 public static class CharacterPlacementGenerator
 {
-    public static Dictionary<Vector2Int, char> GenerateCharPlacements(List<string> possibleWords,  int wordNumber, string anagram)
+    public static Grid GenerateCharPlacements(List<string> possibleWords,  int wordNumber, string anagram)
     {
         Dictionary<Vector2Int, char> result = new();
-        List <KeyValuePair <Vector2Int, string>> addedWords = new();
+        List <Grid.GridWord> addedWords = new();
+        List<int> addedWordsIndexs = new List<int>();
+        
         bool isRow = true;
-        AddWord(result, possibleWords[0], Vector2Int.zero, isRow);
-        addedWords.Add(new KeyValuePair<Vector2Int, string>(Vector2Int.zero,possibleWords[0]));
+        
+        Grid.GridWord wordToAdd = new Grid.GridWord();
+        wordToAdd.Word = possibleWords[0];
+        wordToAdd.IsRow = isRow;
+        wordToAdd.StartPosition = Vector2Int.zero;
+        
+        
+        AddWord(result, wordToAdd.Word, wordToAdd.StartPosition, wordToAdd.IsRow);
+        addedWords.Add(wordToAdd);
+        addedWordsIndexs.Add(0);
+        
         isRow = !isRow;
+        bool canRestartLoop = false;
+        
         
         int i = 1;
-        while (addedWords.Count < wordNumber && i < possibleWords.Count)
+        while (addedWords.Count < wordNumber && (i < possibleWords.Count ||  canRestartLoop))
         {
+            if (addedWordsIndexs.Contains(i))
+            {
+                i++;
+                continue;
+            }
+            
             string newWord = possibleWords[i];
             var lastWord = addedWords[addedWords.Count - 1];
             
-            var corespondingIndexs = GetCorespondingIndexs(newWord, lastWord.Value);
+            var corespondingIndexs = GetCorespondingIndexs(newWord, lastWord.Word);
             if (corespondingIndexs.Count > 0)
             {
                 var possibleStartPositions = GetPossibleStartPositions(result, corespondingIndexs, newWord,
-                    lastWord.Key, isRow);
+                    lastWord.StartPosition, isRow);
                 if (possibleStartPositions.Count > 0)
                 {
                     int index = Random.Range(0, possibleStartPositions.Count);
                     Vector2Int startPos = possibleStartPositions[index];
-                    AddWord(result, newWord, startPos, isRow);
+                    
+                    wordToAdd.Word = possibleWords[i];
+                    wordToAdd.IsRow = isRow;
+                    wordToAdd.StartPosition = startPos;
+                    
+                    AddWord(result, wordToAdd.Word, wordToAdd.StartPosition, wordToAdd.IsRow);
+                    addedWords.Add(wordToAdd);
+                    addedWordsIndexs.Add(i);
                     isRow = !isRow;
-                    addedWords.Add(new KeyValuePair<Vector2Int, string>(startPos, newWord));
-                
+                    canRestartLoop = true;
                 }
             }
+
+            if (i == possibleWords.Count - 1 )
+            {
+                i = 0;
+                canRestartLoop = false;
+                continue;
+            }
+            
             i++;
         }
-        
 
-        return result;
+        Grid grid = new Grid(result, addedWords);
+
+        return grid;
     }
 
     private static List<Vector2Int> GetPossibleStartPositions(
@@ -80,20 +114,30 @@ public static class CharacterPlacementGenerator
                 return false;
             }
 
+            Vector2Int top = new Vector2Int(letterPosition.x, letterPosition.y + 1);
+            Vector2Int bot = new Vector2Int(letterPosition.x, letterPosition.y - 1);
+            Vector2Int left = new Vector2Int(letterPosition.x - 1, letterPosition.y );
+            Vector2Int right = new Vector2Int(letterPosition.x + 1, letterPosition.y );
             if (isRow)
             {
-                Vector2Int top = new Vector2Int(letterPosition.x, letterPosition.y + 1);
-                Vector2Int bot = new Vector2Int(letterPosition.x, letterPosition.y - 1);
                 if ((currentGrid.ContainsKey(top) || currentGrid.ContainsKey(bot) )&& intersectionPos.x != letterPosition.x)
+                {
+                    return false;
+                }
+                
+                if (i ==newWord.Length-1 &&  currentGrid.ContainsKey(right))
                 {
                     return false;
                 }
             }
             else
             {
-                Vector2Int left = new Vector2Int(letterPosition.x - 1, letterPosition.y );
-                Vector2Int right = new Vector2Int(letterPosition.x + 1, letterPosition.y );
                 if ((currentGrid.ContainsKey(left) || currentGrid.ContainsKey(right)) && intersectionPos.y != letterPosition.y)
+                {
+                    return false;
+                }
+                
+                if (i ==newWord.Length-1 &&  currentGrid.ContainsKey(bot))
                 {
                     return false;
                 }
@@ -135,6 +179,9 @@ public static class CharacterPlacementGenerator
             dictionary[position] = word[i];
         }
     }
-    
+
+
+
+
     
 }

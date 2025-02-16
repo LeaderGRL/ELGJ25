@@ -196,7 +196,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -274,7 +274,7 @@ MonoBehaviour:
   - mozzarella
   - tetard
   - tetot
-  m_numberWordToAddGrid: 5
+  m_numberWordToAddGrid: 8
   m_gridGeneration: {fileID: 1904664249}
 --- !u!1 &292424419
 GameObject:

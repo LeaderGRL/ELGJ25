@@ -21,10 +21,6 @@ public class GridGenerator : MonoBehaviour
         List<string> words = m_possibleWords.OrderBy(_ => rng.Next()).ToList();
         var placements =
             CharacterPlacementGenerator.GenerateCharPlacements(words, m_numberWordToAddGrid, "");
-        foreach (var placement in placements)
-        {
-            Debug.Log(placement.Key + ": " + placement.Value);
-        }
-        m_gridGeneration.GenerateGrid(placements);
+        m_gridGeneration.GenerateGrid(placements.CharacterPlacements);
     }
 }
