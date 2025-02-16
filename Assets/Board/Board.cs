@@ -119,11 +119,11 @@ public class Board : MonoBehaviour
     {
         Vector2Int hitPosition = GetTileIndex(hitTile);
 
-        if (hitPosition == -Vector2Int.one)
-        {
-            ResetHoverState();
-            return;
-        }
+        // if (hitPosition == -Vector2Int.one)
+        // {
+        //     ResetHoverState();
+        //     return;
+        // }
 
         if (hitTile.layer != LayerMask.NameToLayer("Letter"))
         {
@@ -131,13 +131,13 @@ public class Board : MonoBehaviour
         }
 
         // Hovering over a new tile
-        if (currentHoverTile == -Vector2Int.one)
-        {
-            Debug.Log("Hovering over tile at " + hitPosition);
-            currentHoverTile = hitPosition;
-            SetTileLayer(currentHoverTile, "Hover");
-            return;
-        }
+       // if (currentHoverTile == -Vector2Int.one)
+        // {
+        //     Debug.Log("Hovering over tile at " + hitPosition);
+        //     currentHoverTile = hitPosition;
+        //     SetTileLayer(currentHoverTile, "Hover");
+        //     return;
+        // }
 
         if (currentHoverTile != hitPosition)
         {

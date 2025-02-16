@@ -990,6 +990,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Crossatro",
+            "id": "716e37a8-7a2b-4df2-abe0-3587272947f3",
+            "actions": [
+                {
+                    "name": "SelectTile",
+                    "type": "Button",
+                    "id": "fd0cbbff-f0bb-4ef3-b602-24b7a4af6997",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "52ce288c-c120-4a9e-932b-6d91637c3d1a",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "SelectTile",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [
