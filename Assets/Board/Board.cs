@@ -56,7 +56,7 @@ public class Board : MonoBehaviour
         RaycastHit hitInfo;
         Ray ray = camera.ScreenPointToRay(Input.mousePosition);
 
-        if (Physics.Raycast(ray, out hitInfo, 100, LayerMask.GetMask("Tile", "Hover", "Highlight", "Selectable")))
+        if (Physics.Raycast(ray, out hitInfo, 100, LayerMask.GetMask("Letter", "Hover", "Select")))
         {
             HandleTileHover(hitInfo.transform.gameObject);
             HandleMouseInputOnTile(hitInfo.transform.gameObject);
@@ -105,12 +105,20 @@ public class Board : MonoBehaviour
             return;
         }
 
-        // If we hovering a new tile
+        // Hovering over a new tile
         if (currentHoverTile == -Vector2Int.one)
         {
+            Debug.Log("Hovering over tile at " + hitPosition);
             currentHoverTile = hitPosition;
             SetTileLayer(currentHoverTile, "Hover");
             return;
+        }
+
+        if (currentHoverTile != hitPosition)
+        {
+            SetTileLayer(currentHoverTile, "Letter");
+            currentHoverTile = hitPosition;
+            SetTileLayer(currentHoverTile, "Hover");
         }
     }
 
@@ -120,7 +128,7 @@ public class Board : MonoBehaviour
         if (hitPosition == -Vector2Int.one) return;
 
         // Left mouse button pressed: pick up a piece if it exists at that position
-        if (Input.GetMouseButtonDown(0) && GetTile(hitPosition).layer == LayerMask.NameToLayer("Selectable"))
+        if (Input.GetMouseButtonDown(0) && GetTile(hitPosition).layer == LayerMask.NameToLayer("Select"))
         {
             OnTileClicked.Invoke(hitPosition);
 
@@ -142,6 +150,7 @@ public class Board : MonoBehaviour
 
     private void SetTileLayer(Vector2Int position, string layerName)
     {
+        Debug.Log("Setting layer to " + layerName);
         if (tiles.TryGetValue(position, out GameObject tile))
         {
             tile.layer = LayerMask.NameToLayer(layerName);
