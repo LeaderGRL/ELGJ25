@@ -10,10 +10,15 @@ public class Board : MonoBehaviour
     [SerializeField] private int width;
     [SerializeField] private int height;
     [SerializeField] private List<GameObject> tilePrefabs;
+    [SerializeField] private LetterTile letterTilePrefab;
+    
+    [SerializeField]
+    private GridGenerationData generationData; 
 
     private Board Instance;
     private Dictionary<Vector2Int, GameObject> tiles;
     private Vector2Int currentHoverTile;
+    private Grid m_grid;
 
     [Header("Events")]
     [HideInInspector] public UnityEvent<Vector2Int> OnTileClicked;
@@ -35,14 +40,25 @@ public class Board : MonoBehaviour
     private void Start()
     {
         tiles = new Dictionary<Vector2Int, GameObject>();
-
-        for (int x = 0; x < width; x++)
+        m_grid = CharacterPlacementGenerator.GenerateCharPlacements(generationData.PossibleWords,
+            generationData.NumWorToGenerate, "");
+        Vector2Int gridSize = m_grid.GetGridSize();
+        var minMaxPosGrid = m_grid.GetMinAndMaxPositionCharacterPlacement();
+        for (int x =  minMaxPosGrid.Key.x; x <= minMaxPosGrid.Value.x; x++)
         {
-            for (int y = 0; y < height; y++)
+            for (int y =  minMaxPosGrid.Key.y; y <= minMaxPosGrid.Value.y; y++)
             {
                 PlaceTile(new Vector2Int(x, y));
             }
         }
+        
+        // for (int x = 0; x < width; x++)
+        // {
+        //     for (int y = 0; y < height; y++)
+        //     {
+        //         PlaceTile(new Vector2Int(x, y));
+        //     }
+        // }
     }
 
     private void Update()
@@ -72,6 +88,15 @@ public class Board : MonoBehaviour
     {
         if (tiles.ContainsKey(pos))
         {
+            return;
+        }
+
+        if (m_grid.CharacterPlacements.ContainsKey(pos))
+        {
+            var letterTile = Instantiate(letterTilePrefab, transform);
+            letterTile.transform.position = new Vector3(pos.x, 0, pos.y);
+            letterTile.DisplayText.text = m_grid.CharacterPlacements[pos].ToString();
+            tiles.Add(pos, letterTile.gameObject);
             return;
         }
 

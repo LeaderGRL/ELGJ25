@@ -124,6 +124,11 @@ public static class CharacterPlacementGenerator
                 {
                     return false;
                 }
+
+                if (i == 0 && currentGrid.ContainsKey(left))
+                {
+                    return false;
+                }
                 
                 if (i ==newWord.Length-1 &&  currentGrid.ContainsKey(right))
                 {
@@ -136,7 +141,10 @@ public static class CharacterPlacementGenerator
                 {
                     return false;
                 }
-                
+                if (i == 0 && currentGrid.ContainsKey(top))
+                {
+                    return false;
+                }
                 if (i ==newWord.Length-1 &&  currentGrid.ContainsKey(bot))
                 {
                     return false;

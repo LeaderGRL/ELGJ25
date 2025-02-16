@@ -686,6 +686,8 @@ MonoBehaviour:
   height: 8
   tilePrefabs:
   - {fileID: 1010969201747375324, guid: 86da03221e65d9846bda32cca226df2f, type: 3}
+  letterTilePrefab: {fileID: 5437280665611621743, guid: 86da03221e65d9846bda32cca226df2f, type: 3}
+  generationData: {fileID: 11400000, guid: 676e0537321054a4a94952f418aaec97, type: 2}
   OnTileClicked:
     m_PersistentCalls:
       m_Calls: []
@@ -881,7 +883,7 @@ Transform:
   m_GameObject: {fileID: 1583613597}
   serializedVersion: 2
   m_LocalRotation: {x: 0.23911765, y: 0.3696438, z: -0.09904577, w: 0.89239913}
-  m_LocalPosition: {x: -4.58, y: 4.74, z: -4.58}
+  m_LocalPosition: {x: -4.58, y: 8, z: -4.58}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
