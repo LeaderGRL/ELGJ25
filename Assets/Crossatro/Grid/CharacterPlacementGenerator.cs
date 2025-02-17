@@ -1,11 +1,14 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
-using Random = UnityEngine.Random;
+using Random = System.Random;
 
 public static class CharacterPlacementGenerator
 {
-    public static Grid GenerateCharPlacements(List<string> possibleWords,  int wordNumber, string anagram)
+    private static Random rng = new Random();
+    public static Grid GenerateCharPlacements(WordDatabaseJSON possibleWords,  int wordNumber, string anagram)
     {
+        List<WordData> wordsShuffled = possibleWords.words.OrderBy(_ => rng.Next()).ToList();
         Dictionary<Vector2Int, char> result = new();
         List <Grid.GridWord> addedWords = new();
         List<int> addedWordsIndexs = new List<int>();
@@ -13,10 +16,13 @@ public static class CharacterPlacementGenerator
         bool isRow = true;
         
         Grid.GridWord wordToAdd = new Grid.GridWord();
-        wordToAdd.SolutionWord = possibleWords[0];
+        wordToAdd.SolutionWord = wordsShuffled[0].word;
         wordToAdd.IsRow = isRow;
         wordToAdd.StartPosition = Vector2Int.zero;
-        
+        wordToAdd.Difficulty = wordsShuffled[0].difficulty;
+        wordToAdd.IsLocked = false;
+        wordToAdd.Description = wordsShuffled[0].description;
+
         
         AddWord(result, wordToAdd.SolutionWord, wordToAdd.StartPosition, wordToAdd.IsRow);
         addedWords.Add(wordToAdd);
@@ -27,7 +33,7 @@ public static class CharacterPlacementGenerator
         
         
         int i = 1;
-        while (addedWords.Count < wordNumber && (i < possibleWords.Count ||  canRestartLoop))
+        while (addedWords.Count < wordNumber && (i < wordsShuffled.Count ||  canRestartLoop))
         {
             if (addedWordsIndexs.Contains(i))
             {
@@ -35,7 +41,7 @@ public static class CharacterPlacementGenerator
                 continue;
             }
             
-            string newWord = possibleWords[i];
+            string newWord = wordsShuffled[i].word;
             var lastWord = addedWords[addedWords.Count - 1];
             
             var corespondingIndexs = GetCorespondingIndexs(newWord, lastWord.SolutionWord);
@@ -45,13 +51,17 @@ public static class CharacterPlacementGenerator
                     lastWord.StartPosition, isRow);
                 if (possibleStartPositions.Count > 0)
                 {
-                    int index = Random.Range(0, possibleStartPositions.Count);
+                    int index = UnityEngine.Random.Range(0, possibleStartPositions.Count);
                     Vector2Int startPos = possibleStartPositions[index];
                     var wordToAddLoop = new Grid.GridWord();
                     
-                    wordToAddLoop.SolutionWord = possibleWords[i];
+                    wordToAddLoop.SolutionWord = wordsShuffled[i].word;
                     wordToAddLoop.IsRow = isRow;
                     wordToAddLoop.StartPosition = startPos;
+                    wordToAddLoop.Difficulty = wordsShuffled[i].difficulty;
+                    wordToAddLoop.IsLocked = false;
+                    wordToAddLoop.Description = wordsShuffled[i].description;
+                    
                     
                     AddWord(result, wordToAddLoop.SolutionWord, wordToAddLoop.StartPosition, wordToAddLoop.IsRow);
                     addedWords.Add(wordToAddLoop);
@@ -61,7 +71,7 @@ public static class CharacterPlacementGenerator
                 }
             }
 
-            if (i == possibleWords.Count - 1 )
+            if (i == wordsShuffled.Count - 1 )
             {
                 i = 0;
                 canRestartLoop = false;

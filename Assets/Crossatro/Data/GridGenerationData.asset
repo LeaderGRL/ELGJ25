@@ -12,13 +12,143 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 970f6aec6cf30db4eaf4800e3ac99bc3, type: 3}
   m_Name: GridGenerationData
   m_EditorClassIdentifier: 
-  <PossibleWords>k__BackingField:
-  - grenouille
-  - axolote
-  - bonjour
-  - burrito
-  - burrata
-  - mozzarella
-  - tetard
-  - tetot
   <NumWorToGenerate>k__BackingField: 5
+  FileName: Words.json
+  Database:
+    words:
+    - word: AVENTURE
+      description: "Un p\xE9riple \xE9pique rempli de d\xE9fis et d'inattendus."
+      difficulty: 5
+    - word: MYSTERE
+      description: "Quelque chose d'inexpliqu\xE9 et de surprenant, envelopp\xE9
+        de secrets."
+      difficulty: 7
+    - word: ENIGME
+      description: "Un probl\xE8me ou une question difficile \xE0 r\xE9soudre."
+      difficulty: 6
+    - word: LABYRINTHE
+      description: "Un d\xE9dale complexe et d\xE9routant qui d\xE9fie l'orientation."
+      difficulty: 8
+    - word: PERIPLE
+      description: "Un long voyage rempli d'aventures et de d\xE9couvertes."
+      difficulty: 4
+    - word: DESTIN
+      description: "Ce qui est in\xE9vitablement \xE9crit pour chacun, parfois myst\xE9rieux."
+      difficulty: 2
+    - word: HEROISME
+      description: "La qualit\xE9 d'un h\xE9ros, alliant bravoure et sacrifice."
+      difficulty: 5
+    - word: COURAGE
+      description: La force de surmonter la peur et les obstacles.
+      difficulty: 3
+    - word: MYTHOLOGIE
+      description: "L'\xE9tude et la collection des mythes et l\xE9gendes d'un peuple."
+      difficulty: 6
+    - word: LEGENDE
+      description: "Une histoire ancienne, souvent embellie, transmise de g\xE9n\xE9ration
+        en g\xE9n\xE9ration."
+      difficulty: 4
+    - word: SAGA
+      description: "Une longue histoire \xE9pique, souvent familiale, pleine d'aventures."
+      difficulty: 7
+    - word: QUETE
+      description: "La recherche passionn\xE9e d'un objectif ou d'un tr\xE9sor."
+      difficulty: 5
+    - word: SORTILEGE
+      description: "Un enchantement ou mal\xE9fice magique exerc\xE9 par un sorcier."
+      difficulty: 8
+    - word: MAGIE
+      description: "L'art de manipuler des forces surnaturelles pour produire des
+        effets \xE9tonnants."
+      difficulty: 4
+    - word: ILLUSION
+      description: "Une perception erron\xE9e de la r\xE9alit\xE9, souvent trompeuse."
+      difficulty: 6
+    - word: OMBRE
+      description: "L'absence de lumi\xE8re, souvent associ\xE9e \xE0 des symboliques
+        obscures."
+      difficulty: 2
+    - word: LUEUR
+      description: "Un faible \xE9clat de lumi\xE8re, porteur d'espoir dans l'obscurit\xE9."
+      difficulty: 3
+    - word: ECLIPSE
+      description: "Le ph\xE9nom\xE8ne c\xE9leste o\xF9 un astre masque partiellement
+        ou totalement un autre."
+      difficulty: 7
+    - word: COSMOS
+      description: "L'ensemble de l'univers, d'une immensit\xE9 et complexit\xE9
+        infinies."
+      difficulty: 9
+    - word: GALAXIE
+      description: "Un vaste ensemble d'\xE9toiles, de gaz et de poussi\xE8res interstellaires."
+      difficulty: 8
+    - word: INFINI
+      description: Ce qui n'a pas de limite, une notion abstraite et vaste.
+      difficulty: 9
+    - word: PARADOXE
+      description: "Une contradiction apparente qui d\xE9fie la logique conventionnelle."
+      difficulty: 8
+    - word: DESTINEE
+      description: "La force myst\xE9rieuse qui semble guider la vie de chacun."
+      difficulty: 5
+    - word: PROPHETIE
+      description: "Une pr\xE9diction concernant l'avenir, souvent formul\xE9e de
+        mani\xE8re \xE9nigmatique."
+      difficulty: 7
+    - word: ORACLE
+      description: "Une personne ou entit\xE9 r\xE9put\xE9e capable de pr\xE9dire
+        l'avenir."
+      difficulty: 6
+    - word: SORCELLERIE
+      description: "La pratique de la magie noire ou occulte, entour\xE9e de myst\xE8re."
+      difficulty: 8
+    - word: ELIXIR
+      description: "Une potion magique, capable de gu\xE9rir ou d'accorder des pouvoirs."
+      difficulty: 5
+    - word: AMITIE
+      description: "Un lien de confiance et d'affection entre personnes, pr\xE9cieux
+        et sinc\xE8re."
+      difficulty: 1
+    - word: TRAHISON
+      description: "L'acte de rompre la confiance en d\xE9loyaut\xE9 envers quelqu'un."
+      difficulty: 6
+    - word: REVELATION
+      description: "La d\xE9couverte soudaine d'une v\xE9rit\xE9 jusque-l\xE0 cach\xE9e."
+      difficulty: 4
+    - word: SECRET
+      description: "Une information ou r\xE9alit\xE9 gard\xE9e cach\xE9e des regards."
+      difficulty: 3
+    - word: MELANCOLIE
+      description: "Un \xE9tat de tristesse douce et profonde, souvent nostalgique."
+      difficulty: 5
+    - word: JUBILATION
+      description: "Une joie intense, exub\xE9rante et contagieuse."
+      difficulty: 2
+    - word: CONSPIRATION
+      description: Un plan secret, souvent ourdi par plusieurs personnes dans l'ombre.
+      difficulty: 8
+    - word: REDEMPTION
+      description: "Le processus par lequel quelqu'un se rach\xE8te apr\xE8s une
+        faute."
+      difficulty: 7
+    - word: EXIL
+      description: "L'acte d'\xEAtre contraint de quitter sa patrie ou sa demeure."
+      difficulty: 6
+    - word: DESTITUTION
+      description: "Le retrait brutal d'un pouvoir ou d'une position d'autorit\xE9."
+      difficulty: 8
+    - word: UTOPIE
+      description: "Une soci\xE9t\xE9 id\xE9ale, souvent irr\xE9alisable dans la
+        r\xE9alit\xE9."
+      difficulty: 9
+    - word: DYSTOPIE
+      description: "Une soci\xE9t\xE9 imaginaire o\xF9 r\xE8gnent l'oppression et
+        le chaos."
+      difficulty: 9
+    - word: EPOPEE
+      description: "Une \u0153uvre litt\xE9raire racontant des exploits h\xE9ro\xEFques
+        sur une grande \xE9chelle."
+      difficulty: 7
+    - word: SERENDIPITE
+      description: "La capacit\xE9 de faire des d\xE9couvertes heureuses et inattendues."
+      difficulty: 9

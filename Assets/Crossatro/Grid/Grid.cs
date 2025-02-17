@@ -27,12 +27,14 @@ public class Grid
                         CharacterPlacements.Keys.Contains(new Vector2Int(location.x , location.y - 1));
 
         int i = 0;
-        while (CharacterPlacements.Keys.Contains(isRow ? new Vector2Int(location.x + i - 1, location.y) : new Vector2Int(location.x , location.y - i + 1)))
+        while (CharacterPlacements.Keys.Contains(isRow ? new Vector2Int(location.x + i - 1, location.y) : 
+                   new Vector2Int(location.x , location.y - i + 1)))
         {
             i--;
         }
-            
-        Vector2Int startPosition = isRow ? new Vector2Int(location.x + i , location.y) : new Vector2Int(location.x , location.y - i );
+
+        Vector2Int startPosition =
+            isRow ? new Vector2Int(location.x + i, location.y) : new Vector2Int(location.x, location.y - i);
 
         return GetWordWithStartPosition(startPosition, isRow);
     }
@@ -128,21 +130,33 @@ public class Grid
         }
         return new KeyValuePair<Vector2Int, Vector2Int>(minValue, maxValue);
     }
-    
 
+    public Vector2Int GetMiddleGrid()
+    {
+        var minPos = GetMinAndMaxPositionCharacterPlacement().Key;
+        var gridSize = GetGridSize();
+
+        Vector2Int result = new Vector2Int(minPos.x + (gridSize.x / 2), minPos.y + (gridSize.y / 2));
+        
+        return result;
+    }
     public class GridWord
     {
         public Vector2Int StartPosition;
         public string SolutionWord;
         private string m_currentWord = "";
         public bool IsRow;
+        public string Description = "";
+        public int Difficulty;
+        public bool IsLocked;
 
         public Dictionary<Vector2Int, char> GetAllLetterSolutionPositions()
         {
             Dictionary<Vector2Int, char> result = new();
             for (int i = 0; i < SolutionWord.Length; i++)
             {
-                result[IsRow ? new Vector2Int(StartPosition.x + i, StartPosition.y) : new Vector2Int(StartPosition.x , StartPosition.y - i)] = SolutionWord[i];
+                result[IsRow ? new Vector2Int(StartPosition.x + i, StartPosition.y) : 
+                    new Vector2Int(StartPosition.x , StartPosition.y - i)] = SolutionWord[i];
             }
 
             return result;
@@ -154,11 +168,13 @@ public class Grid
             {
                 if (i >= m_currentWord.Length)
                 {
-                    result[IsRow ? new Vector2Int(StartPosition.x + i, StartPosition.y) : new Vector2Int(StartPosition.x , StartPosition.y - i)] = '\0';
+                    result[IsRow ? new Vector2Int(StartPosition.x + i, StartPosition.y) : 
+                        new Vector2Int(StartPosition.x , StartPosition.y - i)] = '\0';
 
                     continue;
                 }
-                result[IsRow ? new Vector2Int(StartPosition.x + i, StartPosition.y) : new Vector2Int(StartPosition.x , StartPosition.y - i)] = m_currentWord[i];
+                result[IsRow ? new Vector2Int(StartPosition.x + i, StartPosition.y) : 
+                    new Vector2Int(StartPosition.x , StartPosition.y - i)] = m_currentWord[i];
             }
 
             return result;

@@ -18,9 +18,9 @@ public class GridGenerator : MonoBehaviour
     private static Random rng = new Random();
     private void Start()
     {
-        List<string> words = m_possibleWords.OrderBy(_ => rng.Next()).ToList();
-        var placements =
-            CharacterPlacementGenerator.GenerateCharPlacements(words, m_numberWordToAddGrid, "");
-        m_gridGeneration.GenerateGrid(placements.CharacterPlacements);
+        // List<string> words = m_possibleWords.OrderBy(_ => rng.Next()).ToList();
+        // var placements =
+        //     CharacterPlacementGenerator.GenerateCharPlacements(words, m_numberWordToAddGrid, "");
+        // m_gridGeneration.GenerateGrid(placements.CharacterPlacements);
     }
 }

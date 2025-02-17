@@ -1,23 +1,59 @@
+using System.Collections.Generic;
+using System.Globalization;
 using UnityEngine;
 using System.IO;
+using System.Text;
+using NaughtyAttributes;
+using UnityEngine.Serialization;
 
 public class WordDataBaseLoader : MonoBehaviour
 {
-    public string fileName = "Words.json";
-    public WordDatabaseJSON database;
+    [FormerlySerializedAs("fileName")] 
+    public string FileName = "Words.json";
+    [FormerlySerializedAs("database")] 
+    public WordDatabaseJSON Database;
 
-    private void Awake()
+
+    [Button("Load Database")]
+    public void LoadDataBase()
     {
-        string filePath = Path.Combine(Application.dataPath + "/Database/", fileName);
+        string filePath = Path.Combine(Application.dataPath + "/Database/", FileName);
         if (File.Exists(filePath))
         {
             string dataAsJson = File.ReadAllText(filePath);
-            database = JsonUtility.FromJson<WordDatabaseJSON>(dataAsJson);
-            Debug.Log("Chargement de la base de données de mots réussi. " + database.words.Count + " mots chargés.");
+            Database = JsonUtility.FromJson<WordDatabaseJSON>(dataAsJson);
+            Debug.Log("Chargement de la base de donnï¿½es de mots rï¿½ussi. " + Database.words.Count + " mots chargï¿½s.");
+            foreach (var word in Database.words)
+            {
+                word.word = RemoveDiacritics(word.word);
+                word.word = word.word.ToUpper();
+                
+            }
         }
         else
         {
-            Debug.LogError("Fichier JSON non trouvé à: " + filePath);
+            Debug.LogError("Fichier JSON non trouvï¿½ ï¿½: " + filePath);
         }
+        
+    }
+    
+    static string RemoveDiacritics(string text) 
+    {
+        var normalizedString = text.Normalize(NormalizationForm.FormD);
+        var stringBuilder = new StringBuilder(capacity: normalizedString.Length);
+
+        for (int i = 0; i < normalizedString.Length; i++)
+        {
+            char c = normalizedString[i];
+            var unicodeCategory = CharUnicodeInfo.GetUnicodeCategory(c);
+            if (unicodeCategory != UnicodeCategory.NonSpacingMark)
+            {
+                stringBuilder.Append(c);
+            }
+        }
+
+        return stringBuilder
+            .ToString()
+            .Normalize(NormalizationForm.FormC);
     }
 }

@@ -1,45 +1,57 @@
+using System;
 using DG.Tweening;
 using System.Collections.Generic;
 using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
+using Random = UnityEngine.Random;
 
 public class Board : MonoBehaviour
 {
     public Camera camera;
 
-    [SerializeField] private int width;
-    [SerializeField] private int height;
-    [SerializeField] private List<GameObject> tilePrefabs;
-    [SerializeField] private LetterTile letterTilePrefab;
+    [FormerlySerializedAs("width")] [SerializeField] 
+    private int m_width;
+    [FormerlySerializedAs("height")] [SerializeField] 
+    private int m_height;
+    [FormerlySerializedAs("tilePrefabs")] [SerializeField] 
+    private List<GameObject> m_tilePrefabs;
+    [FormerlySerializedAs("letterTilePrefab")] [SerializeField] 
+    private LetterTile m_letterTilePrefab;
     
-    [SerializeField]
-    private GridGenerationData generationData;
+    [FormerlySerializedAs("generationData")] [SerializeField]
+    private GridGenerationData m_generationData;
+
+    [FormerlySerializedAs("_inputField")] [SerializeField] 
+    private TMPro.TMP_InputField m_inputField;
 
     [SerializeField] 
-    private TMPro.TMP_InputField _inputField;
-
-    private Board Instance;
-    private Dictionary<Vector2Int, GameObject> tiles;
-    private Vector2Int currentHoverTile;
+    private Player m_player;
+    
+    private Board m_instance;
+    private Dictionary<Vector2Int, GameObject> m_tiles;
+    private Vector2Int m_currentHoverTile;
     private Grid m_grid;
     private Grid.GridWord m_currentSelectedWord;
     
 
-    private Sequence sequence;
-    private float animationDelay = 0.01f;
+    private Sequence m_sequence;
+    private float m_animationDelay = 0.01f;
 
     [Header("Events")]
     [HideInInspector] public UnityEvent<Vector2Int> OnTileClicked;
+    
+    public event Action<Grid> OnGenerateGrid;
 
 
 
     private void Awake()
     {
-        if (Instance == null)
+        if (m_instance == null)
         {
-            Instance = this;
+            m_instance = this;
         }
         else
         {
@@ -49,10 +61,10 @@ public class Board : MonoBehaviour
 
     private void Start()
     {
-        sequence = DOTween.Sequence();
-        tiles = new Dictionary<Vector2Int, GameObject>();
-        m_grid = CharacterPlacementGenerator.GenerateCharPlacements(generationData.PossibleWords,
-            generationData.NumWorToGenerate, "");
+        m_sequence = DOTween.Sequence();
+        m_tiles = new Dictionary<Vector2Int, GameObject>();
+        m_grid = CharacterPlacementGenerator.GenerateCharPlacements(m_generationData.Database,
+            m_generationData.NumWorToGenerate, "");
         Vector2Int gridSize = m_grid.GetGridSize();
         var minMaxPosGrid = m_grid.GetMinAndMaxPositionCharacterPlacement();
         for (int x =  minMaxPosGrid.Key.x; x <= minMaxPosGrid.Value.x; x++)
@@ -62,14 +74,7 @@ public class Board : MonoBehaviour
                 PlaceTile(new Vector2Int(x, y));
             }
         }
-        
-        // for (int x = 0; x < width; x++)
-        // {
-        //     for (int y = 0; y < height; y++)
-        //     {
-        //         PlaceTile(new Vector2Int(x, y));
-        //     }
-        // }
+        OnGenerateGrid?.Invoke(m_grid);
     }
 
     private void Update()
@@ -92,12 +97,12 @@ public class Board : MonoBehaviour
 
     public Board GetInstance()
     {
-        return Instance;
+        return m_instance;
     }
 
     public void PlaceTile(Vector2Int pos)
     {
-        if (tiles.ContainsKey(pos))
+        if (m_tiles.ContainsKey(pos))
         {
             return;
         }
@@ -105,36 +110,36 @@ public class Board : MonoBehaviour
 
         if (m_grid.CharacterPlacements.ContainsKey(pos))
         {
-            var letterTile = Instantiate(letterTilePrefab, transform);
+            var letterTile = Instantiate(m_letterTilePrefab, transform);
             letterTile.transform.position = new Vector3(pos.x, 0, pos.y);
             letterTile.DisplayText.text = "";
-            tiles.Add(pos, letterTile.gameObject);
+            m_tiles.Add(pos, letterTile.gameObject);
 
             // Animation
             letterTile.transform.localScale = Vector3.zero;
 
-            letterTile.transform.DOScale(Vector3.one, 0.5f).SetEase(Ease.OutBack).SetDelay(animationDelay);
-            animationDelay += 0.01f;
+            letterTile.transform.DOScale(Vector3.one, 0.5f).SetEase(Ease.OutBack).SetDelay(m_animationDelay);
+            m_animationDelay += 0.01f;
             //letterTile.transform.DOScale(Vector3.one, 0.5f).SetEase(Ease.OutBack);
 
 
             return;
         }
 
-        var tile = Instantiate(tilePrefabs[Random.Range(0, tilePrefabs.Count)], transform);
+        var tile = Instantiate(m_tilePrefabs[Random.Range(0, m_tilePrefabs.Count)], transform);
         tile.transform.position = new Vector3(pos.x, 0, pos.y);
-        tiles.Add(pos, tile);
+        m_tiles.Add(pos, tile);
 
         // Animation
         tile.transform.localScale = Vector3.zero;
-        tile.transform.DOScale(Vector3.one, 0.5f).SetEase(Ease.OutBack).SetDelay(animationDelay);
-        animationDelay += 0.01f;
+        tile.transform.DOScale(Vector3.one, 0.5f).SetEase(Ease.OutBack).SetDelay(m_animationDelay);
+        m_animationDelay += 0.01f;
 
     }
 
     private Vector2Int GetTileIndex(GameObject hitInfo)
     {
-        foreach (var tile in tiles)
+        foreach (var tile in m_tiles)
         {
             if (tile.Value == hitInfo)
                 return tile.Key;
@@ -151,67 +156,84 @@ public class Board : MonoBehaviour
             return;
         }
         
-        if (currentHoverTile != hitPosition)
+        if (m_currentHoverTile != hitPosition)
         {
             string hitPositionLayer = GetTileLayer(hitPosition);
-            string currentHoverTileLayer = GetTileLayer(currentHoverTile);
+            string currentHoverTileLayer = GetTileLayer(m_currentHoverTile);
             if (currentHoverTileLayer == "Hover")
             {
-                SetTileLayer(currentHoverTile, "Letter");
+                SetTileLayer(m_currentHoverTile, "Letter");
             }
-            currentHoverTile = hitPosition;
+            m_currentHoverTile = hitPosition;
             if (hitPositionLayer == "Letter")
             {
-                SetTileLayer(currentHoverTile, "Hover");
+                SetTileLayer(m_currentHoverTile, "Hover");
             }
         }
     }
 
     public void OnPlayerSelectTile(InputAction.CallbackContext context)
     {
-        Debug.Log("Select tile");
-        var tile =  tiles[currentHoverTile];
+        var tile =  m_tiles[m_currentHoverTile];
         var letterComponent = tile.GetComponent<LetterTile>();
-        var word = m_grid.GetWordAtLocation(currentHoverTile);
+        var word = m_grid.GetWordAtLocation(m_currentHoverTile);
         
-        if ( m_currentSelectedWord != null && word != m_currentSelectedWord && word != null)
+        if ( m_currentSelectedWord != null && word != m_currentSelectedWord && word != null&& !m_currentSelectedWord.IsLocked)
         {
             foreach (var position in m_currentSelectedWord.GetAllLetterSolutionPositions().Keys)
             {
                 SetTileLayer(position, "Letter");
+                foreach (var gridWord in m_grid.GetAllWordAtLocation(position))
+                {
+                    if (gridWord.IsLocked)
+                    {
+                        SetTileLayer(position, "Validate");
+                    }
+                }
             }
         }
-
-
-        _inputField.Select();
         
-        if (word != null)
+        m_inputField.ActivateInputField();
+        if (word != null && !word.IsLocked)
         {
             m_currentSelectedWord = word;
-            _inputField.text = m_currentSelectedWord.GetCurrentWord();
+            m_inputField.text = m_currentSelectedWord.GetCurrentWord();
             foreach (var position in m_currentSelectedWord.GetAllLetterSolutionPositions().Keys)
             {
                 SetTileLayer(position, "Select");
+                foreach (var gridWord in m_grid.GetAllWordAtLocation(position))
+                {
+                    if (gridWord.IsLocked)
+                    {
+                        SetTileLayer(position, "Validate");
+                    }
+                }
             }
+            Debug.Log($"Word selected: {m_currentSelectedWord.SolutionWord}");
         }
-        _inputField.caretPosition = _inputField.text.Length ;
-        //_inputField.
+        m_inputField.caretPosition = m_inputField.text.Length ;
     }
 
     public void SetCurrentWordText(string text)
     {
-        Debug.Log($"Value Changed: {text}");
+        text = text.ToUpper();
         if (m_currentSelectedWord == null)
+        {
+            return;
+        }
+
+        if (m_inputField.text == m_currentSelectedWord.GetCurrentWord())
         {
             return;
         }
         string startWord = m_currentSelectedWord.GetCurrentWord();
         if (!m_currentSelectedWord.TrySetCurrentWord(text))
         {
-            _inputField.text = startWord;
+            m_inputField.text = startWord;
         }
         else
         {
+
              var letterLocations = m_currentSelectedWord.GetAllLetterCurrentWordPositions();
              foreach (var letterLocation in letterLocations)
              {
@@ -221,25 +243,73 @@ public class Board : MonoBehaviour
                  {
                      var otherWord = words.Find(word => word != m_currentSelectedWord);
                      char otherWordLetterAtLocation = otherWord.GetCurrentLetterAtLocation(letterLocation.Key);
+                     if (otherWord.IsLocked)
+                     {
+                         Debug.Log("If word is locked");
+
+                         m_currentSelectedWord.SetLetterAtLocation(letterLocation.Key, otherWordLetterAtLocation);
+                         letterTile.DisplayText.text = otherWordLetterAtLocation.ToString();
+                         continue;
+                     }
                      if (letterLocation.Value == '\0')
                      {
+                         Debug.Log("letter location equal 0");
+
                          letterTile.DisplayText.text = letterLocation.Value.ToString();
                          letterTile.DisplayText.text = otherWordLetterAtLocation.ToString();
                          continue;
                      }
                      else if (letterLocation.Value != otherWordLetterAtLocation && otherWordLetterAtLocation != '\0')
                      {
+                         Debug.Log("letter location value different otherwordletteratlocation");
+
                         otherWord.SetLetterAtLocation(letterLocation.Key, letterLocation.Value);
                      }
                  }
                  
                  letterTile.DisplayText.text = letterLocation.Value.ToString();
+                 
              }
+
+             // if (m_inputField.text != m_currentSelectedWord.GetCurrentWord())
+             // {
+             //    m_inputField.text = m_currentSelectedWord.GetCurrentWord();
+             // }
         }
-        
-        
-        
+
     }
+
+    public void ValidateText(string text)
+    {
+        text = text.ToUpper();
+        if (text.Length < m_currentSelectedWord.SolutionWord.Length)
+        {
+            return;
+        }
+
+        if (text != m_currentSelectedWord.SolutionWord)
+        {
+            // Failed
+            // Lose life?
+            m_player.TakeDamage(10);
+            return;
+        }
+
+        if (text == m_currentSelectedWord.SolutionWord)
+        {
+            // Yeees
+            m_player.AddScore(m_currentSelectedWord.Difficulty);
+            m_currentSelectedWord.IsLocked = true;
+            var letters = m_currentSelectedWord.GetAllLetterSolutionPositions();
+            foreach (var letter in letters)
+            {
+                GetTile(letter.Key).layer = LayerMask.NameToLayer("Validate");
+            }
+            
+
+        }
+    }
+    
     
     private void HandleMouseInputOnTile(GameObject hitTile)
     {
@@ -251,7 +321,7 @@ public class Board : MonoBehaviour
         {
             OnTileClicked.Invoke(hitPosition);
 
-            if (tiles.TryGetValue(hitPosition, out GameObject tile))
+            if (m_tiles.TryGetValue(hitPosition, out GameObject tile))
             {
                
 
@@ -264,14 +334,14 @@ public class Board : MonoBehaviour
 
     private void ResetHoverState()
     {
-        if (currentHoverTile == -Vector2Int.one) return;
+        if (m_currentHoverTile == -Vector2Int.one) return;
 
-        currentHoverTile = -Vector2Int.one;
+        m_currentHoverTile = -Vector2Int.one;
     }
 
     private void SetTileLayer(Vector2Int position, string layerName)
     {
-        if (tiles.TryGetValue(position, out GameObject tile))
+        if (m_tiles.TryGetValue(position, out GameObject tile))
         {
             tile.layer = LayerMask.NameToLayer(layerName);
         }
@@ -279,7 +349,7 @@ public class Board : MonoBehaviour
 
     private string GetTileLayer(Vector2Int position)
     {
-        if (tiles.TryGetValue(position, out GameObject tile))
+        if (m_tiles.TryGetValue(position, out GameObject tile))
         {
             return LayerMask.LayerToName(tile.layer);
 
@@ -290,7 +360,7 @@ public class Board : MonoBehaviour
 
     public GameObject GetTile(Vector2Int pos)
     {
-        if (tiles.TryGetValue(pos, out GameObject tile))
+        if (m_tiles.TryGetValue(pos, out GameObject tile))
             return tile;
         return null;
     }

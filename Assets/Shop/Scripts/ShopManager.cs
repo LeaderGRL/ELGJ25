@@ -62,7 +62,7 @@ public class ShopManager : MonoBehaviour
     {
         if (player.GetCoins() >= item.itemObject.itemPrice)
         {
-            player.RemoveCoins(item.itemObject.itemPrice);
+            player.RemoveScore(item.itemObject.itemPrice);
             
             foreach (var effect in item.itemObject.itemEffects)
             {
