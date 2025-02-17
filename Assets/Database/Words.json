@@ -1,0 +1,210 @@
+{
+    "words": [
+      {
+        "word": "aventure",
+        "description": "Un périple épique rempli de défis et d'inattendus.",
+        "difficulty": 5
+      },
+      {
+        "word": "mystère",
+        "description": "Quelque chose d'inexpliqué et de surprenant, enveloppé de secrets.",
+        "difficulty": 7
+      },
+      {
+        "word": "énigme",
+        "description": "Un problème ou une question difficile à résoudre.",
+        "difficulty": 6
+      },
+      {
+        "word": "labyrinthe",
+        "description": "Un dédale complexe et déroutant qui défie l'orientation.",
+        "difficulty": 8
+      },
+      {
+        "word": "périple",
+        "description": "Un long voyage rempli d'aventures et de découvertes.",
+        "difficulty": 4
+      },
+      {
+        "word": "destin",
+        "description": "Ce qui est inévitablement écrit pour chacun, parfois mystérieux.",
+        "difficulty": 2
+      },
+      {
+        "word": "héroïsme",
+        "description": "La qualité d'un héros, alliant bravoure et sacrifice.",
+        "difficulty": 5
+      },
+      {
+        "word": "courage",
+        "description": "La force de surmonter la peur et les obstacles.",
+        "difficulty": 3
+      },
+      {
+        "word": "mythologie",
+        "description": "L'étude et la collection des mythes et légendes d'un peuple.",
+        "difficulty": 6
+      },
+      {
+        "word": "légende",
+        "description": "Une histoire ancienne, souvent embellie, transmise de génération en génération.",
+        "difficulty": 4
+      },
+      {
+        "word": "saga",
+        "description": "Une longue histoire épique, souvent familiale, pleine d'aventures.",
+        "difficulty": 7
+      },
+      {
+        "word": "quête",
+        "description": "La recherche passionnée d'un objectif ou d'un trésor.",
+        "difficulty": 5
+      },
+      {
+        "word": "sortilège",
+        "description": "Un enchantement ou maléfice magique exercé par un sorcier.",
+        "difficulty": 8
+      },
+      {
+        "word": "magie",
+        "description": "L'art de manipuler des forces surnaturelles pour produire des effets étonnants.",
+        "difficulty": 4
+      },
+      {
+        "word": "illusion",
+        "description": "Une perception erronée de la réalité, souvent trompeuse.",
+        "difficulty": 6
+      },
+      {
+        "word": "ombre",
+        "description": "L'absence de lumière, souvent associée à des symboliques obscures.",
+        "difficulty": 2
+      },
+      {
+        "word": "lueur",
+        "description": "Un faible éclat de lumière, porteur d'espoir dans l'obscurité.",
+        "difficulty": 3
+      },
+      {
+        "word": "éclipse",
+        "description": "Le phénomène céleste où un astre masque partiellement ou totalement un autre.",
+        "difficulty": 7
+      },
+      {
+        "word": "cosmos",
+        "description": "L'ensemble de l'univers, d'une immensité et complexité infinies.",
+        "difficulty": 9
+      },
+      {
+        "word": "galaxie",
+        "description": "Un vaste ensemble d'étoiles, de gaz et de poussières interstellaires.",
+        "difficulty": 8
+      },
+      {
+        "word": "infini",
+        "description": "Ce qui n'a pas de limite, une notion abstraite et vaste.",
+        "difficulty": 9
+      },
+      {
+        "word": "paradoxe",
+        "description": "Une contradiction apparente qui défie la logique conventionnelle.",
+        "difficulty": 8
+      },
+      {
+        "word": "destinée",
+        "description": "La force mystérieuse qui semble guider la vie de chacun.",
+        "difficulty": 5
+      },
+      {
+        "word": "prophétie",
+        "description": "Une prédiction concernant l'avenir, souvent formulée de manière énigmatique.",
+        "difficulty": 7
+      },
+      {
+        "word": "oracle",
+        "description": "Une personne ou entité réputée capable de prédire l'avenir.",
+        "difficulty": 6
+      },
+      {
+        "word": "sorcellerie",
+        "description": "La pratique de la magie noire ou occulte, entourée de mystère.",
+        "difficulty": 8
+      },
+      {
+        "word": "élixir",
+        "description": "Une potion magique, capable de guérir ou d'accorder des pouvoirs.",
+        "difficulty": 5
+      },
+      {
+        "word": "amitié",
+        "description": "Un lien de confiance et d'affection entre personnes, précieux et sincère.",
+        "difficulty": 1
+      },
+      {
+        "word": "trahison",
+        "description": "L'acte de rompre la confiance en déloyauté envers quelqu'un.",
+        "difficulty": 6
+      },
+      {
+        "word": "révélation",
+        "description": "La découverte soudaine d'une vérité jusque-là cachée.",
+        "difficulty": 4
+      },
+      {
+        "word": "secret",
+        "description": "Une information ou réalité gardée cachée des regards.",
+        "difficulty": 3
+      },
+      {
+        "word": "mélancolie",
+        "description": "Un état de tristesse douce et profonde, souvent nostalgique.",
+        "difficulty": 5
+      },
+      {
+        "word": "jubilation",
+        "description": "Une joie intense, exubérante et contagieuse.",
+        "difficulty": 2
+      },
+      {
+        "word": "conspiration",
+        "description": "Un plan secret, souvent ourdi par plusieurs personnes dans l'ombre.",
+        "difficulty": 8
+      },
+      {
+        "word": "rédemption",
+        "description": "Le processus par lequel quelqu'un se rachète après une faute.",
+        "difficulty": 7
+      },
+      {
+        "word": "exil",
+        "description": "L'acte d'être contraint de quitter sa patrie ou sa demeure.",
+        "difficulty": 6
+      },
+      {
+        "word": "destitution",
+        "description": "Le retrait brutal d'un pouvoir ou d'une position d'autorité.",
+        "difficulty": 8
+      },
+      {
+        "word": "utopie",
+        "description": "Une société idéale, souvent irréalisable dans la réalité.",
+        "difficulty": 9
+      },
+      {
+        "word": "dystopie",
+        "description": "Une société imaginaire où règnent l'oppression et le chaos.",
+        "difficulty": 9
+      },
+      {
+        "word": "épopée",
+        "description": "Une œuvre littéraire racontant des exploits héroïques sur une grande échelle.",
+        "difficulty": 7
+      },
+      {
+        "word": "sérendipité",
+        "description": "La capacité de faire des découvertes heureuses et inattendues.",
+        "difficulty": 9
+      }
+    ]
+  }
+  

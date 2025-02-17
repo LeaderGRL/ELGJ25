@@ -7,7 +7,7 @@ public class ShopManager : MonoBehaviour
     
 
     [SerializeField] private ItemObject[] items;
-    [SerializeField] private Item itemPrefab;
+    [SerializeField] private GameObject itemPrefab;
 
     [SerializeField] private Transform shopItemContainer;
 
@@ -42,14 +42,19 @@ public class ShopManager : MonoBehaviour
     {
         foreach (var item in items)
         {
-            Item newItem = Instantiate(itemPrefab, shopItemContainer);
-            newItem.itemObject = item;
-            ShopItemView itemView = newItem.GetComponent<ShopItemView>();
+            GameObject newItemObject = Instantiate(itemPrefab, shopItemContainer);
+            Item newItemComponent = newItemObject.GetComponent<Item>();
 
-            if (itemView == null)
+            if (newItemComponent == null)
                 return;
 
-            itemView.Init(newItem);
+            newItemComponent.itemObject = item;
+            ShopItemView itemView = newItemComponent.GetComponent<ShopItemView>();
+
+            //if (itemView == null)
+            //    return;
+
+            //itemView.Init(newItemComponent);
         }
     }
 
@@ -58,6 +63,12 @@ public class ShopManager : MonoBehaviour
         if (player.GetCoins() >= item.itemObject.itemPrice)
         {
             player.RemoveCoins(item.itemObject.itemPrice);
+            
+            foreach (var effect in item.itemObject.itemEffects)
+            {
+                effect.ApplyEffect();
+            }
+
             onItemBought.Invoke();
             Debug.Log("Item bought: " + item.itemObject.itemName);
         }

@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections.Generic;
 using UnityEditorInternal;
 using UnityEngine;
@@ -26,6 +27,9 @@ public class Board : MonoBehaviour
     private Grid.GridWord m_currentSelectedWord;
     
 
+    private Sequence sequence;
+    private float animationDelay = 0.01f;
+
     [Header("Events")]
     [HideInInspector] public UnityEvent<Vector2Int> OnTileClicked;
 
@@ -45,6 +49,7 @@ public class Board : MonoBehaviour
 
     private void Start()
     {
+        sequence = DOTween.Sequence();
         tiles = new Dictionary<Vector2Int, GameObject>();
         m_grid = CharacterPlacementGenerator.GenerateCharPlacements(generationData.PossibleWords,
             generationData.NumWorToGenerate, "");
@@ -97,18 +102,34 @@ public class Board : MonoBehaviour
             return;
         }
 
+
         if (m_grid.CharacterPlacements.ContainsKey(pos))
         {
             var letterTile = Instantiate(letterTilePrefab, transform);
             letterTile.transform.position = new Vector3(pos.x, 0, pos.y);
             letterTile.DisplayText.text = "";
             tiles.Add(pos, letterTile.gameObject);
+
+            // Animation
+            letterTile.transform.localScale = Vector3.zero;
+
+            letterTile.transform.DOScale(Vector3.one, 0.5f).SetEase(Ease.OutBack).SetDelay(animationDelay);
+            animationDelay += 0.01f;
+            //letterTile.transform.DOScale(Vector3.one, 0.5f).SetEase(Ease.OutBack);
+
+
             return;
         }
 
         var tile = Instantiate(tilePrefabs[Random.Range(0, tilePrefabs.Count)], transform);
         tile.transform.position = new Vector3(pos.x, 0, pos.y);
         tiles.Add(pos, tile);
+
+        // Animation
+        tile.transform.localScale = Vector3.zero;
+        tile.transform.DOScale(Vector3.one, 0.5f).SetEase(Ease.OutBack).SetDelay(animationDelay);
+        animationDelay += 0.01f;
+
     }
 
     private Vector2Int GetTileIndex(GameObject hitInfo)
@@ -250,7 +271,6 @@ public class Board : MonoBehaviour
 
     private void SetTileLayer(Vector2Int position, string layerName)
     {
-        Debug.Log("Setting layer to " + layerName);
         if (tiles.TryGetValue(position, out GameObject tile))
         {
             tile.layer = LayerMask.NameToLayer(layerName);

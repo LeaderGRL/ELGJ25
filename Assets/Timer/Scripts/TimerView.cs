@@ -7,7 +7,6 @@ public class TimerView : MonoBehaviour
 
     public void DisplayTime(float timeToDisplay)
     {
-        float seconds = Mathf.FloorToInt(timeToDisplay % 60);
-        timeText.text = seconds.ToString();
+        timeText.text = Mathf.Floor(timeToDisplay).ToString();
     }
 }

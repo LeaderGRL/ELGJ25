@@ -3,7 +3,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     private int health = 100;
-    private int coins = 0;
+    private int coins = 100;
 
     public void TakeDamage(int damage)
     {
