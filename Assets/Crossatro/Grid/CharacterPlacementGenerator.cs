@@ -13,12 +13,12 @@ public static class CharacterPlacementGenerator
         bool isRow = true;
         
         Grid.GridWord wordToAdd = new Grid.GridWord();
-        wordToAdd.Word = possibleWords[0];
+        wordToAdd.SolutionWord = possibleWords[0];
         wordToAdd.IsRow = isRow;
         wordToAdd.StartPosition = Vector2Int.zero;
         
         
-        AddWord(result, wordToAdd.Word, wordToAdd.StartPosition, wordToAdd.IsRow);
+        AddWord(result, wordToAdd.SolutionWord, wordToAdd.StartPosition, wordToAdd.IsRow);
         addedWords.Add(wordToAdd);
         addedWordsIndexs.Add(0);
         
@@ -38,7 +38,7 @@ public static class CharacterPlacementGenerator
             string newWord = possibleWords[i];
             var lastWord = addedWords[addedWords.Count - 1];
             
-            var corespondingIndexs = GetCorespondingIndexs(newWord, lastWord.Word);
+            var corespondingIndexs = GetCorespondingIndexs(newWord, lastWord.SolutionWord);
             if (corespondingIndexs.Count > 0)
             {
                 var possibleStartPositions = GetPossibleStartPositions(result, corespondingIndexs, newWord,
@@ -47,13 +47,14 @@ public static class CharacterPlacementGenerator
                 {
                     int index = Random.Range(0, possibleStartPositions.Count);
                     Vector2Int startPos = possibleStartPositions[index];
+                    var wordToAddLoop = new Grid.GridWord();
                     
-                    wordToAdd.Word = possibleWords[i];
-                    wordToAdd.IsRow = isRow;
-                    wordToAdd.StartPosition = startPos;
+                    wordToAddLoop.SolutionWord = possibleWords[i];
+                    wordToAddLoop.IsRow = isRow;
+                    wordToAddLoop.StartPosition = startPos;
                     
-                    AddWord(result, wordToAdd.Word, wordToAdd.StartPosition, wordToAdd.IsRow);
-                    addedWords.Add(wordToAdd);
+                    AddWord(result, wordToAddLoop.SolutionWord, wordToAddLoop.StartPosition, wordToAddLoop.IsRow);
+                    addedWords.Add(wordToAddLoop);
                     addedWordsIndexs.Add(i);
                     isRow = !isRow;
                     canRestartLoop = true;
