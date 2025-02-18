@@ -144,12 +144,21 @@ public class Grid
     {
         public Vector2Int StartPosition;
         public string SolutionWord;
-        private string m_currentWord = "";
+        private Dictionary<Vector2Int, char> m_currentWord = new ();
         public bool IsRow;
         public string Description = "";
         public int Difficulty;
         public bool IsLocked;
 
+        public void Initialize()
+        {
+            m_currentWord.Clear();
+            foreach (var solutionLetter in GetAllLetterSolutionPositions())
+            {
+                m_currentWord[solutionLetter.Key] = '\0';
+            }
+        }
+        
         public Dictionary<Vector2Int, char> GetAllLetterSolutionPositions()
         {
             Dictionary<Vector2Int, char> result = new();
@@ -163,74 +172,29 @@ public class Grid
         }
         public Dictionary<Vector2Int, char> GetAllLetterCurrentWordPositions()
         {
-            Dictionary<Vector2Int, char> result = new();
-            for (int i = 0; i < SolutionWord.Length; i++)
+
+            return m_currentWord;
+        }
+
+        public string GetCurrentWordToString()
+        {
+            string result = "";
+
+            foreach (var letterLocation in m_currentWord)
             {
-                if (i >= m_currentWord.Length)
-                {
-                    result[IsRow ? new Vector2Int(StartPosition.x + i, StartPosition.y) : 
-                        new Vector2Int(StartPosition.x , StartPosition.y - i)] = '\0';
-
-                    continue;
-                }
-                result[IsRow ? new Vector2Int(StartPosition.x + i, StartPosition.y) : 
-                    new Vector2Int(StartPosition.x , StartPosition.y - i)] = m_currentWord[i];
+                result += letterLocation.Value;
             }
-
             return result;
         }
 
         public char GetCurrentLetterAtLocation(Vector2Int location)
         {
-            char result = '\0';
-            if ((IsRow && (location.y != StartPosition.y || location.x - StartPosition.x > m_currentWord.Length - 1)) || 
-                (!IsRow && (location.x != StartPosition.x || StartPosition.y - location.y >  m_currentWord.Length - 1)))
-            {
-                return result;
-            }
-
-            if (IsRow)
-            {
-                result = m_currentWord[location.x - StartPosition.x];
-            }
-            else
-            {
-                result = m_currentWord[StartPosition.y - location.y];
-            }
-            return result;
+            return m_currentWord[location];
         }
 
         public void  SetLetterAtLocation(Vector2Int location, char letter)
         {
-            string newText = "";
-            foreach (var letterLocation in GetAllLetterCurrentWordPositions())
-            {
-                if (location == letterLocation.Key)
-                {
-                    newText += letter;
-                }
-                else
-                {
-                    newText += letterLocation.Value;
-                }
-            }
-
-            m_currentWord = newText;
-        }
-        
-        public bool TrySetCurrentWord(string text)
-        {
-            if (text.Length > SolutionWord.Length)
-            {
-                return false;
-            }
-            m_currentWord = text;
-            return true;
-        }
-
-        public string GetCurrentWord()
-        {
-            return m_currentWord;
+            m_currentWord[location] = letter;
         }
     }
     

@@ -1,6 +1,7 @@
 using System;
 using DG.Tweening;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.Events;
@@ -197,7 +198,18 @@ public class Board : MonoBehaviour
         if (word != null && !word.IsLocked)
         {
             m_currentSelectedWord = word;
-            m_inputField.text = m_currentSelectedWord.GetCurrentWord();
+            string unlockedTilesToString = "";
+
+            foreach (var letterLocation in m_currentSelectedWord.GetAllLetterCurrentWordPositions())
+            {
+                bool isTileLocked = IsTileLocked(letterLocation.Key);
+                if (!isTileLocked)
+                {
+                    unlockedTilesToString += letterLocation.Value;
+                }
+            }
+            m_inputField.text = unlockedTilesToString;
+            
             foreach (var position in m_currentSelectedWord.GetAllLetterSolutionPositions().Keys)
             {
                 SetTileLayer(position, "Select");
@@ -214,80 +226,165 @@ public class Board : MonoBehaviour
         m_inputField.caretPosition = m_inputField.text.Length ;
     }
 
+    private bool IsTileLocked(Vector2Int tileLocation)
+    {
+        var words = m_grid.GetAllWordAtLocation(tileLocation);
+        foreach (var word in words)
+        {
+            if (word.IsLocked)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public void SetCurrentWordText(string text)
     {
-        text = text.ToUpper();
         if (m_currentSelectedWord == null)
         {
             return;
         }
+        text = text.ToUpper();
+        Dictionary<Vector2Int, char> currentwordLettersLocations = m_currentSelectedWord.GetAllLetterCurrentWordPositions();
+        Dictionary<Vector2Int, char> lockedTiles = new ();
+        Dictionary<Vector2Int, char> unlockedTiles = new ();
+        string unlockedTilesToString = "";
 
-        if (m_inputField.text == m_currentSelectedWord.GetCurrentWord())
+        foreach (var letterLocation in currentwordLettersLocations)
+        {
+            bool isTileLocked = IsTileLocked(letterLocation.Key);
+            if (isTileLocked)
+            {
+                unlockedTilesToString += letterLocation.Value;
+            }
+            (isTileLocked ? lockedTiles : unlockedTiles)[letterLocation.Key] = letterLocation.Value;
+        }
+
+        if (unlockedTilesToString == text)
         {
             return;
         }
-        string startWord = m_currentSelectedWord.GetCurrentWord();
-        if (!m_currentSelectedWord.TrySetCurrentWord(text))
+
+        if (text.Length > unlockedTiles.Count)
         {
-            m_inputField.text = startWord;
+            m_inputField.text = unlockedTilesToString;
+            return;
         }
-        else
+
+        int i = 0;
+        Dictionary<Vector2Int, char> tempDictionary = new();
+        foreach (var letterLocation in unlockedTiles)
         {
-
-             var letterLocations = m_currentSelectedWord.GetAllLetterCurrentWordPositions();
-             foreach (var letterLocation in letterLocations)
-             {
-                 LetterTile letterTile =  GetTile(letterLocation.Key).GetComponent<LetterTile>();
-                 var words = m_grid.GetAllWordAtLocation(letterLocation.Key);
-                 if (words != null && words.Count > 1)
-                 {
-                     var otherWord = words.Find(word => word != m_currentSelectedWord);
-                     char otherWordLetterAtLocation = otherWord.GetCurrentLetterAtLocation(letterLocation.Key);
-                     if (otherWord.IsLocked)
-                     {
-                         Debug.Log("If word is locked");
-
-                         m_currentSelectedWord.SetLetterAtLocation(letterLocation.Key, otherWordLetterAtLocation);
-                         letterTile.DisplayText.text = otherWordLetterAtLocation.ToString();
-                         continue;
-                     }
-                     if (letterLocation.Value == '\0')
-                     {
-                         Debug.Log("letter location equal 0");
-
-                         letterTile.DisplayText.text = letterLocation.Value.ToString();
-                         letterTile.DisplayText.text = otherWordLetterAtLocation.ToString();
-                         continue;
-                     }
-                     else if (letterLocation.Value != otherWordLetterAtLocation && otherWordLetterAtLocation != '\0')
-                     {
-                         Debug.Log("letter location value different otherwordletteratlocation");
-
-                        otherWord.SetLetterAtLocation(letterLocation.Key, letterLocation.Value);
-                     }
-                 }
-                 
-                 letterTile.DisplayText.text = letterLocation.Value.ToString();
-                 
-             }
-
-             // if (m_inputField.text != m_currentSelectedWord.GetCurrentWord())
-             // {
-             //    m_inputField.text = m_currentSelectedWord.GetCurrentWord();
-             // }
+            if (i < text.Length)
+            {
+                tempDictionary[letterLocation.Key] = text[i];
+            }
+            else
+            {
+                tempDictionary[letterLocation.Key] = '\0';
+            }
+            i++;
         }
+
+        foreach (var letterLocation in tempDictionary)
+        {
+            currentwordLettersLocations[letterLocation.Key] = letterLocation.Value;
+        }
+
+        foreach (var letterLocation in currentwordLettersLocations)
+        {
+            GetTile(letterLocation.Key).GetComponent<LetterTile>().DisplayText.text =
+                currentwordLettersLocations[letterLocation.Key].ToString();
+        }
+        // tempDictionary.Clear();
+        //
+        //
+        // foreach (var letterLocation in currentwordLettersLocations)
+        // {
+        //     if (unlockedTiles.ContainsKey(letterLocation.Key))
+        //     {
+        //         currentwordLettersLocations[letterLocation.Key] = unlockedTiles[letterLocation.Key];
+        //         GetTile(letterLocation.Key).GetComponent<LetterTile>().DisplayText.text =
+        //             unlockedTiles[letterLocation.Key].ToString();
+        //     }
+        // }
+        
+
+
+        // if (text == m_currentSelectedWord.GetCurrentWord())
+        // {
+        //     return;
+        // }
+        //
+        // var wordBeforeChanges = m_currentSelectedWord.GetCurrentWord();
+        // bool IsAddingText = text.Length > wordBeforeChanges.Length;
+        // m_currentSelectedWord.TrySetCurrentWord(text);
+        //
+        // var letterLocations = m_currentSelectedWord.GetAllLetterCurrentWordPositions();
+        //
+        // Vector2Int nextTileLocation = IsAddingText
+        //     ? m_currentSelectedWord.GetNextLetterLocation()
+        //     : letterLocations.Keys.ToList()[wordBeforeChanges.Length - 2];
+        //
+        // var nexTile = GetTile(nextTileLocation);
+        // if (nexTile != null && IsAddingText && nexTile.layer == LayerMask.NameToLayer("Validate"))
+        // {
+        //     m_currentSelectedWord.TrySetCurrentWord(
+        //         m_currentSelectedWord.GetCurrentWord() + nexTile.GetComponent<LetterTile>().DisplayText.text[0]);
+        //     m_inputField.text = m_currentSelectedWord.GetCurrentWord();
+        //     return;
+        // } 
+        //
+        // letterLocations = m_currentSelectedWord.GetAllLetterCurrentWordPositions();
+        // foreach (var letterLocation in letterLocations)
+        // {
+        //     LetterTile letterTile =  GetTile(letterLocation.Key).GetComponent<LetterTile>();
+        //     var words = m_grid.GetAllWordAtLocation(letterLocation.Key);
+        //     if (words != null && words.Count > 1)
+        //     {
+        //         var otherWord = words.Find(word => word != m_currentSelectedWord);
+        //         char otherWordLetterAtLocation = otherWord.GetCurrentLetterAtLocation(letterLocation.Key);
+        //         if (otherWord.IsLocked)
+        //         {
+        //
+        //             m_currentSelectedWord.SetLetterAtLocation(letterLocation.Key, otherWordLetterAtLocation);
+        //             letterTile.DisplayText.text = otherWordLetterAtLocation.ToString();
+        //             continue; 
+        //         }
+        //         if (letterLocation.Value == '\0')
+        //         {
+        //
+        //             letterTile.DisplayText.text = letterLocation.Value.ToString();
+        //             letterTile.DisplayText.text = otherWordLetterAtLocation.ToString();
+        //             continue;
+        //         }
+        //         else if (letterLocation.Value != otherWordLetterAtLocation && otherWordLetterAtLocation != '\0')
+        //         { 
+        //             otherWord.SetLetterAtLocation(letterLocation.Key, letterLocation.Value);
+        //         }
+        //     }
+        //
+        //      
+        //     letterTile.DisplayText.text = letterLocation.Value.ToString();
+        //      
+        // }
+
+
 
     }
+    
 
     public void ValidateText(string text)
     {
         text = text.ToUpper();
-        if (text.Length < m_currentSelectedWord.SolutionWord.Length)
+        string wordToString = m_currentSelectedWord.GetCurrentWordToString();
+        if (wordToString.Length < m_currentSelectedWord.SolutionWord.Length)
         {
             return;
         }
 
-        if (text != m_currentSelectedWord.SolutionWord)
+        if (wordToString != m_currentSelectedWord.SolutionWord)
         {
             // Failed
             // Lose life?
@@ -295,7 +392,7 @@ public class Board : MonoBehaviour
             return;
         }
 
-        if (text == m_currentSelectedWord.SolutionWord)
+        if (wordToString == m_currentSelectedWord.SolutionWord)
         {
             // Yeees
             m_player.AddScore(m_currentSelectedWord.Difficulty);
@@ -304,6 +401,11 @@ public class Board : MonoBehaviour
             foreach (var letter in letters)
             {
                 GetTile(letter.Key).layer = LayerMask.NameToLayer("Validate");
+                var wordsAtLocaiton = m_grid.GetAllWordAtLocation(letter.Key);
+                foreach (var word in wordsAtLocaiton)
+                {
+                    word.SetLetterAtLocation(letter.Key, letter.Value);
+                }
             }
             
 
