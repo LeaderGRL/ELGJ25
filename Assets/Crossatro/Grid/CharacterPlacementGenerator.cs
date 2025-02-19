@@ -22,7 +22,7 @@ public static class CharacterPlacementGenerator
         wordToAdd.Difficulty = wordsShuffled[0].difficulty;
         wordToAdd.IsLocked = false;
         wordToAdd.Description = wordsShuffled[0].description;
-
+        wordToAdd.Initialize();
         
         AddWord(result, wordToAdd.SolutionWord, wordToAdd.StartPosition, wordToAdd.IsRow);
         addedWords.Add(wordToAdd);
@@ -61,7 +61,7 @@ public static class CharacterPlacementGenerator
                     wordToAddLoop.Difficulty = wordsShuffled[i].difficulty;
                     wordToAddLoop.IsLocked = false;
                     wordToAddLoop.Description = wordsShuffled[i].description;
-                    
+                    wordToAddLoop.Initialize();
                     
                     AddWord(result, wordToAddLoop.SolutionWord, wordToAddLoop.StartPosition, wordToAddLoop.IsRow);
                     addedWords.Add(wordToAddLoop);
