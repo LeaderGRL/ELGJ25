@@ -20,7 +20,9 @@ public class Board : MonoBehaviour
     private List<GameObject> m_tilePrefabs;
     [FormerlySerializedAs("letterTilePrefab")] [SerializeField] 
     private LetterTile m_letterTilePrefab;
-    
+    [FormerlySerializedAs("shopTilePrefab")] [SerializeField]
+    private ShopTile m_shopTilePrefab;
+
     [FormerlySerializedAs("generationData")] [SerializeField]
     private GridGenerationData m_generationData;
 
@@ -110,7 +112,8 @@ public class Board : MonoBehaviour
 
         if (m_grid.CharacterPlacements.ContainsKey(pos))
         {
-            var letterTile = Instantiate(m_letterTilePrefab, transform);
+            int randomValue = Random.Range(0, 100);
+            var letterTile = Instantiate(randomValue == 50 ? m_shopTilePrefab : m_letterTilePrefab, transform);
             letterTile.transform.position = new Vector3(pos.x, 0, pos.y);
             letterTile.DisplayText.text = "";
             m_tiles.Add(pos, letterTile.gameObject);
@@ -304,9 +307,18 @@ public class Board : MonoBehaviour
             foreach (var letter in letters)
             {
                 GetTile(letter.Key).layer = LayerMask.NameToLayer("Validate");
+                CheckForShopTile(letter.Key);
             }
             
+        }
+    }
 
+    private void CheckForShopTile(Vector2Int pos)
+    {
+        GetTile(pos).TryGetComponent(out ShopTile shopTile);
+        if (shopTile)
+        {
+            ShopManager.Instance.OpenShop();
         }
     }
     

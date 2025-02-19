@@ -275,10 +275,10 @@ RectTransform:
   - {fileID: 367249034}
   m_Father: {fileID: 898100413}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 354.5, y: -62.35}
-  m_SizeDelta: {x: 709, y: 124.7}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 124.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &121444577
 MonoBehaviour:
@@ -1169,6 +1169,62 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Asset: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_ActionId: dad70c86-b58c-4b17-88ad-f5e53adf419e
+--- !u!1 &663355306
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 663355308}
+  - component: {fileID: 663355307}
+  m_Layer: 0
+  m_Name: ShopManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &663355307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 663355306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e77082eff31e1b8449b8fd4d544a8d07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items:
+  - {fileID: 11400000, guid: 80200b767ffe32240867bd0e84c34fd6, type: 2}
+  - {fileID: 11400000, guid: 80200b767ffe32240867bd0e84c34fd6, type: 2}
+  - {fileID: 11400000, guid: 8476a6e5d4455014ba27bde97c3bdcfd, type: 2}
+  itemPrefab: {fileID: 8433361310702939380, guid: abdf68e020729da44a737702abe3684b, type: 3}
+  shopPanel: {fileID: 615684336}
+  shopItemContainer: {fileID: 1439496975}
+  player: {fileID: 13066446}
+  timer: {fileID: 367249039}
+  onItemBought:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!4 &663355308
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 663355306}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.9297438, y: 3.6197226, z: -0.4525363}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &669009453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1218,6 +1274,7 @@ MonoBehaviour:
   m_tilePrefabs:
   - {fileID: 1010969201747375324, guid: e8ab0d5a7a6fa4649aca08e56f4aaddc, type: 3}
   m_letterTilePrefab: {fileID: 5437280665611621743, guid: 86da03221e65d9846bda32cca226df2f, type: 3}
+  m_shopTilePrefab: {fileID: 1862125405419280211, guid: ff67b501ddce48e4c8b2037c52eb980d, type: 3}
   m_generationData: {fileID: 11400000, guid: 676e0537321054a4a94952f418aaec97, type: 2}
   m_inputField: {fileID: 563832619}
   m_player: {fileID: 13066446}
@@ -1463,7 +1520,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &813828918
 Transform:
   m_ObjectHideFlags: 0
@@ -1739,7 +1796,6 @@ GameObject:
   - component: {fileID: 1439496975}
   - component: {fileID: 1439496978}
   - component: {fileID: 1439496977}
-  - component: {fileID: 1439496976}
   - component: {fileID: 1439496979}
   m_Layer: 5
   m_Name: Inventory
@@ -1767,29 +1823,6 @@ RectTransform:
   m_AnchoredPosition: {x: 380, y: -60}
   m_SizeDelta: {x: 513, y: 806}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1439496976
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1439496974}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e77082eff31e1b8449b8fd4d544a8d07, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  items:
-  - {fileID: 11400000, guid: 80200b767ffe32240867bd0e84c34fd6, type: 2}
-  - {fileID: 11400000, guid: 80200b767ffe32240867bd0e84c34fd6, type: 2}
-  - {fileID: 11400000, guid: 8476a6e5d4455014ba27bde97c3bdcfd, type: 2}
-  itemPrefab: {fileID: 8433361310702939380, guid: abdf68e020729da44a737702abe3684b, type: 3}
-  shopItemContainer: {fileID: 1439496975}
-  player: {fileID: 13066446}
-  timer: {fileID: 367249039}
-  onItemBought:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &1439496977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2525,6 +2558,7 @@ SceneRoots:
   - {fileID: 21675426}
   - {fileID: 813828918}
   - {fileID: 1969554611}
+  - {fileID: 663355308}
   - {fileID: 1485671045}
   - {fileID: 1826794245}
   - {fileID: 1075884519}

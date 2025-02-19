@@ -9,6 +9,8 @@ public class ShopManager : MonoBehaviour
     [SerializeField] private ItemObject[] items;
     [SerializeField] private GameObject itemPrefab;
 
+    [Header("UI")]
+    [SerializeField] private GameObject shopPanel;
     [SerializeField] private Transform shopItemContainer;
 
     [Header("References")]
@@ -76,5 +78,15 @@ public class ShopManager : MonoBehaviour
         {
             Debug.Log("Not enough coins to buy: " + item.itemObject.itemName);
         }
+    }
+
+    public void OpenShop()
+    {
+        shopPanel.SetActive(true);
+    }
+
+    public void CloseShop()
+    {
+        shopPanel.SetActive(false);
     }
 }
