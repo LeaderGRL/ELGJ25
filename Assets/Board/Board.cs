@@ -407,7 +407,7 @@ public class Board : MonoBehaviour
         if (wordToString == m_currentSelectedWord.SolutionWord)
         {
             // Yeees
-            m_player.AddScore(m_currentSelectedWord.Difficulty);
+            m_player.AddScore(m_currentSelectedWord.Difficulty * 10);
             m_currentSelectedWord.IsLocked = true;
             var letters = m_currentSelectedWord.GetAllLetterSolutionPositions();
             foreach (var letter in letters)
@@ -418,8 +418,10 @@ public class Board : MonoBehaviour
                 {
                     word.SetLetterAtLocation(letter.Key, letter.Value);
                 }
+
+                m_player.AddScore(LetterWeight.GetLetterWeight(letter.Value));
+                CheckForShopTile(letter.Key);
             }
-            
         }
     }
 

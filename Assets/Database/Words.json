@@ -204,6 +204,366 @@
         "word": "sérendipité",
         "description": "La capacité de faire des découvertes heureuses et inattendues.",
         "difficulty": 9
+      },
+      {
+        "word": "émerveillement",
+        "description": "L'état d'être émerveillé par la beauté ou la grandeur.",
+        "difficulty": 4
+      },
+      {
+        "word": "persévérance",
+        "description": "La capacité de continuer malgré les obstacles.",
+        "difficulty": 5
+      },
+      {
+        "word": "sagesse",
+        "description": "La connaissance profonde acquise par l'expérience.",
+        "difficulty": 3
+      },
+      {
+        "word": "innovation",
+        "description": "L'introduction de nouvelles idées ou méthodes.",
+        "difficulty": 6
+      },
+      {
+        "word": "créativité",
+        "description": "La capacité de créer ou d'inventer quelque chose de nouveau.",
+        "difficulty": 4
+      },
+      {
+        "word": "perplexité",
+        "description": "L'état d'être confus ou déconcerté face à une situation.",
+        "difficulty": 7
+      },
+      {
+        "word": "transcendance",
+        "description": "Le fait de dépasser les limites de l'expérience humaine.",
+        "difficulty": 8
+      },
+      {
+        "word": "volonté",
+        "description": "La force intérieure qui permet de poursuivre ses objectifs.",
+        "difficulty": 3
+      },
+      {
+        "word": "résilience",
+        "description": "La capacité de se remettre d'une difficulté ou d'un traumatisme.",
+        "difficulty": 5
+      },
+      {
+        "word": "harmonie",
+        "description": "L'équilibre parfait entre différents éléments.",
+        "difficulty": 2
+      },
+      {
+        "word": "tempête",
+        "description": "Un phénomène météorologique violent et tumultueux.",
+        "difficulty": 7
+      },
+      {
+        "word": "murmure",
+        "description": "Un son doux et léger, à peine perceptible.",
+        "difficulty": 2
+      },
+      {
+        "word": "écho",
+        "description": "Le retour d'un son dans un environnement réverbérant.",
+        "difficulty": 3
+      },
+      {
+        "word": "subtilité",
+        "description": "La finesse et la délicatesse dans l'expression ou la perception.",
+        "difficulty": 6
+      },
+      {
+        "word": "vibration",
+        "description": "Un mouvement oscillatoire régulier qui peut être ressenti.",
+        "difficulty": 5
+      },
+      {
+        "word": "transformation",
+        "description": "Le processus de changement ou de métamorphose.",
+        "difficulty": 7
+      },
+      {
+        "word": "évasion",
+        "description": "L'acte de fuir ou de s'échapper d'une situation oppressante.",
+        "difficulty": 4
+      },
+      {
+        "word": "espoir",
+        "description": "La croyance en un avenir meilleur malgré les difficultés.",
+        "difficulty": 2
+      },
+      {
+        "word": "fascination",
+        "description": "L'attraction intense pour quelque chose d'extraordinaire.",
+        "difficulty": 6
+      },
+      {
+        "word": "métamorphose",
+        "description": "La transformation profonde d'une chose en une nouvelle forme.",
+        "difficulty": 8
+      },
+      {
+        "word": "contingence",
+        "description": "La notion d'événements fortuits sans cause déterminée.",
+        "difficulty": 7
+      },
+      {
+        "word": "synchronicité",
+        "description": "La coïncidence significative d'événements qui semblent liés.",
+        "difficulty": 9
+      },
+      {
+        "word": "spiritualité",
+        "description": "La quête d'une connexion avec le transcendant ou le sacré.",
+        "difficulty": 5
+      },
+      {
+        "word": "mysticisme",
+        "description": "La recherche d'une expérience directe du divin ou de l'inexprimable.",
+        "difficulty": 8
+      },
+      {
+        "word": "dualité",
+        "description": "La coexistence de deux aspects opposés ou complémentaires.",
+        "difficulty": 4
+      },
+      {
+        "word": "fragmentation",
+        "description": "La division ou la décomposition d'un ensemble en parties plus petites.",
+        "difficulty": 7
+      },
+      {
+        "word": "intemporalité",
+        "description": "La qualité de ce qui est en dehors du temps, éternel.",
+        "difficulty": 9
+      },
+      {
+        "word": "nostalgie",
+        "description": "Le sentiment de regret et de mélancolie lié au passé.",
+        "difficulty": 3
+      },
+      {
+        "word": "vigilance",
+        "description": "L'attention soutenue pour prévenir un danger.",
+        "difficulty": 4
+      },
+      {
+        "word": "émergence",
+        "description": "L'apparition soudaine ou progressive d'un phénomène.",
+        "difficulty": 6
+      },
+      {
+        "word": "complexité",
+        "description": "L'état d'être composé de multiples éléments interconnectés.",
+        "difficulty": 8
+      },
+      {
+        "word": "fluidité",
+        "description": "La capacité de s'adapter et de changer sans heurts.",
+        "difficulty": 3
+      },
+      {
+        "word": "vitalité",
+        "description": "L'énergie, la force de vivre et d'agir.",
+        "difficulty": 5
+      },
+      {
+        "word": "dynamisme",
+        "description": "L'énergie et le mouvement constants qui animent un système.",
+        "difficulty": 4
+      },
+      {
+        "word": "émergence",
+        "description": "L'apparition soudaine d'un phénomène ou d'une idée.",
+        "difficulty": 6
+      },
+      {
+        "word": "rêverie",
+        "description": "Un état de méditation ou d'errance de l'esprit.",
+        "difficulty": 3
+      },
+      {
+        "word": "sérénité",
+        "description": "Un sentiment de calme et de paix intérieure.",
+        "difficulty": 2
+      },
+      {
+        "word": "élan",
+        "description": "Une impulsion vive ou une énergie déterminée pour agir.",
+        "difficulty": 4
+      },
+      {
+        "word": "cadence",
+        "description": "Le rythme régulier dans une séquence d'événements ou de sons.",
+        "difficulty": 5
+      },
+      {
+        "word": "crépuscule",
+        "description": "La période de la journée où la lumière décline, entre jour et nuit.",
+        "difficulty": 6
+      },
+      {
+        "word": "aurore",
+        "description": "Le moment où le jour se lève et apporte la lumière.",
+        "difficulty": 4
+      },
+      {
+        "word": "fantaisie",
+        "description": "L'imagination créative qui dépasse la réalité ordinaire.",
+        "difficulty": 5
+      },
+      {
+        "word": "exaltation",
+        "description": "Un sentiment intense de joie ou d'enthousiasme.",
+        "difficulty": 7
+      },
+      {
+        "word": "ruée",
+        "description": "Une affluence soudaine et massive vers un lieu ou une idée.",
+        "difficulty": 6
+      },
+      {
+        "word": "pénombre",
+        "description": "La zone d'ombre partielle entre la lumière et l'obscurité.",
+        "difficulty": 3
+      },
+      {
+        "word": "iridescence",
+        "description": "La qualité de montrer des couleurs changeantes en fonction de l'angle de vue.",
+        "difficulty": 8
+      },
+      {
+        "word": "sillage",
+        "description": "La trace laissée par quelque chose en mouvement, comme un navire ou une odeur.",
+        "difficulty": 4
+      },
+      {
+        "word": "tempérance",
+        "description": "La vertu de modérer ses actions ou ses passions.",
+        "difficulty": 5
+      },
+      {
+        "word": "vicissitude",
+        "description": "Les changements imprévus et souvent difficiles dans la vie.",
+        "difficulty": 7
+      },
+      {
+        "word": "fractale",
+        "description": "Une structure géométrique complexe qui se répète à différentes échelles.",
+        "difficulty": 8
+      },
+      {
+        "word": "omniscience",
+        "description": "La connaissance illimitée de tout ce qui existe.",
+        "difficulty": 9
+      },
+      {
+        "word": "inconnu",
+        "description": "Ce qui n'est pas connu ou identifié, mystérieux par essence.",
+        "difficulty": 4
+      },
+      {
+        "word": "énigmatique",
+        "description": "Qui est difficile à comprendre ou à interpréter.",
+        "difficulty": 6
+      },
+      {
+        "word": "abstraction",
+        "description": "La capacité de penser en termes généraux, sans se focaliser sur les détails concrets.",
+        "difficulty": 7
+      },
+      {
+        "word": "oscillation",
+        "description": "Un mouvement régulier d'aller-retour ou de fluctuation.",
+        "difficulty": 5
+      },
+      {
+        "word": "holographie",
+        "description": "La technique permettant de créer des images tridimensionnelles par interférence lumineuse.",
+        "difficulty": 8
+      },
+      {
+        "word": "résonance",
+        "description": "L'amplification d'un signal ou d'une vibration par l'interaction avec un objet résonant.",
+        "difficulty": 6
+      },
+      {
+        "word": "transparence",
+        "description": "La qualité d'être clair et ouvert, sans dissimulation.",
+        "difficulty": 3
+      },
+      {
+        "word": "perspective",
+        "description": "La manière d'envisager ou de voir un sujet en fonction de son point de vue.",
+        "difficulty": 4
+      },
+      {
+        "word": "pulsation",
+        "description": "Un battement régulier, souvent associé à un rythme ou une vibration.",
+        "difficulty": 5
+      },
+      {
+        "word": "imagination",
+        "description": "La faculté de créer des images ou des idées qui ne sont pas directement liées à la réalité.",
+        "difficulty": 4
+      },
+      {
+        "word": "dilemme",
+        "description": "Une situation où l'on doit choisir entre deux options difficiles.",
+        "difficulty": 6
+      },
+      {
+        "word": "évanescence",
+        "description": "La nature éphémère de quelque chose qui disparaît rapidement.",
+        "difficulty": 7
+      },
+      {
+        "word": "mirage",
+        "description": "Une illusion optique souvent observée dans des conditions extrêmes.",
+        "difficulty": 6
+      },
+      {
+        "word": "sublimation",
+        "description": "La transformation d'une impulsion ou d'un désir en une activité socialement valorisée.",
+        "difficulty": 8
+      },
+      {
+        "word": "convergence",
+        "description": "Le rapprochement de plusieurs éléments vers un point commun.",
+        "difficulty": 5
+      },
+      {
+        "word": "divergence",
+        "description": "La dispersion ou l'éloignement d'éléments qui étaient initialement groupés.",
+        "difficulty": 5
+      },
+      {
+        "word": "cacophonie",
+        "description": "Un mélange discordant de sons, souvent désagréable à l'oreille.",
+        "difficulty": 7
+      },
+      {
+        "word": "solitude",
+        "description": "L'état de se trouver seul, avec ses propres pensées.",
+        "difficulty": 4
+      },
+      {
+        "word": "épanouissement",
+        "description": "Le processus de développement et de réalisation de soi.",
+        "difficulty": 5
+      },
+      {
+        "word": "révolution",
+        "description": "Un changement radical et souvent soudain dans un système ou une société.",
+        "difficulty": 8
+      },
+      {
+        "word": "mutation",
+        "description": "Un changement profond dans la structure ou la nature d'une entité.",
+        "difficulty": 7
       }
     ]
   }
