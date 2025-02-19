@@ -63,19 +63,12 @@ public class Board : MonoBehaviour
 
     private void Start()
     {
-        m_sequence = DOTween.Sequence();
         m_tiles = new Dictionary<Vector2Int, GameObject>();
         m_grid = CharacterPlacementGenerator.GenerateCharPlacements(m_generationData.Database,
             m_generationData.NumWorToGenerate, "");
         Vector2Int gridSize = m_grid.GetGridSize();
-        var minMaxPosGrid = m_grid.GetMinAndMaxPositionCharacterPlacement();
-        for (int x =  minMaxPosGrid.Key.x; x <= minMaxPosGrid.Value.x; x++)
-        {
-            for (int y =  minMaxPosGrid.Key.y; y <= minMaxPosGrid.Value.y; y++)
-            {
-                PlaceTile(new Vector2Int(x, y));
-            }
-        }
+
+        SpawnAllTiles();
         OnGenerateGrid?.Invoke(m_grid);
     }
 
@@ -97,6 +90,18 @@ public class Board : MonoBehaviour
         }
     }
 
+    private void SpawnAllTiles()
+    {
+        var minMaxPosGrid = m_grid.GetMinAndMaxPositionCharacterPlacement();
+        for (int x = minMaxPosGrid.Key.x; x <= minMaxPosGrid.Value.x; x++)
+        {
+            for (int y = minMaxPosGrid.Key.y; y <= minMaxPosGrid.Value.y; y++)
+            {
+                PlaceTile(new Vector2Int(x, y));
+            }
+        }
+    }
+
     public Board GetInstance()
     {
         return m_instance;
@@ -105,39 +110,32 @@ public class Board : MonoBehaviour
     public void PlaceTile(Vector2Int pos)
     {
         if (m_tiles.ContainsKey(pos))
-        {
             return;
-        }
 
+        GameObject newTile;
 
         if (m_grid.CharacterPlacements.ContainsKey(pos))
         {
-            int randomValue = Random.Range(0, 100);
-            var letterTile = Instantiate(randomValue == 50 ? m_shopTilePrefab : m_letterTilePrefab, transform);
-            letterTile.transform.position = new Vector3(pos.x, 0, pos.y);
-            letterTile.DisplayText.text = "";
-            m_tiles.Add(pos, letterTile.gameObject);
-
-            // Animation
-            letterTile.transform.localScale = Vector3.zero;
-
-            letterTile.transform.DOScale(Vector3.one, 0.5f).SetEase(Ease.OutBack).SetDelay(m_animationDelay);
-            m_animationDelay += 0.01f;
-            //letterTile.transform.DOScale(Vector3.one, 0.5f).SetEase(Ease.OutBack);
-
-
-            return;
+            newTile = Instantiate(Random.Range(0, 100) == 50 ? m_shopTilePrefab.gameObject : m_letterTilePrefab.gameObject, transform); // Random shop tile spawn
+            newTile.GetComponent<LetterTile>().DisplayText.text = "";
+        }
+        else
+        {
+            newTile = Instantiate(m_tilePrefabs[Random.Range(0, m_tilePrefabs.Count)], transform);
         }
 
-        var tile = Instantiate(m_tilePrefabs[Random.Range(0, m_tilePrefabs.Count)], transform);
-        tile.transform.position = new Vector3(pos.x, 0, pos.y);
-        m_tiles.Add(pos, tile);
+        newTile.transform.position = new Vector3(pos.x, 0, pos.y);
+        m_tiles.Add(pos, newTile);
 
         // Animation
-        tile.transform.localScale = Vector3.zero;
-        tile.transform.DOScale(Vector3.one, 0.5f).SetEase(Ease.OutBack).SetDelay(m_animationDelay);
+        AnimateTileSpawn(newTile, m_animationDelay);
         m_animationDelay += 0.01f;
+    }
 
+    private void AnimateTileSpawn(GameObject tile, float delay)
+    {
+        tile.transform.localScale = Vector3.zero;
+        tile.transform.DOScale(Vector3.one, 0.5f).SetEase(Ease.OutBack).SetDelay(delay);
     }
 
     private Vector2Int GetTileIndex(GameObject hitInfo)
@@ -248,36 +246,35 @@ public class Board : MonoBehaviour
                      char otherWordLetterAtLocation = otherWord.GetCurrentLetterAtLocation(letterLocation.Key);
                      if (otherWord.IsLocked)
                      {
-                         Debug.Log("If word is locked");
+                        Debug.Log("If word is locked");
 
-                         m_currentSelectedWord.SetLetterAtLocation(letterLocation.Key, otherWordLetterAtLocation);
-                         letterTile.DisplayText.text = otherWordLetterAtLocation.ToString();
-                         continue;
+                        m_currentSelectedWord.SetLetterAtLocation(letterLocation.Key, otherWordLetterAtLocation);
+                        letterTile.DisplayText.text = otherWordLetterAtLocation.ToString();
+                        continue;
                      }
                      if (letterLocation.Value == '\0')
                      {
-                         Debug.Log("letter location equal 0");
+                        Debug.Log("letter location equal 0");
 
-                         letterTile.DisplayText.text = letterLocation.Value.ToString();
-                         letterTile.DisplayText.text = otherWordLetterAtLocation.ToString();
-                         continue;
+                        letterTile.DisplayText.text = letterLocation.Value.ToString();
+                        letterTile.DisplayText.text = otherWordLetterAtLocation.ToString();
+                        continue;
                      }
                      else if (letterLocation.Value != otherWordLetterAtLocation && otherWordLetterAtLocation != '\0')
                      {
-                         Debug.Log("letter location value different otherwordletteratlocation");
+                        Debug.Log("letter location value different otherwordletteratlocation");
 
                         otherWord.SetLetterAtLocation(letterLocation.Key, letterLocation.Value);
                      }
                  }
                  
                  letterTile.DisplayText.text = letterLocation.Value.ToString();
-                 
-             }
+            }
 
-             // if (m_inputField.text != m_currentSelectedWord.GetCurrentWord())
-             // {
-             //    m_inputField.text = m_currentSelectedWord.GetCurrentWord();
-             // }
+            // if (m_inputField.text != m_currentSelectedWord.GetCurrentWord())
+            // {
+            //    m_inputField.text = m_currentSelectedWord.GetCurrentWord();
+            // }
         }
 
     }
