@@ -126,6 +126,8 @@ MonoBehaviour:
   height: 1
   letterTileObject: {fileID: 0}
   <DisplayText>k__BackingField: {fileID: 4108763050805681862}
+  jumpPower: 1
+  jumpDuration: 0.2
 --- !u!1 &3300479082681201748
 GameObject:
   m_ObjectHideFlags: 0
@@ -581,7 +583,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.60784316}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
