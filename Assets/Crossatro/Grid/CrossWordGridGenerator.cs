@@ -24,7 +24,7 @@ public class CrossWordGridGenerator : MonoBehaviour
     {
         m_board = Board.GetInstance();
         m_grid = CharacterPlacementGenerator.GenerateCharPlacements(m_generationData.Database,
-            m_generationData.NumWorToGenerate, "");
+            m_generationData.NumWordsToGenerate, "");
         m_grid.OnValidateAllWorlds += OnValidateAllWordsCallback;
         m_grid.OnAddWord += GenerateWord;
         m_board.SetGrid(m_grid);

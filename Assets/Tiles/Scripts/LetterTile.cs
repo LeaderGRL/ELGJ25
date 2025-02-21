@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 [CreateAssetMenu(fileName = "LetterTile", menuName = "Tiles/LetterTile")]
 public class LetterTileObject : ScriptableObject
@@ -12,23 +13,25 @@ public class LetterTileObject : ScriptableObject
     public Sprite sprite;
 }
 
-public class LetterTile : Tile
+public class LetterTile : Tile, IPointerClickHandler
 {
     [SerializeField] LetterTileObject letterTileObject;
 
     [field: SerializeField]
     public TextMeshProUGUI DisplayText { get; private set; }
+
+    [Header("Animation Settings")]
     public float jumpPower = 1;
     public float jumpDuration = 0.2f;
+
+    [Header("Popup")]
+    public GameObject popup;
+    public TextMeshProUGUI clueText;
 
     private void Start()
     {
         DOTween.defaultAutoKill = false; // Prevents animations from being killed when the object is destroyed
     }
-    //public void PlayJumpAnimation()
-    //{
-    //    transform.DOJump(transform.position, jumpPower, 1, jumpDuration).SetEase(Ease.OutQuad);
-    //}
 
     public void PlayJumpAnimation()
     {
@@ -48,10 +51,25 @@ public class LetterTile : Tile
         );
     }
 
-
-    public void PlayPunchAnimation()
+    public void OnPointerClick(PointerEventData eventData)
     {
-        transform.DOPunchScale(new Vector3(0, 1f, 0), jumpDuration, 1, 1f).SetEase(Ease.OutQuad);
+        Debug.Log("Tile clicked at " + this.gameObject.name);
+        Vector2Int tilePos = Board.GetInstance().GetTilePosition(this.gameObject);
+        popup.SetActive(true);
+        clueText.text = Board.GetInstance().GetWordGrid().GetClue(tilePos);
+    }
+
+    public void ManagePopup()
+    {
+        Board.GetInstance().HideAllPopups();
+        Vector2Int tilePos = Board.GetInstance().GetTilePosition(this.gameObject);
+        popup.SetActive(true);
+        clueText.text = Board.GetInstance().GetWordGrid().GetClue(tilePos);
+    }
+
+    public void HidePopup()
+    {
+        popup.SetActive(false);
     }
 }
 

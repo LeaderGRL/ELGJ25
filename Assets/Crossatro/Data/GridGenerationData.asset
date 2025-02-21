@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 970f6aec6cf30db4eaf4800e3ac99bc3, type: 3}
   m_Name: GridGenerationData
   m_EditorClassIdentifier: 
-  <NumWorToGenerate>k__BackingField: 5
+  <NumWordsToGenerate>k__BackingField: 5
   FileName: Words.json
   Database:
     words:
@@ -152,3 +152,239 @@ MonoBehaviour:
     - word: SERENDIPITE
       description: "La capacit\xE9 de faire des d\xE9couvertes heureuses et inattendues."
       difficulty: 9
+    - word: EMERVEILLEMENT
+      description: "L'\xE9tat d'\xEAtre \xE9merveill\xE9 par la beaut\xE9 ou la grandeur."
+      difficulty: 4
+    - word: PERSEVERANCE
+      description: "La capacit\xE9 de continuer malgr\xE9 les obstacles."
+      difficulty: 5
+    - word: SAGESSE
+      description: "La connaissance profonde acquise par l'exp\xE9rience."
+      difficulty: 3
+    - word: INNOVATION
+      description: "L'introduction de nouvelles id\xE9es ou m\xE9thodes."
+      difficulty: 6
+    - word: CREATIVITE
+      description: "La capacit\xE9 de cr\xE9er ou d'inventer quelque chose de nouveau."
+      difficulty: 4
+    - word: PERPLEXITE
+      description: "L'\xE9tat d'\xEAtre confus ou d\xE9concert\xE9 face \xE0 une
+        situation."
+      difficulty: 7
+    - word: TRANSCENDANCE
+      description: "Le fait de d\xE9passer les limites de l'exp\xE9rience humaine."
+      difficulty: 8
+    - word: VOLONTE
+      description: "La force int\xE9rieure qui permet de poursuivre ses objectifs."
+      difficulty: 3
+    - word: RESILIENCE
+      description: "La capacit\xE9 de se remettre d'une difficult\xE9 ou d'un traumatisme."
+      difficulty: 5
+    - word: HARMONIE
+      description: "L'\xE9quilibre parfait entre diff\xE9rents \xE9l\xE9ments."
+      difficulty: 2
+    - word: TEMPETE
+      description: "Un ph\xE9nom\xE8ne m\xE9t\xE9orologique violent et tumultueux."
+      difficulty: 7
+    - word: MURMURE
+      description: "Un son doux et l\xE9ger, \xE0 peine perceptible."
+      difficulty: 2
+    - word: ECHO
+      description: "Le retour d'un son dans un environnement r\xE9verb\xE9rant."
+      difficulty: 3
+    - word: SUBTILITE
+      description: "La finesse et la d\xE9licatesse dans l'expression ou la perception."
+      difficulty: 6
+    - word: VIBRATION
+      description: "Un mouvement oscillatoire r\xE9gulier qui peut \xEAtre ressenti."
+      difficulty: 5
+    - word: TRANSFORMATION
+      description: "Le processus de changement ou de m\xE9tamorphose."
+      difficulty: 7
+    - word: EVASION
+      description: "L'acte de fuir ou de s'\xE9chapper d'une situation oppressante."
+      difficulty: 4
+    - word: ESPOIR
+      description: "La croyance en un avenir meilleur malgr\xE9 les difficult\xE9s."
+      difficulty: 2
+    - word: FASCINATION
+      description: L'attraction intense pour quelque chose d'extraordinaire.
+      difficulty: 6
+    - word: METAMORPHOSE
+      description: La transformation profonde d'une chose en une nouvelle forme.
+      difficulty: 8
+    - word: CONTINGENCE
+      description: "La notion d'\xE9v\xE9nements fortuits sans cause d\xE9termin\xE9e."
+      difficulty: 7
+    - word: SYNCHRONICITE
+      description: "La co\xEFncidence significative d'\xE9v\xE9nements qui semblent
+        li\xE9s."
+      difficulty: 9
+    - word: SPIRITUALITE
+      description: "La qu\xEAte d'une connexion avec le transcendant ou le sacr\xE9."
+      difficulty: 5
+    - word: MYSTICISME
+      description: "La recherche d'une exp\xE9rience directe du divin ou de l'inexprimable."
+      difficulty: 8
+    - word: DUALITE
+      description: "La coexistence de deux aspects oppos\xE9s ou compl\xE9mentaires."
+      difficulty: 4
+    - word: FRAGMENTATION
+      description: "La division ou la d\xE9composition d'un ensemble en parties plus
+        petites."
+      difficulty: 7
+    - word: INTEMPORALITE
+      description: "La qualit\xE9 de ce qui est en dehors du temps, \xE9ternel."
+      difficulty: 9
+    - word: NOSTALGIE
+      description: "Le sentiment de regret et de m\xE9lancolie li\xE9 au pass\xE9."
+      difficulty: 3
+    - word: VIGILANCE
+      description: "L'attention soutenue pour pr\xE9venir un danger."
+      difficulty: 4
+    - word: EMERGENCE
+      description: "L'apparition soudaine ou progressive d'un ph\xE9nom\xE8ne."
+      difficulty: 6
+    - word: COMPLEXITE
+      description: "L'\xE9tat d'\xEAtre compos\xE9 de multiples \xE9l\xE9ments interconnect\xE9s."
+      difficulty: 8
+    - word: FLUIDITE
+      description: "La capacit\xE9 de s'adapter et de changer sans heurts."
+      difficulty: 3
+    - word: VITALITE
+      description: "L'\xE9nergie, la force de vivre et d'agir."
+      difficulty: 5
+    - word: DYNAMISME
+      description: "L'\xE9nergie et le mouvement constants qui animent un syst\xE8me."
+      difficulty: 4
+    - word: EMERGENCE
+      description: "L'apparition soudaine d'un ph\xE9nom\xE8ne ou d'une id\xE9e."
+      difficulty: 6
+    - word: REVERIE
+      description: "Un \xE9tat de m\xE9ditation ou d'errance de l'esprit."
+      difficulty: 3
+    - word: SERENITE
+      description: "Un sentiment de calme et de paix int\xE9rieure."
+      difficulty: 2
+    - word: ELAN
+      description: "Une impulsion vive ou une \xE9nergie d\xE9termin\xE9e pour agir."
+      difficulty: 4
+    - word: CADENCE
+      description: "Le rythme r\xE9gulier dans une s\xE9quence d'\xE9v\xE9nements
+        ou de sons."
+      difficulty: 5
+    - word: CREPUSCULE
+      description: "La p\xE9riode de la journ\xE9e o\xF9 la lumi\xE8re d\xE9cline,
+        entre jour et nuit."
+      difficulty: 6
+    - word: AURORE
+      description: "Le moment o\xF9 le jour se l\xE8ve et apporte la lumi\xE8re."
+      difficulty: 4
+    - word: FANTAISIE
+      description: "L'imagination cr\xE9ative qui d\xE9passe la r\xE9alit\xE9 ordinaire."
+      difficulty: 5
+    - word: EXALTATION
+      description: Un sentiment intense de joie ou d'enthousiasme.
+      difficulty: 7
+    - word: RUEE
+      description: "Une affluence soudaine et massive vers un lieu ou une id\xE9e."
+      difficulty: 6
+    - word: PENOMBRE
+      description: "La zone d'ombre partielle entre la lumi\xE8re et l'obscurit\xE9."
+      difficulty: 3
+    - word: IRIDESCENCE
+      description: "La qualit\xE9 de montrer des couleurs changeantes en fonction
+        de l'angle de vue."
+      difficulty: 8
+    - word: SILLAGE
+      description: "La trace laiss\xE9e par quelque chose en mouvement, comme un
+        navire ou une odeur."
+      difficulty: 4
+    - word: TEMPERANCE
+      description: "La vertu de mod\xE9rer ses actions ou ses passions."
+      difficulty: 5
+    - word: VICISSITUDE
+      description: "Les changements impr\xE9vus et souvent difficiles dans la vie."
+      difficulty: 7
+    - word: FRACTALE
+      description: "Une structure g\xE9om\xE9trique complexe qui se r\xE9p\xE8te
+        \xE0 diff\xE9rentes \xE9chelles."
+      difficulty: 8
+    - word: OMNISCIENCE
+      description: "La connaissance illimit\xE9e de tout ce qui existe."
+      difficulty: 9
+    - word: INCONNU
+      description: "Ce qui n'est pas connu ou identifi\xE9, myst\xE9rieux par essence."
+      difficulty: 4
+    - word: ENIGMATIQUE
+      description: "Qui est difficile \xE0 comprendre ou \xE0 interpr\xE9ter."
+      difficulty: 6
+    - word: ABSTRACTION
+      description: "La capacit\xE9 de penser en termes g\xE9n\xE9raux, sans se focaliser
+        sur les d\xE9tails concrets."
+      difficulty: 7
+    - word: OSCILLATION
+      description: "Un mouvement r\xE9gulier d'aller-retour ou de fluctuation."
+      difficulty: 5
+    - word: HOLOGRAPHIE
+      description: "La technique permettant de cr\xE9er des images tridimensionnelles
+        par interf\xE9rence lumineuse."
+      difficulty: 8
+    - word: RESONANCE
+      description: "L'amplification d'un signal ou d'une vibration par l'interaction
+        avec un objet r\xE9sonant."
+      difficulty: 6
+    - word: TRANSPARENCE
+      description: "La qualit\xE9 d'\xEAtre clair et ouvert, sans dissimulation."
+      difficulty: 3
+    - word: PERSPECTIVE
+      description: "La mani\xE8re d'envisager ou de voir un sujet en fonction de
+        son point de vue."
+      difficulty: 4
+    - word: PULSATION
+      description: "Un battement r\xE9gulier, souvent associ\xE9 \xE0 un rythme ou
+        une vibration."
+      difficulty: 5
+    - word: IMAGINATION
+      description: "La facult\xE9 de cr\xE9er des images ou des id\xE9es qui ne sont
+        pas directement li\xE9es \xE0 la r\xE9alit\xE9."
+      difficulty: 4
+    - word: DILEMME
+      description: "Une situation o\xF9 l'on doit choisir entre deux options difficiles."
+      difficulty: 6
+    - word: EVANESCENCE
+      description: "La nature \xE9ph\xE9m\xE8re de quelque chose qui dispara\xEEt
+        rapidement."
+      difficulty: 7
+    - word: MIRAGE
+      description: "Une illusion optique souvent observ\xE9e dans des conditions
+        extr\xEAmes."
+      difficulty: 6
+    - word: SUBLIMATION
+      description: "La transformation d'une impulsion ou d'un d\xE9sir en une activit\xE9
+        socialement valoris\xE9e."
+      difficulty: 8
+    - word: CONVERGENCE
+      description: "Le rapprochement de plusieurs \xE9l\xE9ments vers un point commun."
+      difficulty: 5
+    - word: DIVERGENCE
+      description: "La dispersion ou l'\xE9loignement d'\xE9l\xE9ments qui \xE9taient
+        initialement group\xE9s."
+      difficulty: 5
+    - word: CACOPHONIE
+      description: "Un m\xE9lange discordant de sons, souvent d\xE9sagr\xE9able \xE0
+        l'oreille."
+      difficulty: 7
+    - word: SOLITUDE
+      description: "L'\xE9tat de se trouver seul, avec ses propres pens\xE9es."
+      difficulty: 4
+    - word: EPANOUISSEMENT
+      description: "Le processus de d\xE9veloppement et de r\xE9alisation de soi."
+      difficulty: 5
+    - word: REVOLUTION
+      description: "Un changement radical et souvent soudain dans un syst\xE8me ou
+        une soci\xE9t\xE9."
+      difficulty: 8
+    - word: MUTATION
+      description: "Un changement profond dans la structure ou la nature d'une entit\xE9."
+      difficulty: 7

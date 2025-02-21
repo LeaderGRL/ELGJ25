@@ -192,6 +192,21 @@ public class Grid
         
         return result;
     }
-    
-    
+
+    public String GetClue(Vector2Int location)
+    {
+        var words = GetAllWordAtLocation(location);
+        if (words == null)
+        {
+            return "";
+        }
+        string result = "";
+        foreach (var word in words)
+        {
+            result += word.Description + "\n";
+        }
+        return result;
+    }
+
+
 }

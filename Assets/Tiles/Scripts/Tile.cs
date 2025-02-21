@@ -1,5 +1,12 @@
+using DG.Tweening;
 using UnityEngine;
 
+public enum TileState
+{
+    Default,
+    Selected,
+    Validated
+}
 public class Tile : MonoBehaviour
 {
     public int width;
@@ -7,6 +14,10 @@ public class Tile : MonoBehaviour
 
     Vector2Int position;
     int score;
+
+    //[Header("Events")]
+    public delegate void TileClicked(Tile tile);
+    public event TileClicked OnTileClicked;
 
 
     public Vector2Int Position
@@ -19,5 +30,14 @@ public class Tile : MonoBehaviour
     {
         get => score;
         set => score = value;
+    }
+
+    public void SpawnAnimation()
+    {
+        // Start with a scale of zero.
+        transform.localScale = Vector3.zero;
+        // Animate to full scale.
+        transform.DOScale(Vector3.one, 0.5f)
+            .SetEase(Ease.OutBack);
     }
 }

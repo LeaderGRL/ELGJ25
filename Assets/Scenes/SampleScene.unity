@@ -332,6 +332,7 @@ GameObject:
   - component: {fileID: 330585547}
   - component: {fileID: 330585548}
   - component: {fileID: 330585549}
+  - component: {fileID: 330585550}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -503,6 +504,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_crossGridGenerator: {fileID: 1575694550}
   m_cameraTarget: {fileID: 438506969}
+--- !u!114 &330585550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 330585543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c49b4cc203aa6414fae5c798d1d0e7d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EventMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_MaxRayIntersections: 0
 --- !u!1 &367249033
 GameObject:
   m_ObjectHideFlags: 0
@@ -1249,6 +1266,7 @@ GameObject:
   m_Component:
   - component: {fileID: 687105349}
   - component: {fileID: 687105348}
+  - component: {fileID: 687105350}
   m_Layer: 0
   m_Name: Board
   m_TagString: Untagged
@@ -1277,7 +1295,6 @@ MonoBehaviour:
   m_shopTilePrefab: {fileID: 1862125405419280211, guid: ff67b501ddce48e4c8b2037c52eb980d, type: 3}
   m_generationData: {fileID: 11400000, guid: 676e0537321054a4a94952f418aaec97, type: 2}
   m_inputField: {fileID: 563832619}
-  m_player: {fileID: 13066446}
   OnTileClicked:
     m_PersistentCalls:
       m_Calls: []
@@ -1296,6 +1313,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &687105350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 687105347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc6d4553f4fa46a4abd68abbe5c530fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_player: {fileID: 13066446}
+  m_selectAction: {fileID: 6841872322419951025, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  m_inputField: {fileID: 563832619}
+  m_inputCooldown: 0.1
 --- !u!1 &695023435
 GameObject:
   m_ObjectHideFlags: 0
@@ -1946,14 +1979,14 @@ PrefabInstance:
     - target: {fileID: 3768149870756016092, guid: caf269ccf1747c14c8f43b0b2621da6a, type: 3}
       propertyPath: m_ActionEvents.Array.data[19].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 687105348}
+      objectReference: {fileID: 687105350}
     - target: {fileID: 3768149870756016092, guid: caf269ccf1747c14c8f43b0b2621da6a, type: 3}
       propertyPath: m_ActionEvents.Array.data[19].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnPlayerSelectTile
+      value: HandleSelection
       objectReference: {fileID: 0}
     - target: {fileID: 3768149870756016092, guid: caf269ccf1747c14c8f43b0b2621da6a, type: 3}
       propertyPath: m_ActionEvents.Array.data[19].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Board, Assembly-CSharp
+      value: BoardInputHandler, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3768149870756016092, guid: caf269ccf1747c14c8f43b0b2621da6a, type: 3}
       propertyPath: m_ActionEvents.Array.data[19].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName

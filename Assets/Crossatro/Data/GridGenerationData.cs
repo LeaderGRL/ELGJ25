@@ -10,7 +10,7 @@ public class GridGenerationData : ScriptableObject
 {
 
     [field: SerializeField] 
-    public int NumWorToGenerate { get; private set; }
+    public int NumWordsToGenerate { get; private set; }
     
     public string FileName = "Words.json";
     public WordDatabaseJSON Database;
