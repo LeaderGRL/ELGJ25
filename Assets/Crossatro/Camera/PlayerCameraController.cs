@@ -4,14 +4,14 @@ using UnityEngine;
 public class PlayerCameraController : MonoBehaviour
 {
     [SerializeField] 
-    private Board m_board;
+    private CrossWordGridGenerator m_crossGridGenerator;
 
     [SerializeField] 
     private Transform m_cameraTarget;
 
     private void Awake()
     {
-        m_board.OnGenerateGrid += OnGenerateGridCallback;
+        m_crossGridGenerator.OnEndGridGeneration += OnGenerateGridCallback;
     }
 
     private void OnGenerateGridCallback(Grid grid)

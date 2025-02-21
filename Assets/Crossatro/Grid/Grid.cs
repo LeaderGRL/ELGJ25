@@ -1,33 +1,54 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
 public class Grid
 {
     
-    public Dictionary<Vector2Int, char> CharacterPlacements { get; private set; }
     public List<GridWord> Words { get; private set; }
+    public event Action<GridWord> OnValidateAllWorlds;
+    public event Action<GridWord> OnAddWord; 
 
-    public Grid(Dictionary<Vector2Int, char> charPlacements,  List<GridWord> words)
+    public Grid( List<GridWord> words)
     {
-        CharacterPlacements = charPlacements;
-        Words = words;
+        Words = new List<GridWord>();
+        foreach (var word in words)
+        {
+            AddWord(word);
+        }
+    }
+
+    public Dictionary<Vector2Int, char> GetWordsToGridValues()
+    {
+        Dictionary<Vector2Int, char> result = new();
+        foreach (var gridWord in Words)
+        {
+            foreach (var letterLocation in gridWord.GetAllLetterSolutionPositions())
+            {
+                result[letterLocation.Key] = letterLocation.Value;
+            }
+        }
+
+        return result;
     }
 
     public GridWord? GetWordAtLocation(Vector2Int location)
     {
-        if (!CharacterPlacements.ContainsKey(location))
+        var characterPlacements = GetWordsToGridValues();
+        if (!characterPlacements.ContainsKey(location))
         {
             return null;
         }
-        bool isRow = CharacterPlacements.Keys.Contains(new Vector2Int(location.x + 1, location.y)) || 
-                     CharacterPlacements.Keys.Contains(new Vector2Int(location.x - 1, location.y));
-        bool isColumn = CharacterPlacements.Keys.Contains(new Vector2Int(location.x , location.y + 1)) || 
-                        CharacterPlacements.Keys.Contains(new Vector2Int(location.x , location.y - 1));
+        bool isRow = characterPlacements.Keys.Contains(new Vector2Int(location.x + 1, location.y)) || 
+                     characterPlacements.Keys.Contains(new Vector2Int(location.x - 1, location.y));
+        bool isColumn = characterPlacements.Keys.Contains(new Vector2Int(location.x , location.y + 1)) || 
+                        characterPlacements.Keys.Contains(new Vector2Int(location.x , location.y - 1));
 
         int i = 0;
-        while (CharacterPlacements.Keys.Contains(isRow ? new Vector2Int(location.x + i - 1, location.y) : 
+        while (characterPlacements.Keys.Contains(isRow ? new Vector2Int(location.x + i - 1, location.y) : 
                    new Vector2Int(location.x , location.y - i + 1)))
         {
             i--;
@@ -39,6 +60,35 @@ public class Grid
         return GetWordWithStartPosition(startPosition, isRow);
     }
 
+    public void AddWord(GridWord word)
+    {
+        Words.Add(word);
+        word.OnValidate += OnWordValidateCallback;
+        OnAddWord?.Invoke(word);
+    }
+
+    private void OnWordValidateCallback(GridWord word)
+    {
+        bool isAllWordValidated = CheckAllWordValidated();
+        if (isAllWordValidated)
+        {
+            OnValidateAllWorlds?.Invoke(word);
+        }
+    }
+
+    private bool CheckAllWordValidated()
+    {
+        foreach (var word in Words)
+        {
+            if (!word.IsValidated)
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
     /// <summary>
     /// The result of this function can have max  2 elements (for one intersection)
     /// and return null if the grid don't contain letter at this location
@@ -47,22 +97,24 @@ public class Grid
     /// <returns></returns>
     public List<GridWord> GetAllWordAtLocation(Vector2Int location)
     {
-        if (!CharacterPlacements.ContainsKey(location))
+        var characterPlacements = GetWordsToGridValues();
+
+        if (!characterPlacements.ContainsKey(location))
         {
             return null;
         }
 
         List<GridWord> result = new List<GridWord>();
-        bool isRow = CharacterPlacements.Keys.Contains(new Vector2Int(location.x + 1, location.y)) || 
-                     CharacterPlacements.Keys.Contains(new Vector2Int(location.x - 1, location.y));
-        bool isColumn = CharacterPlacements.Keys.Contains(new Vector2Int(location.x , location.y + 1)) || 
-                        CharacterPlacements.Keys.Contains(new Vector2Int(location.x , location.y - 1));
+        bool isRow = characterPlacements.Keys.Contains(new Vector2Int(location.x + 1, location.y)) || 
+                     characterPlacements.Keys.Contains(new Vector2Int(location.x - 1, location.y));
+        bool isColumn = characterPlacements.Keys.Contains(new Vector2Int(location.x , location.y + 1)) || 
+                        characterPlacements.Keys.Contains(new Vector2Int(location.x , location.y - 1));
         int i = 0;
         int j = 0;
         
         if (isRow)
         {
-            while (CharacterPlacements.Keys.Contains(new Vector2Int(location.x + i - 1, location.y)))
+            while (characterPlacements.Keys.Contains(new Vector2Int(location.x + i - 1, location.y)))
             {
                 i--;
             }
@@ -73,7 +125,7 @@ public class Grid
 
         if (isColumn)
         {
-            while (CharacterPlacements.Keys.Contains(new Vector2Int(location.x , location.y - j + 1)))
+            while (characterPlacements.Keys.Contains(new Vector2Int(location.x , location.y - j + 1)))
             {
                 j--;
             }
@@ -109,7 +161,7 @@ public class Grid
     {
         Vector2Int minValue = Vector2Int.zero;
         Vector2Int maxValue = Vector2Int.zero;
-        foreach (var  key in CharacterPlacements.Keys)
+        foreach (var  key in GetWordsToGridValues().Keys)
         {
             if (key.x < minValue.x)
             {
@@ -140,62 +192,6 @@ public class Grid
         
         return result;
     }
-    public class GridWord
-    {
-        public Vector2Int StartPosition;
-        public string SolutionWord;
-        private Dictionary<Vector2Int, char> m_currentWord = new ();
-        public bool IsRow;
-        public string Description = "";
-        public int Difficulty;
-        public bool IsLocked;
-
-        public void Initialize()
-        {
-            m_currentWord.Clear();
-            foreach (var solutionLetter in GetAllLetterSolutionPositions())
-            {
-                m_currentWord[solutionLetter.Key] = '\0';
-            }
-        }
-        
-        public Dictionary<Vector2Int, char> GetAllLetterSolutionPositions()
-        {
-            Dictionary<Vector2Int, char> result = new();
-            for (int i = 0; i < SolutionWord.Length; i++)
-            {
-                result[IsRow ? new Vector2Int(StartPosition.x + i, StartPosition.y) : 
-                    new Vector2Int(StartPosition.x , StartPosition.y - i)] = SolutionWord[i];
-            }
-
-            return result;
-        }
-        public Dictionary<Vector2Int, char> GetAllLetterCurrentWordPositions()
-        {
-
-            return m_currentWord;
-        }
-
-        public string GetCurrentWordToString()
-        {
-            string result = "";
-
-            foreach (var letterLocation in m_currentWord)
-            {
-                result += letterLocation.Value;
-            }
-            return result;
-        }
-
-        public char GetCurrentLetterAtLocation(Vector2Int location)
-        {
-            return m_currentWord[location];
-        }
-
-        public void  SetLetterAtLocation(Vector2Int location, char letter)
-        {
-            m_currentWord[location] = letter;
-        }
-    }
+    
     
 }

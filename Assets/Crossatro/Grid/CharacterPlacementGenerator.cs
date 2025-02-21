@@ -10,17 +10,16 @@ public static class CharacterPlacementGenerator
     {
         List<WordData> wordsShuffled = possibleWords.words.OrderBy(_ => rng.Next()).ToList();
         Dictionary<Vector2Int, char> result = new();
-        List <Grid.GridWord> addedWords = new();
+        List <GridWord> addedWords = new();
         List<int> addedWordsIndexs = new List<int>();
         
         bool isRow = true;
         
-        Grid.GridWord wordToAdd = new Grid.GridWord();
+        GridWord wordToAdd = new GridWord();
         wordToAdd.SolutionWord = wordsShuffled[0].word;
         wordToAdd.IsRow = isRow;
         wordToAdd.StartPosition = Vector2Int.zero;
         wordToAdd.Difficulty = wordsShuffled[0].difficulty;
-        wordToAdd.IsLocked = false;
         wordToAdd.Description = wordsShuffled[0].description;
         wordToAdd.Initialize();
         
@@ -53,13 +52,12 @@ public static class CharacterPlacementGenerator
                 {
                     int index = UnityEngine.Random.Range(0, possibleStartPositions.Count);
                     Vector2Int startPos = possibleStartPositions[index];
-                    var wordToAddLoop = new Grid.GridWord();
+                    var wordToAddLoop = new GridWord();
                     
                     wordToAddLoop.SolutionWord = wordsShuffled[i].word;
                     wordToAddLoop.IsRow = isRow;
                     wordToAddLoop.StartPosition = startPos;
                     wordToAddLoop.Difficulty = wordsShuffled[i].difficulty;
-                    wordToAddLoop.IsLocked = false;
                     wordToAddLoop.Description = wordsShuffled[i].description;
                     wordToAddLoop.Initialize();
                     
@@ -81,11 +79,77 @@ public static class CharacterPlacementGenerator
             i++;
         }
 
-        Grid grid = new Grid(result, addedWords);
+        Grid grid = new Grid(addedWords);
 
         return grid;
     }
 
+    public static void GenrateCharPlacementsForExistingGrid(
+        WordDatabaseJSON possibleWords,  int wordNumber, string anagram, Grid existingGrid, GridWord gridWord)
+    {
+        List<WordData> possibleWordsListFiltered = new List<WordData>();
+        foreach (var word in possibleWords.words)
+        {
+            if (!existingGrid.Words.Any((gridWord)  => (gridWord.SolutionWord == word.word)))
+            {
+                possibleWordsListFiltered.Add(word);
+            }
+        }
+        possibleWordsListFiltered = possibleWordsListFiltered.OrderBy(_ => rng.Next()).ToList();
+
+        List<int> wordAddedIndexs = new List<int>();
+        int iterations = 0;
+        int remainingWordsToAdd = wordNumber;
+        GridWord lastWordAdded = gridWord;
+        
+        while (remainingWordsToAdd > 0 || iterations < possibleWordsListFiltered.Count)
+        {
+            if (wordAddedIndexs.Contains(iterations))
+            {
+                iterations++;
+                continue;
+            }
+
+            var gridValue = existingGrid.GetWordsToGridValues();
+            bool isRow = !lastWordAdded.IsRow;
+            string newWordString = possibleWordsListFiltered[iterations].word;
+            var correspondingIndexs =
+                GetCorespondingIndexs(newWordString, lastWordAdded.SolutionWord);
+            if (correspondingIndexs.Count == 0)
+            {
+                iterations++;
+                continue;
+            }
+            
+            var possibleStartPositions =
+                GetPossibleStartPositions(gridValue, correspondingIndexs, newWordString, lastWordAdded.StartPosition,
+                    isRow);
+
+            if (possibleStartPositions.Count == 0)
+            {
+                iterations++;
+                continue;
+            }
+
+            int index = UnityEngine.Random.Range(0, possibleStartPositions.Count);
+            Vector2Int startPos = possibleStartPositions[index];
+            var wordToAddLoop = new GridWord();
+            
+            wordToAddLoop.SolutionWord = possibleWordsListFiltered[iterations].word;
+            wordToAddLoop.IsRow = isRow;
+            wordToAddLoop.StartPosition = startPos;
+            wordToAddLoop.Difficulty = possibleWordsListFiltered[iterations].difficulty;
+            wordToAddLoop.Description = possibleWordsListFiltered[iterations].description;
+            wordToAddLoop.Initialize();
+                    
+            existingGrid.AddWord(wordToAddLoop);
+            wordAddedIndexs.Add(iterations);
+            lastWordAdded = wordToAddLoop;
+            iterations = 0;
+            remainingWordsToAdd--;
+        }
+    }
+    
     private static List<Vector2Int> GetPossibleStartPositions(
         Dictionary<Vector2Int, char> currentGrid, 
         List<KeyValuePair<int, int>> correspondingIndexs, 
@@ -185,8 +249,6 @@ public static class CharacterPlacementGenerator
         return correspondingIndex;
     }
     
-    
-    
     private static void AddWord(Dictionary<Vector2Int, char> dictionary, string word, Vector2Int startPosition, bool isRow)
     {
         for (int i = 0; i < word.Length; i++)
@@ -198,9 +260,6 @@ public static class CharacterPlacementGenerator
             dictionary[position] = word[i];
         }
     }
-
-
-
-
+    
     
 }

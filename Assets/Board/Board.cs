@@ -33,11 +33,11 @@ public class Board : MonoBehaviour
     [SerializeField] 
     private Player m_player;
     
-    private Board m_instance;
+    private static Board m_instance;
     private Dictionary<Vector2Int, GameObject> m_tiles;
     private Vector2Int m_currentHoverTile;
     private Grid m_grid;
-    private Grid.GridWord m_currentSelectedWord;
+    private GridWord m_currentSelectedWord;
     
 
     private Sequence m_sequence;
@@ -65,16 +65,18 @@ public class Board : MonoBehaviour
     private void Start()
     {
         m_tiles = new Dictionary<Vector2Int, GameObject>();
+        return;
         m_grid = CharacterPlacementGenerator.GenerateCharPlacements(m_generationData.Database,
             m_generationData.NumWorToGenerate, "");
         Vector2Int gridSize = m_grid.GetGridSize();
-
         SpawnAllTiles();
+
         OnGenerateGrid?.Invoke(m_grid);
     }
 
     private void Update()
     {
+
         if (!camera)
         {
             camera = Camera.main;
@@ -103,19 +105,54 @@ public class Board : MonoBehaviour
         }
     }
 
-    public Board GetInstance()
+    public void ResetDoTweenDelay()
+    {
+        m_animationDelay = 0.0f;
+    }
+
+    public static Board GetInstance()
     {
         return m_instance;
     }
 
+    public void SetGrid(Grid grid)
+    {
+        m_grid = grid;
+    }
+
+    public void PlaceTileRefacto(Vector2Int pos, Tile tile)
+    {
+        bool isExistingTile = m_tiles.ContainsKey(pos);
+        if (isExistingTile)
+        {
+            m_tiles[pos].SetActive(false);
+            Destroy(m_tiles[pos]);
+        }
+        
+        tile.transform.position = new Vector3(pos.x, 0, pos.y);
+        m_tiles[pos] = tile.gameObject;
+
+        // Animation
+        AnimateTileSpawn(tile.gameObject, m_animationDelay);
+        m_animationDelay += 0.005f;
+    }
+
     public void PlaceTile(Vector2Int pos)
     {
-        if (m_tiles.ContainsKey(pos))
+        bool isExistingTile = m_tiles.ContainsKey(pos);
+        if (isExistingTile && m_tiles[pos].GetComponent<LetterTile>() != null)
+        {
             return;
+        }
+        
+        if (isExistingTile)
+        {
+            m_tiles[pos].SetActive(false);
+        }
 
         GameObject newTile;
 
-        if (m_grid.CharacterPlacements.ContainsKey(pos))
+        if (m_grid.GetWordsToGridValues().ContainsKey(pos))
         {
             newTile = Instantiate(Random.Range(0, 100) == 50 ? m_shopTilePrefab.gameObject : m_letterTilePrefab.gameObject, transform); // Random shop tile spawn
             newTile.GetComponent<LetterTile>().DisplayText.text = "";
@@ -126,7 +163,7 @@ public class Board : MonoBehaviour
         }
 
         newTile.transform.position = new Vector3(pos.x, 0, pos.y);
-        m_tiles.Add(pos, newTile);
+        m_tiles[pos] = newTile;
 
         // Animation
         AnimateTileSpawn(newTile, m_animationDelay);
@@ -136,6 +173,13 @@ public class Board : MonoBehaviour
     private void AnimateTileSpawn(GameObject tile, float delay)
     {
         tile.transform.localScale = Vector3.zero;
+        
+        // var position = tile.transform.position;
+        // position = new Vector3(position.x,-1.1f, position.z);
+        // tile.transform.position = position;
+        // position = new Vector3(position.x,0.0f, position.z);
+        //
+        //tile.transform.DOMove(position, 0.5f).SetEase(Ease.Linear).SetDelay(delay);
         tile.transform.DOScale(Vector3.one, 0.5f).SetEase(Ease.OutBack).SetDelay(delay);
     }
 
@@ -183,14 +227,14 @@ public class Board : MonoBehaviour
         var letterComponent = tile.GetComponent<LetterTile>();
         var word = m_grid.GetWordAtLocation(m_currentHoverTile);
         
-        if ( m_currentSelectedWord != null && word != m_currentSelectedWord && word != null&& !m_currentSelectedWord.IsLocked)
+        if ( m_currentSelectedWord != null && word != m_currentSelectedWord && word != null&& !m_currentSelectedWord.IsValidated)
         {
             foreach (var position in m_currentSelectedWord.GetAllLetterSolutionPositions().Keys)
             {
                 SetTileLayer(position, "Letter");
                 foreach (var gridWord in m_grid.GetAllWordAtLocation(position))
                 {
-                    if (gridWord.IsLocked)
+                    if (gridWord.IsValidated)
                     {
                         SetTileLayer(position, "Validate");
                     }
@@ -199,27 +243,29 @@ public class Board : MonoBehaviour
         }
         
         m_inputField.ActivateInputField();
-        if (word != null && !word.IsLocked)
+        if (word != null && !word.IsValidated)
         {
             m_currentSelectedWord = word;
             string unlockedTilesToString = "";
-
+            int numUnlockedTiles = 0;
             foreach (var letterLocation in m_currentSelectedWord.GetAllLetterCurrentWordPositions())
             {
                 bool isTileLocked = IsTileLocked(letterLocation.Key);
                 if (!isTileLocked)
                 {
                     unlockedTilesToString += letterLocation.Value;
+                    numUnlockedTiles++;
                 }
             }
             m_inputField.text = unlockedTilesToString;
+            m_inputField.characterLimit = numUnlockedTiles;
             
             foreach (var position in m_currentSelectedWord.GetAllLetterSolutionPositions().Keys)
             {
                 SetTileLayer(position, "Select");
                 foreach (var gridWord in m_grid.GetAllWordAtLocation(position))
                 {
-                    if (gridWord.IsLocked)
+                    if (gridWord.IsValidated)
                     {
                         SetTileLayer(position, "Validate");
                     }
@@ -235,7 +281,7 @@ public class Board : MonoBehaviour
         var words = m_grid.GetAllWordAtLocation(tileLocation);
         foreach (var word in words)
         {
-            if (word.IsLocked)
+            if (word.IsValidated)
             {
                 return true;
             }
@@ -308,82 +354,6 @@ public class Board : MonoBehaviour
             }
         }
 
-
-        // tempDictionary.Clear();
-        //
-        //
-        // foreach (var letterLocation in currentwordLettersLocations)
-        // {
-        //     if (unlockedTiles.ContainsKey(letterLocation.Key))
-        //     {
-        //         currentwordLettersLocations[letterLocation.Key] = unlockedTiles[letterLocation.Key];
-        //         GetTile(letterLocation.Key).GetComponent<LetterTile>().DisplayText.text =
-        //             unlockedTiles[letterLocation.Key].ToString();
-        //     }
-        // }
-        
-
-
-        // if (text == m_currentSelectedWord.GetCurrentWord())
-        // {
-        //     return;
-        // }
-        //
-        // var wordBeforeChanges = m_currentSelectedWord.GetCurrentWord();
-        // bool IsAddingText = text.Length > wordBeforeChanges.Length;
-        // m_currentSelectedWord.TrySetCurrentWord(text);
-        //
-        // var letterLocations = m_currentSelectedWord.GetAllLetterCurrentWordPositions();
-        //
-        // Vector2Int nextTileLocation = IsAddingText
-        //     ? m_currentSelectedWord.GetNextLetterLocation()
-        //     : letterLocations.Keys.ToList()[wordBeforeChanges.Length - 2];
-        //
-        // var nexTile = GetTile(nextTileLocation);
-        // if (nexTile != null && IsAddingText && nexTile.layer == LayerMask.NameToLayer("Validate"))
-        // {
-        //     m_currentSelectedWord.TrySetCurrentWord(
-        //         m_currentSelectedWord.GetCurrentWord() + nexTile.GetComponent<LetterTile>().DisplayText.text[0]);
-        //     m_inputField.text = m_currentSelectedWord.GetCurrentWord();
-        //     return;
-        // } 
-        //
-        // letterLocations = m_currentSelectedWord.GetAllLetterCurrentWordPositions();
-        // foreach (var letterLocation in letterLocations)
-        // {
-        //     LetterTile letterTile =  GetTile(letterLocation.Key).GetComponent<LetterTile>();
-        //     var words = m_grid.GetAllWordAtLocation(letterLocation.Key);
-        //     if (words != null && words.Count > 1)
-        //     {
-        //         var otherWord = words.Find(word => word != m_currentSelectedWord);
-        //         char otherWordLetterAtLocation = otherWord.GetCurrentLetterAtLocation(letterLocation.Key);
-        //         if (otherWord.IsLocked)
-        //         {
-        //
-        //             m_currentSelectedWord.SetLetterAtLocation(letterLocation.Key, otherWordLetterAtLocation);
-        //             letterTile.DisplayText.text = otherWordLetterAtLocation.ToString();
-        //             continue; 
-        //         }
-        //         if (letterLocation.Value == '\0')
-        //         {
-        //
-        //             letterTile.DisplayText.text = letterLocation.Value.ToString();
-        //             letterTile.DisplayText.text = otherWordLetterAtLocation.ToString();
-        //             continue;
-        //         }
-        //         else if (letterLocation.Value != otherWordLetterAtLocation && otherWordLetterAtLocation != '\0')
-        //         { 
-        //             otherWord.SetLetterAtLocation(letterLocation.Key, letterLocation.Value);
-        //         }
-        //     }
-        //
-        //      
-        //     letterTile.DisplayText.text = letterLocation.Value.ToString();
-        //      
-        // }
-
-
-
     }
     
 
@@ -408,7 +378,6 @@ public class Board : MonoBehaviour
         {
             // Yeees
             m_player.AddScore(m_currentSelectedWord.Difficulty * 10);
-            m_currentSelectedWord.IsLocked = true;
             var letters = m_currentSelectedWord.GetAllLetterSolutionPositions();
             foreach (var letter in letters)
             {
@@ -422,6 +391,7 @@ public class Board : MonoBehaviour
                 m_player.AddScore(LetterWeight.GetLetterWeight(letter.Value));
                 CheckForShopTile(letter.Key);
             }
+            m_currentSelectedWord.Validate();
         }
     }
 
