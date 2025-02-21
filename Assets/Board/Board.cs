@@ -223,6 +223,11 @@ public class Board : MonoBehaviour
 
     public void OnPlayerSelectTile(InputAction.CallbackContext context)
     {
+        if (!context.started)
+        {
+            return;
+        }
+
         var tile =  m_tiles[m_currentHoverTile];
         var letterComponent = tile.GetComponent<LetterTile>();
         var word = m_grid.GetWordAtLocation(m_currentHoverTile);
@@ -392,6 +397,7 @@ public class Board : MonoBehaviour
                 CheckForShopTile(letter.Key);
             }
             m_currentSelectedWord.Validate();
+            m_currentSelectedWord = null;
         }
     }
 

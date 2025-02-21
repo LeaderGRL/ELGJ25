@@ -102,7 +102,7 @@ public static class CharacterPlacementGenerator
         int remainingWordsToAdd = wordNumber;
         GridWord lastWordAdded = gridWord;
         
-        while (remainingWordsToAdd > 0 || iterations < possibleWordsListFiltered.Count)
+        while (remainingWordsToAdd > 0 && iterations < possibleWordsListFiltered.Count)
         {
             if (wordAddedIndexs.Contains(iterations))
             {
