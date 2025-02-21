@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -6,7 +7,7 @@ using Random = System.Random;
 public static class CharacterPlacementGenerator
 {
     private static Random rng = new Random();
-    public static Grid GenerateCharPlacements(WordDatabaseJSON possibleWords,  int wordNumber, string anagram)
+    public static CrossWordsGameGrid GenerateCharPlacements(WordDatabaseJSON possibleWords,  int wordNumber, string anagram)
     {
         List<WordData> wordsShuffled = possibleWords.words.OrderBy(_ => rng.Next()).ToList();
         Dictionary<Vector2Int, char> result = new();
@@ -79,18 +80,18 @@ public static class CharacterPlacementGenerator
             i++;
         }
 
-        Grid grid = new Grid(addedWords);
+        CrossWordsGameGrid crossWordsGameGrid = new CrossWordsGameGrid(addedWords);
 
-        return grid;
+        return crossWordsGameGrid;
     }
 
     public static void GenrateCharPlacementsForExistingGrid(
-        WordDatabaseJSON possibleWords,  int wordNumber, string anagram, Grid existingGrid, GridWord gridWord)
+        WordDatabaseJSON possibleWords,  int wordNumber, string anagram, CrossWordsGameGrid existingCrossWordsGameGrid, GridWord gridWord, Action onEndCallback = null)
     {
         List<WordData> possibleWordsListFiltered = new List<WordData>();
         foreach (var word in possibleWords.words)
         {
-            if (!existingGrid.Words.Any((gridWord)  => (gridWord.SolutionWord == word.word)))
+            if (!existingCrossWordsGameGrid.Words.Any((gridWord)  => (gridWord.SolutionWord == word.word)))
             {
                 possibleWordsListFiltered.Add(word);
             }
@@ -110,7 +111,7 @@ public static class CharacterPlacementGenerator
                 continue;
             }
 
-            var gridValue = existingGrid.GetWordsToGridValues();
+            var gridValue = existingCrossWordsGameGrid.GetWordsToGridValues();
             bool isRow = !lastWordAdded.IsRow;
             string newWordString = possibleWordsListFiltered[iterations].word;
             var correspondingIndexs =
@@ -141,13 +142,24 @@ public static class CharacterPlacementGenerator
             wordToAddLoop.Difficulty = possibleWordsListFiltered[iterations].difficulty;
             wordToAddLoop.Description = possibleWordsListFiltered[iterations].description;
             wordToAddLoop.Initialize();
+            if (lastWordAdded.IsValidated)
+            {
+                foreach (var letterSolutionPosition in lastWordAdded.GetAllLetterSolutionPositions())
+                {
+                    if (wordToAddLoop.GetAllLetterSolutionPositions().ContainsKey(letterSolutionPosition.Key))
+                    {
+                        wordToAddLoop.SetLetterAtLocation(letterSolutionPosition.Key, letterSolutionPosition.Value);
+                    }
+                }
+            }
                     
-            existingGrid.AddWord(wordToAddLoop);
+            existingCrossWordsGameGrid.AddWord(wordToAddLoop);
             wordAddedIndexs.Add(iterations);
             lastWordAdded = wordToAddLoop;
             iterations = 0;
             remainingWordsToAdd--;
         }
+        onEndCallback?.Invoke();
     }
     
     private static List<Vector2Int> GetPossibleStartPositions(

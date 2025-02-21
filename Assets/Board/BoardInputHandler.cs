@@ -63,7 +63,7 @@ public class BoardInputHandler : MonoBehaviour
         if (!context.performed) return;
 
         var tile = m_board.GetTile(m_currentHoverPosition);
-        if (tile == null) return;
+        if (tile.GetComponent<LetterTile>() == null) return;
 
         HandleWordSelection(m_board.GetWordGrid().GetWordAtLocation(m_currentHoverPosition));
     }
@@ -139,11 +139,16 @@ public class BoardInputHandler : MonoBehaviour
             .Where(kvp => !IsTileLocked(kvp.Key))
             .ToList();
 
+        var lettersBeforeUpdate = m_currentSelectedWord.GetAllLetterCurrentWordPositions();
         // Update word letters
         for (int i = 0; i < unlockedLetters.Count; i++)
         {
             var pos = unlockedLetters[i].Key;
             var newChar = i < inputText.Length ? inputText[i] : '\0';
+            if (newChar == lettersBeforeUpdate[pos])
+            {
+             continue;   
+            }
             m_currentSelectedWord.SetLetterAtLocation(pos, newChar);
             UpdateTileVisual(pos, newChar);
         }

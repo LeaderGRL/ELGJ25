@@ -42,7 +42,7 @@ public class Board : MonoBehaviour
     private static Board m_instance;
     private Dictionary<Vector2Int, GameObject> m_tiles;
     private Vector2Int m_currentHoverTile;
-    private Grid m_grid;
+    private CrossWordsGameGrid _mCrossWordsGameGrid;
     private GridWord m_currentSelectedWord;
     private BoardInputHandler m_inputHandler;
 
@@ -53,7 +53,7 @@ public class Board : MonoBehaviour
     [Header("Events")]
     [HideInInspector] public UnityEvent<Vector2Int> OnTileClicked;
 
-    public event Action<Grid> OnGenerateGrid;
+    public event Action<CrossWordsGameGrid> OnGenerateGrid;
 
 
 
@@ -110,7 +110,7 @@ public class Board : MonoBehaviour
 
     private void HandleTileClick(Tile tile)
     {
-        var word = m_grid.GetWordAtLocation(tile.Position);
+        var word = _mCrossWordsGameGrid.GetWordAtLocation(tile.Position);
         m_inputHandler.HandleWordSelection(word);
     }
 
@@ -122,7 +122,7 @@ public class Board : MonoBehaviour
 
     private void CreateGrid()
     {
-        m_grid = CharacterPlacementGenerator.GenerateCharPlacements(
+        _mCrossWordsGameGrid = CharacterPlacementGenerator.GenerateCharPlacements(
             m_generationData.Database,
             m_generationData.NumWordsToGenerate,
             ""
@@ -139,9 +139,9 @@ public class Board : MonoBehaviour
         return m_instance;
     }
 
-    public void SetGrid(Grid grid)
+    public void SetGrid(CrossWordsGameGrid crossWordsGameGrid)
     {
-        m_grid = grid;
+        _mCrossWordsGameGrid = crossWordsGameGrid;
     }
 
     public void PlaceTileRefacto(Vector2Int pos, Tile tile)
@@ -186,7 +186,7 @@ public class Board : MonoBehaviour
 
     private GameObject SelectTilePrefab(Vector2Int position)
     {
-        if (m_grid.GetWordsToGridValues().ContainsKey(position))
+        if (_mCrossWordsGameGrid.GetWordsToGridValues().ContainsKey(position))
         {
             return Random.Range(0, 100) == 50
                 ? m_shopTilePrefab.gameObject
@@ -255,7 +255,7 @@ public class Board : MonoBehaviour
 
     public bool IsTileLocked(Vector2Int tileLocation)
     {
-        var words = m_grid.GetAllWordAtLocation(tileLocation);
+        var words = _mCrossWordsGameGrid.GetAllWordAtLocation(tileLocation);
         foreach (var word in words)
         {
             if (word.IsValidated)
@@ -320,9 +320,9 @@ public class Board : MonoBehaviour
         return m_currentSelectedWord;
     }
 
-    public Grid GetWordGrid()
+    public CrossWordsGameGrid GetWordGrid()
     {
-        return m_grid;
+        return _mCrossWordsGameGrid;
     }
 
     public Vector2Int GetTilePosition(GameObject tile)

@@ -407,13 +407,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.5961943, y: -2.6793413, z: -17.640753}
+  m_LocalRotation: {x: 0.2507864, y: 0.3683147, z: -0.103879124, w: 0.88919044}
+  m_LocalPosition: {x: -15, y: 13, z: -15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1583613598}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 30, y: 45, z: 0}
 --- !u!114 &330585547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -504,6 +504,49 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_crossGridGenerator: {fileID: 1575694550}
   m_cameraTarget: {fileID: 438506969}
+  m_cameraSpeedRatioByMousePositionRatioCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: -1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.15
+      value: 0
+      inSlope: -0.01568672
+      outSlope: -0.01568672
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.085931964
+    - serializedVersion: 3
+      time: 0.85
+      value: 0
+      inSlope: 0.0036227263
+      outSlope: 0.0036227263
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 1
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  m_moveTargetCameraSpeed: 20
 --- !u!114 &330585550
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -861,13 +904,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 438506968}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.23911765, y: -0.3696438, z: 0.09904577, w: 0.89239913}
-  m_LocalPosition: {x: -4.596194, y: -3.331067, z: 7.230421}
+  m_LocalRotation: {x: 0, y: 0.38268343, z: 0, w: 0.92387956}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1583613598}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
 --- !u!1 &563832617
 GameObject:
   m_ObjectHideFlags: 0
@@ -1023,7 +1066,7 @@ MonoBehaviour:
   m_ReadOnly: 0
   m_RichText: 1
   m_GlobalFontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_OnFocusSelectAll: 1
+  m_OnFocusSelectAll: 0
   m_ResetOnDeActivation: 1
   m_KeepTextSelectionVisible: 0
   m_RestoreOriginalTextOnEscape: 1
@@ -1811,8 +1854,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1075884516}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.5961943, y: -2.6793413, z: -17.640753}
+  m_LocalRotation: {x: 0.2507864, y: 0.3683147, z: -0.103879124, w: 0.88919044}
+  m_LocalPosition: {x: -15, y: 13, z: -15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1973,7 +2016,27 @@ PrefabInstance:
       value: PlayerController
       objectReference: {fileID: 0}
     - target: {fileID: 3768149870756016092, guid: caf269ccf1747c14c8f43b0b2621da6a, type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 3768149870756016092, guid: caf269ccf1747c14c8f43b0b2621da6a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[20].m_ActionId
+      value: d58c7cb0-bdd2-43ff-b739-02f7582881d7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3768149870756016092, guid: caf269ccf1747c14c8f43b0b2621da6a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[20].m_ActionName
+      value: 'Crossatro/MouseMoved[/Mouse/position]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3768149870756016092, guid: caf269ccf1747c14c8f43b0b2621da6a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[20].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3768149870756016092, guid: caf269ccf1747c14c8f43b0b2621da6a, type: 3}
       propertyPath: m_ActionEvents.Array.data[19].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3768149870756016092, guid: caf269ccf1747c14c8f43b0b2621da6a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[20].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3768149870756016092, guid: caf269ccf1747c14c8f43b0b2621da6a, type: 3}
@@ -1981,15 +2044,35 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 687105350}
     - target: {fileID: 3768149870756016092, guid: caf269ccf1747c14c8f43b0b2621da6a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[20].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 330585549}
+    - target: {fileID: 3768149870756016092, guid: caf269ccf1747c14c8f43b0b2621da6a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[20].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3768149870756016092, guid: caf269ccf1747c14c8f43b0b2621da6a, type: 3}
       propertyPath: m_ActionEvents.Array.data[19].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: HandleSelection
+      objectReference: {fileID: 0}
+    - target: {fileID: 3768149870756016092, guid: caf269ccf1747c14c8f43b0b2621da6a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[20].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnMouseMoveCallback
       objectReference: {fileID: 0}
     - target: {fileID: 3768149870756016092, guid: caf269ccf1747c14c8f43b0b2621da6a, type: 3}
       propertyPath: m_ActionEvents.Array.data[19].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: BoardInputHandler, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3768149870756016092, guid: caf269ccf1747c14c8f43b0b2621da6a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[20].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PlayerCameraController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3768149870756016092, guid: caf269ccf1747c14c8f43b0b2621da6a, type: 3}
       propertyPath: m_ActionEvents.Array.data[19].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3768149870756016092, guid: caf269ccf1747c14c8f43b0b2621da6a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[20].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -2032,8 +2115,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1583613597}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.23911765, y: 0.3696438, z: -0.09904577, w: 0.89239913}
-  m_LocalPosition: {x: 0, y: 6.5, z: -6.5}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2041,7 +2124,7 @@ Transform:
   - {fileID: 1075884519}
   - {fileID: 330585546}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 30, y: 45, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1673587562
 GameObject:
   m_ObjectHideFlags: 0
@@ -2769,6 +2852,10 @@ PrefabInstance:
       propertyPath: m_minPosBase.y
       value: -10
       objectReference: {fileID: 0}
+    - target: {fileID: 7742188781084759031, guid: 0b11a40a59d7ef941a1879b8ad50fd47, type: 3}
+      propertyPath: m_pCameraController
+      value: 
+      objectReference: {fileID: 330585549}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

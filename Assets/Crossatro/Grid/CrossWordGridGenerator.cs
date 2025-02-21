@@ -15,38 +15,39 @@ public class CrossWordGridGenerator : MonoBehaviour
     private ShopTile m_shopTilePrefab;
     
     private Board m_board = null;
-    private Grid m_grid;
+    private CrossWordsGameGrid m_crossWordsGameGrid;
     public bool IsStarted { get; private set; } = false;
 
-    public event Action<Grid> OnEndGridGeneration = null;
+    public event Action<CrossWordsGameGrid> OnEndGridGeneration = null;
 
     private void Start()
     {
         m_board = Board.GetInstance();
-        m_grid = CharacterPlacementGenerator.GenerateCharPlacements(m_generationData.Database,
+        m_crossWordsGameGrid = CharacterPlacementGenerator.GenerateCharPlacements(m_generationData.Database,
             m_generationData.NumWordsToGenerate, "");
-        m_grid.OnValidateAllWorlds += OnValidateAllWordsCallback;
-        m_grid.OnAddWord += GenerateWord;
-        m_board.SetGrid(m_grid);
+        m_crossWordsGameGrid.OnValidateAllWorlds += OnValidateAllWordsCallback;
+        m_crossWordsGameGrid.OnAddWord += GenerateWord;
+        m_board.SetGrid(m_crossWordsGameGrid);
         IsStarted = true;
 
     }
 
     public void GenerateBase()
     {
-        foreach (var letterLocation in m_grid.GetWordsToGridValues())
+        foreach (var letterLocation in m_crossWordsGameGrid.GetWordsToGridValues())
         {
             LetterTile newTile = Instantiate(Random.Range(0, 100) == 50 ? m_shopTilePrefab : m_letterTilePrefab, transform);
             newTile.DisplayText.text = "";
             m_board.PlaceTileRefacto(letterLocation.Key, newTile);
         } 
-        OnEndGridGeneration?.Invoke(m_grid);
+        OnEndGridGeneration?.Invoke(m_crossWordsGameGrid);
         
     }
 
     private void OnValidateAllWordsCallback(GridWord lastWord)
     {
-        CharacterPlacementGenerator.GenrateCharPlacementsForExistingGrid(m_generationData.Database, 5, "", m_grid, lastWord);
+        CharacterPlacementGenerator.GenrateCharPlacementsForExistingGrid(
+            m_generationData.Database, 5, "", m_crossWordsGameGrid, lastWord, (() => OnEndGridGeneration?.Invoke(m_crossWordsGameGrid)));
     }
 
     private void GenerateWord(GridWord newWord)
@@ -63,7 +64,6 @@ public class CrossWordGridGenerator : MonoBehaviour
             newTile.DisplayText.text = "";
             m_board.PlaceTileRefacto(letterLocation.Key, newTile);
         }
-        OnEndGridGeneration?.Invoke(m_grid);
 
     }
 }

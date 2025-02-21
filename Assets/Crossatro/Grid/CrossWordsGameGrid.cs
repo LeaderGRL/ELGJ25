@@ -5,14 +5,14 @@ using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
-public class Grid
+public class CrossWordsGameGrid
 {
     
     public List<GridWord> Words { get; private set; }
     public event Action<GridWord> OnValidateAllWorlds;
     public event Action<GridWord> OnAddWord; 
 
-    public Grid( List<GridWord> words)
+    public CrossWordsGameGrid( List<GridWord> words)
     {
         Words = new List<GridWord>();
         foreach (var word in words)
@@ -23,8 +23,13 @@ public class Grid
 
     public Dictionary<Vector2Int, char> GetWordsToGridValues()
     {
+        return GetAnyWordListToGridValues(Words);
+    }
+
+    private Dictionary<Vector2Int, char> GetAnyWordListToGridValues(List<GridWord> words)
+    {
         Dictionary<Vector2Int, char> result = new();
-        foreach (var gridWord in Words)
+        foreach (var gridWord in words)
         {
             foreach (var letterLocation in gridWord.GetAllLetterSolutionPositions())
             {
@@ -159,9 +164,14 @@ public class Grid
     
     public KeyValuePair<Vector2Int, Vector2Int> GetMinAndMaxPositionCharacterPlacement()
     {
+        return GetMinAndMaxPositionCharacterPlacementOfWordList(Words);
+    }
+
+    private KeyValuePair<Vector2Int, Vector2Int> GetMinAndMaxPositionCharacterPlacementOfWordList(List<GridWord> gridWords)
+    {
         Vector2Int minValue = Vector2Int.zero;
         Vector2Int maxValue = Vector2Int.zero;
-        foreach (var  key in GetWordsToGridValues().Keys)
+        foreach (var  key in GetAnyWordListToGridValues(gridWords).Keys)
         {
             if (key.x < minValue.x)
             {
@@ -183,12 +193,36 @@ public class Grid
         return new KeyValuePair<Vector2Int, Vector2Int>(minValue, maxValue);
     }
 
+    public Vector2Int GetMiddleWordList(List<GridWord> gridWords)
+    {
+        var minPosMaxPos = GetMinAndMaxPositionCharacterPlacementOfWordList(gridWords);
+        var wordListSize = new Vector2Int(minPosMaxPos.Value.x - minPosMaxPos.Key.x,
+            minPosMaxPos.Value.y - minPosMaxPos.Key.y);
+        Vector2Int result = new Vector2Int(minPosMaxPos.Key.x + (wordListSize.x / 2), minPosMaxPos.Key.y + (wordListSize.y / 2));
+        return result;
+    }
+    
     public Vector2Int GetMiddleGrid()
     {
         var minPos = GetMinAndMaxPositionCharacterPlacement().Key;
         var gridSize = GetGridSize();
 
         Vector2Int result = new Vector2Int(minPos.x + (gridSize.x / 2), minPos.y + (gridSize.y / 2));
+        
+        return result;
+    }
+
+    public List<GridWord> GetAllNonValidatedWords()
+    {
+        List<GridWord> result = new List<GridWord>();
+        foreach (var word in Words)
+        {
+            if (word.IsValidated)
+            {
+                continue;
+            }
+            result.Add(word);
+        }
         
         return result;
     }
