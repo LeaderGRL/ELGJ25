@@ -6,7 +6,7 @@ public class ShopManager : MonoBehaviour
 {
     
 
-    [SerializeField] private ItemObject[] items;
+    [SerializeField] private ItemObject[] itemsObject;
     [SerializeField] private GameObject itemPrefab;
 
     [Header("UI")]
@@ -19,6 +19,7 @@ public class ShopManager : MonoBehaviour
 
     [Header("Event")]
     public UnityEvent onItemBought;
+    public UnityEvent onShopOpened;
 
 
     public static ShopManager Instance { get; private set; }
@@ -37,28 +38,29 @@ public class ShopManager : MonoBehaviour
 
     private void Start()
     {
-        GenerateItem();
+        //GenerateItem();
     }
 
-    void GenerateItem()
-    {
-        foreach (var item in items)
-        {
-            GameObject newItemObject = Instantiate(itemPrefab, shopItemContainer);
-            Item newItemComponent = newItemObject.GetComponent<Item>();
 
-            if (newItemComponent == null)
-                return;
+    //void GenerateItem()
+    //{
+    //    foreach (var item in items)
+    //    {
+    //        GameObject newItemObject = Instantiate(itemPrefab, shopItemContainer);
+    //        Item newItemComponent = newItemObject.GetComponent<Item>();
 
-            newItemComponent.itemObject = item;
-            ShopItemView itemView = newItemComponent.GetComponent<ShopItemView>();
+        //        if (newItemComponent == null)
+        //            return;
 
-            //if (itemView == null)
-            //    return;
+        //        newItemComponent.itemObject = item;
+        //        ShopItemView itemView = newItemComponent.GetComponent<ShopItemView>();
 
-            //itemView.Init(newItemComponent);
-        }
-    }
+        //        if (itemView == null)
+        //            return;
+
+        //        itemView.Init(newItemComponent);
+        //    }
+        //}
 
     public void BuyItem(Item item)
     {
@@ -83,10 +85,18 @@ public class ShopManager : MonoBehaviour
     public void OpenShop()
     {
         shopPanel.SetActive(true);
+        onShopOpened.Invoke();
     }
 
     public void CloseShop()
     {
         shopPanel.SetActive(false);
+    }
+
+    public Item GetRandomItem()
+    {
+        Item item = new Item();
+        item.itemObject = itemsObject[Random.Range(0, itemsObject.Length)];
+        return item;
     }
 }

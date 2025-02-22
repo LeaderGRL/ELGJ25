@@ -9,10 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e50036fc5cf4342b64db137396e92e2, type: 3}
-  m_Name: NoiseMapData
+  m_Script: {fileID: 11500000, guid: 616f5336d7d388c4db099dc5c5512ecf, type: 3}
+  m_Name: AddScore
   m_EditorClassIdentifier: 
-  <NoiseValueDatas>k__BackingField:
-  - NoiseValue: 0
-    AssociatedMaterial: {fileID: 2100000, guid: c8c1f6c8b8302254f99ccd650bc6268d, type: 2}
-  <ZoomValue>k__BackingField: 12.5
+  itemName: Potion de score
+  itemDescription: lkfbsnltrkjgir
+  itemSprite: {fileID: 21300000, guid: d3293014dbc6c9946b7751e1a0095deb, type: 3}
+  itemPrice: 5
+  itemEffects: []

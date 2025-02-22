@@ -9,7 +9,6 @@ public class ShopItemView : MonoBehaviour
     public TextMeshProUGUI itemName;
     public TextMeshProUGUI itemPrice;
     public TextMeshProUGUI itemDescription;
-    public Button buyButton;
 
 
     public void Init(Item item)
@@ -19,13 +18,5 @@ public class ShopItemView : MonoBehaviour
         itemPrice.text = item.itemObject.itemPrice.ToString();
         itemDescription.text = item.itemObject.itemDescription;
 
-        buyButton.onClick.RemoveAllListeners();
-        buyButton.onClick.AddListener(() => OnBuyButtonClick(item));
-
-    }
-
-    public void OnBuyButtonClick(Item item)
-    {
-        ShopManager.Instance.BuyItem(item);
     }
 }

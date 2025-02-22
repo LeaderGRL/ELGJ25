@@ -15,10 +15,30 @@ public class AddTimeEffect : ItemEffectObject
     }
 }
 
+[CreateAssetMenu(fileName = "AddHealthEffect", menuName = "Item Effects/Add Health effect")]
+public class AddHealthEffect : ItemEffectObject
+{
+    public int healthToAdd = 1;
+    public override void ApplyEffect()
+    {
+        EffectManager.GetInstance().player.AddHealth(healthToAdd);
+    }
+}
+
 [CreateAssetMenu(fileName = "AddScoreEffect", menuName = "Item Effects/Add Score effect")]
 public class AddScoreEffect : ItemEffectObject
 {
     public int scoreToAdd = 100;
+    public override void ApplyEffect()
+    {
+       
+    }
+}
+
+[CreateAssetMenu(fileName = "RevealSpecificLetterEffect", menuName = "Item Effects/Reveal specific Letter effect")]
+public class RevealSpecificLetterEffect : ItemEffectObject
+{
+    public char letterToReveal = 'a';
     public override void ApplyEffect()
     {
        

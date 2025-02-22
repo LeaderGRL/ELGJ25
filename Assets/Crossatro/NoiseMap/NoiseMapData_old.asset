@@ -10,9 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2e50036fc5cf4342b64db137396e92e2, type: 3}
-  m_Name: NoiseMapData
+  m_Name: NoiseMapData_old
   m_EditorClassIdentifier: 
   <NoiseValueDatas>k__BackingField:
   - NoiseValue: 0
-    AssociatedMaterial: {fileID: 2100000, guid: c8c1f6c8b8302254f99ccd650bc6268d, type: 2}
+    AssociatedMaterial: {fileID: 2100000, guid: c49c33aa6f835dd46b042fa7aefea8dc, type: 2}
+  - NoiseValue: 0.25
+    AssociatedMaterial: {fileID: 2100000, guid: 363e4f541978d654fb5191c6306aa0ad, type: 2}
+  - NoiseValue: 0.5
+    AssociatedMaterial: {fileID: 2100000, guid: 823718c208ceba04ca0a04253af5271b, type: 2}
+  - NoiseValue: 0.75
+    AssociatedMaterial: {fileID: 2100000, guid: 5f68c5022b9856f48b815df831ee1c52, type: 2}
   <ZoomValue>k__BackingField: 12.5

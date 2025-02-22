@@ -267,7 +267,7 @@ public class Board : MonoBehaviour
     }
 
  
-    private void CheckForShopTile(Vector2Int pos)
+    public void CheckForShopTile(Vector2Int pos)
     {
         GetTile(pos).TryGetComponent(out ShopTile shopTile);
         if (shopTile)

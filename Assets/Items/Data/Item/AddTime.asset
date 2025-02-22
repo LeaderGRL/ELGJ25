@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 616f5336d7d388c4db099dc5c5512ecf, type: 3}
+  m_Name: AddTime
+  m_EditorClassIdentifier: 
+  itemName: Potion de temps
+  itemDescription: "Une potion qui vous ajoute du temps suppl\xE9mentaire pour votre
+    chasse aux mots"
+  itemSprite: {fileID: 21300000, guid: 8fa8909e89a734f48b35dbad28ada9e8, type: 3}
+  itemPrice: 10
+  itemEffects: []
