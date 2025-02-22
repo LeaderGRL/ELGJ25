@@ -16,4 +16,5 @@ MonoBehaviour:
   itemDescription: Potion qui soigne vos petit mots
   itemSprite: {fileID: 21300000, guid: 48b314ec9e18d794584eb2c7ded9d2d2, type: 3}
   itemPrice: 10
-  itemEffects: []
+  itemEffects:
+  - {fileID: 0}

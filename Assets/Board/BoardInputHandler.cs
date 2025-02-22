@@ -1,4 +1,5 @@
 using System.Linq;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -156,7 +157,7 @@ public class BoardInputHandler : MonoBehaviour
         }
     }
 
-    private void UpdateTileVisual(Vector2Int position, char character)
+    public void UpdateTileVisual(Vector2Int position, char character)
     {
         var tile = m_board.GetTile(position);
         if (tile != null && tile.TryGetComponent<LetterTile>(out var letterTile))
@@ -184,10 +185,16 @@ public class BoardInputHandler : MonoBehaviour
     private void SetupInputFieldForWord(GridWord word)
     {
         var unlockedTiles = word.GetAllLetterCurrentWordPositions()
-            .Where(kvp => !m_board.IsTileLocked(kvp.Key))
+            .Where(kvp => !IsTileLocked(kvp.Key))
             .ToList();
 
-        m_inputField.text = string.Join("", unlockedTiles.Select(kvp => kvp.Value));
+        string inputText = "";
+        foreach (var pos in word.GetAllLetterSolutionPositions().Keys.OrderBy(p => p.x + p.y))
+        {
+            inputText += IsTileLocked(pos) ? " " : word.GetCurrentLetterAtLocation(pos);
+        }
+
+        m_inputField.text = inputText.Trim();
         m_inputField.characterLimit = unlockedTiles.Count;
         m_inputField.caretPosition = m_inputField.text.Length;
     }
@@ -196,7 +203,10 @@ public class BoardInputHandler : MonoBehaviour
     {
         foreach (var position in word.GetAllLetterSolutionPositions().Keys)
         {
-            m_board.UpdateTileState(position, TileState.Selected);
+            if (!IsTileLocked(position))
+            {
+                m_board.UpdateTileState(position, TileState.Selected);
+            }
         }
     }
 
@@ -236,4 +246,7 @@ public class BoardInputHandler : MonoBehaviour
         m_inputField.text = "";
         m_inputField.DeactivateInputField();
     }
+
+
+
 }

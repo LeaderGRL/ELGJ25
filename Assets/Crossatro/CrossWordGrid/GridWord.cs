@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 
@@ -11,6 +12,9 @@ public class GridWord
     public bool IsRow;
     public string Description = "";
     public int Difficulty;
+
+    private HashSet<Vector2Int> _validatedPositions = new();
+
     public bool IsValidated { get; private set; }
 
     public event Action<GridWord> OnValidate;
@@ -36,10 +40,12 @@ public class GridWord
 
         return result;
     }
+
     public Dictionary<Vector2Int, char> GetAllLetterCurrentWordPositions()
     {
-
-        return m_currentWord;
+        return m_currentWord
+            .Where(kvp => !IsPositionValidated(kvp.Key))
+            .ToDictionary(kvp => kvp.Key, kvp => kvp.Value);
     }
 
     public string GetCurrentWordToString()
@@ -68,4 +74,22 @@ public class GridWord
         IsValidated = true;
         OnValidate?.Invoke(this);
     }
+
+    public void ValidatePosition(Vector2Int position)
+    {
+        _validatedPositions.Add(position);
+
+        // Vérifier si tout le mot est validé
+        if (GetAllLetterSolutionPositions().Keys.All(_validatedPositions.Contains))
+        {
+            Validate();
+        }
+    }
+
+    public bool IsPositionValidated(Vector2Int position)
+    {
+        return _validatedPositions.Contains(position);
+    }
+
+
 }

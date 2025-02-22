@@ -242,5 +242,38 @@ public class CrossWordsGameGrid
         return result;
     }
 
+    public List<Vector2Int> RevealLetterInAllWords(char letter)
+    {
+        HashSet<Vector2Int> revealedPositions = new HashSet<Vector2Int>();
+
+        foreach (GridWord word in Words)
+        {
+            var solutionLetters = word.GetAllLetterSolutionPositions();
+            foreach (var kvp in solutionLetters)
+            {
+                if (kvp.Value == char.ToUpper(letter))
+                {
+                    var wordsAtPosition = GetAllWordAtLocation(kvp.Key);
+                    foreach (var w in wordsAtPosition)
+                    {
+                        w.SetLetterAtLocation(kvp.Key, kvp.Value);
+
+                        if (!w.IsValidated)
+                        {
+                            w.ValidatePosition(kvp.Key);
+                        }
+                    }
+                    revealedPositions.Add(kvp.Key);
+                }
+            }
+        }
+        return revealedPositions.ToList();
+    }
+
+    public char GetCurrentLetterAtPosition(Vector2Int position)
+    {
+        var wordsHere = GetAllWordAtLocation(position);
+        return wordsHere?[0]?.GetCurrentLetterAtLocation(position) ?? '\0';
+    }
 
 }

@@ -337,6 +337,11 @@ public class Board : MonoBehaviour
         return -Vector2Int.one;
     }
 
+    public BoardInputHandler GetInputHandler()
+    {
+        return m_inputHandler;
+    }
+
     public void HideAllPopups()
     {
         foreach (var tilePositionObject in m_tiles)
@@ -349,5 +354,36 @@ public class Board : MonoBehaviour
             tile.HidePopup();
         }
 
+    }
+
+    public void RevealLetter(char letter)
+    {
+        var affectedPositions = _mCrossWordsGameGrid.RevealLetterInAllWords(letter);
+
+        foreach (Vector2Int pos in affectedPositions)
+        {
+            UpdateTileVisual(pos);
+            UpdateTileState(pos, TileState.Validated);
+
+            // Mettre à jour l'état de verrouillage
+            if (m_tiles.TryGetValue(pos, out GameObject tile))
+            {
+                tile.layer = LayerMask.NameToLayer("Validate");
+            }
+        }
+    }
+
+    private void UpdateTileVisual(Vector2Int position)
+    {
+        if (m_tiles.TryGetValue(position, out GameObject tileObj))
+        {
+            if (tileObj.TryGetComponent<LetterTile>(out LetterTile tile))
+            {
+                char currentChar = _mCrossWordsGameGrid.GetCurrentLetterAtPosition(position);
+                tile.DisplayText.text = currentChar.ToString();
+                tile.PlayJumpAnimation();
+                UpdateTileState(position, TileState.Validated);
+            }
+        }
     }
 }

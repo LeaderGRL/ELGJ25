@@ -24,6 +24,12 @@ public class EffectManager : MonoBehaviour
         timer.timeRemaining += time;
     }
 
+    public void ApplySpecificLetterRevealEffect(char revealedLetter)
+    {
+        Debug.Log("Revealing letter: " + revealedLetter);
+        Board.GetInstance().RevealLetter(revealedLetter);
+    }
+
     public static EffectManager GetInstance()
     {
         return instance;

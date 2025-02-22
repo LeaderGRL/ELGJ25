@@ -35,12 +35,4 @@ public class AddScoreEffect : ItemEffectObject
     }
 }
 
-[CreateAssetMenu(fileName = "RevealSpecificLetterEffect", menuName = "Item Effects/Reveal specific Letter effect")]
-public class RevealSpecificLetterEffect : ItemEffectObject
-{
-    public char letterToReveal = 'a';
-    public override void ApplyEffect()
-    {
-       
-    }
-}
+
