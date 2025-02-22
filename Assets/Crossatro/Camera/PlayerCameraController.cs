@@ -44,6 +44,8 @@ public class PlayerCameraController : MonoBehaviour
         {
             return;
         }
+
+        Screen
         
         float mousePositionXRatio = Mathf.InverseLerp(0, Screen.width, m_mousePosition.x);
         float mousePositionYRatio = Mathf.InverseLerp(0, Screen.height, m_mousePosition.y);

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Crossatro.Data;
 using UnityEngine;
 
 public class EnvironementGenerator : MonoBehaviour
@@ -13,6 +14,9 @@ public class EnvironementGenerator : MonoBehaviour
 
     [SerializeField] 
     private PlayerCameraController m_pCameraController;
+
+    [SerializeField] 
+    private NoiseMapGenerationData m_noiseMapData;
 
 
     private int m_noiseMapSeed = 0;
@@ -36,7 +40,10 @@ public class EnvironementGenerator : MonoBehaviour
             for (int y = m_minPosBase.y; y <= m_maxPosBase.y; y++)
             {
                 Tile newTile = Instantiate(m_baseTilePrefab, m_board.transform);
-                m_board.PlaceTileRefacto(new Vector2Int(x, y), newTile);
+                var tilePos = new Vector2Int(x, y);
+                float noiseValue = GetNoiseMapValueAtCoord(tilePos);
+                newTile.GetComponent<MeshRenderer>().material = GetMaterialByNoiseValue(noiseValue);
+                m_board.PlaceTileRefacto(tilePos, newTile);
             }
         }
         
@@ -52,6 +59,8 @@ public class EnvironementGenerator : MonoBehaviour
         foreach (var tilePos in nonExistentTilesAtPositions)
         {
             Tile newTile = Instantiate(m_baseTilePrefab, m_board.transform);
+            float noiseValue = GetNoiseMapValueAtCoord(tilePos);
+            newTile.GetComponent<MeshRenderer>().material = GetMaterialByNoiseValue(noiseValue);
             m_board.PlaceTileRefacto(tilePos, newTile);
         }
     }
@@ -75,11 +84,31 @@ public class EnvironementGenerator : MonoBehaviour
         return result;
     }
 
+    private Material GetMaterialByNoiseValue(float noiseValue)
+    {
+        int i = 0;
+        Material material = null;
+        while (i < m_noiseMapData.NoiseValueDatas.Count)
+        {
+            if (m_noiseMapData.NoiseValueDatas[i].NoiseValue < noiseValue)
+            {
+                material = m_noiseMapData.NoiseValueDatas[i].AssociatedMaterial;
+            }
+
+            i++;
+        }
+
+        if (material == null)
+        {
+            material = m_noiseMapData.NoiseValueDatas[m_noiseMapData.NoiseValueDatas.Count - 1].AssociatedMaterial;
+        }
+
+        return material;
+    }
+
 
     private float GetNoiseMapValueAtCoord(Vector2Int coord)
     {
-        // Mathf.PerlinNoise();
-        // return 
-        return 0.0f;
+        return Mathf.PerlinNoise(m_noiseMapSeed + (coord.x / m_noiseMapData.ZoomValue), m_noiseMapSeed + (coord.y/m_noiseMapData.ZoomValue));
     }
 }

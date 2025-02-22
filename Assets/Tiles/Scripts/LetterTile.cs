@@ -33,6 +33,26 @@ public class LetterTile : Tile, IPointerClickHandler
         DOTween.defaultAutoKill = false; // Prevents animations from being killed when the object is destroyed
     }
 
+    public void SetPopupPosAndRotByIsRow(bool isRow)
+    {
+        Vector3 position = popup.transform.position;
+        Vector3 rotationEuler = popup.transform.rotation.eulerAngles;
+        if (isRow)
+        {
+            position.x = 0;
+            position.z = 0.5f;
+            rotationEuler.y = 0;
+        }
+        else
+        {
+            position.x = 0.5f;
+            position.z = 0f;
+            rotationEuler.y = 90;
+        }
+        popup.transform.position = position;
+        popup.transform.rotation = Quaternion.Euler( rotationEuler);
+    }
+
     public void PlayJumpAnimation()
     {
         // Create a DOTween sequence for the jump.

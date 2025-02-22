@@ -34,12 +34,10 @@ public class CrossWordGridGenerator : MonoBehaviour
 
     public void GenerateBase()
     {
-        foreach (var letterLocation in m_crossWordsGameGrid.GetWordsToGridValues())
+        foreach (var word in m_crossWordsGameGrid.Words)
         {
-            LetterTile newTile = Instantiate(Random.Range(0, 100) == 50 ? m_shopTilePrefab : m_letterTilePrefab, transform);
-            newTile.DisplayText.text = "";
-            m_board.PlaceTileRefacto(letterLocation.Key, newTile);
-        } 
+            GenerateWord(word);
+        }
         OnEndGridGeneration?.Invoke(m_crossWordsGameGrid);
         
     }
@@ -61,6 +59,7 @@ public class CrossWordGridGenerator : MonoBehaviour
                 continue;
             }
             LetterTile newTile = Instantiate(Random.Range(0, 100) == 50 ? m_shopTilePrefab : m_letterTilePrefab, transform);
+            newTile.SetPopupPosAndRotByIsRow(newWord.IsRow);
             newTile.DisplayText.text = "";
             m_board.PlaceTileRefacto(letterLocation.Key, newTile);
         }

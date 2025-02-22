@@ -339,12 +339,14 @@ public class Board : MonoBehaviour
 
     public void HideAllPopups()
     {
-        foreach (var tile in m_tiles)
+        foreach (var tilePositionObject in m_tiles)
         {
-            if (tile.GetType() == typeof(LetterTile))
+            var tile = tilePositionObject.Value.GetComponent<LetterTile>();
+            if (tile == null)
             {
-                tile.Value.GetComponent<LetterTile>().HidePopup();
+                continue;
             }
+            tile.HidePopup();
         }
 
     }

@@ -62,9 +62,10 @@ public class BoardInputHandler : MonoBehaviour
     {
         if (!context.performed) return;
 
-        var tile = m_board.GetTile(m_currentHoverPosition);
-        if (tile.GetComponent<LetterTile>() == null) return;
-
+        var tileObeject = m_board.GetTile(m_currentHoverPosition);
+        var tile = tileObeject.GetComponent<LetterTile>();
+        if (tile == null) return;
+        tile.ManagePopup();
         HandleWordSelection(m_board.GetWordGrid().GetWordAtLocation(m_currentHoverPosition));
     }
 
