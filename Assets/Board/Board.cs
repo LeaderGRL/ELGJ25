@@ -1,15 +1,10 @@
 using System;
 using DG.Tweening;
 using System.Collections.Generic;
-using System.Linq;
-using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
-using UnityEditor;
-using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class Board : MonoBehaviour
 {
