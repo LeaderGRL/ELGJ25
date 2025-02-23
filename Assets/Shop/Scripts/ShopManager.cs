@@ -16,6 +16,7 @@ public class ShopManager : MonoBehaviour
     [Header("References")]
     public Player player;
     public Timer timer;
+    public CoinController coinController;
     [SerializeField] private PlayerCameraController m_playerCameraControllerr;
 
     [Header("Event")]
@@ -67,8 +68,8 @@ public class ShopManager : MonoBehaviour
     {
         if (player.GetCoins() >= item.itemObject.itemPrice)
         {
-            player.RemoveScore(item.itemObject.itemPrice);
-            
+            coinController.RemoveCoins(item.itemObject.itemPrice);
+
             foreach (var effect in item.itemObject.itemEffects)
             {
                 effect.ApplyEffect();
