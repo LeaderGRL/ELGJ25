@@ -564,6 +564,396 @@
         "word": "mutation",
         "description": "Un changement profond dans la structure ou la nature d'une entité.",
         "difficulty": 7
+      },
+      {
+        "word": "chat",
+        "description": "Un petit animal domestique qui miaule.",
+        "difficulty": 1
+      },
+      {
+        "word": "chien",
+        "description": "Un animal domestique qui aboie.",
+        "difficulty": 1
+      },
+      {
+        "word": "maison",
+        "description": "Un lieu où l'on habite.",
+        "difficulty": 1
+      },
+      {
+        "word": "arbre",
+        "description": "Une plante avec un tronc et des branches.",
+        "difficulty": 1
+      },
+      {
+        "word": "fleur",
+        "description": "La partie colorée d'une plante, souvent odorante.",
+        "difficulty": 1
+      },
+      {
+        "word": "soleil",
+        "description": "L'astre qui éclaire le jour.",
+        "difficulty": 1
+      },
+      {
+        "word": "lune",
+        "description": "L'astre qui brille la nuit.",
+        "difficulty": 1
+      },
+      {
+        "word": "eau",
+        "description": "Un liquide indispensable à la vie.",
+        "difficulty": 1
+      },
+      {
+        "word": "pain",
+        "description": "Un aliment de base fait de farine et d'eau.",
+        "difficulty": 1
+      },
+      {
+        "word": "lait",
+        "description": "Un liquide blanc produit par les mammifères.",
+        "difficulty": 1
+      },
+      {
+        "word": "table",
+        "description": "Un meuble plat utilisé pour manger ou travailler.",
+        "difficulty": 1
+      },
+      {
+        "word": "chaise",
+        "description": "Un meuble pour s'asseoir.",
+        "difficulty": 1
+      },
+      {
+        "word": "livre",
+        "description": "Un recueil de pages imprimées reliées ensemble.",
+        "difficulty": 1
+      },
+      {
+        "word": "porte",
+        "description": "Un objet permettant d'entrer ou de sortir d'une pièce.",
+        "difficulty": 1
+      },
+      {
+        "word": "nez",
+        "description": "L'organe de l'odorat sur le visage.",
+        "difficulty": 1
+      },
+      {
+        "word": "yeux",
+        "description": "Les organes de la vue.",
+        "difficulty": 1
+      },
+      {
+        "word": "bouche",
+        "description": "La partie du visage utilisée pour manger et parler.",
+        "difficulty": 1
+      },
+      {
+        "word": "pomme",
+        "description": "Un fruit rond, souvent rouge, vert ou jaune.",
+        "difficulty": 1
+      },
+      {
+        "word": "banane",
+        "description": "Un fruit long et jaune, doux et sucré.",
+        "difficulty": 1
+      },
+      {
+        "word": "vélo",
+        "description": "Un moyen de transport à deux roues, propulsé par la force humaine.",
+        "difficulty": 1
+      },
+      {
+        "word": "bus",
+        "description": "Un véhicule de transport en commun.",
+        "difficulty": 1
+      },
+      {
+        "word": "train",
+        "description": "Un moyen de transport sur rail.",
+        "difficulty": 1
+      },
+      {
+        "word": "route",
+        "description": "Un chemin pour la circulation des véhicules.",
+        "difficulty": 1
+      },
+      {
+        "word": "école",
+        "description": "Un lieu où les enfants vont apprendre.",
+        "difficulty": 1
+      },
+      {
+        "word": "ami",
+        "description": "Une personne avec qui on partage des moments agréables.",
+        "difficulty": 1
+      },
+      {
+        "word": "jouet",
+        "description": "Un objet utilisé pour jouer, souvent par les enfants.",
+        "difficulty": 1
+      },
+      {
+        "word": "ballon",
+        "description": "Un objet sphérique utilisé pour jouer, par exemple au football.",
+        "difficulty": 1
+      },
+      {
+        "word": "clé",
+        "description": "Un objet servant à ouvrir ou fermer une serrure.",
+        "difficulty": 1
+      },
+      {
+        "word": "voiture",
+        "description": "Un véhicule motorisé utilisé pour se déplacer rapidement.",
+        "difficulty": 1
+      },
+      {
+        "word": "bicyclette",
+        "description": "Un moyen de transport à deux roues propulsé par le pédalage.",
+        "difficulty": 1
+      },
+      {
+        "word": "parc",
+        "description": "Un espace vert public où les gens se détendent et jouent.",
+        "difficulty": 1
+      },
+      {
+        "word": "jardin",
+        "description": "Un petit espace extérieur où poussent des fleurs et des légumes.",
+        "difficulty": 1
+      },
+      {
+        "word": "nuage",
+        "description": "Une masse de vapeur d'eau visible dans le ciel.",
+        "difficulty": 1
+      },
+      {
+        "word": "pluie",
+        "description": "De l'eau qui tombe du ciel sous forme de gouttes.",
+        "difficulty": 1
+      },
+      {
+        "word": "neige",
+        "description": "Des flocons blancs qui tombent en hiver et recouvrent le sol.",
+        "difficulty": 1
+      },
+      {
+        "word": "oiseau",
+        "description": "Un animal qui vole et qui chante souvent dans les arbres.",
+        "difficulty": 1
+      },
+      {
+        "word": "poisson",
+        "description": "Un animal qui vit dans l'eau et qui nage.",
+        "difficulty": 1
+      },
+      {
+        "word": "montagne",
+        "description": "Une grande élévation de terrain, parfois recouverte de neige.",
+        "difficulty": 1
+      },
+      {
+        "word": "rivière",
+        "description": "Un cours d'eau naturel qui coule vers la mer ou un lac.",
+        "difficulty": 1
+      },
+      {
+        "word": "forêt",
+        "description": "Une vaste zone peuplée d'arbres et de végétation.",
+        "difficulty": 1
+      },
+      {
+        "word": "ville",
+        "description": "Un endroit densément peuplé avec de nombreux bâtiments et rues.",
+        "difficulty": 1
+      },
+      {
+        "word": "campagne",
+        "description": "Une zone rurale avec des champs, des fermes et peu de bâtiments.",
+        "difficulty": 1
+      },
+      {
+        "word": "chemin",
+        "description": "Un petit sentier ou voie empruntée pour se déplacer.",
+        "difficulty": 1
+      },
+      {
+        "word": "montre",
+        "description": "Un appareil que l'on porte pour connaître l'heure.",
+        "difficulty": 1
+      },
+      {
+        "word": "fenêtre",
+        "description": "Un ouvrant dans un mur qui permet de voir à l'extérieur.",
+        "difficulty": 1
+      },
+      {
+        "word": "ordinateur",
+        "description": "Une machine électronique utilisée pour traiter et afficher des informations.",
+        "difficulty": 1
+      },
+      {
+        "word": "téléphone",
+        "description": "Un appareil permettant de communiquer à distance par la voix.",
+        "difficulty": 1
+      },
+      {
+        "word": "chaussure",
+        "description": "Un accessoire porté aux pieds pour marcher confortablement.",
+        "difficulty": 1
+      },
+      {
+        "word": "rose",
+        "description": "Une fleur colorée, symbole de l'amour.",
+        "difficulty": 1
+      },
+      {
+        "word": "ciel",
+        "description": "L'espace au-dessus de nous, où flottent les nuages.",
+        "difficulty": 1
+      },
+      {
+        "word": "mer",
+        "description": "Une vaste étendue d'eau salée.",
+        "difficulty": 1
+      },
+      {
+        "word": "plage",
+        "description": "Un endroit de sable près de l'océan.",
+        "difficulty": 1
+      },
+      {
+        "word": "nuage",
+        "description": "Une accumulation de vapeur d'eau dans le ciel.",
+        "difficulty": 1
+      },
+      {
+        "word": "arbre",
+        "description": "Une grande plante avec un tronc et des branches.",
+        "difficulty": 1
+      },
+      {
+        "word": "chemin",
+        "description": "Une voie pour se déplacer d'un endroit à un autre.",
+        "difficulty": 1
+      },
+      {
+        "word": "cœur",
+        "description": "L'organe qui pompe le sang, symbole d'amour.",
+        "difficulty": 1
+      },
+      {
+        "word": "rire",
+        "description": "L'expression de joie avec des sons amusants.",
+        "difficulty": 1
+      },
+      {
+        "word": "joie",
+        "description": "Un sentiment de grand bonheur.",
+        "difficulty": 1
+      },
+      {
+        "word": "chanson",
+        "description": "Un morceau de musique avec des paroles chantées.",
+        "difficulty": 1
+      },
+      {
+        "word": "soleil",
+        "description": "L'astre qui éclaire notre journée.",
+        "difficulty": 1
+      },
+      {
+        "word": "pluie",
+        "description": "De l'eau qui tombe du ciel en gouttes.",
+        "difficulty": 1
+      },
+      {
+        "word": "vent",
+        "description": "Le mouvement de l'air.",
+        "difficulty": 1
+      },
+      {
+        "word": "neige",
+        "description": "Des flocons blancs qui tombent en hiver.",
+        "difficulty": 1
+      },
+      {
+        "word": "pomme",
+        "description": "Un fruit rond, souvent rouge, vert ou jaune.",
+        "difficulty": 1
+      },
+      {
+        "word": "banane",
+        "description": "Un fruit long et jaune, sucré et doux.",
+        "difficulty": 1
+      },
+      {
+        "word": "orange",
+        "description": "Un fruit juteux, riche en vitamine C.",
+        "difficulty": 1
+      },
+      {
+        "word": "tableau",
+        "description": "Une image ou une peinture encadrée.",
+        "difficulty": 1
+      },
+      {
+        "word": "stylo",
+        "description": "Un instrument pour écrire avec de l'encre.",
+        "difficulty": 1
+      },
+      {
+        "word": "crayon",
+        "description": "Un outil pour écrire ou dessiner, souvent en graphite.",
+        "difficulty": 1
+      },
+      {
+        "word": "radio",
+        "description": "Un appareil qui diffuse de la musique et des informations.",
+        "difficulty": 1
+      },
+      {
+        "word": "télévision",
+        "description": "Un appareil pour regarder des images animées.",
+        "difficulty": 1
+      },
+      {
+        "word": "chapeau",
+        "description": "Un accessoire porté sur la tête pour se protéger du soleil.",
+        "difficulty": 1
+      },
+      {
+        "word": "vêtement",
+        "description": "Des habits portés pour se couvrir et se protéger.",
+        "difficulty": 1
+      },
+      {
+        "word": "sac",
+        "description": "Un accessoire pour transporter des objets.",
+        "difficulty": 1
+      },
+      {
+        "word": "montagne",
+        "description": "Une grande élévation naturelle avec un sommet.",
+        "difficulty": 1
+      },
+      {
+        "word": "rivière",
+        "description": "Un petit fleuve qui coule à travers le paysage.",
+        "difficulty": 1
+      },
+      {
+        "word": "étoile",
+        "description": "Un corps céleste qui brille dans le ciel la nuit.",
+        "difficulty": 1
+      },
+      {
+        "word": "lumière",
+        "description": "Ce qui permet de voir, émise par le soleil ou une lampe.",
+        "difficulty": 1
       }
     ]
   }
