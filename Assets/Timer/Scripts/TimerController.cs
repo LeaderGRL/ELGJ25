@@ -8,6 +8,7 @@ public class TimerController : MonoBehaviour
     private void Start()
     {
         timer.timerIsRunning = true;
+        timer.OnTimerFinished += OnTimerFinishedCallback;
     }
 
     private void Update()
@@ -26,5 +27,10 @@ public class TimerController : MonoBehaviour
     public void ResumeTimer()
     {
         timer.timerIsRunning = true;
+    }
+
+    private void OnTimerFinishedCallback()
+    {
+        
     }
 }

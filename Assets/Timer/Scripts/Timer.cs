@@ -1,9 +1,12 @@
+using System;
 using UnityEngine;
 
 public class Timer : MonoBehaviour
 {
     public float timeRemaining = 60;
     public bool timerIsRunning = false;
+
+    public event Action OnTimerFinished;
 
     private void Start()
     {
@@ -24,6 +27,7 @@ public class Timer : MonoBehaviour
                 Debug.Log("Game Over!");
                 timeRemaining = 0;
                 timerIsRunning = false;
+                OnTimerFinished?.Invoke();
             }
         }
     }
