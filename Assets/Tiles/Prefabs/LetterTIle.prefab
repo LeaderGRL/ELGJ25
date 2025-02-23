@@ -125,6 +125,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   width: 1
   height: 1
+  popSfx: {fileID: 8300000, guid: 2667b02f14560814eac63f800bf16820, type: 3}
   letterTileObject: {fileID: 11400000, guid: 16042e60d14310d4f8b46829b551a910, type: 2}
   <DisplayText>k__BackingField: {fileID: 4108763050805681862}
   jumpPower: 1

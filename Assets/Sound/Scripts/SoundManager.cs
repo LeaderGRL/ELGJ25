@@ -31,6 +31,7 @@ public class SoundManager : MonoBehaviour
 
     public void PlaySfxWithRandomPitch(AudioClip audioClip, float min, float max)
     {
+        Debug.Log("Playing : " + audioClip.name);
         musicSource.pitch = Random.Range(min, max);
         musicSource.PlayOneShot(audioClip);
     }

@@ -16,6 +16,8 @@ public class LetterTileObject : ScriptableObject
 
 public class LetterTile : Tile, IPointerClickHandler
 {
+    public AudioClip popSfx;
+
     [SerializeField] LetterTileObject letterTileObject;
 
     [field: SerializeField]
@@ -71,7 +73,7 @@ public class LetterTile : Tile, IPointerClickHandler
                      .SetEase(Ease.InQuad)
         );
 
-        SoundManager.Instance.PlaySfxWithRandomPitch(letterTileObject.popSfx, 0.8f, 1.2f);
+        SoundManager.Instance.PlaySfxWithRandomPitch(popSfx, 0.8f, 1.2f);
     }
 
     public void OnPointerClick(PointerEventData eventData)
