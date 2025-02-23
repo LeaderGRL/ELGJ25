@@ -16,6 +16,7 @@ public class ShopManager : MonoBehaviour
     [Header("References")]
     public Player player;
     public Timer timer;
+    [SerializeField] private PlayerCameraController m_playerCameraControllerr;
 
     [Header("Event")]
     public UnityEvent onItemBought;
@@ -85,11 +86,13 @@ public class ShopManager : MonoBehaviour
     public void OpenShop()
     {
         shopPanel.SetActive(true);
+        m_playerCameraControllerr.enabled = false;
         onShopOpened.Invoke();
     }
 
     public void CloseShop()
     {
+        m_playerCameraControllerr.enabled = true;
         shopPanel.SetActive(false);
     }
 

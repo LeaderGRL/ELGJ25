@@ -13,6 +13,9 @@ public class CrossWordGridGenerator : MonoBehaviour
     private LetterTile m_letterTilePrefab;
     [SerializeField] 
     private ShopTile m_shopTilePrefab;
+
+    [SerializeField] 
+    private int m_shopTilePercentageApparition = 1;
     
     private Board m_board = null;
     private CrossWordsGameGrid m_crossWordsGameGrid;
@@ -58,7 +61,7 @@ public class CrossWordGridGenerator : MonoBehaviour
             {
                 continue;
             }
-            LetterTile newTile = Instantiate(Random.Range(0, 100) == 50 ? m_shopTilePrefab : m_letterTilePrefab, transform);
+            LetterTile newTile = Instantiate(Random.Range(1, 101) <= m_shopTilePercentageApparition ? m_shopTilePrefab : m_letterTilePrefab, transform);
             newTile.SetPopupPosAndRotByIsRow(newWord.IsRow);
             newTile.DisplayText.text = "";
             m_board.PlaceTileRefacto(letterLocation.Key, newTile);

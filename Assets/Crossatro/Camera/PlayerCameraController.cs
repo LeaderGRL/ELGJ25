@@ -40,7 +40,7 @@ public class PlayerCameraController : MonoBehaviour
 
     private void MoveTargetCamera()
     {
-        if (m_mousePosition.x < 0 || m_mousePosition.x > Screen.width || m_mousePosition.y < 0 || m_mousePosition.y > Screen.height)
+        if (m_mousePosition.x <= 0 || m_mousePosition.x > Screen.width || m_mousePosition.y <= 0 || m_mousePosition.y > Screen.height)
         {
             return;
         }

@@ -21,4 +21,4 @@ MonoBehaviour:
     AssociatedMaterial: {fileID: 2100000, guid: 823718c208ceba04ca0a04253af5271b, type: 2}
   - NoiseValue: 0.75
     AssociatedMaterial: {fileID: 2100000, guid: 5f68c5022b9856f48b815df831ee1c52, type: 2}
-  <ZoomValue>k__BackingField: 12.5
+  <ZoomValue>k__BackingField: 25
