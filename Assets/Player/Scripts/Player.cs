@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    private int m_health = 3;
-    private int m_score = 10000;
+    private int m_health = 100;
+    private int m_score = 0;
+    private int m_coins = 3;
 
     public event Action<int> OnTakeDamage;
     public event Action<int> OnChangeScore; 
+    public event Action<int> OnCoinChange;
 
     public void TakeDamage(int damage)
     {
@@ -45,10 +47,23 @@ public class Player : MonoBehaviour
     public void RemoveHealth(int amount)
     {
         m_health -= amount;
+        OnTakeDamage?.Invoke(m_health);
+    }
+
+    public void AddCoins(int amount)
+    {
+        m_coins += amount;
+        OnCoinChange?.Invoke(m_coins);
+    }
+
+    public void RemoveCoins(int amount)
+    {
+        m_coins -= amount;
+        OnCoinChange?.Invoke(m_coins);
     }
 
     public int GetCoins()
     {
-        return m_score;
+        return m_coins;
     }
 }

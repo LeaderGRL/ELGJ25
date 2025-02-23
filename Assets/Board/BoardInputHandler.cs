@@ -6,8 +6,9 @@ using UnityEngine.UI;
 
 public class BoardInputHandler : MonoBehaviour
 {
-    [SerializeField]
-    private Player m_player;
+    [SerializeField] private Player m_player;
+    [SerializeField] private HealthController m_healthController;
+    [SerializeField] private CoinController m_coinController;
 
     [SerializeField] private InputActionReference m_selectAction;
     [SerializeField] private TMPro.TMP_InputField m_inputField;
@@ -108,6 +109,7 @@ public class BoardInputHandler : MonoBehaviour
         }
 
         m_player.AddScore(m_currentSelectedWord.Difficulty * 10);
+        m_coinController.AddCoins(1);
         m_currentSelectedWord.Validate();
         ResetSelection();
     }
@@ -128,7 +130,7 @@ public class BoardInputHandler : MonoBehaviour
 
     private void HandleIncorrectWord()
     {
-        m_player.TakeDamage(10);
+        m_healthController.RemoveHealth(10);
         ResetSelection();
     }
 
