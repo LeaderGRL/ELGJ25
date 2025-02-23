@@ -42,6 +42,8 @@ public class Player : MonoBehaviour
     public void AddHealth(int amount)
     {
         m_health += amount;
+        OnTakeDamage?.Invoke(m_health);
+
     }
 
     public void RemoveHealth(int amount)

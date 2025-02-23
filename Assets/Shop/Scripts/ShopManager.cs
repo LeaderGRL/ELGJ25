@@ -72,6 +72,7 @@ public class ShopManager : MonoBehaviour
 
             foreach (var effect in item.itemObject.itemEffects)
             {
+                Debug.Log("Applying effect: " + effect.name);
                 effect.ApplyEffect();
             }
 
