@@ -5,19 +5,20 @@ using System.Text;
 using NaughtyAttributes;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "GridGenerationData", menuName = "Scriptable Objects/GridGenerationData")]
-public class GridGenerationData : ScriptableObject
+[CreateAssetMenu(fileName = "WordsGenerationDatabase", menuName = "Scriptable Objects/GridGenerationData")]
+public class WordsGenerationDatabase : ScriptableObject
 {
 
     [field: SerializeField] 
     public int NumWordsToGenerate { get; private set; }
-    
+
+    [SerializeField] private string m_path = "/0_Crossatro/Database/";
     public string FileName = "Words.json";
     public WordDatabaseJSON Database;
     [Button("Load Database")]
     public void LoadDataBase()
     {
-        string filePath = Path.Combine(Application.dataPath + "/Database/", FileName);
+        string filePath = Path.Combine(Application.dataPath + m_path, FileName);
         if (File.Exists(filePath))
         {
             string dataAsJson = File.ReadAllText(filePath);

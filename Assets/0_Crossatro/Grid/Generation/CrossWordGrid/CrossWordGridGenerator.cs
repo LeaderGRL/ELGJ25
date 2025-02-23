@@ -2,12 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 public class CrossWordGridGenerator : MonoBehaviour
 {
-    [SerializeField] 
-    private GridGenerationData m_generationData;
+    [FormerlySerializedAs("m_generationData")] [SerializeField] 
+    private WordsGenerationDatabase mGenerationDatabase;
 
     [SerializeField] 
     private LetterTile m_letterTilePrefab;
@@ -26,8 +27,8 @@ public class CrossWordGridGenerator : MonoBehaviour
     private void Start()
     {
         m_board = Board.GetInstance();
-        m_crossWordsGameGrid = CharacterPlacementGenerator.GenerateCharPlacements(m_generationData.Database,
-            m_generationData.NumWordsToGenerate, "");
+        m_crossWordsGameGrid = CharacterPlacementGenerator.GenerateCharPlacements(mGenerationDatabase.Database,
+            mGenerationDatabase.NumWordsToGenerate, "");
         m_crossWordsGameGrid.OnValidateAllWorlds += OnValidateAllWordsCallback;
         m_crossWordsGameGrid.OnAddWord += GenerateWord;
         m_board.SetGrid(m_crossWordsGameGrid);
@@ -48,7 +49,7 @@ public class CrossWordGridGenerator : MonoBehaviour
     private void OnValidateAllWordsCallback(GridWord lastWord)
     {
         CharacterPlacementGenerator.GenrateCharPlacementsForExistingGrid(
-            m_generationData.Database, 5, "", m_crossWordsGameGrid, lastWord, (() => OnEndGridGeneration?.Invoke(m_crossWordsGameGrid)));
+            mGenerationDatabase.Database, 5, "", m_crossWordsGameGrid, lastWord, (() => OnEndGridGeneration?.Invoke(m_crossWordsGameGrid)));
     }
 
     private void GenerateWord(GridWord newWord)

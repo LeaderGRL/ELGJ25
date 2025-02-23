@@ -26,9 +26,10 @@ public class Board : MonoBehaviour
     [SerializeField]
     private ShopTile m_shopTilePrefab;
 
+    [FormerlySerializedAs("m_generationData")]
     [FormerlySerializedAs("generationData")]
     [SerializeField]
-    private GridGenerationData m_generationData;
+    private WordsGenerationDatabase mGenerationDatabase;
 
     [FormerlySerializedAs("_inputField")]
     [SerializeField]
@@ -118,8 +119,8 @@ public class Board : MonoBehaviour
     private void CreateGrid()
     {
         _mCrossWordsGameGrid = CharacterPlacementGenerator.GenerateCharPlacements(
-            m_generationData.Database,
-            m_generationData.NumWordsToGenerate,
+            mGenerationDatabase.Database,
+            mGenerationDatabase.NumWordsToGenerate,
             ""
         );
     }
