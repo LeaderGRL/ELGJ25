@@ -1,4 +1,4 @@
-using UnityEngine;
+ using UnityEngine;
 
 [CreateAssetMenu(fileName = "RevealSpecificLetterEffect", menuName = "Item Effects/Reveal specific Letter effect")]
 public class RevealSpecificLetterEffect : ItemEffectObject
