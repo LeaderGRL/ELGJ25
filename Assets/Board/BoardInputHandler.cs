@@ -185,16 +185,16 @@ public class BoardInputHandler : MonoBehaviour
     private void SetupInputFieldForWord(GridWord word)
     {
         var unlockedTiles = word.GetAllLetterCurrentWordPositions()
-            .Where(kvp => !IsTileLocked(kvp.Key))
+            .Where(kvp => !m_board.IsTileLocked(kvp.Key))
             .ToList();
 
-        string inputText = "";
-        foreach (var pos in word.GetAllLetterSolutionPositions().Keys.OrderBy(p => p.x + p.y))
-        {
-            inputText += IsTileLocked(pos) ? " " : word.GetCurrentLetterAtLocation(pos);
-        }
+        //string inputText = "";
+        //foreach (var pos in word.GetAllLetterSolutionPositions().Keys.OrderBy(p => p.x + p.y))
+        //{
+        //    inputText += IsTileLocked(pos) ? " " : word.GetCurrentLetterAtLocation(pos);
+        //}
 
-        m_inputField.text = inputText.Trim();
+        m_inputField.text = string.Join("", unlockedTiles.Select(kvp => kvp.Value));
         m_inputField.characterLimit = unlockedTiles.Count;
         m_inputField.caretPosition = m_inputField.text.Length;
     }

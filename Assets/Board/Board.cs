@@ -365,7 +365,6 @@ public class Board : MonoBehaviour
             UpdateTileVisual(pos);
             UpdateTileState(pos, TileState.Validated);
 
-            // Mettre à jour l'état de verrouillage
             if (m_tiles.TryGetValue(pos, out GameObject tile))
             {
                 tile.layer = LayerMask.NameToLayer("Validate");
