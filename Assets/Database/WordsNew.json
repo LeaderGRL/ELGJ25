@@ -1,0 +1,960 @@
+{
+    "words": [
+      {
+        "word": "aventure",
+        "description": "Un périple épique rempli de défis et d'inattendus.",
+        "difficulty": 5
+      },
+      {
+        "word": "mystère",
+        "description": "Quelque chose d'inexpliqué et de surprenant, enveloppé de secrets.",
+        "difficulty": 7
+      },
+      {
+        "word": "énigme",
+        "description": "Un problème ou une question difficile à résoudre.",
+        "difficulty": 6
+      },
+      {
+        "word": "labyrinthe",
+        "description": "Un dédale complexe et déroutant qui défie l'orientation.",
+        "difficulty": 8
+      },
+      {
+        "word": "périple",
+        "description": "Un long voyage rempli d'aventures et de découvertes.",
+        "difficulty": 4
+      },
+      {
+        "word": "destin",
+        "description": "Ce qui est inévitablement écrit pour chacun, parfois mystérieux.",
+        "difficulty": 2
+      },
+      {
+        "word": "héroïsme",
+        "description": "La qualité d'un héros, alliant bravoure et sacrifice.",
+        "difficulty": 5
+      },
+      {
+        "word": "courage",
+        "description": "La force de surmonter la peur et les obstacles.",
+        "difficulty": 3
+      },
+      {
+        "word": "mythologie",
+        "description": "L'étude et la collection des mythes et légendes d'un peuple.",
+        "difficulty": 6
+      },
+      {
+        "word": "légende",
+        "description": "Une histoire ancienne, souvent embellie, transmise de génération en génération.",
+        "difficulty": 4
+      },
+      {
+        "word": "saga",
+        "description": "Une longue histoire épique, souvent familiale, pleine d'aventures.",
+        "difficulty": 7
+      },
+      {
+        "word": "quête",
+        "description": "La recherche passionnée d'un objectif ou d'un trésor.",
+        "difficulty": 5
+      },
+      {
+        "word": "sortilège",
+        "description": "Un enchantement ou maléfice magique exercé par un sorcier.",
+        "difficulty": 8
+      },
+      {
+        "word": "magie",
+        "description": "L'art de manipuler des forces surnaturelles pour produire des effets étonnants.",
+        "difficulty": 4
+      },
+      {
+        "word": "illusion",
+        "description": "Une perception erronée de la réalité, souvent trompeuse.",
+        "difficulty": 6
+      },
+      {
+        "word": "ombre",
+        "description": "L'absence de lumière, souvent associée à des symboliques obscures.",
+        "difficulty": 2
+      },
+      {
+        "word": "lueur",
+        "description": "Un faible éclat de lumière, porteur d'espoir dans l'obscurité.",
+        "difficulty": 3
+      },
+      {
+        "word": "éclipse",
+        "description": "Le phénomène céleste où un astre masque partiellement ou totalement un autre.",
+        "difficulty": 7
+      },
+      {
+        "word": "cosmos",
+        "description": "L'ensemble de l'univers, d'une immensité et complexité infinies.",
+        "difficulty": 9
+      },
+      {
+        "word": "galaxie",
+        "description": "Un vaste ensemble d'étoiles, de gaz et de poussières interstellaires.",
+        "difficulty": 8
+      },
+      {
+        "word": "infini",
+        "description": "Ce qui n'a pas de limite, une notion abstraite et vaste.",
+        "difficulty": 9
+      },
+      {
+        "word": "paradoxe",
+        "description": "Une contradiction apparente qui défie la logique conventionnelle.",
+        "difficulty": 8
+      },
+      {
+        "word": "destinée",
+        "description": "La force mystérieuse qui semble guider la vie de chacun.",
+        "difficulty": 5
+      },
+      {
+        "word": "prophétie",
+        "description": "Une prédiction concernant l'avenir, souvent formulée de manière énigmatique.",
+        "difficulty": 7
+      },
+      {
+        "word": "oracle",
+        "description": "Une personne ou entité réputée capable de prédire l'avenir.",
+        "difficulty": 6
+      },
+      {
+        "word": "sorcellerie",
+        "description": "La pratique de la magie noire ou occulte, entourée de mystère.",
+        "difficulty": 8
+      },
+      {
+        "word": "élixir",
+        "description": "Une potion magique, capable de guérir ou d'accorder des pouvoirs.",
+        "difficulty": 5
+      },
+      {
+        "word": "amitié",
+        "description": "Un lien de confiance et d'affection entre personnes, précieux et sincère.",
+        "difficulty": 1
+      },
+      {
+        "word": "trahison",
+        "description": "L'acte de rompre la confiance en déloyauté envers quelqu'un.",
+        "difficulty": 6
+      },
+      {
+        "word": "révélation",
+        "description": "La découverte soudaine d'une vérité jusque-là cachée.",
+        "difficulty": 4
+      },
+      {
+        "word": "secret",
+        "description": "Une information ou réalité gardée cachée des regards.",
+        "difficulty": 3
+      },
+      {
+        "word": "mélancolie",
+        "description": "Un état de tristesse douce et profonde, souvent nostalgique.",
+        "difficulty": 5
+      },
+      {
+        "word": "jubilation",
+        "description": "Une joie intense, exubérante et contagieuse.",
+        "difficulty": 2
+      },
+      {
+        "word": "conspiration",
+        "description": "Un plan secret, souvent ourdi par plusieurs personnes dans l'ombre.",
+        "difficulty": 8
+      },
+      {
+        "word": "rédemption",
+        "description": "Le processus par lequel quelqu'un se rachète après une faute.",
+        "difficulty": 7
+      },
+      {
+        "word": "exil",
+        "description": "L'acte d'être contraint de quitter sa patrie ou sa demeure.",
+        "difficulty": 6
+      },
+      {
+        "word": "destitution",
+        "description": "Le retrait brutal d'un pouvoir ou d'une position d'autorité.",
+        "difficulty": 8
+      },
+      {
+        "word": "utopie",
+        "description": "Une société idéale, souvent irréalisable dans la réalité.",
+        "difficulty": 9
+      },
+      {
+        "word": "dystopie",
+        "description": "Une société imaginaire où règnent l'oppression et le chaos.",
+        "difficulty": 9
+      },
+      {
+        "word": "épopée",
+        "description": "Une œuvre littéraire racontant des exploits héroïques sur une grande échelle.",
+        "difficulty": 7
+      },
+      {
+        "word": "sérendipité",
+        "description": "La capacité de faire des découvertes heureuses et inattendues.",
+        "difficulty": 9
+      },
+      {
+        "word": "émerveillement",
+        "description": "L'état d'être émerveillé par la beauté ou la grandeur.",
+        "difficulty": 4
+      },
+      {
+        "word": "persévérance",
+        "description": "La capacité de continuer malgré les obstacles.",
+        "difficulty": 5
+      },
+      {
+        "word": "sagesse",
+        "description": "La connaissance profonde acquise par l'expérience.",
+        "difficulty": 3
+      },
+      {
+        "word": "innovation",
+        "description": "L'introduction de nouvelles idées ou méthodes.",
+        "difficulty": 6
+      },
+      {
+        "word": "créativité",
+        "description": "La capacité de créer ou d'inventer quelque chose de nouveau.",
+        "difficulty": 4
+      },
+      {
+        "word": "perplexité",
+        "description": "L'état d'être confus ou déconcerté face à une situation.",
+        "difficulty": 7
+      },
+      {
+        "word": "transcendance",
+        "description": "Le fait de dépasser les limites de l'expérience humaine.",
+        "difficulty": 8
+      },
+      {
+        "word": "volonté",
+        "description": "La force intérieure qui permet de poursuivre ses objectifs.",
+        "difficulty": 3
+      },
+      {
+        "word": "résilience",
+        "description": "La capacité de se remettre d'une difficulté ou d'un traumatisme.",
+        "difficulty": 5
+      },
+      {
+        "word": "harmonie",
+        "description": "L'équilibre parfait entre différents éléments.",
+        "difficulty": 2
+      },
+      {
+        "word": "tempête",
+        "description": "Un phénomène météorologique violent et tumultueux.",
+        "difficulty": 7
+      },
+      {
+        "word": "murmure",
+        "description": "Un son doux et léger, à peine perceptible.",
+        "difficulty": 2
+      },
+      {
+        "word": "écho",
+        "description": "Le retour d'un son dans un environnement réverbérant.",
+        "difficulty": 3
+      },
+      {
+        "word": "subtilité",
+        "description": "La finesse et la délicatesse dans l'expression ou la perception.",
+        "difficulty": 6
+      },
+      {
+        "word": "vibration",
+        "description": "Un mouvement oscillatoire régulier qui peut être ressenti.",
+        "difficulty": 5
+      },
+      {
+        "word": "transformation",
+        "description": "Le processus de changement ou de métamorphose.",
+        "difficulty": 7
+      },
+      {
+        "word": "évasion",
+        "description": "L'acte de fuir ou de s'échapper d'une situation oppressante.",
+        "difficulty": 4
+      },
+      {
+        "word": "espoir",
+        "description": "La croyance en un avenir meilleur malgré les difficultés.",
+        "difficulty": 2
+      },
+      {
+        "word": "fascination",
+        "description": "L'attraction intense pour quelque chose d'extraordinaire.",
+        "difficulty": 6
+      },
+      {
+        "word": "métamorphose",
+        "description": "La transformation profonde d'une chose en une nouvelle forme.",
+        "difficulty": 8
+      },
+      {
+        "word": "contingence",
+        "description": "La notion d'événements fortuits sans cause déterminée.",
+        "difficulty": 7
+      },
+      {
+        "word": "synchronicité",
+        "description": "La coïncidence significative d'événements qui semblent liés.",
+        "difficulty": 9
+      },
+      {
+        "word": "spiritualité",
+        "description": "La quête d'une connexion avec le transcendant ou le sacré.",
+        "difficulty": 5
+      },
+      {
+        "word": "mysticisme",
+        "description": "La recherche d'une expérience directe du divin ou de l'inexprimable.",
+        "difficulty": 8
+      },
+      {
+        "word": "dualité",
+        "description": "La coexistence de deux aspects opposés ou complémentaires.",
+        "difficulty": 4
+      },
+      {
+        "word": "fragmentation",
+        "description": "La division ou la décomposition d'un ensemble en parties plus petites.",
+        "difficulty": 7
+      },
+      {
+        "word": "intemporalité",
+        "description": "La qualité de ce qui est en dehors du temps, éternel.",
+        "difficulty": 9
+      },
+      {
+        "word": "nostalgie",
+        "description": "Le sentiment de regret et de mélancolie lié au passé.",
+        "difficulty": 3
+      },
+      {
+        "word": "vigilance",
+        "description": "L'attention soutenue pour prévenir un danger.",
+        "difficulty": 4
+      },
+      {
+        "word": "émergence",
+        "description": "L'apparition soudaine ou progressive d'un phénomène.",
+        "difficulty": 6
+      },
+      {
+        "word": "complexité",
+        "description": "L'état d'être composé de multiples éléments interconnectés.",
+        "difficulty": 8
+      },
+      {
+        "word": "fluidité",
+        "description": "La capacité de s'adapter et de changer sans heurts.",
+        "difficulty": 3
+      },
+      {
+        "word": "vitalité",
+        "description": "L'énergie, la force de vivre et d'agir.",
+        "difficulty": 5
+      },
+      {
+        "word": "dynamisme",
+        "description": "L'énergie et le mouvement constants qui animent un système.",
+        "difficulty": 4
+      },
+      {
+        "word": "émergence",
+        "description": "L'apparition soudaine d'un phénomène ou d'une idée.",
+        "difficulty": 6
+      },
+      {
+        "word": "rêverie",
+        "description": "Un état de méditation ou d'errance de l'esprit.",
+        "difficulty": 3
+      },
+      {
+        "word": "sérénité",
+        "description": "Un sentiment de calme et de paix intérieure.",
+        "difficulty": 2
+      },
+      {
+        "word": "élan",
+        "description": "Une impulsion vive ou une énergie déterminée pour agir.",
+        "difficulty": 4
+      },
+      {
+        "word": "cadence",
+        "description": "Le rythme régulier dans une séquence d'événements ou de sons.",
+        "difficulty": 5
+      },
+      {
+        "word": "crépuscule",
+        "description": "La période de la journée où la lumière décline, entre jour et nuit.",
+        "difficulty": 6
+      },
+      {
+        "word": "aurore",
+        "description": "Le moment où le jour se lève et apporte la lumière.",
+        "difficulty": 4
+      },
+      {
+        "word": "fantaisie",
+        "description": "L'imagination créative qui dépasse la réalité ordinaire.",
+        "difficulty": 5
+      },
+      {
+        "word": "exaltation",
+        "description": "Un sentiment intense de joie ou d'enthousiasme.",
+        "difficulty": 7
+      },
+      {
+        "word": "ruée",
+        "description": "Une affluence soudaine et massive vers un lieu ou une idée.",
+        "difficulty": 6
+      },
+      {
+        "word": "pénombre",
+        "description": "La zone d'ombre partielle entre la lumière et l'obscurité.",
+        "difficulty": 3
+      },
+      {
+        "word": "iridescence",
+        "description": "La qualité de montrer des couleurs changeantes en fonction de l'angle de vue.",
+        "difficulty": 8
+      },
+      {
+        "word": "sillage",
+        "description": "La trace laissée par quelque chose en mouvement, comme un navire ou une odeur.",
+        "difficulty": 4
+      },
+      {
+        "word": "tempérance",
+        "description": "La vertu de modérer ses actions ou ses passions.",
+        "difficulty": 5
+      },
+      {
+        "word": "vicissitude",
+        "description": "Les changements imprévus et souvent difficiles dans la vie.",
+        "difficulty": 7
+      },
+      {
+        "word": "fractale",
+        "description": "Une structure géométrique complexe qui se répète à différentes échelles.",
+        "difficulty": 8
+      },
+      {
+        "word": "omniscience",
+        "description": "La connaissance illimitée de tout ce qui existe.",
+        "difficulty": 9
+      },
+      {
+        "word": "inconnu",
+        "description": "Ce qui n'est pas connu ou identifié, mystérieux par essence.",
+        "difficulty": 4
+      },
+      {
+        "word": "énigmatique",
+        "description": "Qui est difficile à comprendre ou à interpréter.",
+        "difficulty": 6
+      },
+      {
+        "word": "abstraction",
+        "description": "La capacité de penser en termes généraux, sans se focaliser sur les détails concrets.",
+        "difficulty": 7
+      },
+      {
+        "word": "oscillation",
+        "description": "Un mouvement régulier d'aller-retour ou de fluctuation.",
+        "difficulty": 5
+      },
+      {
+        "word": "holographie",
+        "description": "La technique permettant de créer des images tridimensionnelles par interférence lumineuse.",
+        "difficulty": 8
+      },
+      {
+        "word": "résonance",
+        "description": "L'amplification d'un signal ou d'une vibration par l'interaction avec un objet résonant.",
+        "difficulty": 6
+      },
+      {
+        "word": "transparence",
+        "description": "La qualité d'être clair et ouvert, sans dissimulation.",
+        "difficulty": 3
+      },
+      {
+        "word": "perspective",
+        "description": "La manière d'envisager ou de voir un sujet en fonction de son point de vue.",
+        "difficulty": 4
+      },
+      {
+        "word": "pulsation",
+        "description": "Un battement régulier, souvent associé à un rythme ou une vibration.",
+        "difficulty": 5
+      },
+      {
+        "word": "imagination",
+        "description": "La faculté de créer des images ou des idées qui ne sont pas directement liées à la réalité.",
+        "difficulty": 4
+      },
+      {
+        "word": "dilemme",
+        "description": "Une situation où l'on doit choisir entre deux options difficiles.",
+        "difficulty": 6
+      },
+      {
+        "word": "évanescence",
+        "description": "La nature éphémère de quelque chose qui disparaît rapidement.",
+        "difficulty": 7
+      },
+      {
+        "word": "mirage",
+        "description": "Une illusion optique souvent observée dans des conditions extrêmes.",
+        "difficulty": 6
+      },
+      {
+        "word": "sublimation",
+        "description": "La transformation d'une impulsion ou d'un désir en une activité socialement valorisée.",
+        "difficulty": 8
+      },
+      {
+        "word": "convergence",
+        "description": "Le rapprochement de plusieurs éléments vers un point commun.",
+        "difficulty": 5
+      },
+      {
+        "word": "divergence",
+        "description": "La dispersion ou l'éloignement d'éléments qui étaient initialement groupés.",
+        "difficulty": 5
+      },
+      {
+        "word": "cacophonie",
+        "description": "Un mélange discordant de sons, souvent désagréable à l'oreille.",
+        "difficulty": 7
+      },
+      {
+        "word": "solitude",
+        "description": "L'état de se trouver seul, avec ses propres pensées.",
+        "difficulty": 4
+      },
+      {
+        "word": "épanouissement",
+        "description": "Le processus de développement et de réalisation de soi.",
+        "difficulty": 5
+      },
+      {
+        "word": "révolution",
+        "description": "Un changement radical et souvent soudain dans un système ou une société.",
+        "difficulty": 8
+      },
+      {
+        "word": "mutation",
+        "description": "Un changement profond dans la structure ou la nature d'une entité.",
+        "difficulty": 7
+      },
+      {
+        "word": "chat",
+        "description": "Un petit animal domestique qui miaule.",
+        "difficulty": 1
+      },
+      {
+        "word": "chien",
+        "description": "Un animal domestique qui aboie.",
+        "difficulty": 1
+      },
+      {
+        "word": "maison",
+        "description": "Un lieu où l'on habite.",
+        "difficulty": 1
+      },
+      {
+        "word": "arbre",
+        "description": "Une plante avec un tronc et des branches.",
+        "difficulty": 1
+      },
+      {
+        "word": "fleur",
+        "description": "La partie colorée d'une plante, souvent odorante.",
+        "difficulty": 1
+      },
+      {
+        "word": "soleil",
+        "description": "L'astre qui éclaire le jour.",
+        "difficulty": 1
+      },
+      {
+        "word": "lune",
+        "description": "L'astre qui brille la nuit.",
+        "difficulty": 1
+      },
+      {
+        "word": "eau",
+        "description": "Un liquide indispensable à la vie.",
+        "difficulty": 1
+      },
+      {
+        "word": "pain",
+        "description": "Un aliment de base fait de farine et d'eau.",
+        "difficulty": 1
+      },
+      {
+        "word": "lait",
+        "description": "Un liquide blanc produit par les mammifères.",
+        "difficulty": 1
+      },
+      {
+        "word": "table",
+        "description": "Un meuble plat utilisé pour manger ou travailler.",
+        "difficulty": 1
+      },
+      {
+        "word": "chaise",
+        "description": "Un meuble pour s'asseoir.",
+        "difficulty": 1
+      },
+      {
+        "word": "livre",
+        "description": "Un recueil de pages imprimées reliées ensemble.",
+        "difficulty": 1
+      },
+      {
+        "word": "porte",
+        "description": "Un objet permettant d'entrer ou de sortir d'une pièce.",
+        "difficulty": 1
+      },
+      {
+        "word": "nez",
+        "description": "L'organe de l'odorat sur le visage.",
+        "difficulty": 1
+      },
+      {
+        "word": "yeux",
+        "description": "Les organes de la vue.",
+        "difficulty": 1
+      },
+      {
+        "word": "bouche",
+        "description": "La partie du visage utilisée pour manger et parler.",
+        "difficulty": 1
+      },
+      {
+        "word": "pomme",
+        "description": "Un fruit rond, souvent rouge, vert ou jaune.",
+        "difficulty": 1
+      },
+      {
+        "word": "banane",
+        "description": "Un fruit long et jaune, doux et sucré.",
+        "difficulty": 1
+      },
+      {
+        "word": "vélo",
+        "description": "Un moyen de transport à deux roues, propulsé par la force humaine.",
+        "difficulty": 1
+      },
+      {
+        "word": "bus",
+        "description": "Un véhicule de transport en commun.",
+        "difficulty": 1
+      },
+      {
+        "word": "train",
+        "description": "Un moyen de transport sur rail.",
+        "difficulty": 1
+      },
+      {
+        "word": "route",
+        "description": "Un chemin pour la circulation des véhicules.",
+        "difficulty": 1
+      },
+      {
+        "word": "école",
+        "description": "Un lieu où les enfants vont apprendre.",
+        "difficulty": 1
+      },
+      {
+        "word": "ami",
+        "description": "Une personne avec qui on partage des moments agréables.",
+        "difficulty": 1
+      },
+      {
+        "word": "jouet",
+        "description": "Un objet utilisé pour jouer, souvent par les enfants.",
+        "difficulty": 1
+      },
+      {
+        "word": "ballon",
+        "description": "Un objet sphérique utilisé pour jouer, par exemple au football.",
+        "difficulty": 1
+      },
+      {
+        "word": "clé",
+        "description": "Un objet servant à ouvrir ou fermer une serrure.",
+        "difficulty": 1
+      },
+      {
+        "word": "voiture",
+        "description": "Un véhicule motorisé utilisé pour se déplacer rapidement.",
+        "difficulty": 1
+      },
+      {
+        "word": "bicyclette",
+        "description": "Un moyen de transport à deux roues propulsé par le pédalage.",
+        "difficulty": 1
+      },
+      {
+        "word": "parc",
+        "description": "Un espace vert public où les gens se détendent et jouent.",
+        "difficulty": 1
+      },
+      {
+        "word": "jardin",
+        "description": "Un petit espace extérieur où poussent des fleurs et des légumes.",
+        "difficulty": 1
+      },
+      {
+        "word": "nuage",
+        "description": "Une masse de vapeur d'eau visible dans le ciel.",
+        "difficulty": 1
+      },
+      {
+        "word": "pluie",
+        "description": "De l'eau qui tombe du ciel sous forme de gouttes.",
+        "difficulty": 1
+      },
+      {
+        "word": "neige",
+        "description": "Des flocons blancs qui tombent en hiver et recouvrent le sol.",
+        "difficulty": 1
+      },
+      {
+        "word": "oiseau",
+        "description": "Un animal qui vole et qui chante souvent dans les arbres.",
+        "difficulty": 1
+      },
+      {
+        "word": "poisson",
+        "description": "Un animal qui vit dans l'eau et qui nage.",
+        "difficulty": 1
+      },
+      {
+        "word": "montagne",
+        "description": "Une grande élévation de terrain, parfois recouverte de neige.",
+        "difficulty": 1
+      },
+      {
+        "word": "rivière",
+        "description": "Un cours d'eau naturel qui coule vers la mer ou un lac.",
+        "difficulty": 1
+      },
+      {
+        "word": "forêt",
+        "description": "Une vaste zone peuplée d'arbres et de végétation.",
+        "difficulty": 1
+      },
+      {
+        "word": "ville",
+        "description": "Un endroit densément peuplé avec de nombreux bâtiments et rues.",
+        "difficulty": 1
+      },
+      {
+        "word": "campagne",
+        "description": "Une zone rurale avec des champs, des fermes et peu de bâtiments.",
+        "difficulty": 1
+      },
+      {
+        "word": "chemin",
+        "description": "Un petit sentier ou voie empruntée pour se déplacer.",
+        "difficulty": 1
+      },
+      {
+        "word": "montre",
+        "description": "Un appareil que l'on porte pour connaître l'heure.",
+        "difficulty": 1
+      },
+      {
+        "word": "fenêtre",
+        "description": "Un ouvrant dans un mur qui permet de voir à l'extérieur.",
+        "difficulty": 1
+      },
+      {
+        "word": "ordinateur",
+        "description": "Une machine électronique utilisée pour traiter et afficher des informations.",
+        "difficulty": 1
+      },
+      {
+        "word": "téléphone",
+        "description": "Un appareil permettant de communiquer à distance par la voix.",
+        "difficulty": 1
+      },
+      {
+        "word": "chaussure",
+        "description": "Un accessoire porté aux pieds pour marcher confortablement.",
+        "difficulty": 1
+      },
+      {
+        "word": "rose",
+        "description": "Une fleur colorée, symbole de l'amour.",
+        "difficulty": 1
+      },
+      {
+        "word": "ciel",
+        "description": "L'espace au-dessus de nous, où flottent les nuages.",
+        "difficulty": 1
+      },
+      {
+        "word": "mer",
+        "description": "Une vaste étendue d'eau salée.",
+        "difficulty": 1
+      },
+      {
+        "word": "plage",
+        "description": "Un endroit de sable près de l'océan.",
+        "difficulty": 1
+      },
+      {
+        "word": "nuage",
+        "description": "Une accumulation de vapeur d'eau dans le ciel.",
+        "difficulty": 1
+      },
+      {
+        "word": "arbre",
+        "description": "Une grande plante avec un tronc et des branches.",
+        "difficulty": 1
+      },
+      {
+        "word": "chemin",
+        "description": "Une voie pour se déplacer d'un endroit à un autre.",
+        "difficulty": 1
+      },
+      {
+        "word": "cœur",
+        "description": "L'organe qui pompe le sang, symbole d'amour.",
+        "difficulty": 1
+      },
+      {
+        "word": "rire",
+        "description": "L'expression de joie avec des sons amusants.",
+        "difficulty": 1
+      },
+      {
+        "word": "joie",
+        "description": "Un sentiment de grand bonheur.",
+        "difficulty": 1
+      },
+      {
+        "word": "chanson",
+        "description": "Un morceau de musique avec des paroles chantées.",
+        "difficulty": 1
+      },
+      {
+        "word": "soleil",
+        "description": "L'astre qui éclaire notre journée.",
+        "difficulty": 1
+      },
+      {
+        "word": "pluie",
+        "description": "De l'eau qui tombe du ciel en gouttes.",
+        "difficulty": 1
+      },
+      {
+        "word": "vent",
+        "description": "Le mouvement de l'air.",
+        "difficulty": 1
+      },
+      {
+        "word": "neige",
+        "description": "Des flocons blancs qui tombent en hiver.",
+        "difficulty": 1
+      },
+      {
+        "word": "pomme",
+        "description": "Un fruit rond, souvent rouge, vert ou jaune.",
+        "difficulty": 1
+      },
+      {
+        "word": "banane",
+        "description": "Un fruit long et jaune, sucré et doux.",
+        "difficulty": 1
+      },
+      {
+        "word": "orange",
+        "description": "Un fruit juteux, riche en vitamine C.",
+        "difficulty": 1
+      },
+      {
+        "word": "tableau",
+        "description": "Une image ou une peinture encadrée.",
+        "difficulty": 1
+      },
+      {
+        "word": "stylo",
+        "description": "Un instrument pour écrire avec de l'encre.",
+        "difficulty": 1
+      },
+      {
+        "word": "crayon",
+        "description": "Un outil pour écrire ou dessiner, souvent en graphite.",
+        "difficulty": 1
+      },
+      {
+        "word": "radio",
+        "description": "Un appareil qui diffuse de la musique et des informations.",
+        "difficulty": 1
+      },
+      {
+        "word": "télévision",
+        "description": "Un appareil pour regarder des images animées.",
+        "difficulty": 1
+      },
+      {
+        "word": "chapeau",
+        "description": "Un accessoire porté sur la tête pour se protéger du soleil.",
+        "difficulty": 1
+      },
+      {
+        "word": "vêtement",
+        "description": "Des habits portés pour se couvrir et se protéger.",
+        "difficulty": 1
+      },
+      {
+        "word": "sac",
+        "description": "Un accessoire pour transporter des objets.",
+        "difficulty": 1
+      },
+      {
+        "word": "montagne",
+        "description": "Une grande élévation naturelle avec un sommet.",
+        "difficulty": 1
+      },
+      {
+        "word": "rivière",
+        "description": "Un petit fleuve qui coule à travers le paysage.",
+        "difficulty": 1
+      },
+      {
+        "word": "étoile",
+        "description": "Un corps céleste qui brille dans le ciel la nuit.",
+        "difficulty": 1
+      },
+      {
+        "word": "lumière",
+        "description": "Ce qui permet de voir, émise par le soleil ou une lampe.",
+        "difficulty": 1
+      }
+    ]
+  }
+  
