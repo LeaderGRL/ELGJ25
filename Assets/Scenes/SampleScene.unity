@@ -1931,6 +1931,7 @@ MonoBehaviour:
   m_player: {fileID: 13066446}
   m_healthController: {fileID: 616562997}
   m_coinController: {fileID: 26497682}
+  m_scoreController: {fileID: 1960455756}
   m_selectAction: {fileID: 6841872322419951025, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_inputField: {fileID: 563832619}
   m_inputCooldown: 0.1
@@ -3689,6 +3690,8 @@ GameObject:
   - component: {fileID: 1960455754}
   - component: {fileID: 1960455753}
   - component: {fileID: 1960455752}
+  - component: {fileID: 1960455756}
+  - component: {fileID: 1960455755}
   m_Layer: 5
   m_Name: ScorePanel
   m_TagString: Untagged
@@ -3780,6 +3783,33 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1960455750}
   m_CullTransparentMesh: 1
+--- !u!114 &1960455755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1960455750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 915b8ea414127e64284a4da56f8db2e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreText: {fileID: 177635504}
+--- !u!114 &1960455756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1960455750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97ed2515d3d19d54f8909a916d46de92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 13066446}
+  ScoreView: {fileID: 1960455755}
 --- !u!1 &1969554609
 GameObject:
   m_ObjectHideFlags: 0

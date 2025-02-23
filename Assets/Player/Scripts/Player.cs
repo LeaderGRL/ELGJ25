@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
     private int m_coins = 3;
 
     public event Action<int> OnTakeDamage;
-    public event Action<int> OnChangeScore; 
+    public event Action<int> OnScoreChange; 
     public event Action<int> OnCoinChange;
 
     public void TakeDamage(int damage)
@@ -30,13 +30,13 @@ public class Player : MonoBehaviour
     public void AddScore(int amount)
     {
         m_score += amount;
-        OnChangeScore?.Invoke(m_score);
+        OnScoreChange?.Invoke(m_score);
     }
 
     public void RemoveScore(int amount)
     {
         m_score -= amount;
-        OnChangeScore?.Invoke(m_score);
+        OnScoreChange?.Invoke(m_score);
     }
 
     public void AddHealth(int amount)
