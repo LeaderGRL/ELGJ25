@@ -17,11 +17,14 @@ namespace Crossatro.UserInterface.GameOver.Scripts
         private void OnTimerFinishedCallback()
         {
             m_panel.SetActive(true);
+            Time.timeScale = 0;
         }
 
         public void RestartGame()
         {
             string currentSceneName = SceneManager.GetActiveScene().name;
+            Time.timeScale = 1;
+
             SceneManager.LoadScene(currentSceneName);
         }
     }
