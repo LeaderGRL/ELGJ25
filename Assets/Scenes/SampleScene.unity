@@ -2810,7 +2810,7 @@ PrefabInstance:
     - target: {fileID: 3768149870756016092, guid: caf269ccf1747c14c8f43b0b2621da6a, type: 3}
       propertyPath: m_ActionEvents.Array.data[20].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1782687962}
     - target: {fileID: 3768149870756016092, guid: caf269ccf1747c14c8f43b0b2621da6a, type: 3}
       propertyPath: m_ActionEvents.Array.data[20].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -2844,6 +2844,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: caf269ccf1747c14c8f43b0b2621da6a, type: 3}
+--- !u!114 &1575694550 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8490332025497383679, guid: 0b11a40a59d7ef941a1879b8ad50fd47, type: 3}
+  m_PrefabInstance: {fileID: 979188400990852592}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7fa070262f153443adf30381c624b17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1583613597
 GameObject:
   m_ObjectHideFlags: 0
@@ -3276,6 +3287,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7582309682713919826, guid: 5dd541a3275703b4cbd3571b7158c791, type: 3}
+      propertyPath: m_cameraTarget
+      value: 
+      objectReference: {fileID: 438506969}
+    - target: {fileID: 7582309682713919826, guid: 5dd541a3275703b4cbd3571b7158c791, type: 3}
+      propertyPath: m_crossGridGenerator
+      value: 
+      objectReference: {fileID: 1575694550}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3286,6 +3305,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5638462108682764619, guid: 5dd541a3275703b4cbd3571b7158c791, type: 3}
   m_PrefabInstance: {fileID: 1782687959}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1782687962 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7582309682713919826, guid: 5dd541a3275703b4cbd3571b7158c791, type: 3}
+  m_PrefabInstance: {fileID: 1782687959}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 784b5382b6e82844cb468143c6da4370, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1826794241
 GameObject:
   m_ObjectHideFlags: 0
@@ -3882,7 +3912,7 @@ PrefabInstance:
     - target: {fileID: 7742188781084759031, guid: 0b11a40a59d7ef941a1879b8ad50fd47, type: 3}
       propertyPath: m_pCameraController
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1782687962}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
