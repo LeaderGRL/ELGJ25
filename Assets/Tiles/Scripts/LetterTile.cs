@@ -11,6 +11,7 @@ public class LetterTileObject : ScriptableObject
 {
     public char letter;
     public Sprite sprite;
+    public AudioClip popSfx;
 }
 
 public class LetterTile : Tile, IPointerClickHandler
@@ -69,6 +70,8 @@ public class LetterTile : Tile, IPointerClickHandler
             transform.DOBlendableMoveBy(new Vector3(0, -jumpPower, 0), jumpDuration / 2)
                      .SetEase(Ease.InQuad)
         );
+
+        SoundManager.Instance.PlaySfxWithRandomPitch(letterTileObject.popSfx, 0.8f, 1.2f);
     }
 
     public void OnPointerClick(PointerEventData eventData)

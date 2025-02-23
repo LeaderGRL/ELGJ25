@@ -5,26 +5,6 @@ public abstract class ItemEffectObject : ScriptableObject
     public abstract void ApplyEffect();
 }
 
-[CreateAssetMenu(fileName = "AddTimeEffect", menuName = "Item Effects/Add Time effect")]
-public class AddTimeEffect : ItemEffectObject
-{
-    public float timeToAdd = 30f;
-    public override void ApplyEffect()
-    {
-        EffectManager.GetInstance().ApplyTimerEffect(timeToAdd);
-    }
-}
-
-[CreateAssetMenu(fileName = "AddHealthEffect", menuName = "Item Effects/Add Health effect")]
-public class AddHealthEffect : ItemEffectObject
-{
-    public int healthToAdd = 1;
-    public override void ApplyEffect()
-    {
-        EffectManager.GetInstance().player.AddHealth(healthToAdd);
-    }
-}
-
 [CreateAssetMenu(fileName = "AddScoreEffect", menuName = "Item Effects/Add Score effect")]
 public class AddScoreEffect : ItemEffectObject
 {

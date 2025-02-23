@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
 {
     private int m_health = 100;
     private int m_score = 0;
-    private int m_coins = 3;
+    private int m_coins = 15;
 
     public event Action<int> OnTakeDamage;
     public event Action<int> OnScoreChange; 

@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Timer : MonoBehaviour
 {
-    public float timeRemaining = 60;
+    public float timeRemaining = 600;
     public bool timerIsRunning = false;
 
     public event Action OnTimerFinished;

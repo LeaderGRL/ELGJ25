@@ -9,9 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: A
-  m_EditorClassIdentifier: Assembly-CSharp::LetterTileObject
-  letter: 65
-  sprite: {fileID: 0}
-  popSfx: {fileID: 8300000, guid: 2667b02f14560814eac63f800bf16820, type: 3}
+  m_Script: {fileID: 11500000, guid: 6fdc654578078c443b4f814085746355, type: 3}
+  m_Name: AddHealthEffect
+  m_EditorClassIdentifier: 
+  healthToAdd: 10

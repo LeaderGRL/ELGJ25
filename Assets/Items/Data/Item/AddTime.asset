@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: AddTime
   m_EditorClassIdentifier: 
   itemName: Potion de temps
-  itemDescription: "Une potion qui vous ajoute du temps suppl\xE9mentaire pour votre
-    chasse aux mots"
+  itemDescription: "Une potion qui vous ajoute 300 secondes de temps suppl\xE9mentaire
+    pour votre chasse aux mots"
   itemSprite: {fileID: 21300000, guid: 8fa8909e89a734f48b35dbad28ada9e8, type: 3}
   itemPrice: 10
-  itemEffects: []
+  itemEffects:
+  - {fileID: 11400000, guid: fc967284d0af8b14d9920d3f983eeaeb, type: 2}

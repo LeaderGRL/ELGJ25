@@ -1,11 +1,13 @@
 using UnityEngine;
 
-public class EffectManager : MonoBehaviour
+public class 
+    EffectManager : MonoBehaviour
 {
     private static EffectManager instance;
 
     [Header("References")]
     public Player player;
+    public HealthController healthController;
     public Timer timer;
 
     private void Awake()
