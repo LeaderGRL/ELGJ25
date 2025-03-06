@@ -68,14 +68,6 @@ public class Board : MonoBehaviour
     {
         m_tiles = new Dictionary<Vector2Int, GameObject>();
         GenerateNewGrid();
-        //m_tiles = new Dictionary<Vector2Int, GameObject>();
-        //return;
-        //m_grid = CharacterPlacementGenerator.GenerateCharPlacements(m_generationData.Database,
-        //    m_generationData.NumWordsToGenerate, "");
-        //Vector2Int gridSize = m_grid.GetGridSize();
-        //SpawnAllTiles();
-
-        //OnGenerateGrid?.Invoke(m_grid);
     }
 
     private void Update()

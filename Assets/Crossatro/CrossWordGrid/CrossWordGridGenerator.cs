@@ -23,11 +23,17 @@ public class CrossWordGridGenerator : MonoBehaviour
 
     public event Action<CrossWordsGameGrid> OnEndGridGeneration = null;
 
+    private void Awake()
+    {
+        m_crossWordsGameGrid = CharacterPlacementGenerator.GenerateCharPlacements(m_generationData.Database,
+        m_generationData.NumWordsToGenerate, "");
+
+        Debug.Log("CrossWordsGameGrid: " + m_crossWordsGameGrid);
+    }
     private void Start()
     {
         m_board = Board.GetInstance();
-        m_crossWordsGameGrid = CharacterPlacementGenerator.GenerateCharPlacements(m_generationData.Database,
-            m_generationData.NumWordsToGenerate, "");
+
         m_crossWordsGameGrid.OnValidateAllWorlds += OnValidateAllWordsCallback;
         m_crossWordsGameGrid.OnAddWord += GenerateWord;
         m_board.SetGrid(m_crossWordsGameGrid);
@@ -49,6 +55,7 @@ public class CrossWordGridGenerator : MonoBehaviour
     {
         CharacterPlacementGenerator.GenrateCharPlacementsForExistingGrid(
             m_generationData.Database, 5, "", m_crossWordsGameGrid, lastWord, (() => OnEndGridGeneration?.Invoke(m_crossWordsGameGrid)));
+
     }
 
     private void GenerateWord(GridWord newWord)
@@ -67,5 +74,14 @@ public class CrossWordGridGenerator : MonoBehaviour
             m_board.PlaceTileRefacto(letterLocation.Key, newTile);
         }
 
+    }
+
+    public CrossWordsGameGrid GetCrossWordsGameGrid()
+    {
+        if (m_crossWordsGameGrid == null)
+        {
+            Debug.Log("CrossWordsGameGrid is nullllllllllllllllllllllllllll");
+        }
+        return m_crossWordsGameGrid;
     }
 }

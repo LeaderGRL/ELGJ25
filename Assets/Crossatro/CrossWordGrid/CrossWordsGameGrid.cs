@@ -77,6 +77,7 @@ public class CrossWordsGameGrid
         bool isAllWordValidated = CheckAllWordValidated();
         if (isAllWordValidated)
         {
+            Debug.Log("All words validated");
             OnValidateAllWorlds?.Invoke(word);
         }
     }

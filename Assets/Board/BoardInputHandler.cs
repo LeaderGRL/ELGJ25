@@ -106,7 +106,7 @@ public class BoardInputHandler : MonoBehaviour
             m_scoreController.AddScore(LetterWeight.GetLetterWeight(
                 m_currentSelectedWord.GetAllLetterSolutionPositions()[position]
             ));
-            Board.GetInstance().CheckForShopTile(position);
+            //Board.GetInstance().CheckForShopTile(position);
         }
 
         m_scoreController.AddScore(m_currentSelectedWord.Difficulty * 10);

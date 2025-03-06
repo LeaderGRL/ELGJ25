@@ -954,6 +954,11 @@
         "word": "lumière",
         "description": "Ce qui permet de voir, émise par le soleil ou une lampe.",
         "difficulty": 1
+      },
+      {
+        "word": "pique-nique",
+        "description": "Repas pris en plein air, dans la nature.",
+        "difficulty": 1
       }
     ]
   }

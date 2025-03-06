@@ -1,6 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
 
 public class ShopManager : MonoBehaviour
 {
@@ -23,6 +24,8 @@ public class ShopManager : MonoBehaviour
     public UnityEvent onItemBought;
     public UnityEvent onShopOpened;
 
+    public InputActionAsset inputActionAsset;
+    public InputActionReference openShopAction;
 
     public static ShopManager Instance { get; private set; }
 
@@ -40,6 +43,7 @@ public class ShopManager : MonoBehaviour
 
     private void Start()
     {
+        openShopAction.action.performed += _ => OpenShop();
         //GenerateItem();
     }
 
@@ -87,15 +91,17 @@ public class ShopManager : MonoBehaviour
 
     public void OpenShop()
     {
-        shopPanel.SetActive(true);
+        shopPanel.GetComponent<Canvas>().enabled = true;
+        //shopPanel.SetActive(true);
         m_playerCameraControllerr.enabled = false;
         onShopOpened.Invoke();
     }
 
     public void CloseShop()
     {
+        shopPanel.GetComponent<Canvas>().enabled = false;
         m_playerCameraControllerr.enabled = true;
-        shopPanel.SetActive(false);
+        //shopPanel.SetActive(false);
     }
 
     public Item GetRandomItem()

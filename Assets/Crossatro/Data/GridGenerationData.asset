@@ -628,3 +628,6 @@ MonoBehaviour:
     - word: LUMIERE
       description: "Ce qui permet de voir, \xE9mise par le soleil ou une lampe."
       difficulty: 1
+    - word: PIQUE-NIQUE
+      description: Repas pris en plein air, dans la nature.
+      difficulty: 1

@@ -1012,6 +1012,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "OpenShop",
+                    "type": "Button",
+                    "id": "8ab10c16-958f-481f-9f00-bda73e5cc558",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -1034,6 +1043,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "MouseMoved",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "db0ae405-8ce1-4c32-962f-fcf0e85f3561",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "OpenShop",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
