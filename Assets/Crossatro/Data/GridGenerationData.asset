@@ -558,7 +558,7 @@ MonoBehaviour:
     - word: CHEMIN
       description: "Une voie pour se d\xE9placer d'un endroit \xE0 un autre."
       difficulty: 1
-    - word: "C\u0152UR"
+    - word: COEUR
       description: L'organe qui pompe le sang, symbole d'amour.
       difficulty: 1
     - word: RIRE
@@ -631,3 +631,489 @@ MonoBehaviour:
     - word: PIQUE-NIQUE
       description: Repas pris en plein air, dans la nature.
       difficulty: 1
+    - word: ABEILLE
+      description: "Un insecte volant qui produit du miel et poss\xE8de un dard."
+      difficulty: 1
+    - word: BATEAU
+      description: "Un v\xE9hicule qui flotte et se d\xE9place sur l'eau."
+      difficulty: 1
+    - word: CANARD
+      description: "Un oiseau aquatique avec un bec plat et des pattes palm\xE9es."
+      difficulty: 1
+    - word: DENT
+      description: "Structure dure dans la bouche utilis\xE9e pour m\xE2cher les
+        aliments."
+      difficulty: 1
+    - word: ESCALIER
+      description: "Une s\xE9rie de marches permettant de monter ou descendre."
+      difficulty: 1
+    - word: FETE
+      description: "Une c\xE9l\xE9bration joyeuse pour un \xE9v\xE9nement sp\xE9cial."
+      difficulty: 1
+    - word: GATEAU
+      description: "Une p\xE2tisserie sucr\xE9e souvent servie lors des anniversaires."
+      difficulty: 1
+    - word: HIVER
+      description: "La saison froide de l'ann\xE9e avec parfois de la neige."
+      difficulty: 1
+    - word: ILE
+      description: "Une terre entour\xE9e d'eau de tous c\xF4t\xE9s."
+      difficulty: 1
+    - word: JOURNAL
+      description: Une publication quotidienne contenant des nouvelles.
+      difficulty: 1
+    - word: KIWI
+      description: "Un petit fruit vert \xE0 la chair tendre et aux petites graines
+        noires."
+      difficulty: 1
+    - word: LEGUME
+      description: "Plante ou partie de plante consomm\xE9e comme nourriture."
+      difficulty: 1
+    - word: MUSIQUE
+      description: "Art de combiner des sons de mani\xE8re agr\xE9able \xE0 l'oreille."
+      difficulty: 1
+    - word: BONHEUR
+      description: "\xC9tat de pleine satisfaction et de contentement."
+      difficulty: 2
+    - word: CHALEUR
+      description: "Sensation de temp\xE9rature \xE9lev\xE9e, oppos\xE9e au froid."
+      difficulty: 2
+    - word: DOUCEUR
+      description: "Caract\xE8re de ce qui est agr\xE9able, tendre ou sucr\xE9."
+      difficulty: 2
+    - word: ENFANCE
+      description: "Premi\xE8re p\xE9riode de la vie humaine, avant l'adolescence."
+      difficulty: 2
+    - word: FEUILLE
+      description: "Organe vert et plat des plantes qui capte la lumi\xE8re."
+      difficulty: 2
+    - word: GENTIL
+      description: "Qui est aimable, attentionn\xE9 et bienveillant envers les autres."
+      difficulty: 2
+    - word: HEUREUX
+      description: "Qui \xE9prouve du bonheur, de la satisfaction."
+      difficulty: 2
+    - word: INSTANT
+      description: "Tr\xE8s court moment, fraction de temps."
+      difficulty: 2
+    - word: JARDINIER
+      description: Personne qui cultive et entretient un jardin.
+      difficulty: 2
+    - word: LEGERETE
+      description: "Qualit\xE9 de ce qui est peu pesant ou facile \xE0 porter."
+      difficulty: 2
+    - word: MERVEILLE
+      description: "Chose qui suscite l'admiration par sa beaut\xE9 ou perfection."
+      difficulty: 2
+    - word: NOBLESSE
+      description: "Caract\xE8re \xE9lev\xE9 des sentiments ou des comportements."
+      difficulty: 2
+    - word: TENDRESSE
+      description: "Sentiment d'affection douce et d\xE9licate envers quelqu'un."
+      difficulty: 2
+    - word: AVENTURIER
+      description: Personne qui recherche les aventures et prend des risques.
+      difficulty: 3
+    - word: BRILLANCE
+      description: "\xC9clat vif et intense d'une lumi\xE8re ou d'une intelligence."
+      difficulty: 3
+    - word: CONFIANCE
+      description: "Sentiment de s\xE9curit\xE9 envers quelqu'un ou quelque chose."
+      difficulty: 3
+    - word: DELICAT
+      description: "Qui demande du soin, de l'attention ou de la sensibilit\xE9."
+      difficulty: 3
+    - word: ETINCELLE
+      description: Petite particule incandescente qui jaillit d'un feu.
+      difficulty: 3
+    - word: FLAMME
+      description: Partie lumineuse et chaude produite par la combustion.
+      difficulty: 3
+    - word: GRACIEUX
+      description: "Qui poss\xE8de de la gr\xE2ce, de l'\xE9l\xE9gance dans ses mouvements."
+      difficulty: 3
+    - word: HORIZON
+      description: "Ligne apparente o\xF9 le ciel semble rejoindre la terre ou la
+        mer."
+      difficulty: 3
+    - word: INTUITION
+      description: "Connaissance directe et imm\xE9diate, sans recours au raisonnement."
+      difficulty: 3
+    - word: JUSTESSE
+      description: "Qualit\xE9 de ce qui est exact, pr\xE9cis et appropri\xE9."
+      difficulty: 3
+    - word: LIBERTE
+      description: "\xC9tat de celui qui n'est soumis \xE0 aucune contrainte impos\xE9e."
+      difficulty: 3
+    - word: MEMOIRE
+      description: "Facult\xE9 de conserver et de rappeler des exp\xE9riences pass\xE9es."
+      difficulty: 3
+    - word: NUANCE
+      description: "L\xE9g\xE8re diff\xE9rence entre des choses semblables."
+      difficulty: 3
+    - word: ALLIANCE
+      description: "Union ou association form\xE9e par un accord mutuel."
+      difficulty: 4
+    - word: BOULEVARD
+      description: "Large avenue urbaine, souvent bord\xE9e d'arbres."
+      difficulty: 4
+    - word: CONTEMPLATION
+      description: Action de regarder attentivement avec admiration.
+      difficulty: 4
+    - word: DETERMINATION
+      description: "Ferme r\xE9solution de mener \xE0 bien un projet."
+      difficulty: 4
+    - word: ELOQUENCE
+      description: "Art de bien parler pour \xE9mouvoir et persuader."
+      difficulty: 4
+    - word: FRENESIE
+      description: "Agitation extr\xEAme, souvent incontr\xF4lable."
+      difficulty: 4
+    - word: GRACIEUSE
+      description: "Qui poss\xE8de une \xE9l\xE9gance naturelle et fluide."
+      difficulty: 4
+    - word: HARMONIE
+      description: "Accord parfait qui r\xE8gne entre des \xE9l\xE9ments divers."
+      difficulty: 4
+    - word: IMMERSION
+      description: "Action de plonger enti\xE8rement dans un liquide ou une exp\xE9rience."
+      difficulty: 4
+    - word: JONGLERIE
+      description: "Art de lancer et rattraper plusieurs objets simultan\xE9ment."
+      difficulty: 4
+    - word: LABYRINTHE
+      description: "R\xE9seau compliqu\xE9 de chemins o\xF9 il est difficile de s'orienter."
+      difficulty: 4
+    - word: MELODIE
+      description: "Succession agr\xE9able de sons formant une ligne musicale."
+      difficulty: 4
+    - word: NAUFRAGE
+      description: "Accident o\xF9 un navire coule ou s'\xE9choue gravement."
+      difficulty: 4
+    - word: ALTRUISME
+      description: "Disposition \xE0 s'int\xE9resser et se d\xE9vouer aux autres."
+      difficulty: 5
+    - word: BOURRASQUE
+      description: "Coup de vent violent et de courte dur\xE9e."
+      difficulty: 5
+    - word: CATACLYSME
+      description: "Bouleversement violent de l'\xE9corce terrestre ou catastrophe."
+      difficulty: 5
+    - word: DIPLOMATIE
+      description: "Art de conduire les relations entre les \xE9tats ou les personnes."
+      difficulty: 5
+    - word: EUPHORIE
+      description: "Sensation intense de bien-\xEAtre et d'optimisme."
+      difficulty: 5
+    - word: FREMISSEMENT
+      description: "L\xE9ger tremblement caus\xE9 par une \xE9motion ou une vibration."
+      difficulty: 5
+    - word: GRATITUDE
+      description: Sentiment de reconnaissance envers un bienfaiteur.
+      difficulty: 5
+    - word: HERITAGE
+      description: "Ce qui est transmis par les g\xE9n\xE9rations pr\xE9c\xE9dentes."
+      difficulty: 5
+    - word: IMPETUOSITE
+      description: "Caract\xE8re fougueux et passionn\xE9 dans l'action."
+      difficulty: 5
+    - word: JURISPRUDENCE
+      description: "Ensemble des d\xE9cisions judiciaires qui interpr\xE8tent les
+        lois."
+      difficulty: 5
+    - word: LUMINESCENCE
+      description: "\xC9mission de lumi\xE8re sans chaleur notable."
+      difficulty: 5
+    - word: MAGNETISME
+      description: "Force d'attraction ou de r\xE9pulsion entre certains corps."
+      difficulty: 5
+    - word: NARCISSISME
+      description: "Admiration excessive de soi-m\xEAme et recherche d'admiration."
+      difficulty: 5
+    - word: AMBIVALENCE
+      description: "\xC9tat d'esprit o\xF9 coexistent des sentiments contradictoires."
+      difficulty: 6
+    - word: BELLIGERANT
+      description: "Qui est en \xE9tat de guerre ou qui montre de l'hostilit\xE9."
+      difficulty: 6
+    - word: CONJONCTURE
+      description: Ensemble des circonstances qui influencent une situation.
+      difficulty: 6
+    - word: DIALECTIQUE
+      description: "Art de raisonner m\xE9thodiquement par le dialogue ou l'opposition."
+      difficulty: 6
+    - word: EMPATHIQUE
+      description: "Qui a la capacit\xE9 de comprendre les sentiments d'autrui."
+      difficulty: 6
+    - word: FLUCTUATION
+      description: "Variation irr\xE9guli\xE8re dans le temps ou l'espace."
+      difficulty: 6
+    - word: GRANULOMETRIE
+      description: "Mesure de la taille des particules d'une mati\xE8re."
+      difficulty: 6
+    - word: HEURISTIQUE
+      description: "M\xE9thode de d\xE9couverte progressive bas\xE9e sur l'exp\xE9rience."
+      difficulty: 6
+    - word: INTROSPECTION
+      description: "Observation attentive de ses propres pens\xE9es et sentiments."
+      difficulty: 6
+    - word: JUXTAPOSITION
+      description: "Placement c\xF4te \xE0 c\xF4te d'\xE9l\xE9ments sans lien apparent."
+      difficulty: 6
+    - word: LUDIQUE
+      description: "Qui est relatif au jeu ou qui pr\xE9sente un caract\xE8re de
+        jeu."
+      difficulty: 6
+    - word: METICULEUX
+      description: "Qui accorde une grande attention aux d\xE9tails."
+      difficulty: 6
+    - word: NARRATOLOGIE
+      description: "\xC9tude des structures et techniques du r\xE9cit."
+      difficulty: 6
+    - word: ANTAGONISME
+      description: "Opposition forte entre deux forces, id\xE9es ou personnes."
+      difficulty: 7
+    - word: BIOLUMINESCENCE
+      description: "Production naturelle de lumi\xE8re par certains organismes vivants."
+      difficulty: 7
+    - word: CLAIRVOYANCE
+      description: "Facult\xE9 exceptionnelle de discernement ou de pr\xE9diction."
+      difficulty: 7
+    - word: DEONTOLOGIE
+      description: "Ensemble des r\xE8gles et devoirs qui r\xE9gissent une profession."
+      difficulty: 7
+    - word: EPHEMERE
+      description: "Qui ne dure qu'un tr\xE8s court moment, passager."
+      difficulty: 7
+    - word: FANTASMAGORIQUE
+      description: "Qui \xE9voque un monde irr\xE9el, fantastique ou hallucinatoire."
+      difficulty: 7
+    - word: GROTESQUE
+      description: Qui provoque le rire par son extravagance ou sa bizarrerie.
+      difficulty: 7
+    - word: HERMENEUTIQUE
+      description: "Art ou science de l'interpr\xE9tation des textes."
+      difficulty: 7
+    - word: INDELEBILE
+      description: "Qui ne peut \xEAtre effac\xE9 ou qui laisse une trace permanente."
+      difficulty: 7
+    - word: JUXTAPOSE
+      description: "Plac\xE9 imm\xE9diatement \xE0 c\xF4t\xE9, sans connexion grammaticale."
+      difficulty: 7
+    - word: KINESTHESIE
+      description: Perception consciente de la position et des mouvements du corps.
+      difficulty: 7
+    - word: LUMINESCENT
+      description: "Qui \xE9met de la lumi\xE8re sans production notable de chaleur."
+      difficulty: 7
+    - word: METAPHYSIQUE
+      description: "Partie de la philosophie qui traite des principes premiers de
+        l'\xEAtre."
+      difficulty: 7
+    - word: APOPHENIE
+      description: "Tendance \xE0 percevoir des connexions entre des choses sans
+        relation."
+      difficulty: 8
+    - word: BELLIFERANT
+      description: Qui porte ou engendre la guerre et les conflits.
+      difficulty: 8
+    - word: CEPHALIQUE
+      description: "Relatif \xE0 la t\xEAte ou au cerveau."
+      difficulty: 8
+    - word: DICHOTOMIE
+      description: "Division en deux parties ou aspects contrast\xE9s."
+      difficulty: 8
+    - word: ETIOLOGIE
+      description: "\xC9tude des causes et facteurs d'une maladie ou situation."
+      difficulty: 8
+    - word: FANTASMAGORIE
+      description: "Ensemble d'illusions visuelles cr\xE9ant un spectacle fantastique."
+      difficulty: 8
+    - word: GNOSEOLOGIE
+      description: "Th\xE9orie philosophique de la connaissance humaine."
+      difficulty: 8
+    - word: HOLISTIQUE
+      description: "Qui consid\xE8re un ph\xE9nom\xE8ne comme un tout indivisible."
+      difficulty: 8
+    - word: IDIOSYNCRASIE
+      description: "Mani\xE8re d'\xEAtre particuli\xE8re propre \xE0 un individu."
+      difficulty: 8
+    - word: JUXTAPOSITIF
+      description: "Qui a la propri\xE9t\xE9 de se placer c\xF4te \xE0 c\xF4te sans
+        lien syntaxique."
+      difficulty: 8
+    - word: KALEIDOSCOPIQUE
+      description: "Qui change constamment d'aspect comme les motifs d'un kal\xE9idoscope."
+      difficulty: 8
+    - word: LEXICOGRAPHIE
+      description: Science et technique de la composition des dictionnaires.
+      difficulty: 8
+    - word: METATEXTUEL
+      description: "Qui fait r\xE9f\xE9rence au texte lui-m\xEAme ou \xE0 sa structure."
+      difficulty: 8
+    - word: ANTEPENULTIEME
+      description: "Qui pr\xE9c\xE8de imm\xE9diatement l'avant-dernier \xE9l\xE9ment
+        d'une s\xE9rie."
+      difficulty: 9
+    - word: BIREFRINGENCE
+      description: "Propri\xE9t\xE9 optique de certains mat\xE9riaux divisant un
+        rayon lumineux."
+      difficulty: 9
+    - word: CONSUBSTANTIALITE
+      description: "Concept th\xE9ologique d\xE9signant l'unit\xE9 de substance ou
+        d'essence."
+      difficulty: 9
+    - word: DENDROCHRONOLOGIE
+      description: "M\xE9thode de datation par l'\xE9tude des anneaux de croissance
+        des arbres."
+      difficulty: 9
+    - word: EPISTEMOLOGIQUE
+      description: "Relatif \xE0 l'\xE9tude critique des sciences et de la connaissance."
+      difficulty: 9
+    - word: FANTASMAGORISATION
+      description: "Processus de transformation d'\xE9l\xE9ments r\xE9els en visions
+        fantastiques."
+      difficulty: 9
+    - word: GEOMORPHOLOGIQUE
+      description: "Relatif \xE0 l'\xE9tude des reliefs terrestres et de leur \xE9volution."
+      difficulty: 9
+    - word: HERMENEUTIQUEMENT
+      description: "De mani\xE8re relative \xE0 l'interpr\xE9tation des textes ou
+        symboles."
+      difficulty: 9
+    - word: INTRANSITIVITE
+      description: "Propri\xE9t\xE9 de ce qui n'admet pas de passage ou de transmission."
+      difficulty: 9
+    - word: JACULATOIRE
+      description: "Se dit d'une pri\xE8re br\xE8ve et fervente, lanc\xE9e comme
+        un trait."
+      difficulty: 9
+    - word: KINESITHERAPEUTIQUE
+      description: "Relatif \xE0 la th\xE9rapie par le mouvement et la r\xE9\xE9ducation
+        physique."
+      difficulty: 9
+    - word: LEXICOGRAPHIQUE
+      description: "Qui concerne la composition et l'\xE9tude des dictionnaires."
+      difficulty: 9
+    - word: METAMORPHIQUE
+      description: Relatif aux changements profonds de structure ou de nature.
+      difficulty: 9
+    - word: ORONYME
+      description: "Nom propre d\xE9signant une montagne ou une cha\xEEne montagneuse."
+      difficulty: 4
+    - word: PALIMPSESTE
+      description: "Manuscrit dont on a effac\xE9 le texte pour en \xE9crire un nouveau."
+      difficulty: 7
+    - word: QUINTESSENCE
+      description: "L'\xE9l\xE9ment le plus pur, l'essentiel absolu d'une chose."
+      difficulty: 5
+    - word: RHETORIQUE
+      description: Art de bien parler pour convaincre et persuader.
+      difficulty: 6
+    - word: SYMPHONIE
+      description: Composition musicale pour orchestre en plusieurs mouvements.
+      difficulty: 3
+    - word: TANGIBLE
+      description: "Qui peut \xEAtre touch\xE9, per\xE7u par le toucher ou attest\xE9."
+      difficulty: 4
+    - word: UBIQUITE
+      description: "Facult\xE9 d'\xEAtre pr\xE9sent en plusieurs lieux simultan\xE9ment."
+      difficulty: 8
+    - word: VEHEMENCE
+      description: "Ardeur imp\xE9tueuse dans les paroles ou les actions."
+      difficulty: 5
+    - word: XENOPHILIE
+      description: "Affection ou attirance pour ce qui vient de l'\xE9tranger."
+      difficulty: 7
+    - word: ZENITUDE
+      description: "\xC9tat de calme et de paix int\xE9rieure inspir\xE9 par le zen."
+      difficulty: 4
+    - word: ANTHROPOMORPHISME
+      description: "Attribution de caract\xE9ristiques humaines \xE0 des non-humains."
+      difficulty: 8
+    - word: BAROQUE
+      description: "Style artistique caract\xE9ris\xE9 par l'exub\xE9rance et le
+        mouvement."
+      difficulty: 5
+    - word: CACOPHONIE
+      description: "Ensemble de sons discordants et d\xE9sagr\xE9ables."
+      difficulty: 6
+    - word: DELIQUESCENCE
+      description: "\xC9tat de ce qui se liqu\xE9fie ou se d\xE9sagr\xE8ge par l'humidit\xE9."
+      difficulty: 8
+    - word: EVANESCENT
+      description: "Qui tend \xE0 dispara\xEEtre comme une vapeur."
+      difficulty: 7
+    - word: FULGURANT
+      description: "Qui frappe soudainement comme un \xE9clair."
+      difficulty: 5
+    - word: GOLGOTHA
+      description: "Lieu de souffrance extr\xEAme ou d'\xE9preuve douloureuse."
+      difficulty: 7
+    - word: HIERATIQUE
+      description: "Qui a un caract\xE8re sacr\xE9, solennel et fig\xE9."
+      difficulty: 8
+    - word: INVULNERABLE
+      description: "Qui ne peut \xEAtre bless\xE9 ou atteint."
+      difficulty: 3
+    - word: JOVIALITE
+      description: "Gaiet\xE9 communicative et bienveillante."
+      difficulty: 4
+    - word: KAIROS
+      description: "Moment opportun ou d\xE9cisif pour agir."
+      difficulty: 7
+    - word: LUCIDITE
+      description: "Clart\xE9 d'esprit permettant de bien juger les choses."
+      difficulty: 3
+    - word: MELOPEE
+      description: "Chant monotone et plaintif, souvent ritualis\xE9."
+      difficulty: 6
+    - word: ONIRISME
+      description: "Caract\xE8re de ce qui \xE9voque les r\xEAves, \xE9tat similaire
+        au r\xEAve."
+      difficulty: 7
+    - word: PERENNITE
+      description: "Caract\xE8re de ce qui dure tr\xE8s longtemps ou ind\xE9finiment."
+      difficulty: 5
+    - word: QUIETUDE
+      description: "\xC9tat de tranquillit\xE9 et de calme profond."
+      difficulty: 4
+    - word: REMANENCE
+      description: "Persistance d'un ph\xE9nom\xE8ne apr\xE8s la disparition de sa
+        cause."
+      difficulty: 6
+    - word: SEMANTIQUE
+      description: "\xC9tude du sens et de la signification des mots et signes."
+      difficulty: 5
+    - word: TAUTOLOGIE
+      description: "R\xE9p\xE9tition inutile d'une m\xEAme id\xE9e en termes diff\xE9rents."
+      difficulty: 7
+    - word: UCHRONIE
+      description: "Reconstitution fictive de l'histoire \xE0 partir d'un \xE9v\xE9nement
+        modifi\xE9."
+      difficulty: 8
+    - word: VELLEITE
+      description: "Volont\xE9 faible et sans effet, d\xE9sir non suivi d'ex\xE9cution."
+      difficulty: 6
+    - word: ZENITH
+      description: Point culminant de la trajectoire d'un astre ou d'une situation.
+      difficulty: 3
+    - word: ARLEQUIN
+      description: "Personnage comique portant un costume \xE0 losanges multicolores."
+      difficulty: 3
+    - word: BACCHANALE
+      description: "F\xEAte tumultueuse et d\xE9brid\xE9e, \xE0 l'origine rituel
+        en l'honneur de Bacchus."
+      difficulty: 7
+    - word: CRISTALLIN
+      description: "Qui a la transparence et la puret\xE9 du cristal."
+      difficulty: 4
+    - word: DIDACTIQUE
+      description: "Qui vise \xE0 instruire, \xE0 enseigner m\xE9thodiquement."
+      difficulty: 5
+    - word: EMULSION
+      description: "M\xE9lange de deux liquides normalement non miscibles."
+      difficulty: 4
+    - word: FALLACIEUX
+      description: "Qui cherche \xE0 tromper, qui induit en erreur."
+      difficulty: 7
