@@ -9,6 +9,7 @@ using Random = UnityEngine.Random;
 public class Board : MonoBehaviour
 {
     public Camera camera;
+    public CoinController coinController;
 
     [FormerlySerializedAs("width")]
     [SerializeField]
@@ -25,6 +26,7 @@ public class Board : MonoBehaviour
     [FormerlySerializedAs("shopTilePrefab")]
     [SerializeField]
     private ShopTile m_shopTilePrefab;
+    [SerializeField] private GameObject m_coinTilePrefab;
 
     [FormerlySerializedAs("generationData")]
     [SerializeField]
@@ -175,8 +177,8 @@ public class Board : MonoBehaviour
     {
         if (_mCrossWordsGameGrid.GetWordsToGridValues().ContainsKey(position))
         {
-            return Random.Range(0, 100) == 50
-                ? m_shopTilePrefab.gameObject
+            return Random.Range(0, 25) == 10
+                ? m_coinTilePrefab.gameObject
                 : m_letterTilePrefab.gameObject;
         }
         return m_tilePrefabs[Random.Range(0, m_tilePrefabs.Count)];
@@ -260,6 +262,16 @@ public class Board : MonoBehaviour
         if (shopTile)
         {
             ShopManager.Instance.OpenShop();
+        }
+    }
+
+    public void CheckForCoinTile(Vector2Int pos)
+    {
+        GetTile(pos).TryGetComponent(out CoinTile coinTile);
+        if (coinTile)
+        {
+            coinController.AddCoins(coinTile.coinValue);
+            Debug.Log("Coin tile clicked");
         }
     }
 

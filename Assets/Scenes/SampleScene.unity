@@ -1871,12 +1871,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 0}
+  coinController: {fileID: 26497682}
   m_width: 8
   m_height: 8
   m_tilePrefabs:
   - {fileID: 1010969201747375324, guid: e8ab0d5a7a6fa4649aca08e56f4aaddc, type: 3}
   m_letterTilePrefab: {fileID: 5437280665611621743, guid: 86da03221e65d9846bda32cca226df2f, type: 3}
   m_shopTilePrefab: {fileID: 1862125405419280211, guid: ff67b501ddce48e4c8b2037c52eb980d, type: 3}
+  m_coinTilePrefab: {fileID: 1010969201747375324, guid: a525e71ecedec2744a75bd0f9a56ee7b, type: 3}
   m_generationData: {fileID: 11400000, guid: 676e0537321054a4a94952f418aaec97, type: 2}
   m_inputField: {fileID: 563832619}
   OnTileClicked:
@@ -4023,6 +4025,10 @@ PrefabInstance:
       propertyPath: m_pCameraController
       value: 
       objectReference: {fileID: 1782687962}
+    - target: {fileID: 8490332025497383679, guid: 0b11a40a59d7ef941a1879b8ad50fd47, type: 3}
+      propertyPath: m_coinTilePrefab
+      value: 
+      objectReference: {fileID: -7704182711223119132, guid: a525e71ecedec2744a75bd0f9a56ee7b, type: 3}
     - target: {fileID: 8490332025497383679, guid: 0b11a40a59d7ef941a1879b8ad50fd47, type: 3}
       propertyPath: m_shopTilePercentageApparition
       value: 5
