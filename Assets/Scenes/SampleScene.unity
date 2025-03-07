@@ -925,6 +925,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeRemaining: 360
   timerIsRunning: 0
+  additionalTimeOnCorrectWord: 15
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -1912,6 +1913,7 @@ MonoBehaviour:
   m_healthController: {fileID: 616562997}
   m_coinController: {fileID: 26497682}
   m_scoreController: {fileID: 1960455756}
+  m_timerController: {fileID: 367249038}
   m_selectAction: {fileID: 6841872322419951025, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_inputField: {fileID: 563832619}
   m_inputCooldown: 0.1

@@ -28,5 +28,13 @@ public class TimerController : MonoBehaviour
         timer.timerIsRunning = true;
     }
 
+    public void AddTime(float time)
+    {
+        timer.timeRemaining += time;
+    }
 
+    public void SubtractTime(float time)
+    {
+        timer.timeRemaining -= time;
+    }
 }

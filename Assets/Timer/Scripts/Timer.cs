@@ -5,6 +5,7 @@ public class Timer : MonoBehaviour
 {
     public float timeRemaining = 600;
     public bool timerIsRunning = false;
+    public float additionalTimeOnCorrectWord = 15f;
 
     public event Action OnTimerFinished;
 

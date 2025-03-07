@@ -6,10 +6,12 @@ using UnityEngine.UI;
 
 public class BoardInputHandler : MonoBehaviour
 {
+    [Header("References")]
     [SerializeField] private Player m_player;
     [SerializeField] private HealthController m_healthController;
     [SerializeField] private CoinController m_coinController;
     [SerializeField] private ScoreController m_scoreController;
+    [SerializeField] private TimerController m_timerController;
 
     [SerializeField] private InputActionReference m_selectAction;
     [SerializeField] private TMPro.TMP_InputField m_inputField;
@@ -110,6 +112,7 @@ public class BoardInputHandler : MonoBehaviour
         }
 
         m_scoreController.AddScore(m_currentSelectedWord.Difficulty * 10);
+        m_timerController.AddTime(m_timerController.timer.additionalTimeOnCorrectWord);
         m_coinController.AddCoins(1);
         m_currentSelectedWord.Validate();
         ResetSelection();
