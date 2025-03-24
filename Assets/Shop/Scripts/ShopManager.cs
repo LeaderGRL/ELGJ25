@@ -18,7 +18,7 @@ public class ShopManager : MonoBehaviour
     public Player player;
     public Timer timer;
     public CoinController coinController;
-    [SerializeField] private PlayerCameraController m_playerCameraControllerr;
+    [SerializeField] private PlayerCameraController m_playerCameraController;
 
     [Header("Event")]
     public UnityEvent onItemBought;
@@ -91,16 +91,17 @@ public class ShopManager : MonoBehaviour
 
     public void OpenShop()
     {
+        Debug.Log("Shop opened");
         shopPanel.GetComponent<Canvas>().enabled = true;
         //shopPanel.SetActive(true);
-        m_playerCameraControllerr.enabled = false;
+        m_playerCameraController.enabled = false;
         onShopOpened.Invoke();
     }
 
     public void CloseShop()
     {
         shopPanel.GetComponent<Canvas>().enabled = false;
-        m_playerCameraControllerr.enabled = true;
+        m_playerCameraController.enabled = true;
         //shopPanel.SetActive(false);
     }
 

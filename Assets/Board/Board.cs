@@ -281,7 +281,6 @@ public class Board : MonoBehaviour
         Vector2Int hitPosition = GetTileIndex(hitTile);
         if (hitPosition == -Vector2Int.one) return;
 
-        // Left mouse button pressed: pick up a piece if it exists at that position
         if (Input.GetMouseButtonDown(0) && GetTile(hitPosition).layer == LayerMask.NameToLayer("Letter"))
         {
 
