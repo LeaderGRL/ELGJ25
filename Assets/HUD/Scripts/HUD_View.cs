@@ -1,5 +1,7 @@
+using NUnit.Framework;
 using Rive.Components;
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,6 +13,8 @@ public class HUD_View : MonoBehaviour
     [SerializeField] private RiveWidget closeIcon;
     [SerializeField] private Image background;
     [SerializeField] private GameObject shopPanel;
+
+    private List<GameObject> cards = new List<GameObject>();
 
 
     public void Start()
@@ -38,5 +42,10 @@ public class HUD_View : MonoBehaviour
         shopPanel.SetActive(false);
     }
 
+    public void AddItemToShop(GameObject cardPrefab)
+    {
+        var card = Instantiate(cardPrefab, shopPanel.transform);
+        cards.Add(card);
+    }
 
 }

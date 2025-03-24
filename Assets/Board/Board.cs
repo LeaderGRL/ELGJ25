@@ -256,14 +256,14 @@ public class Board : MonoBehaviour
     }
 
  
-    public void CheckForShopTile(Vector2Int pos)
-    {
-        GetTile(pos).TryGetComponent(out ShopTile shopTile);
-        if (shopTile)
-        {
-            ShopManager.Instance.OpenShop();
-        }
-    }
+    //public void CheckForShopTile(Vector2Int pos)
+    //{
+    //    GetTile(pos).TryGetComponent(out ShopTile shopTile);
+    //    if (shopTile)
+    //    {
+    //        ShopManager.Instance.OpenShop();
+    //    }
+    //}
 
     public void CheckForCoinTile(Vector2Int pos)
     {

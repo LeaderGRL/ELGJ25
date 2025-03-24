@@ -888,127 +888,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 177635502}
   m_CullTransparentMesh: 1
---- !u!1 &203340122
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 203340123}
-  - component: {fileID: 203340128}
-  - component: {fileID: 203340124}
-  - component: {fileID: 203340127}
-  - component: {fileID: 203340126}
-  - component: {fileID: 203340125}
-  m_Layer: 0
-  m_Name: Rive Card Panel
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &203340123
+--- !u!224 &203340123 stripped
 RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 3622265035574205478, guid: e85c0ebded2bd0647adf33ce3cb5e7da, type: 3}
+  m_PrefabInstance: {fileID: 657232676727839319}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 203340122}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1814718501}
-  m_Father: {fileID: 1155835579}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 531.43335, y: -340}
-  m_SizeDelta: {x: 492.6, y: 680}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &203340124
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 203340122}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f980c8c19ea824215be0686df1b90726, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_customRenderTargetStrategy: {fileID: 0}
-  m_updateMode: 0
-  m_disableEditorPreview: 0
---- !u!114 &203340125
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 203340122}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4b4a2d64b69b4c0bbdc2f768c08b799, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_pointerInputMode: 0
-  m_displayImage: {fileID: 203340126}
-  m_initialRivePanel: {fileID: 203340124}
-  m_customMaterial: {fileID: 0}
-  m_inputProvider: {fileID: 0}
---- !u!114 &203340126
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 203340122}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9727164d01ae84a31a68e1e12835571c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Texture: {fileID: 0}
-  m_UVRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
---- !u!222 &203340127
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 203340122}
-  m_CullTransparentMesh: 1
---- !u!114 &203340128
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 203340122}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f654c708803f043dfb10eb862af9e868, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_rivePanel: {fileID: 203340124}
 --- !u!1 &304208304
 GameObject:
   m_ObjectHideFlags: 0
@@ -2713,13 +2597,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e77082eff31e1b8449b8fd4d544a8d07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemsObject:
-  - {fileID: 11400000, guid: 827114a3b2c45ca499ce582f3ebbec4f, type: 2}
-  - {fileID: 11400000, guid: 29f0c7ecf4b8c4a4590e4fd15cd246dd, type: 2}
-  - {fileID: 11400000, guid: f1b702326d6948b4790c8a25229ba646, type: 2}
-  itemPrefab: {fileID: 195357567492159131, guid: 34fabca82c4ea424dab053b71cb0acb8, type: 3}
-  shopPanel: {fileID: 667775932}
-  shopItemContainer: {fileID: 1439496975}
   player: {fileID: 13066446}
   timer: {fileID: 367249039}
   coinController: {fileID: 26497682}
@@ -2727,11 +2604,6 @@ MonoBehaviour:
   onItemBought:
     m_PersistentCalls:
       m_Calls: []
-  onShopOpened:
-    m_PersistentCalls:
-      m_Calls: []
-  inputActionAsset: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-  openShopAction: {fileID: 5344578029303332697, guid: 052faaac586de48259a63d0c4782560b, type: 3}
 --- !u!4 &663355308
 Transform:
   m_ObjectHideFlags: 0
@@ -4812,7 +4684,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1159763866
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4830,7 +4702,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 981.30005, y: -340}
+  m_AnchoredPosition: {x: 1302.7251, y: -340}
   m_SizeDelta: {x: 450, y: 680}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1159763867
@@ -5235,11 +5107,9 @@ MonoBehaviour:
   player: {fileID: 13066446}
   timer: {fileID: 367249039}
   coinController: {fileID: 26497682}
---- !u!224 &1439496975 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 8552905739625412557, guid: 2fc6b87773ca195439f52a1ad5f076b5, type: 3}
-  m_PrefabInstance: {fileID: 3192633723083265147}
-  m_PrefabAsset: {fileID: 0}
+  itemDatabase: {fileID: 11400000, guid: 0e9d70a10d2bd3c448c4d6300d21015a, type: 2}
+  shop: {fileID: 663355307}
+  shopPanel: {fileID: 1155835578}
 --- !u!1 &1479557709
 GameObject:
   m_ObjectHideFlags: 0
@@ -5646,7 +5516,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1549238372
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6340,68 +6210,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 784b5382b6e82844cb468143c6da4370, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1814718500
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1814718501}
-  - component: {fileID: 1814718502}
-  m_Layer: 0
-  m_Name: Rive Card Widget
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1814718501
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1814718500}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 203340123}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1814718502
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1814718500}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30b5bc34e03734ee49f044caba90a384, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_rivePanel: {fileID: 203340124}
-  m_asset: {fileID: -4516626237390682484, guid: d14e7b6768cf0cb4cad3cc9c9cb16c27, type: 3}
-  m_artboardName: Card
-  m_stateMachineName: Desktop Machine
-  m_fit: 5
-  m_alignment:
-    m_x: 0
-    m_y: 0
-  m_layoutScaleFactor: 1
-  m_layoutScalingMode: 1
-  m_fallbackDPI: 96
-  m_referenceDPI: 150
-  m_hitTestBehavior: 0
-  m_eventPoolingMode: 0
 --- !u!1 &1826794241
 GameObject:
   m_ObjectHideFlags: 0
@@ -7273,6 +7081,107 @@ MonoBehaviour:
   m_referenceDPI: 150
   m_hitTestBehavior: 0
   m_eventPoolingMode: 0
+--- !u!1001 &657232676727839319
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1155835579}
+    m_Modifications:
+    - target: {fileID: 3622265035574205478, guid: e85c0ebded2bd0647adf33ce3cb5e7da, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3622265035574205478, guid: e85c0ebded2bd0647adf33ce3cb5e7da, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3622265035574205478, guid: e85c0ebded2bd0647adf33ce3cb5e7da, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3622265035574205478, guid: e85c0ebded2bd0647adf33ce3cb5e7da, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3622265035574205478, guid: e85c0ebded2bd0647adf33ce3cb5e7da, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3622265035574205478, guid: e85c0ebded2bd0647adf33ce3cb5e7da, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3622265035574205478, guid: e85c0ebded2bd0647adf33ce3cb5e7da, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 492.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3622265035574205478, guid: e85c0ebded2bd0647adf33ce3cb5e7da, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 680
+      objectReference: {fileID: 0}
+    - target: {fileID: 3622265035574205478, guid: e85c0ebded2bd0647adf33ce3cb5e7da, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3622265035574205478, guid: e85c0ebded2bd0647adf33ce3cb5e7da, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3622265035574205478, guid: e85c0ebded2bd0647adf33ce3cb5e7da, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3622265035574205478, guid: e85c0ebded2bd0647adf33ce3cb5e7da, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3622265035574205478, guid: e85c0ebded2bd0647adf33ce3cb5e7da, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3622265035574205478, guid: e85c0ebded2bd0647adf33ce3cb5e7da, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3622265035574205478, guid: e85c0ebded2bd0647adf33ce3cb5e7da, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3622265035574205478, guid: e85c0ebded2bd0647adf33ce3cb5e7da, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 960
+      objectReference: {fileID: 0}
+    - target: {fileID: 3622265035574205478, guid: e85c0ebded2bd0647adf33ce3cb5e7da, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -340
+      objectReference: {fileID: 0}
+    - target: {fileID: 3622265035574205478, guid: e85c0ebded2bd0647adf33ce3cb5e7da, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3622265035574205478, guid: e85c0ebded2bd0647adf33ce3cb5e7da, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3622265035574205478, guid: e85c0ebded2bd0647adf33ce3cb5e7da, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4558181563397409044, guid: e85c0ebded2bd0647adf33ce3cb5e7da, type: 3}
+      propertyPath: m_Name
+      value: Rive Card Panel
+      objectReference: {fileID: 0}
+    - target: {fileID: 4558181563397409044, guid: e85c0ebded2bd0647adf33ce3cb5e7da, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e85c0ebded2bd0647adf33ce3cb5e7da, type: 3}
 --- !u!1001 &979188400990852592
 PrefabInstance:
   m_ObjectHideFlags: 0

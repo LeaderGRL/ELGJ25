@@ -14,6 +14,8 @@ public class ItemObject : ScriptableObject
     public int itemPrice;
 
     public List<ItemEffectObject> itemEffects;
+
+    public GameObject itemPrefab;
 }
 
 
