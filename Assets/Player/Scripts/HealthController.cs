@@ -5,6 +5,10 @@ public class HealthController : MonoBehaviour
     public Player player;
     public HealthView healthView;
 
+    public void Start()
+    {
+        InitHealth();
+    }
     private void OnEnable()
     {
         player.OnTakeDamage += OnTakeDamage;
@@ -18,6 +22,11 @@ public class HealthController : MonoBehaviour
     private void OnTakeDamage(int health)
     {
         healthView.UpdateHealth(health);
+    }
+
+    private void InitHealth()
+    {
+        healthView.UpdateHealth(player.GetHealth());
     }
 
     public void AddHealth(int amount)

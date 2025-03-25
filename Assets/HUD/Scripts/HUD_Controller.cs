@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using Rive.Components;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -9,24 +10,24 @@ using UnityEngine.UI;
 
 public class HUD_Controller : MonoBehaviour
 {
-    [SerializeField] private HUD_View hudView;
+    [SerializeField] private HUD_View m_hudView;
     [SerializeField] private PlayerCameraController m_playerCameraController;
 
     [Header("References")]
+    [SerializeField] private GameObject m_shopPanel;
     public Player player;
     public Timer timer;
     public CoinController coinController;
     public ItemDatabase itemDatabase;
     public Shop shop;
-    [SerializeField] private GameObject shopPanel;
 
     [Header("Event")]
     private UnityEvent onItemBought;
     private UnityEvent onShopOpened;
     private UnityEvent onShopClosed;
 
-    private List<GameObject> cards = new List<GameObject>();
-    private Dictionary<GameObject, Item> cardItemDictionnary = new Dictionary<GameObject, Item>();
+    private List<GameObject> m_cards = new List<GameObject>();
+    private Dictionary<GameObject, Item> m_cardItemDictionnary = new Dictionary<GameObject, Item>();
 
     public void Start()
     {
@@ -37,14 +38,19 @@ public class HUD_Controller : MonoBehaviour
     public void OpenShop()
     {
         m_playerCameraController.enabled = false;
-        hudView.OpenShopView();
+        m_hudView.OpenShopView();
         SetCardInteraction();
+
+        foreach (KeyValuePair<GameObject, Item> cardItem in m_cardItemDictionnary)
+        {
+            cardItem.Key.GetComponentInChildren<RiveWidget>().Artboard.SetTextRun("CostText", cardItem.Value.itemObject.itemPrice.ToString());
+        }
     }
 
     public void CloseShop()
     {
         m_playerCameraController.enabled = true;
-        hudView.CloseShopView();
+        m_hudView.CloseShopView();
     }
 
     public void InitShop()
@@ -54,8 +60,8 @@ public class HUD_Controller : MonoBehaviour
             var cardItemObject = itemDatabase.GetRandomItem();
             Item cardItem = new Item();
             cardItem.itemObject = cardItemObject;
-            var card = Instantiate(cardItemObject.itemPrefab, shopPanel.transform);
-            cardItemDictionnary.Add(card, cardItem);
+            var card = Instantiate(cardItemObject.itemPrefab, m_shopPanel.transform);
+            m_cardItemDictionnary.Add(card, cardItem);
 
             card.GetComponent<Button>().onClick.AddListener(() => OnBuyButtonClick(cardItem));
         }
@@ -63,7 +69,7 @@ public class HUD_Controller : MonoBehaviour
 
     public void SetCardInteraction()
     {
-        foreach (KeyValuePair<GameObject, Item> cardItem in cardItemDictionnary)
+        foreach (KeyValuePair<GameObject, Item> cardItem in m_cardItemDictionnary)
         {
             if (player.GetCoins() >= cardItem.Value.itemObject.itemPrice && !cardItem.Value.isBought)
             {
@@ -87,7 +93,7 @@ public class HUD_Controller : MonoBehaviour
         shop.BuyItem(item);
 
         // Get Key from Value
-        GameObject card = cardItemDictionnary.FirstOrDefault(x => x.Value == item).Key;
+        GameObject card = m_cardItemDictionnary.FirstOrDefault(x => x.Value == item).Key;
         card.GetComponent<Button>().interactable = false;
 
         item.isBought = true;

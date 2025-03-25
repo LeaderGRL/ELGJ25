@@ -5,6 +5,10 @@ public class CoinController : MonoBehaviour
     public Player player;
     public CoinView coinView;
 
+    public void Start()
+    {
+        InitCoins();
+    }
     private void OnEnable()
     {
         player.OnCoinChange += OnCoinChange;
@@ -18,6 +22,11 @@ public class CoinController : MonoBehaviour
     private void OnCoinChange(int coin)
     {
         coinView.UpdateCoin(coin);
+    }
+
+    public void InitCoins()
+    {
+        coinView.UpdateCoin(player.GetCoins());
     }
 
     public void AddCoins(int amount)

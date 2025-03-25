@@ -1,19 +1,15 @@
+using Rive.Components;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class HealthView : MonoBehaviour
 {
-    public Image heartIcon;
-    public TextMeshProUGUI healthText;
+    [SerializeField] private RiveWidget m_riveWidget;
 
     public void UpdateHealth(int health)
     {
-        healthText.text = health.ToString();
+        m_riveWidget.Artboard.SetTextRun("HeartText", health.ToString());
     }
 
-    public void UpdateHeartColor(Color color)
-    {
-        healthText.color = color;
-    }
 }

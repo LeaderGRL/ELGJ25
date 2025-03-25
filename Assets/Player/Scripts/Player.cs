@@ -68,4 +68,14 @@ public class Player : MonoBehaviour
     {
         return m_coins;
     }
+
+    public int GetScore()
+    {
+        return m_score;
+    }
+
+    public int GetHealth()
+    {
+        return m_health;
+    }
 }
