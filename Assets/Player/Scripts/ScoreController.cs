@@ -4,7 +4,11 @@ public class ScoreController : MonoBehaviour
 {
     public Player Player;
     public ScoreView ScoreView;
-
+    
+    public void Start()
+    {
+        InitScore();
+    }
     private void OnEnable()
     {
         Player.OnScoreChange += OnScoreChanged;
@@ -18,6 +22,10 @@ public class ScoreController : MonoBehaviour
     private void OnScoreChanged(int score)
     {
         ScoreView.UpdateScore(score);
+    }
+    private void InitScore()
+    {
+        ScoreView.UpdateScore(Player.GetScore());
     }
 
     public void AddScore(int amount)

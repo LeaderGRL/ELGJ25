@@ -1,12 +1,14 @@
+using Rive;
+using Rive.Components;
 using TMPro;
 using UnityEngine;
 
 public class CoinView : MonoBehaviour
 {
-    public TextMeshProUGUI coinText;
+    [SerializeField] private RiveWidget RiveWidget;
 
     public void UpdateCoin(int coin)
     {
-        coinText.text = coin.ToString();
+        RiveWidget.Artboard.SetTextRun("GemsText", coin.ToString());
     }
 }

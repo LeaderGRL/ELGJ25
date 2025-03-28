@@ -21,7 +21,7 @@ public static class CharacterPlacementGenerator
         wordToAdd.IsRow = isRow;
         wordToAdd.StartPosition = Vector2Int.zero;
         wordToAdd.Difficulty = wordsShuffled[0].difficulty;
-        wordToAdd.Description = wordsShuffled[0].description;
+        wordToAdd.Description = wordsShuffled[0].description1;
         wordToAdd.Initialize();
         
         AddWord(result, wordToAdd.SolutionWord, wordToAdd.StartPosition, wordToAdd.IsRow);
@@ -59,7 +59,7 @@ public static class CharacterPlacementGenerator
                     wordToAddLoop.IsRow = isRow;
                     wordToAddLoop.StartPosition = startPos;
                     wordToAddLoop.Difficulty = wordsShuffled[i].difficulty;
-                    wordToAddLoop.Description = wordsShuffled[i].description;
+                    wordToAddLoop.Description = wordsShuffled[i].description1;
                     wordToAddLoop.Initialize();
                     
                     AddWord(result, wordToAddLoop.SolutionWord, wordToAddLoop.StartPosition, wordToAddLoop.IsRow);
@@ -140,7 +140,7 @@ public static class CharacterPlacementGenerator
             wordToAddLoop.IsRow = isRow;
             wordToAddLoop.StartPosition = startPos;
             wordToAddLoop.Difficulty = possibleWordsListFiltered[iterations].difficulty;
-            wordToAddLoop.Description = possibleWordsListFiltered[iterations].description;
+            wordToAddLoop.Description = possibleWordsListFiltered[iterations].description1;
             wordToAddLoop.Initialize();
             if (lastWordAdded.IsValidated)
             {

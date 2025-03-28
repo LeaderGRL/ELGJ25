@@ -5,7 +5,9 @@ using System.Collections.Generic;
 public class WordData
 {
     public string word;
-    public string description;
+    public string description1;
+    public string description2;
+    public string category;
     public int difficulty;
 }
 

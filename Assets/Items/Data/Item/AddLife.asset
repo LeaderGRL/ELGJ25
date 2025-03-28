@@ -18,3 +18,4 @@ MonoBehaviour:
   itemPrice: 10
   itemEffects:
   - {fileID: 11400000, guid: cae1e790cd6b0a140869fdad83f413a4, type: 2}
+  itemPrefab: {fileID: 4558181563397409044, guid: 802d8f0733230cd40943b6af4c301e99, type: 3}

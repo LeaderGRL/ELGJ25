@@ -256,14 +256,14 @@ public class Board : MonoBehaviour
     }
 
  
-    public void CheckForShopTile(Vector2Int pos)
-    {
-        GetTile(pos).TryGetComponent(out ShopTile shopTile);
-        if (shopTile)
-        {
-            ShopManager.Instance.OpenShop();
-        }
-    }
+    //public void CheckForShopTile(Vector2Int pos)
+    //{
+    //    GetTile(pos).TryGetComponent(out ShopTile shopTile);
+    //    if (shopTile)
+    //    {
+    //        ShopManager.Instance.OpenShop();
+    //    }
+    //}
 
     public void CheckForCoinTile(Vector2Int pos)
     {
@@ -281,7 +281,6 @@ public class Board : MonoBehaviour
         Vector2Int hitPosition = GetTileIndex(hitTile);
         if (hitPosition == -Vector2Int.one) return;
 
-        // Left mouse button pressed: pick up a piece if it exists at that position
         if (Input.GetMouseButtonDown(0) && GetTile(hitPosition).layer == LayerMask.NameToLayer("Letter"))
         {
 

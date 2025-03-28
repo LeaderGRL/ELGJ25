@@ -26,8 +26,6 @@ public class CrossWordGridGenerator : MonoBehaviour
     {
         m_crossWordsGameGrid = CharacterPlacementGenerator.GenerateCharPlacements(m_generationData.Database,
         m_generationData.NumWordsToGenerate, "");
-
-        Debug.Log("CrossWordsGameGrid: " + m_crossWordsGameGrid);
     }
     private void Start()
     {
@@ -77,10 +75,6 @@ public class CrossWordGridGenerator : MonoBehaviour
 
     public CrossWordsGameGrid GetCrossWordsGameGrid()
     {
-        if (m_crossWordsGameGrid == null)
-        {
-            Debug.Log("CrossWordsGameGrid is nullllllllllllllllllllllllllll");
-        }
         return m_crossWordsGameGrid;
     }
 }
