@@ -435,7 +435,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.8863139}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.6500244}
+  m_AnchoredPosition: {x: 0, y: 0.64990234}
   m_SizeDelta: {x: 0, y: -1.300003}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &121444577
@@ -2763,16 +2763,28 @@ PrefabInstance:
       value: PlayerController
       objectReference: {fileID: 0}
     - target: {fileID: 3768149870756016092, guid: caf269ccf1747c14c8f43b0b2621da6a, type: 3}
+      propertyPath: m_NotificationBehavior
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3768149870756016092, guid: caf269ccf1747c14c8f43b0b2621da6a, type: 3}
       propertyPath: m_ActionEvents.Array.size
-      value: 21
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 3768149870756016092, guid: caf269ccf1747c14c8f43b0b2621da6a, type: 3}
       propertyPath: m_ActionEvents.Array.data[20].m_ActionId
       value: d58c7cb0-bdd2-43ff-b739-02f7582881d7
       objectReference: {fileID: 0}
     - target: {fileID: 3768149870756016092, guid: caf269ccf1747c14c8f43b0b2621da6a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[21].m_ActionId
+      value: 8ab10c16-958f-481f-9f00-bda73e5cc558
+      objectReference: {fileID: 0}
+    - target: {fileID: 3768149870756016092, guid: caf269ccf1747c14c8f43b0b2621da6a, type: 3}
       propertyPath: m_ActionEvents.Array.data[20].m_ActionName
       value: 'Crossatro/MouseMoved[/Mouse/position]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3768149870756016092, guid: caf269ccf1747c14c8f43b0b2621da6a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[21].m_ActionName
+      value: 'Crossatro/OpenShop[/Keyboard/space]'
       objectReference: {fileID: 0}
     - target: {fileID: 3768149870756016092, guid: caf269ccf1747c14c8f43b0b2621da6a, type: 3}
       propertyPath: m_ActionEvents.Array.data[20].m_PersistentCalls.m_Calls.Array.size
@@ -3703,7 +3715,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0.147}
-  m_AnchoredPosition: {x: 0, y: -0.25500488}
+  m_AnchoredPosition: {x: 0, y: -0.2548828}
   m_SizeDelta: {x: 0, y: -0.51000977}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1904460949

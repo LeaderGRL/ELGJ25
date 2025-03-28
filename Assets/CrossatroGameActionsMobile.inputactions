@@ -1,0 +1,54 @@
+{
+    "name": "CrossatroGameActionsMobile",
+    "maps": [
+        {
+            "name": "Game",
+            "id": "79282ce5-bcdb-47c5-ad5f-d20e6fb24c20",
+            "actions": [
+                {
+                    "name": "Drag",
+                    "type": "Value",
+                    "id": "4a533336-9aa7-4268-9fec-d8cf5826c24f",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Select",
+                    "type": "Value",
+                    "id": "c4960461-5432-48dc-b833-095c3e3bacde",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "32ee72aa-4064-495f-8018-fdea29c68e29",
+                    "path": "<Touchscreen>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Drag",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7d212813-2580-4990-983c-f0b20b4a723f",
+                    "path": "<Touchscreen>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Select",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
