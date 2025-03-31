@@ -20,7 +20,7 @@ public class BoardInputHandler : MonoBehaviour
     private float m_lastInputTime;
 
     private Board m_board;
-    private Vector2Int m_currentHoverPosition;
+    private Vector2 m_currentHoverPosition;
     private GridWord m_currentSelectedWord;
 
     public GridWord CurrentSelectedWord => m_currentSelectedWord;
@@ -163,7 +163,7 @@ public class BoardInputHandler : MonoBehaviour
         }
     }
 
-    public void UpdateTileVisual(Vector2Int position, char character)
+    public void UpdateTileVisual(Vector2 position, char character)
     {
         var tile = m_board.GetTile(position);
         if (tile != null && tile.TryGetComponent<LetterTile>(out var letterTile))
@@ -222,7 +222,7 @@ public class BoardInputHandler : MonoBehaviour
         m_inputField.text = "";
     }
 
-    public bool IsTileLocked(Vector2Int position)
+    public bool IsTileLocked(Vector2 position)
     {
         return m_board.GetWordGrid().GetAllWordAtLocation(position)?
             .Any(word => word.IsValidated) ?? false;

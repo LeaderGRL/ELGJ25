@@ -31,6 +31,10 @@ public class CrossWordGridGenerator : MonoBehaviour
     {
         m_board = Board.GetInstance();
 
+        foreach (var word in m_crossWordsGameGrid.Words)
+        {
+            GenerateWord(word);
+        }
         m_crossWordsGameGrid.OnValidateAllWorlds += OnValidateAllWordsCallback;
         m_crossWordsGameGrid.OnAddWord += GenerateWord;
         m_board.SetGrid(m_crossWordsGameGrid);
@@ -57,7 +61,7 @@ public class CrossWordGridGenerator : MonoBehaviour
 
     private void GenerateWord(GridWord newWord)
     {
-        m_board.ResetDoTweenDelay();
+        //m_board.ResetDoTweenDelay();
         foreach (var letterLocation in newWord.GetAllLetterSolutionPositions())
         {
             GameObject tileObject = m_board.GetTile(letterLocation.Key);

@@ -16,7 +16,7 @@ public class PopupClue : MonoBehaviour
         Board.GetInstance().OnTileClicked.RemoveListener(OnTileClicked);
     }
 
-    private void OnTileClicked(Vector2Int tilePos)
+    private void OnTileClicked(Vector2 tilePos)
     {
         Debug.Log("Tile clicked at " + tilePos);
         popup.SetActive(true);

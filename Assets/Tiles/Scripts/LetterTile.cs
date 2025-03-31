@@ -79,7 +79,7 @@ public class LetterTile : Tile, IPointerClickHandler
     public void OnPointerClick(PointerEventData eventData)
     {
         Debug.Log("Tile clicked at " + this.gameObject.name);
-        Vector2Int tilePos = Board.GetInstance().GetTilePosition(this.gameObject);
+        Vector2 tilePos = Board.GetInstance().GetTilePosition(this.gameObject);
         popup.SetActive(true);
         clueText.text = Board.GetInstance().GetWordGrid().GetClue(tilePos);
     }
@@ -87,7 +87,7 @@ public class LetterTile : Tile, IPointerClickHandler
     public void ManagePopup()
     {
         Board.GetInstance().HideAllPopups();
-        Vector2Int tilePos = Board.GetInstance().GetTilePosition(this.gameObject);
+        Vector2 tilePos = Board.GetInstance().GetTilePosition(this.gameObject);
         popup.SetActive(true);
         clueText.text = Board.GetInstance().GetWordGrid().GetClue(tilePos);
     }

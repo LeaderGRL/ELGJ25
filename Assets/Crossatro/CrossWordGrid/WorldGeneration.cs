@@ -19,7 +19,7 @@ namespace Crossatro.Grid
         private void Start()
         {
             m_board = Board.GetInstance();
-            StartCoroutine(BaseWorldGenerationRoutine());
+            //StartCoroutine(BaseWorldGenerationRoutine());
         }
 
         private IEnumerator BaseWorldGenerationRoutine()

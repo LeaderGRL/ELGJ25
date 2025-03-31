@@ -28,7 +28,7 @@ public class PlayerCameraController : MonoBehaviour
     private void OnGenerateGridCallback(CrossWordsGameGrid crossWordsGameGrid)
     {
         List<GridWord> listNonValidatedWord = crossWordsGameGrid.GetAllNonValidatedWords();
-        Vector2Int gridMiddle = crossWordsGameGrid.GetMiddleWordList(listNonValidatedWord);
+        Vector2 gridMiddle = crossWordsGameGrid.GetMiddleWordList(listNonValidatedWord);
         m_cameraTarget.position = new Vector3(gridMiddle.x, 0, gridMiddle.y);
         OnTargetCameraMove?.Invoke(m_cameraTarget.transform.position);
     }

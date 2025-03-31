@@ -37,8 +37,8 @@ public class Board : MonoBehaviour
     private TMPro.TMP_InputField m_inputField;
 
     private static Board m_instance;
-    private Dictionary<Vector2Int, GameObject> m_tiles;
-    private Vector2Int m_currentHoverTile;
+    private Dictionary<Vector2, GameObject> m_tiles;
+    private Vector2 m_currentHoverTile;
     private CrossWordsGameGrid _mCrossWordsGameGrid;
     private GridWord m_currentSelectedWord;
     private BoardInputHandler m_inputHandler;
@@ -48,7 +48,7 @@ public class Board : MonoBehaviour
     private float m_animationDelay = 0.01f;
 
     [Header("Events")]
-    [HideInInspector] public UnityEvent<Vector2Int> OnTileClicked;
+    [HideInInspector] public UnityEvent<Vector2> OnTileClicked;
 
     public event Action<CrossWordsGameGrid> OnGenerateGrid;
 
@@ -68,7 +68,7 @@ public class Board : MonoBehaviour
 
     private void Start()
     {
-        m_tiles = new Dictionary<Vector2Int, GameObject>();
+        m_tiles = new Dictionary<Vector2, GameObject>();
         GenerateNewGrid();
     }
 
@@ -91,7 +91,7 @@ public class Board : MonoBehaviour
         }
     }
 
-    private void InitializeLetterTile(LetterTile tile, Vector2Int position)
+    private void InitializeLetterTile(LetterTile tile, Vector2 position)
     {
         tile.DisplayText.text = "";
         tile.OnTileClicked += HandleTileClick;
@@ -133,7 +133,7 @@ public class Board : MonoBehaviour
         _mCrossWordsGameGrid = crossWordsGameGrid;
     }
 
-    public void PlaceTileRefacto(Vector2Int pos, Tile tile)
+    public void PlaceTileRefacto(Vector2 pos, Tile tile)
     {
         bool isExistingTile = m_tiles.ContainsKey(pos);
         if (isExistingTile)
@@ -142,22 +142,22 @@ public class Board : MonoBehaviour
             Destroy(m_tiles[pos]);
         }
 
-        tile.transform.position = new Vector3(pos.x, 0, pos.y);
+        tile.transform.position = new Vector3(pos.x * 1.2f, -0.75f, pos.y * 1.2f);
         m_tiles[pos] = tile.gameObject;
 
         // Animation
         AnimateTileSpawn(tile.gameObject, m_animationDelay);
-        m_animationDelay += 0.005f;
+        m_animationDelay += 0.05f;
     }
 
-    public void SpawnTile(Vector2Int position)
+    public void SpawnTile(Vector2 position)
     {
         if (m_tiles.ContainsKey(position)) return;
 
         var tilePrefab = SelectTilePrefab(position);
         var newTile = Instantiate(tilePrefab, transform);
 
-        newTile.transform.position = new Vector3(position.x, 0, position.y);
+        newTile.transform.position = new Vector3(position.x * 1.2f, 0, position.y * 1.2f);
         m_tiles[position] = newTile;
 
         if (newTile.TryGetComponent<Tile>(out var basicTile))
@@ -173,7 +173,7 @@ public class Board : MonoBehaviour
 
     }
 
-    private GameObject SelectTilePrefab(Vector2Int position)
+    private GameObject SelectTilePrefab(Vector2 position)
     {
         if (_mCrossWordsGameGrid.GetWordsToGridValues().ContainsKey(position))
         {
@@ -184,7 +184,7 @@ public class Board : MonoBehaviour
         return m_tilePrefabs[Random.Range(0, m_tilePrefabs.Count)];
     }
 
-    public void UpdateTileState(Vector2Int position, TileState state)
+    public void UpdateTileState(Vector2 position, TileState state)
     {
         if (m_tiles.TryGetValue(position, out var tile))
         {
@@ -204,19 +204,19 @@ public class Board : MonoBehaviour
         tile.transform.DOScale(Vector3.one, 0.5f).SetEase(Ease.OutBack).SetDelay(delay);
     }
 
-    private Vector2Int GetTileIndex(GameObject hitInfo)
+    private Vector2 GetTileIndex(GameObject hitInfo)
     {
         foreach (var tile in m_tiles)
         {
             if (tile.Value == hitInfo)
                 return tile.Key;
         }
-        return -Vector2Int.one;
+        return -Vector2.one;
     }
 
     private void HandleTileHover(GameObject hitTile)
     {
-        Vector2Int hitPosition = GetTileIndex(hitTile);
+        Vector2 hitPosition = GetTileIndex(hitTile);
 
         if (hitTile.layer != LayerMask.NameToLayer("Letter"))
         {
@@ -242,7 +242,7 @@ public class Board : MonoBehaviour
         }
     }
 
-    public bool IsTileLocked(Vector2Int tileLocation)
+    public bool IsTileLocked(Vector2 tileLocation)
     {
         var words = _mCrossWordsGameGrid.GetAllWordAtLocation(tileLocation);
         foreach (var word in words)
@@ -265,7 +265,7 @@ public class Board : MonoBehaviour
     //    }
     //}
 
-    public void CheckForCoinTile(Vector2Int pos)
+    public void CheckForCoinTile(Vector2 pos)
     {
         GetTile(pos).TryGetComponent(out CoinTile coinTile);
         if (coinTile)
@@ -278,8 +278,8 @@ public class Board : MonoBehaviour
 
     private void HandleMouseInputOnTile(GameObject hitTile)
     {
-        Vector2Int hitPosition = GetTileIndex(hitTile);
-        if (hitPosition == -Vector2Int.one) return;
+        Vector2 hitPosition = GetTileIndex(hitTile);
+        if (hitPosition == -Vector2.one) return;
 
         if (Input.GetMouseButtonDown(0) && GetTile(hitPosition).layer == LayerMask.NameToLayer("Letter"))
         {
@@ -287,7 +287,7 @@ public class Board : MonoBehaviour
         }
     }
 
-    private void SetTileLayer(Vector2Int position, string layerName)
+    private void SetTileLayer(Vector2 position, string layerName)
     {
         if (m_tiles.TryGetValue(position, out GameObject tile))
         {
@@ -295,7 +295,7 @@ public class Board : MonoBehaviour
         }
     }
 
-    private string GetTileLayer(Vector2Int position)
+    private string GetTileLayer(Vector2 position)
     {
         if (m_tiles.TryGetValue(position, out GameObject tile))
         {
@@ -306,7 +306,7 @@ public class Board : MonoBehaviour
         return "";
     }
 
-    public GameObject GetTile(Vector2Int pos)
+    public GameObject GetTile(Vector2 pos)
     {
         if (m_tiles.TryGetValue(pos, out GameObject tile))
             return tile;
@@ -323,7 +323,7 @@ public class Board : MonoBehaviour
         return _mCrossWordsGameGrid;
     }
 
-    public Vector2Int GetTilePosition(GameObject tile)
+    public Vector2 GetTilePosition(GameObject tile)
     {
         foreach (var tilePos in m_tiles)
         {
@@ -332,7 +332,7 @@ public class Board : MonoBehaviour
                 return tilePos.Key;
             }
         }
-        return -Vector2Int.one;
+        return -Vector2.one;
     }
 
     public BoardInputHandler GetInputHandler()
@@ -358,7 +358,7 @@ public class Board : MonoBehaviour
     {
         var affectedPositions = _mCrossWordsGameGrid.RevealLetterInAllWords(letter);
 
-        foreach (Vector2Int pos in affectedPositions)
+        foreach (Vector2 pos in affectedPositions)
         {
             UpdateTileVisual(pos);
             UpdateTileState(pos, TileState.Validated);
@@ -370,7 +370,7 @@ public class Board : MonoBehaviour
         }
     }
 
-    private void UpdateTileVisual(Vector2Int position)
+    private void UpdateTileVisual(Vector2 position)
     {
         if (m_tiles.TryGetValue(position, out GameObject tileObj))
         {

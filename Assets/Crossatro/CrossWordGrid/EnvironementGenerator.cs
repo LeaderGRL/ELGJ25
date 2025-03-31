@@ -28,7 +28,7 @@ public class EnvironementGenerator : MonoBehaviour
     private void Start()
     {
         m_board = Board.GetInstance();
-        m_pCameraController.OnTargetCameraMove += OnTargetCameraMoveCallback;
+        //m_pCameraController.OnTargetCameraMove += OnTargetCameraMoveCallback;
         m_noiseMapSeed = UnityEngine.Random.Range(0, 100);
         IsStarted = true;
     }

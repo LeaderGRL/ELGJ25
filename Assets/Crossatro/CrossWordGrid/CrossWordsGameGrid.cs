@@ -21,14 +21,14 @@ public class CrossWordsGameGrid
         }
     }
 
-    public Dictionary<Vector2Int, char> GetWordsToGridValues()
+    public Dictionary<Vector2, char> GetWordsToGridValues()
     {
         return GetAnyWordListToGridValues(Words);
     }
 
-    private Dictionary<Vector2Int, char> GetAnyWordListToGridValues(List<GridWord> words)
+    private Dictionary<Vector2, char> GetAnyWordListToGridValues(List<GridWord> words)
     {
-        Dictionary<Vector2Int, char> result = new();
+        Dictionary<Vector2, char> result = new();
         foreach (var gridWord in words)
         {
             foreach (var letterLocation in gridWord.GetAllLetterSolutionPositions())
@@ -40,27 +40,27 @@ public class CrossWordsGameGrid
         return result;
     }
 
-    public GridWord? GetWordAtLocation(Vector2Int location)
+    public GridWord? GetWordAtLocation(Vector2 location)
     {
         var characterPlacements = GetWordsToGridValues();
         if (!characterPlacements.ContainsKey(location))
         {
             return null;
         }
-        bool isRow = characterPlacements.Keys.Contains(new Vector2Int(location.x + 1, location.y)) || 
-                     characterPlacements.Keys.Contains(new Vector2Int(location.x - 1, location.y));
-        bool isColumn = characterPlacements.Keys.Contains(new Vector2Int(location.x , location.y + 1)) || 
-                        characterPlacements.Keys.Contains(new Vector2Int(location.x , location.y - 1));
+        bool isRow = characterPlacements.Keys.Contains(new Vector2(location.x + 1, location.y)) || 
+                     characterPlacements.Keys.Contains(new Vector2(location.x - 1, location.y));
+        bool isColumn = characterPlacements.Keys.Contains(new Vector2(location.x , location.y + 1)) || 
+                        characterPlacements.Keys.Contains(new Vector2(location.x , location.y - 1));
 
         int i = 0;
-        while (characterPlacements.Keys.Contains(isRow ? new Vector2Int(location.x + i - 1, location.y) : 
-                   new Vector2Int(location.x , location.y - i + 1)))
+        while (characterPlacements.Keys.Contains(isRow ? new Vector2(location.x + i - 1, location.y) : 
+                   new Vector2(location.x , location.y - i + 1)))
         {
             i--;
         }
 
-        Vector2Int startPosition =
-            isRow ? new Vector2Int(location.x + i, location.y) : new Vector2Int(location.x, location.y - i);
+        Vector2 startPosition =
+            isRow ? new Vector2(location.x + i, location.y) : new Vector2(location.x, location.y - i);
 
         return GetWordWithStartPosition(startPosition, isRow);
     }
@@ -101,7 +101,7 @@ public class CrossWordsGameGrid
     /// </summary>
     /// <param name="location"></param>
     /// <returns></returns>
-    public List<GridWord> GetAllWordAtLocation(Vector2Int location)
+    public List<GridWord> GetAllWordAtLocation(Vector2 location)
     {
         var characterPlacements = GetWordsToGridValues();
 
@@ -111,31 +111,31 @@ public class CrossWordsGameGrid
         }
 
         List<GridWord> result = new List<GridWord>();
-        bool isRow = characterPlacements.Keys.Contains(new Vector2Int(location.x + 1, location.y)) || 
-                     characterPlacements.Keys.Contains(new Vector2Int(location.x - 1, location.y));
-        bool isColumn = characterPlacements.Keys.Contains(new Vector2Int(location.x , location.y + 1)) || 
-                        characterPlacements.Keys.Contains(new Vector2Int(location.x , location.y - 1));
+        bool isRow = characterPlacements.Keys.Contains(new Vector2(location.x + 1, location.y)) || 
+                     characterPlacements.Keys.Contains(new Vector2(location.x - 1, location.y));
+        bool isColumn = characterPlacements.Keys.Contains(new Vector2(location.x , location.y + 1)) || 
+                        characterPlacements.Keys.Contains(new Vector2(location.x , location.y - 1));
         int i = 0;
         int j = 0;
         
         if (isRow)
         {
-            while (characterPlacements.Keys.Contains(new Vector2Int(location.x + i - 1, location.y)))
+            while (characterPlacements.Keys.Contains(new Vector2(location.x + i - 1, location.y)))
             {
                 i--;
             }
 
-            Vector2Int startPosition = new Vector2Int(location.x + i, location.y);
+            Vector2 startPosition = new Vector2(location.x + i, location.y);
             result.Add(GetWordWithStartPosition(startPosition, true));
         }
 
         if (isColumn)
         {
-            while (characterPlacements.Keys.Contains(new Vector2Int(location.x , location.y - j + 1)))
+            while (characterPlacements.Keys.Contains(new Vector2(location.x , location.y - j + 1)))
             {
                 j--;
             }
-            Vector2Int startPosition = new Vector2Int(location.x , location.y - j );
+            Vector2 startPosition = new Vector2(location.x , location.y - j );
             result.Add(GetWordWithStartPosition(startPosition, false));
 
         }
@@ -143,7 +143,7 @@ public class CrossWordsGameGrid
         return result;
     }
     
-    public GridWord? GetWordWithStartPosition(Vector2Int startPosition, bool isRow)
+    public GridWord? GetWordWithStartPosition(Vector2 startPosition, bool isRow)
     {
         foreach (var word in Words)
         {
@@ -156,22 +156,22 @@ public class CrossWordsGameGrid
         return null;
     }
 
-    public Vector2Int GetGridSize()
+    public Vector2 GetGridSize()
     {
         var MinMaxpos = GetMinAndMaxPositionCharacterPlacement();
-        Vector2Int size = new Vector2Int(MinMaxpos.Value.x - MinMaxpos.Key.x, MinMaxpos.Value.y - MinMaxpos.Key.y);
+        Vector2 size = new Vector2(MinMaxpos.Value.x - MinMaxpos.Key.x, MinMaxpos.Value.y - MinMaxpos.Key.y);
         return size;
     }
     
-    public KeyValuePair<Vector2Int, Vector2Int> GetMinAndMaxPositionCharacterPlacement()
+    public KeyValuePair<Vector2, Vector2> GetMinAndMaxPositionCharacterPlacement()
     {
         return GetMinAndMaxPositionCharacterPlacementOfWordList(Words);
     }
 
-    private KeyValuePair<Vector2Int, Vector2Int> GetMinAndMaxPositionCharacterPlacementOfWordList(List<GridWord> gridWords)
+    private KeyValuePair<Vector2, Vector2> GetMinAndMaxPositionCharacterPlacementOfWordList(List<GridWord> gridWords)
     {
-        Vector2Int minValue = Vector2Int.zero;
-        Vector2Int maxValue = Vector2Int.zero;
+        Vector2 minValue = Vector2.zero;
+        Vector2 maxValue = Vector2.zero;
         foreach (var  key in GetAnyWordListToGridValues(gridWords).Keys)
         {
             if (key.x < minValue.x)
@@ -191,24 +191,24 @@ public class CrossWordsGameGrid
                 maxValue.y = key.y;
             }
         }
-        return new KeyValuePair<Vector2Int, Vector2Int>(minValue, maxValue);
+        return new KeyValuePair<Vector2, Vector2>(minValue, maxValue);
     }
 
-    public Vector2Int GetMiddleWordList(List<GridWord> gridWords)
+    public Vector2 GetMiddleWordList(List<GridWord> gridWords)
     {
         var minPosMaxPos = GetMinAndMaxPositionCharacterPlacementOfWordList(gridWords);
-        var wordListSize = new Vector2Int(minPosMaxPos.Value.x - minPosMaxPos.Key.x,
+        var wordListSize = new Vector2(minPosMaxPos.Value.x - minPosMaxPos.Key.x,
             minPosMaxPos.Value.y - minPosMaxPos.Key.y);
-        Vector2Int result = new Vector2Int(minPosMaxPos.Key.x + (wordListSize.x / 2), minPosMaxPos.Key.y + (wordListSize.y / 2));
+        Vector2 result = new Vector2(minPosMaxPos.Key.x + (wordListSize.x / 2), minPosMaxPos.Key.y + (wordListSize.y / 2));
         return result;
     }
     
-    public Vector2Int GetMiddleGrid()
+    public Vector2 GetMiddleGrid()
     {
         var minPos = GetMinAndMaxPositionCharacterPlacement().Key;
         var gridSize = GetGridSize();
 
-        Vector2Int result = new Vector2Int(minPos.x + (gridSize.x / 2), minPos.y + (gridSize.y / 2));
+        Vector2 result = new Vector2(minPos.x + (gridSize.x / 2), minPos.y + (gridSize.y / 2));
         
         return result;
     }
@@ -228,7 +228,7 @@ public class CrossWordsGameGrid
         return result;
     }
 
-    public String GetClue(Vector2Int location)
+    public String GetClue(Vector2 location)
     {
         var words = GetAllWordAtLocation(location);
         if (words == null)
@@ -243,9 +243,9 @@ public class CrossWordsGameGrid
         return result;
     }
 
-    public List<Vector2Int> RevealLetterInAllWords(char letter)
+    public List<Vector2> RevealLetterInAllWords(char letter)
     {
-        HashSet<Vector2Int> revealedPositions = new HashSet<Vector2Int>();
+        HashSet<Vector2> revealedPositions = new HashSet<Vector2>();
 
         foreach (GridWord word in Words)
         {
@@ -271,7 +271,7 @@ public class CrossWordsGameGrid
         return revealedPositions.ToList();
     }
 
-    public char GetCurrentLetterAtPosition(Vector2Int position)
+    public char GetCurrentLetterAtPosition(Vector2 position)
     {
         var wordsHere = GetAllWordAtLocation(position);
         return wordsHere?[0]?.GetCurrentLetterAtLocation(position) ?? '\0';

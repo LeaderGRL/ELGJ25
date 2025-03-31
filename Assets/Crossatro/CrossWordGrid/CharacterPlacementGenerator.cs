@@ -10,7 +10,7 @@ public static class CharacterPlacementGenerator
     public static CrossWordsGameGrid GenerateCharPlacements(WordDatabaseJSON possibleWords,  int wordNumber, string anagram)
     {
         List<WordData> wordsShuffled = possibleWords.words.OrderBy(_ => rng.Next()).ToList();
-        Dictionary<Vector2Int, char> result = new();
+        Dictionary<Vector2, char> result = new();
         List <GridWord> addedWords = new();
         List<int> addedWordsIndexs = new List<int>();
         
@@ -19,7 +19,7 @@ public static class CharacterPlacementGenerator
         GridWord wordToAdd = new GridWord();
         wordToAdd.SolutionWord = wordsShuffled[0].word;
         wordToAdd.IsRow = isRow;
-        wordToAdd.StartPosition = Vector2Int.zero;
+        wordToAdd.StartPosition = Vector2.zero;
         wordToAdd.Difficulty = wordsShuffled[0].difficulty;
         wordToAdd.Description = wordsShuffled[0].description1;
         wordToAdd.Initialize();
@@ -52,7 +52,7 @@ public static class CharacterPlacementGenerator
                 if (possibleStartPositions.Count > 0)
                 {
                     int index = UnityEngine.Random.Range(0, possibleStartPositions.Count);
-                    Vector2Int startPos = possibleStartPositions[index];
+                    Vector2 startPos = possibleStartPositions[index];
                     var wordToAddLoop = new GridWord();
                     
                     wordToAddLoop.SolutionWord = wordsShuffled[i].word;
@@ -133,7 +133,7 @@ public static class CharacterPlacementGenerator
             }
 
             int index = UnityEngine.Random.Range(0, possibleStartPositions.Count);
-            Vector2Int startPos = possibleStartPositions[index];
+            Vector2 startPos = possibleStartPositions[index];
             var wordToAddLoop = new GridWord();
             
             wordToAddLoop.SolutionWord = possibleWordsListFiltered[iterations].word;
@@ -162,24 +162,24 @@ public static class CharacterPlacementGenerator
         onEndCallback?.Invoke();
     }
     
-    private static List<Vector2Int> GetPossibleStartPositions(
-        Dictionary<Vector2Int, char> currentGrid, 
+    private static List<Vector2> GetPossibleStartPositions(
+        Dictionary<Vector2, char> currentGrid, 
         List<KeyValuePair<int, int>> correspondingIndexs, 
         string newWord, 
-        Vector2Int lastWordStartPosition,
+        Vector2 lastWordStartPosition,
         bool isRow)
     {
-        List<Vector2Int> result = new();
+        List<Vector2> result = new();
         bool isLastWordRow = !isRow;
         foreach (var keyValuePair in correspondingIndexs)
         {
             
-            Vector2Int intersectionPos = isLastWordRow ?
-                new Vector2Int(lastWordStartPosition.x + keyValuePair.Value, lastWordStartPosition.y) :
-                new Vector2Int(lastWordStartPosition.x, lastWordStartPosition.y  - keyValuePair.Value) ;
-            Vector2Int newStartPos = isRow ?
-                new Vector2Int(intersectionPos.x - keyValuePair.Key, intersectionPos.y) :
-                new Vector2Int(intersectionPos.x, intersectionPos.y  + keyValuePair.Key) ;
+            Vector2 intersectionPos = isLastWordRow ?
+                new Vector2(lastWordStartPosition.x + keyValuePair.Value, lastWordStartPosition.y) :
+                new Vector2(lastWordStartPosition.x, lastWordStartPosition.y  - keyValuePair.Value) ;
+            Vector2 newStartPos = isRow ?
+                new Vector2(intersectionPos.x - keyValuePair.Key, intersectionPos.y) :
+                new Vector2(intersectionPos.x, intersectionPos.y  + keyValuePair.Key) ;
             if (CanBeStartPos(currentGrid, newWord, newStartPos, isRow, intersectionPos))
             {
                 result.Add(newStartPos);
@@ -189,22 +189,22 @@ public static class CharacterPlacementGenerator
         return result;
     }
 
-    private static bool CanBeStartPos(Dictionary<Vector2Int, char> currentGrid, string newWord, Vector2Int startPos, bool isRow, Vector2Int intersectionPos)
+    private static bool CanBeStartPos(Dictionary<Vector2, char> currentGrid, string newWord, Vector2 startPos, bool isRow, Vector2 intersectionPos)
     {
         for (int i = 0; i < newWord.Length; i++)
         {
             char letter = newWord[i];
-            Vector2Int letterPosition =
-                isRow ? new Vector2Int(startPos.x + i, startPos.y) : new Vector2Int(startPos.x, startPos.y - i);
+            Vector2 letterPosition =
+                isRow ? new Vector2(startPos.x + i, startPos.y) : new Vector2(startPos.x, startPos.y - i);
             if (currentGrid.ContainsKey(letterPosition) && currentGrid[letterPosition] != letter)
             {
                 return false;
             }
 
-            Vector2Int top = new Vector2Int(letterPosition.x, letterPosition.y + 1);
-            Vector2Int bot = new Vector2Int(letterPosition.x, letterPosition.y - 1);
-            Vector2Int left = new Vector2Int(letterPosition.x - 1, letterPosition.y );
-            Vector2Int right = new Vector2Int(letterPosition.x + 1, letterPosition.y );
+            Vector2 top = new Vector2(letterPosition.x, letterPosition.y + 1);
+            Vector2 bot = new Vector2(letterPosition.x, letterPosition.y - 1);
+            Vector2 left = new Vector2(letterPosition.x - 1, letterPosition.y );
+            Vector2 right = new Vector2(letterPosition.x + 1, letterPosition.y );
             if (isRow)
             {
                 if ((currentGrid.ContainsKey(top) || currentGrid.ContainsKey(bot) )&& intersectionPos.x != letterPosition.x)
@@ -261,13 +261,13 @@ public static class CharacterPlacementGenerator
         return correspondingIndex;
     }
     
-    private static void AddWord(Dictionary<Vector2Int, char> dictionary, string word, Vector2Int startPosition, bool isRow)
+    private static void AddWord(Dictionary<Vector2, char> dictionary, string word, Vector2 startPosition, bool isRow)
     {
         for (int i = 0; i < word.Length; i++)
         {
-            Vector2Int position =  isRow ? 
-                new Vector2Int(startPosition.x + i , startPosition.y ) : 
-                new Vector2Int(startPosition.x  , startPosition.y - i ) ;
+            Vector2 position =  isRow ? 
+                new         (startPosition.x + i , startPosition.y ) : 
+                new Vector2(startPosition.x  , startPosition.y - i ) ;
             
             dictionary[position] = word[i];
         }

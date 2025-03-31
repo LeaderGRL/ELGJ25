@@ -14,7 +14,8 @@ public class TimerController : MonoBehaviour
     {
         if (timer.timerIsRunning)
         {
-            timerView.DisplayTime(timer.timeRemaining);
+            timerView.DisplayTime(SecondToMinuteText(timer.timeRemaining));
+            SetTimerPanelSize();
         }
     }
 
@@ -37,4 +38,17 @@ public class TimerController : MonoBehaviour
     {
         timer.timeRemaining -= time;
     }
+
+    private string SecondToMinuteText(float time)
+    {
+        int minutes = Mathf.FloorToInt(time / 60);
+        int seconds = Mathf.FloorToInt(time % 60);
+        return string.Format("{0:00}:{1:00}", minutes, seconds);
+    }
+    public void SetTimerPanelSize()
+    {
+        float width = timer.timeRemaining / timer.maxTime;
+        timerView.SetTimerPanelSize(width);
+    }
+
 }
