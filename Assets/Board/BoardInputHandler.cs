@@ -156,7 +156,7 @@ public class BoardInputHandler : MonoBehaviour
             m_scoreController.AddScore(LetterWeight.GetLetterWeight(
                 m_currentSelectedWord.GetAllLetterSolutionPositions()[position]
             ));
-            m_board.CheckForCoinTile(position);
+            m_board.CheckForCoinTile(m_coinController, position);
         }
 
         m_scoreController.AddScore(m_currentSelectedWord.Difficulty * 10);

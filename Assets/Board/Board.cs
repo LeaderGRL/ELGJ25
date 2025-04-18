@@ -9,7 +9,6 @@ using Random = UnityEngine.Random;
 public class Board : MonoBehaviour
 {
     public Camera camera;
-    public CoinController coinController;
 
     [SerializeField] private int m_width;
     [SerializeField] private int m_height;
@@ -29,7 +28,6 @@ public class Board : MonoBehaviour
 
     [Header("Events")]
     [HideInInspector] public UnityEvent<Vector2> OnTileClicked;
-
     public event Action<CrossWordsGameGrid> OnGenerateGrid;
 
     private float m_animationDelay = 0.01f;
@@ -185,11 +183,12 @@ public class Board : MonoBehaviour
         return false;
     }
 
-    public void CheckForCoinTile(Vector2 pos)
+    public void CheckForCoinTile(CoinController coinController, Vector2 pos)
     {
         GetTile(pos).TryGetComponent(out CoinTile coinTile);
         if (coinTile)
         {
+            Debug.Log("coin : " + coinTile.coinValue);
             coinController.AddCoins(coinTile.coinValue);
             Debug.Log("Coin tile clicked");
         }

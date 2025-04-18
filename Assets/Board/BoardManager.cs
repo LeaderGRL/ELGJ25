@@ -1,12 +1,14 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class BoardManager : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private BoardController boardPrefab;
     [SerializeField] private Transform boardsContainer;
-    [SerializeField] private Camera mainCamera;
+    [SerializeField] private GameObject cameraPivot;
     [SerializeField] private GridGenerationData generationData;
     [SerializeField] private TMPro.TMP_InputField inputField;
     [SerializeField] private CoinController coinController;
@@ -24,8 +26,6 @@ public class BoardManager : MonoBehaviour
     {
         if (boardsContainer == null)
             boardsContainer = transform;
-
-
     }
 
     private void Start()
@@ -40,7 +40,7 @@ public class BoardManager : MonoBehaviour
         var newBoard = Instantiate(boardPrefab, position, Quaternion.identity, boardsContainer);
 
         // Setup the board
-        newBoard.Initialize(generationData, coinController, healthController, timerController, inputField);
+        newBoard.Initialize(generationData, coinController, healthController, timerController, scoreController, inputField);
 
         activeBoards.Add(newBoard);
         SetActiveBoard(newBoard);
@@ -65,15 +65,23 @@ public class BoardManager : MonoBehaviour
         }
     }
 
-    public void SetActiveBoard(BoardController board)
+    private void SetActiveBoard(BoardController board)
     {
         if (!activeBoards.Contains(board))
             return;
 
         currentActiveBoard = board;
 
-        // Focus camera on active board
+        // Subscribe to the OnBoardCompleted event of the current active board  
+        currentActiveBoard.OnBoardCompleted.AddListener(OnBoardCompleted);
+
+        // Focus camera on active board  
         FocusCameraOnBoard(board);
+    }
+
+    private void OnBoardCompleted(BoardController completedBoard)
+    {
+        CreateNewBoard(generationData);
     }
 
     public List<BoardController> GetActiveBoards()
@@ -115,17 +123,17 @@ public class BoardManager : MonoBehaviour
 
     private void FocusCameraOnBoard(BoardController board)
     {
-        if (mainCamera == null || board == null)
+        if (cameraPivot == null || board == null)
             return;
 
         // Calculate desired camera position
         Vector3 targetPosition = new Vector3(
             board.transform.position.x,
-            mainCamera.transform.position.y,
+            cameraPivot.transform.position.y,
             board.transform.position.z - 10 // Adjust for camera distance
         );
 
         // Could animate the camera transition here
-        mainCamera.transform.position = targetPosition;
+        cameraPivot.transform.position = targetPosition;
     }
 }

@@ -4952,7 +4952,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boardPrefab: {fileID: -4417414925932788986, guid: 23f061f40800d724b86b43090bc243e6, type: 3}
   boardsContainer: {fileID: 1452626533}
-  mainCamera: {fileID: 1782687967}
+  cameraPivot: {fileID: 1583613597}
   generationData: {fileID: 11400000, guid: 676e0537321054a4a94952f418aaec97, type: 2}
   inputField: {fileID: 563832619}
   coinController: {fileID: 590266210}
@@ -6287,11 +6287,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 784b5382b6e82844cb468143c6da4370, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!20 &1782687967 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 6171250753874494953, guid: 5dd541a3275703b4cbd3571b7158c791, type: 3}
-  m_PrefabInstance: {fileID: 1782687959}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1826794241
 GameObject:
   m_ObjectHideFlags: 0

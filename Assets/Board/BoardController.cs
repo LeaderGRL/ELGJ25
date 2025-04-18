@@ -38,7 +38,7 @@ public class BoardController : MonoBehaviour
         ValidateComponents();
     }
 
-    public void Initialize(GridGenerationData generationData, CoinController coinCtrontroller, HealthController healthController, TimerController timerController, TMPro.TMP_InputField inputField)
+    public void Initialize(GridGenerationData generationData, CoinController coinCtrontroller, HealthController healthController, TimerController timerController, ScoreController scoreController, TMPro.TMP_InputField inputField)
     {
         if (isInitialized)
             return;
@@ -47,6 +47,7 @@ public class BoardController : MonoBehaviour
         this.coinController = coinCtrontroller;
         this.healthController = healthController;
         this.timerController = timerController;
+        this.scoreController = scoreController;
 
         // Link components together
         ConnectComponents();
