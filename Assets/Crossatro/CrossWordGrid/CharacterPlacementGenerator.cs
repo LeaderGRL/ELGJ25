@@ -85,82 +85,82 @@ public static class CharacterPlacementGenerator
         return crossWordsGameGrid;
     }
 
-    public static void GenrateCharPlacementsForExistingGrid(
-        WordDatabaseJSON possibleWords,  int wordNumber, string anagram, CrossWordsGameGrid existingCrossWordsGameGrid, GridWord gridWord, Action onEndCallback = null)
-    {
-        List<WordData> possibleWordsListFiltered = new List<WordData>();
-        foreach (var word in possibleWords.words)
-        {
-            if (!existingCrossWordsGameGrid.Words.Any((gridWord)  => (gridWord.SolutionWord == word.word)))
-            {
-                possibleWordsListFiltered.Add(word);
-            }
-        }
-        possibleWordsListFiltered = possibleWordsListFiltered.OrderBy(_ => rng.Next()).ToList();
+    //public static void GenrateCharPlacementsForExistingGrid(
+    //    WordDatabaseJSON possibleWords,  int wordNumber, string anagram, CrossWordsGameGrid existingCrossWordsGameGrid, GridWord gridWord, Action onEndCallback = null)
+    //{
+    //    List<WordData> possibleWordsListFiltered = new List<WordData>();
+    //    foreach (var word in possibleWords.words)
+    //    {
+    //        if (!existingCrossWordsGameGrid.Words.Any((gridWord)  => (gridWord.SolutionWord == word.word)))
+    //        {
+    //            possibleWordsListFiltered.Add(word);
+    //        }
+    //    }
+    //    possibleWordsListFiltered = possibleWordsListFiltered.OrderBy(_ => rng.Next()).ToList();
 
-        List<int> wordAddedIndexs = new List<int>();
-        int iterations = 0;
-        int remainingWordsToAdd = wordNumber;
-        GridWord lastWordAdded = gridWord;
+    //    List<int> wordAddedIndexs = new List<int>();
+    //    int iterations = 0;
+    //    int remainingWordsToAdd = wordNumber;
+    //    GridWord lastWordAdded = gridWord;
         
-        while (remainingWordsToAdd > 0 && iterations < possibleWordsListFiltered.Count)
-        {
-            if (wordAddedIndexs.Contains(iterations))
-            {
-                iterations++;
-                continue;
-            }
+    //    while (remainingWordsToAdd > 0 && iterations < possibleWordsListFiltered.Count)
+    //    {
+    //        if (wordAddedIndexs.Contains(iterations))
+    //        {
+    //            iterations++;
+    //            continue;
+    //        }
 
-            var gridValue = existingCrossWordsGameGrid.GetWordsToGridValues();
-            bool isRow = !lastWordAdded.IsRow;
-            string newWordString = possibleWordsListFiltered[iterations].word;
-            var correspondingIndexs =
-                GetCorespondingIndexs(newWordString, lastWordAdded.SolutionWord);
-            if (correspondingIndexs.Count == 0)
-            {
-                iterations++;
-                continue;
-            }
+    //        var gridValue = existingCrossWordsGameGrid.GetWordsToGridValues();
+    //        bool isRow = !lastWordAdded.IsRow;
+    //        string newWordString = possibleWordsListFiltered[iterations].word;
+    //        var correspondingIndexs =
+    //            GetCorespondingIndexs(newWordString, lastWordAdded.SolutionWord);
+    //        if (correspondingIndexs.Count == 0)
+    //        {
+    //            iterations++;
+    //            continue;
+    //        }
             
-            var possibleStartPositions =
-                GetPossibleStartPositions(gridValue, correspondingIndexs, newWordString, lastWordAdded.StartPosition,
-                    isRow);
+    //        var possibleStartPositions =
+    //            GetPossibleStartPositions(gridValue, correspondingIndexs, newWordString, lastWordAdded.StartPosition,
+    //                isRow);
 
-            if (possibleStartPositions.Count == 0)
-            {
-                iterations++;
-                continue;
-            }
+    //        if (possibleStartPositions.Count == 0)
+    //        {
+    //            iterations++;
+    //            continue;
+    //        }
 
-            int index = UnityEngine.Random.Range(0, possibleStartPositions.Count);
-            Vector2 startPos = possibleStartPositions[index];
-            var wordToAddLoop = new GridWord();
+    //        int index = UnityEngine.Random.Range(0, possibleStartPositions.Count);
+    //        Vector2 startPos = possibleStartPositions[index];
+    //        var wordToAddLoop = new GridWord();
             
-            wordToAddLoop.SolutionWord = possibleWordsListFiltered[iterations].word;
-            wordToAddLoop.IsRow = isRow;
-            wordToAddLoop.StartPosition = startPos;
-            wordToAddLoop.Difficulty = possibleWordsListFiltered[iterations].difficulty;
-            wordToAddLoop.Description = possibleWordsListFiltered[iterations].description1;
-            wordToAddLoop.Initialize();
-            if (lastWordAdded.IsValidated)
-            {
-                foreach (var letterSolutionPosition in lastWordAdded.GetAllLetterSolutionPositions())
-                {
-                    if (wordToAddLoop.GetAllLetterSolutionPositions().ContainsKey(letterSolutionPosition.Key))
-                    {
-                        wordToAddLoop.SetLetterAtLocation(letterSolutionPosition.Key, letterSolutionPosition.Value);
-                    }
-                }
-            }
+    //        wordToAddLoop.SolutionWord = possibleWordsListFiltered[iterations].word;
+    //        wordToAddLoop.IsRow = isRow;
+    //        wordToAddLoop.StartPosition = startPos;
+    //        wordToAddLoop.Difficulty = possibleWordsListFiltered[iterations].difficulty;
+    //        wordToAddLoop.Description = possibleWordsListFiltered[iterations].description1;
+    //        wordToAddLoop.Initialize();
+    //        if (lastWordAdded.IsValidated)
+    //        {
+    //            foreach (var letterSolutionPosition in lastWordAdded.GetAllLetterSolutionPositions())
+    //            {
+    //                if (wordToAddLoop.GetAllLetterSolutionPositions().ContainsKey(letterSolutionPosition.Key))
+    //                {
+    //                    wordToAddLoop.SetLetterAtLocation(letterSolutionPosition.Key, letterSolutionPosition.Value);
+    //                }
+    //            }
+    //        }
                     
-            existingCrossWordsGameGrid.AddWord(wordToAddLoop);
-            wordAddedIndexs.Add(iterations);
-            lastWordAdded = wordToAddLoop;
-            iterations = 0;
-            remainingWordsToAdd--;
-        }
-        onEndCallback?.Invoke();
-    }
+    //        existingCrossWordsGameGrid.AddWord(wordToAddLoop);
+    //        wordAddedIndexs.Add(iterations);
+    //        lastWordAdded = wordToAddLoop;
+    //        iterations = 0;
+    //        remainingWordsToAdd--;
+    //    }
+    //    onEndCallback?.Invoke();
+    //}
     
     private static List<Vector2> GetPossibleStartPositions(
         Dictionary<Vector2, char> currentGrid, 

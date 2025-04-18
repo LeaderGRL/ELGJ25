@@ -27,7 +27,7 @@ public class EnvironementGenerator : MonoBehaviour
 
     private void Start()
     {
-        m_board = Board.GetInstance();
+        //m_board = Board.GetInstance();
         //m_pCameraController.OnTargetCameraMove += OnTargetCameraMoveCallback;
         m_noiseMapSeed = UnityEngine.Random.Range(0, 100);
         IsStarted = true;
@@ -43,7 +43,7 @@ public class EnvironementGenerator : MonoBehaviour
                 var tilePos = new Vector2Int(x, y);
                 float noiseValue = GetNoiseMapValueAtCoord(tilePos);
                 newTile.GetComponent<MeshRenderer>().material = GetMaterialByNoiseValue(noiseValue);
-                m_board.PlaceTileRefacto(tilePos, newTile);
+                m_board.PlaceTile(tilePos, newTile);
             }
         }
         
@@ -61,7 +61,7 @@ public class EnvironementGenerator : MonoBehaviour
             Tile newTile = Instantiate(m_baseTilePrefab, m_board.transform);
             float noiseValue = GetNoiseMapValueAtCoord(tilePos);
             newTile.GetComponent<MeshRenderer>().material = GetMaterialByNoiseValue(noiseValue);
-            m_board.PlaceTileRefacto(tilePos, newTile);
+            m_board.PlaceTile(tilePos, newTile);
         }
     }
 

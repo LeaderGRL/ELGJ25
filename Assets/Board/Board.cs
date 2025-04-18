@@ -11,65 +11,47 @@ public class Board : MonoBehaviour
     public Camera camera;
     public CoinController coinController;
 
-    [FormerlySerializedAs("width")]
-    [SerializeField]
-    private int m_width;
-    [FormerlySerializedAs("height")]
-    [SerializeField]
-    private int m_height;
-    [FormerlySerializedAs("tilePrefabs")]
-    [SerializeField]
-    private List<GameObject> m_tilePrefabs;
-    [FormerlySerializedAs("letterTilePrefab")]
-    [SerializeField]
-    private LetterTile m_letterTilePrefab;
-    [FormerlySerializedAs("shopTilePrefab")]
-    [SerializeField]
-    private ShopTile m_shopTilePrefab;
+    [SerializeField] private int m_width;
+    [SerializeField] private int m_height;
+    [SerializeField] private List<GameObject> m_tilePrefabs;
+    [SerializeField] private LetterTile m_letterTilePrefab;
+    [SerializeField] private ShopTile m_shopTilePrefab;
     [SerializeField] private GameObject m_coinTilePrefab;
+    [SerializeField] private GridGenerationData m_generationData;
+    [SerializeField] private TMPro.TMP_InputField m_inputField;
 
-    [FormerlySerializedAs("generationData")]
-    [SerializeField]
-    private GridGenerationData m_generationData;
-
-    [FormerlySerializedAs("_inputField")]
-    [SerializeField]
-    private TMPro.TMP_InputField m_inputField;
-
-    private static Board m_instance;
-    private Dictionary<Vector2, GameObject> m_tiles;
+    private Dictionary<Vector2, GameObject> m_tiles = new Dictionary<Vector2, GameObject>();
     private Vector2 m_currentHoverTile;
     private CrossWordsGameGrid _mCrossWordsGameGrid;
     private GridWord m_currentSelectedWord;
     private BoardInputHandler m_inputHandler;
 
 
-    private Sequence m_sequence;
-    private float m_animationDelay = 0.01f;
-
     [Header("Events")]
     [HideInInspector] public UnityEvent<Vector2> OnTileClicked;
 
     public event Action<CrossWordsGameGrid> OnGenerateGrid;
 
+    private float m_animationDelay = 0.01f;
+
+    // Layers & Masks
+    private int layerLetter, layerHover, layerSelect, layerValidate;
+    private int maskLetterHoverSelect;
+
 
 
     private void Awake()
     {
-        if (m_instance == null)
-        {
-            m_instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        layerLetter = LayerMask.NameToLayer("Letter");
+        layerHover = LayerMask.NameToLayer("Hover");
+        layerSelect = LayerMask.NameToLayer("Select");
+        layerValidate = LayerMask.NameToLayer("Validate");
+        maskLetterHoverSelect = LayerMask.GetMask("Letter", "Hover", "Select");
     }
 
     private void Start()
     {
-        m_tiles = new Dictionary<Vector2, GameObject>();
-        GenerateNewGrid();
+        //GenerateNewGrid();
     }
 
     private void Update()
@@ -84,29 +66,16 @@ public class Board : MonoBehaviour
         RaycastHit hitInfo;
         Ray ray = camera.ScreenPointToRay(Input.mousePosition);
 
-        if (Physics.Raycast(ray, out hitInfo, 100, LayerMask.GetMask("Letter", "Hover", "Select")))
+        if (Physics.Raycast(ray, out hitInfo, 100, maskLetterHoverSelect))
         {
             HandleTileHover(hitInfo.transform.gameObject);
-            HandleMouseInputOnTile(hitInfo.transform.gameObject);
+            //HandleMouseInputOnTile(hitInfo.transform.gameObject);
         }
-    }
-
-    private void InitializeLetterTile(LetterTile tile, Vector2 position)
-    {
-        tile.DisplayText.text = "";
-        tile.OnTileClicked += HandleTileClick;
-    }
-
-    private void HandleTileClick(Tile tile)
-    {
-        var word = _mCrossWordsGameGrid.GetWordAtLocation(tile.Position);
-        m_inputHandler.HandleWordSelection(word);
     }
 
     public void GenerateNewGrid()
     {
         CreateGrid();
-        //SpawnAllTiles();
     }
 
     private void CreateGrid()
@@ -123,17 +92,12 @@ public class Board : MonoBehaviour
         m_animationDelay = 0.0f;
     }
 
-    public static Board GetInstance()
-    {
-        return m_instance;
-    }
-
     public void SetGrid(CrossWordsGameGrid crossWordsGameGrid)
     {
         _mCrossWordsGameGrid = crossWordsGameGrid;
     }
 
-    public void PlaceTileRefacto(Vector2 pos, Tile tile)
+    public void PlaceTile(Vector2 pos, Tile tile)
     {
         bool isExistingTile = m_tiles.ContainsKey(pos);
         if (isExistingTile)
@@ -142,46 +106,12 @@ public class Board : MonoBehaviour
             Destroy(m_tiles[pos]);
         }
 
-        tile.transform.position = new Vector3(pos.x * 1.2f, -0.75f, pos.y * 1.2f);
+        tile.transform.localPosition = new Vector3(pos.x * 1.2f, -0.75f, pos.y * 1.2f);
         m_tiles[pos] = tile.gameObject;
 
         // Animation
         AnimateTileSpawn(tile.gameObject, m_animationDelay);
         m_animationDelay += 0.05f;
-    }
-
-    public void SpawnTile(Vector2 position)
-    {
-        if (m_tiles.ContainsKey(position)) return;
-
-        var tilePrefab = SelectTilePrefab(position);
-        var newTile = Instantiate(tilePrefab, transform);
-
-        newTile.transform.position = new Vector3(position.x * 1.2f, 0, position.y * 1.2f);
-        m_tiles[position] = newTile;
-
-        if (newTile.TryGetComponent<Tile>(out var basicTile))
-        {
-            basicTile.SpawnAnimation();
-        }
-
-        if (newTile.TryGetComponent<LetterTile>(out var letterTile))
-        {
-            InitializeLetterTile(letterTile, position);
-            letterTile.SpawnAnimation();
-        }
-
-    }
-
-    private GameObject SelectTilePrefab(Vector2 position)
-    {
-        if (_mCrossWordsGameGrid.GetWordsToGridValues().ContainsKey(position))
-        {
-            return Random.Range(0, 25) == 10
-                ? m_coinTilePrefab.gameObject
-                : m_letterTilePrefab.gameObject;
-        }
-        return m_tilePrefabs[Random.Range(0, m_tilePrefabs.Count)];
     }
 
     public void UpdateTileState(Vector2 position, TileState state)
@@ -255,16 +185,6 @@ public class Board : MonoBehaviour
         return false;
     }
 
- 
-    //public void CheckForShopTile(Vector2Int pos)
-    //{
-    //    GetTile(pos).TryGetComponent(out ShopTile shopTile);
-    //    if (shopTile)
-    //    {
-    //        ShopManager.Instance.OpenShop();
-    //    }
-    //}
-
     public void CheckForCoinTile(Vector2 pos)
     {
         GetTile(pos).TryGetComponent(out CoinTile coinTile);
@@ -276,16 +196,16 @@ public class Board : MonoBehaviour
     }
 
 
-    private void HandleMouseInputOnTile(GameObject hitTile)
-    {
-        Vector2 hitPosition = GetTileIndex(hitTile);
-        if (hitPosition == -Vector2.one) return;
+    //private void HandleMouseInputOnTile(GameObject hitTile)
+    //{
+    //    Vector2 hitPosition = GetTileIndex(hitTile);
+    //    if (hitPosition == -Vector2.one) return;
 
-        if (Input.GetMouseButtonDown(0) && GetTile(hitPosition).layer == LayerMask.NameToLayer("Letter"))
-        {
+    //    if (Input.GetMouseButtonDown(0) && GetTile(hitPosition).layer == LayerMask.NameToLayer("Letter"))
+    //    {
 
-        }
-    }
+    //    }
+    //}
 
     private void SetTileLayer(Vector2 position, string layerName)
     {
@@ -308,6 +228,7 @@ public class Board : MonoBehaviour
 
     public GameObject GetTile(Vector2 pos)
     {
+        Debug.Log(m_tiles);
         if (m_tiles.TryGetValue(pos, out GameObject tile))
             return tile;
         return null;

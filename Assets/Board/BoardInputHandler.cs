@@ -8,6 +8,7 @@ public class BoardInputHandler : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private Player m_player;
+    [SerializeField] private Board m_board;
     [SerializeField] private HealthController m_healthController;
     [SerializeField] private CoinController m_coinController;
     [SerializeField] private ScoreController m_scoreController;
@@ -19,7 +20,6 @@ public class BoardInputHandler : MonoBehaviour
     [SerializeField] private float m_inputCooldown = 0.1f;
     private float m_lastInputTime;
 
-    private Board m_board;
     private Vector2 m_currentHoverPosition;
     private GridWord m_currentSelectedWord;
 
@@ -27,29 +27,76 @@ public class BoardInputHandler : MonoBehaviour
 
     private void Awake()
     {
-        m_board = GetComponent<Board>();
         m_selectAction.action.Enable();
     }
 
-    private void Start()
-    {
-        m_inputField.onValueChanged.AddListener(HandleTextInput);
-        m_inputField.onSubmit.AddListener(ValidateWord);
-    }
+    //private void Start()
+    //{
+    //    m_inputField.onValueChanged.AddListener(HandleTextInput);
+    //    m_inputField.onSubmit.AddListener(ValidateWord);
+    //}
 
     private void OnEnable()
     {
         m_selectAction.action.performed += HandleSelection;
+        LetterTile.OnTileSelected += HandleTileSelected;
     }
 
     private void OnDisable()
     {
         m_selectAction.action.performed -= HandleSelection;
+        LetterTile.OnTileSelected -= HandleTileSelected;
     }
 
     private void Update()
     {
         UpdateHoverPosition();
+    }
+
+    public void Initialize(Board board, HealthController healthController,
+                          CoinController coinController, ScoreController scoreController,
+                          TimerController timerController, TMPro.TMP_InputField inputField)
+    {
+        m_board = board;
+        m_healthController = healthController;
+        m_coinController = coinController;
+        m_scoreController = scoreController;
+        m_timerController = timerController;
+        m_inputField = inputField;
+
+        SetupInputField();
+    }
+
+    private void SetupInputField()
+    {
+        m_inputField.onValueChanged.AddListener(HandleTextInput);
+        m_inputField.onSubmit.AddListener(ValidateWord);
+    }
+
+    public void SetInputField(TMPro.TMP_InputField inputField)
+    {
+        // Remove listeners from old field if exists
+        if (m_inputField != null)
+        {
+            m_inputField.onValueChanged.RemoveListener(HandleTextInput);
+            m_inputField.onSubmit.RemoveListener(ValidateWord);
+        }
+
+        m_inputField = inputField;
+
+        // Add listeners to new field
+        if (m_inputField != null)
+        {
+            m_inputField.onValueChanged.AddListener(HandleTextInput);
+            m_inputField.onSubmit.AddListener(ValidateWord);
+        }
+    }
+
+    private void HandleTileSelected(LetterTile tile, Board board, Vector2 position)
+    {
+        if (board != m_board) return;
+
+        HandleWordSelection(board.GetWordGrid().GetWordAtLocation(position));
     }
 
     private void UpdateHoverPosition()
@@ -67,8 +114,9 @@ public class BoardInputHandler : MonoBehaviour
     {
         if (!context.performed) return;
 
-        var tileObeject = m_board.GetTile(m_currentHoverPosition);
-        var tile = tileObeject.GetComponent<LetterTile>();
+        var tileObject = m_board.GetTile(m_currentHoverPosition);
+        if (tileObject == null) return;
+        var tile = tileObject.GetComponent<LetterTile>();
         if (tile == null) return;
         tile.ManagePopup();
         HandleWordSelection(m_board.GetWordGrid().GetWordAtLocation(m_currentHoverPosition));
@@ -108,7 +156,7 @@ public class BoardInputHandler : MonoBehaviour
             m_scoreController.AddScore(LetterWeight.GetLetterWeight(
                 m_currentSelectedWord.GetAllLetterSolutionPositions()[position]
             ));
-            Board.GetInstance().CheckForCoinTile(position);
+            m_board.CheckForCoinTile(position);
         }
 
         m_scoreController.AddScore(m_currentSelectedWord.Difficulty * 10);

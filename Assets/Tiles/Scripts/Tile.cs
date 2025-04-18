@@ -12,7 +12,7 @@ public class Tile : MonoBehaviour
     public int width;
     public int height;
 
-    Vector2Int position;
+    Vector2 position;
     int score;
 
     //[Header("Events")]
@@ -20,7 +20,7 @@ public class Tile : MonoBehaviour
     public event TileClicked OnTileClicked;
 
 
-    public Vector2Int Position
+    public Vector2 Position
     {
         get => position;
         set => position = value;

@@ -16,6 +16,7 @@ public class LetterTileObject : ScriptableObject
 
 public class LetterTile : Tile, IPointerClickHandler
 {
+    public Board board;
     public AudioClip popSfx;
 
     [SerializeField] LetterTileObject letterTileObject;
@@ -30,6 +31,9 @@ public class LetterTile : Tile, IPointerClickHandler
     [Header("Popup")]
     public GameObject popup;
     public TextMeshProUGUI clueText;
+
+    public static event Action<LetterTile, Board, Vector2> OnTileSelected;
+
 
     private void Start()
     {
@@ -78,18 +82,18 @@ public class LetterTile : Tile, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        Debug.Log("Tile clicked at " + this.gameObject.name);
-        Vector2 tilePos = Board.GetInstance().GetTilePosition(this.gameObject);
-        popup.SetActive(true);
-        clueText.text = Board.GetInstance().GetWordGrid().GetClue(tilePos);
+        Vector2 tilePos = board.GetTilePosition(this.gameObject);
+        OnTileSelected?.Invoke(this, board, tilePos);
+        //popup.SetActive(true);
+        ///clueText.text = board.GetWordGrid().GetClue(tilePos);
     }
 
     public void ManagePopup()
     {
-        Board.GetInstance().HideAllPopups();
-        Vector2 tilePos = Board.GetInstance().GetTilePosition(this.gameObject);
+        board.HideAllPopups();
+        Vector2 tilePos = board.GetTilePosition(this.gameObject);
         popup.SetActive(true);
-        clueText.text = Board.GetInstance().GetWordGrid().GetClue(tilePos);
+        clueText.text = board.GetWordGrid().GetClue(tilePos);
     }
 
     public void HidePopup()

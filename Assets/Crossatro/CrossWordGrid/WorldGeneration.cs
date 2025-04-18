@@ -13,12 +13,11 @@ namespace Crossatro.Grid
         [SerializeField] 
         private CrossWordGridGenerator m_crossWordGridGenerator;
 
-        private Board m_board;
+        public Board board;
 
 
         private void Start()
         {
-            m_board = Board.GetInstance();
             //StartCoroutine(BaseWorldGenerationRoutine());
         }
 
@@ -28,7 +27,7 @@ namespace Crossatro.Grid
             
             m_environementGenerator.GenerateBase();
             yield return new WaitUntil(() => m_crossWordGridGenerator);
-            m_board.ResetDoTweenDelay();
+            board.ResetDoTweenDelay();
             yield return new WaitForSeconds(2f);
             m_crossWordGridGenerator.GenerateBase();
         }

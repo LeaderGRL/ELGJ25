@@ -26,10 +26,10 @@ public class
         timer.timeRemaining += time;
     }
 
-    public void ApplySpecificLetterRevealEffect(char revealedLetter)
+    public void ApplySpecificLetterRevealEffect(char revealedLetter, Board board)
     {
         Debug.Log("Revealing letter: " + revealedLetter);
-        Board.GetInstance().RevealLetter(revealedLetter);
+        board.RevealLetter(revealedLetter);
     }
 
     public static EffectManager GetInstance()

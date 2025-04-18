@@ -12,6 +12,6 @@ public class RevealSpecificLetterEffect : ItemEffectObject
     public override void ApplyEffect()
     {
         Debug.Log("RevealSpecificLetterEffect");
-        EffectManager.GetInstance().ApplySpecificLetterRevealEffect(GetRandomLetter());
+        //EffectManager.GetInstance().ApplySpecificLetterRevealEffect(GetRandomLetter());
     }
 }
