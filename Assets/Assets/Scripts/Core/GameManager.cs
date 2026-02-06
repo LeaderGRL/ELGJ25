@@ -3,7 +3,6 @@ using UnityEngine.Android;
 
 public class GameManager : MonoBehaviour
 {
-
     public enum GameState
     {
         Initializing,
