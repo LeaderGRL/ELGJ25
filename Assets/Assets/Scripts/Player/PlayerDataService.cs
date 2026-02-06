@@ -1,7 +1,7 @@
 using Crossatro.Events;
 using UnityEngine;
 
-public class PlayerDataService
+public class PlayerDataService : MonoBehaviour
 {
     [SerializeField] private int _maxHealth = 100;
     [SerializeField] private int _currentHealth;

@@ -46,5 +46,57 @@ namespace Crossatro.Events
         public int Delta;
     }
 
+    // ============================================================
+    // Game State Event
+    // ============================================================
 
+    public struct GameStartedEvent
+    {
+        public int StartingHealth;
+        public int StartingCoins;
+    }
+
+    public struct GameOverEvent
+    {
+        public bool Victory;
+        public int FinalScore;
+        public int TurnsCompleted;
+    }
+
+    public struct BoardCompletedEvent
+    {
+        public int BoardIndex;
+        public int BonusReward;
+    }
+
+    public struct NewBoardGeneratedEvent
+    {
+        public int BoardIndex;
+        public int WordCount;
+    }
+
+    // ============================================================
+    // Turn Event
+    // ============================================================
+
+    public struct TurnStartedEvent
+    {
+        public int TurnNumber;
+        public float TimeRemaining;
+    }
+
+    public struct TurnEndedEvent
+    {
+        public int TurnNumber;
+        public int WordsCompleted;
+        public int DamageDealt;
+    }
+
+    public struct TimerTickEvent
+    {
+        public float TimeRemaining;
+        public float MaxTime;
+    }
+
+    public struct TimerExpiredEvent { }
 }
