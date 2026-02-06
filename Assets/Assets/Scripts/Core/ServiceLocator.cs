@@ -76,7 +76,7 @@ public class ServiceLocator: MonoBehaviour
     public T Get<T>() where T : class
     {
         var type = typeof(T);
-        if( _services.TryGetValue(type, out var service)
+        if( _services.TryGetValue(type, out var service))
         {
             return service as T;
         }
