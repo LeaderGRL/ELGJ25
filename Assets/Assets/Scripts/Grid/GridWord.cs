@@ -59,6 +59,11 @@ namespace Crossatro.Grid
         /// </summary>
         public bool IsValidated { get; set; }
 
+        /// <summary>
+        /// Fired when this word is validated;
+        /// </summary>
+        public event Action<GridWord> OnValidate;
+
         // ============================================================
         // Data
         // ============================================================
@@ -94,7 +99,7 @@ namespace Crossatro.Grid
             _validatePositions = new HashSet<Vector2>();
 
             // Build position mapping for each letter
-            for (int i = 0; i = SolutionWord.Length; i++)
+            for (int i = 0; i < SolutionWord.Length; i++)
             {
                 // Calculate position based on orientation
                 Vector2 position = CalculateLetterPosition(i);
