@@ -127,7 +127,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     private void SubscribeToEvents()
     {
-        EventBus.Instance.Subscribe<PlayerDamageEvent>(OnPlayerDamaged);
+        EventBus.Instance.Subscribe<PlayerDamagedEvent>(OnPlayerDamaged);
         //EventBus.Instance.Subscribe<BoardCompletedEvent>(OnBoardCompleted)
     }
 
@@ -138,7 +138,7 @@ public class GameManager : MonoBehaviour
     {
         if (EventBus.Instance == null) return;
 
-        EventBus.Instance.Unsubscribe<PlayerDamageEvent>(OnPlayerDamaged);
+        EventBus.Instance.Unsubscribe<PlayerDamagedEvent>(OnPlayerDamaged);
     }
 
     /// <summary>
@@ -216,7 +216,142 @@ public class GameManager : MonoBehaviour
         _previousState = _currentState;
         _currentState = newState;
 
-        OnEnterNewState(newState);
+        OnEnterState(newState);
     }
 
+    /// <summary>
+    /// Called when leaving a state
+    /// Mostly used to clean up things
+    /// </summary>
+    /// <param name="state"></param>
+    public void OnExitState(GameState state)
+    {
+        switch (state)
+        {
+            case GameState.Paused:
+                // Restore normal time when unpausing
+                Time.timeScale = 1;
+                break;
+
+            case GameState.Shopping:
+                EventBus.Instance.Publish(new ShopClosedEvent());
+                break;
+        }
+    }
+
+    /// <summary>
+    /// Called when entering a state
+    /// Mostly used to setup things
+    /// </summary>
+    /// <param name="state"></param>
+    public void OnEnterState(GameState state)
+    {
+        switch (state)
+        {
+            case GameState.Playing:
+                Time.timeScale = 1;
+                break;
+
+            case GameState.Shopping:
+                EventBus.Instance.Publish(new ShopOpenedEvent());
+                break;
+
+            case GameState.Paused:
+                // Freeze the game
+                Time.timeScale = 0;
+                break;
+
+            case GameState.GameOver:
+                Time.timeScale = 0;
+                EventBus.Instance.Publish(new GameOverEvent
+                {
+                    Victory = false,
+                    FinalScore = _playerDataService?.Score ?? 0
+                });
+                break;
+
+            case GameState.Victory:
+                EventBus.Instance.Publish(new GameOverEvent
+                {
+                    Victory = true,
+                    FinalScore = _playerDataService?.Score ?? 0
+                });
+                break;
+        }
+    }
+
+    public void OpenShop()
+    {
+        if (_currentState == GameState.Playing)
+        {
+            ChangeState(GameState.Shopping);
+        }
+    }
+
+    public void CloseShop()
+    {
+        if (_currentState == GameState.Shopping)
+        {
+            ChangeState(GameState.Playing);
+        }
+    }
+
+    public void PauseGame()
+    {
+        if (_currentState == GameState.Playing || _currentState == GameState.Shopping)
+        {
+            ChangeState(GameState.Paused);
+        }
+    }
+
+    public void Resume()
+    {
+        if (_currentState == GameState.Paused)
+        {
+            ChangeState(_previousState);
+        }
+    }
+
+    public void TriggerGameOver()
+    {
+        ChangeState(GameState.GameOver);
+    }
+
+    public void TriggerVictory()
+    {
+        ChangeState(GameState.Victory);
+    }
+
+    // ============================================================
+    // Event Handlers
+    // React to events from others systems
+    // ============================================================
+
+    /// <summary>
+    /// Called when player take damage
+    /// Check if the player died
+    /// </summary>
+    /// <param name="evt"></param>
+    private void OnPlayerDamaged(PlayerDamagedEvent evt)
+    {
+        if (evt.RemainingHealth <= 0)
+        {
+            Debug.Log("[GameManager] Player died!");
+            TriggerGameOver();
+        }
+    }
+
+    /// <summary>
+    /// Called when the grid is completed
+    /// </summary>
+    private void OnBoardCompleted()
+    {
+
+    }
+
+    private void OnTimerExpired(TimerExpiredEvent evt)
+    {
+        Debug.Log("[GameManager] Timer expired!");
+        EndTurn();
+    }
 }

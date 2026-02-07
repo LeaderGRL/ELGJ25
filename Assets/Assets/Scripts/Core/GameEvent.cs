@@ -34,6 +34,12 @@ namespace Crossatro.Events
         public int Delta;
     }
 
+    public struct PlayerDamagedEvent
+    {
+        public int Damage;
+        public int RemainingHealth;
+    }
+
     public struct CoinsChangedEvent
     {
         public int NewAmount;
@@ -99,4 +105,18 @@ namespace Crossatro.Events
     }
 
     public struct TimerExpiredEvent { }
+
+    // ============================================================
+    // Shop Event
+    // ============================================================
+
+    public struct ShopOpenedEvent { }
+    public struct ShopClosedEvent { }
+
+    public struct ItemPurchasedEvent
+    {
+        public string ItemName;
+        public int Cost;
+        public int RemainingCoins;
+    }
 }
