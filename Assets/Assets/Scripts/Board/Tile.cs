@@ -16,7 +16,6 @@ namespace Crossatro.Board
         // Constant
         // ============================================================
 
-        private const float SPAWN_DURATION = 0.5f;
         private const float GRID_CELL_SIZE = 1.2f;
 
         // ============================================================
@@ -77,21 +76,5 @@ namespace Crossatro.Board
         /// Check if this tile can be interacted.
         /// </summary>
         public bool IsInteractable => CurrentState != TileState.Validated;
-
-        // ============================================================
-        // Animation
-        // ============================================================
-
-        /// <summary>
-        /// Play spawn animation => Scale from 0 to full size + Bounce.
-        /// </summary>
-        /// <param name="delay"></param>
-        public void PlaySpawnAnimation(float delay = 0f)
-        {
-            transform.localScale = Vector3.zero;
-            transform.DOScale(Vector3.one, SPAWN_DURATION)
-                .SetEase(Ease.OutBack)
-                .SetDelay(delay);
-        }
     }
 }
