@@ -160,7 +160,7 @@ namespace Crossatro.Board
         {
             if (_currentHoverPosition.HasValue)
             {
-                _board.ResetTileState(_currentHoverPosition);
+                _board.SetTileState(_currentHoverPosition.Value, TileState.Default);
             }
         }
 
