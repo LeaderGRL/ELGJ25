@@ -49,6 +49,16 @@ namespace Crossatro.Board
         private Vector2? _currentHoverPosition;
 
         /// <summary>
+        /// The state the hovered tile had before we applied hovered.
+        /// </summary>
+        private TileState _previousHoverState;
+
+        /// <summary>
+        /// Whether we actually changed the tile's visual to hevered.
+        /// </summary>
+        private bool _didApplyHoverVisual;
+
+        /// <summary>
         /// Track if input is enabled.
         /// </summary>
         private bool _inputEnabled = true;
@@ -100,15 +110,16 @@ namespace Crossatro.Board
                 // Did we move to a new tile ?
                 if (_currentHoverPosition == null || _currentHoverPosition.Value != hitPosition)
                 {
-                    // Clear previous hover
-                    ClearHoverVisual();
+                    // Restore previus hover tile
+                    RestoreHoverVisual();
 
                     // Set new hover
                     _currentHoverPosition = hitPosition;
-                    _board.SetTileState(hitPosition, TileState.Hovered);
 
                     OnTileHoverEnter?.Invoke(hitPosition, hitTile);
                 }
+
+                UpdateHoverVisual(hitPosition, hitTile);
             }
             else
             {
@@ -117,6 +128,37 @@ namespace Crossatro.Board
                 {
                     ClearHover();
                 }
+            }
+        }
+
+        /// <summary>
+        /// Apply the correct hover visual base on the tile current state.
+        /// - Default -> Hovered
+        /// - Selected -> HoverSelected
+        /// - Validated -> Validated
+        /// </summary>
+        /// <param name="hitPosition"></param>
+        /// <param name="hitTile"></param>
+        private void UpdateHoverVisual(Vector2 hitPosition, Tile hitTile)
+        {
+            TileState currentState = hitTile.CurrentState;
+
+            switch (currentState)
+            {
+                case TileState.Default:
+                    _board.SetTileState(hitPosition, TileState.Hovered);
+                    _didApplyHoverVisual = true;
+                    break;
+                case TileState.Selected:
+                    _board.SetTileState(hitPosition, TileState.HoverSelected);
+                    _didApplyHoverVisual = true;
+                    break;
+                case TileState.Hovered:
+                case TileState.HoverSelected:
+                    break;
+                case TileState.Validated:
+                    _didApplyHoverVisual = false;
+                    break;
             }
         }
 
@@ -148,21 +190,36 @@ namespace Crossatro.Board
         /// </summary>
         private void ClearHover()
         {
-            ClearHoverVisual();
+            RestoreHoverVisual();
             _currentHoverPosition = null;
+            _didApplyHoverVisual = false;
             OnTileHoverExit?.Invoke();
         }
 
         /// <summary>
-        /// Reset the visual state of the currently hovered tile.
+        /// Restore the visual state of the currently hovered tile.
+        /// Only restores if we actually changed it to Hovered.
         /// </summary>
-        private void ClearHoverVisual()
+        private void RestoreHoverVisual()
         {
-            if (_currentHoverPosition.HasValue)
+            if (!_currentHoverPosition.HasValue || !_didApplyHoverVisual) return;
+
+            Tile tile = _board.GetTileAt(_currentHoverPosition.Value);
+            if (tile == null) return;
+
+            TileState restoreState = tile.CurrentState switch
             {
-                _board.SetTileState(_currentHoverPosition.Value, TileState.Default);
-            }
+                TileState.Hovered => TileState.Default,
+                TileState.HoverSelected => TileState.Selected,
+                _ => tile.CurrentState,
+            };
+
+            if (restoreState != tile.CurrentState)
+                _board.SetTileState(_currentHoverPosition.Value, restoreState);
+
+            _didApplyHoverVisual = false;
         }
+
 
         // ============================================================
         // API

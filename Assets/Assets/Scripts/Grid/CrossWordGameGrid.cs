@@ -101,7 +101,7 @@ namespace Crossatro.Grid
         /// <param name="word"></param>
         public void RemoveWord(GridWord word)
         {
-            if (word != null) return;
+            if (word == null) return;
 
             word.OnValidate -= OnWordValidateCallback;
             Words.Remove(word);
@@ -125,7 +125,7 @@ namespace Crossatro.Grid
         {
             foreach (GridWord word in Words)
             {
-                if (word.IsValidated)
+                if (!word.IsValidated)
                     return false;
             }
             return true;
@@ -161,7 +161,7 @@ namespace Crossatro.Grid
 
             foreach (GridWord gridWord in words)
             {
-                foreach (var letterLocation in gridWord.GetAllLetterSoltutionPosition())
+                foreach (var letterLocation in gridWord.GetAllLetterSolutionPositions())
                 {
                     result[letterLocation.Key] = letterLocation.Value;
                 }
@@ -245,7 +245,7 @@ namespace Crossatro.Grid
                     offset--;
                 }
                 Vector2 startPosition = new Vector2(location.x + offset, location.y);
-                var word = GetWordWithStartPosition(startPosition, true);
+                var word = GetWordWithStartPosition(startPosition, false);
                 if (word != null)
                 {
                     result.Add(word);
@@ -282,6 +282,16 @@ namespace Crossatro.Grid
                     return word;
             }
             return null;
+        }
+
+        /// <summary>
+        /// Get the current letter at a position.
+        /// </summary>
+        public char GetCurrentLetterAtPosition(Vector2 position)
+        {
+            var wordsHere = GetAllWordAtLocation(position);
+            if (wordsHere == null || wordsHere.Count == 0) return '\0';
+            return wordsHere[0].GetCurrentLetterAtLocation(position);
         }
 
         // ============================================================
@@ -350,7 +360,7 @@ namespace Crossatro.Grid
 
             foreach (var word in Words)
             {
-                var solutionLetters = word.GetAllLetterSoltutionPosition();
+                var solutionLetters = word.GetAllLetterSolutionPositions();
 
                 foreach (var kvp in solutionLetters)
                 {

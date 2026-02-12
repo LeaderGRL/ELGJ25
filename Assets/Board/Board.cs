@@ -21,14 +21,14 @@ public class Board : MonoBehaviour
 
     private Dictionary<Vector2, GameObject> m_tiles = new Dictionary<Vector2, GameObject>();
     private Vector2 m_currentHoverTile;
-    private CrossWordsGameGrid _mCrossWordsGameGrid;
-    private GridWord m_currentSelectedWord;
+    private CrossWordsGameGrid_old _mCrossWordsGameGrid;
+    private GridWord_old m_currentSelectedWord;
     private BoardInputHandler m_inputHandler;
 
 
     [Header("Events")]
     [HideInInspector] public UnityEvent<Vector2> OnTileClicked;
-    public event Action<CrossWordsGameGrid> OnGenerateGrid;
+    public event Action<CrossWordsGameGrid_old> OnGenerateGrid;
 
     private float m_animationDelay = 0.01f;
 
@@ -90,7 +90,7 @@ public class Board : MonoBehaviour
         m_animationDelay = 0.0f;
     }
 
-    public void SetGrid(CrossWordsGameGrid crossWordsGameGrid)
+    public void SetGrid(CrossWordsGameGrid_old crossWordsGameGrid)
     {
         _mCrossWordsGameGrid = crossWordsGameGrid;
     }
@@ -233,12 +233,12 @@ public class Board : MonoBehaviour
         return null;
     }
 
-    public GridWord GetSelectedWord()
+    public GridWord_old GetSelectedWord()
     {
         return m_currentSelectedWord;
     }
 
-    public CrossWordsGameGrid GetWordGrid()
+    public CrossWordsGameGrid_old GetWordGrid()
     {
         return _mCrossWordsGameGrid;
     }

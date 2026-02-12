@@ -21,9 +21,9 @@ public class BoardInputHandler : MonoBehaviour
     private float m_lastInputTime;
 
     private Vector2 m_currentHoverPosition;
-    private GridWord m_currentSelectedWord;
+    private GridWord_old m_currentSelectedWord;
 
-    public GridWord CurrentSelectedWord => m_currentSelectedWord;
+    public GridWord_old CurrentSelectedWord => m_currentSelectedWord;
 
     private void Awake()
     {
@@ -122,7 +122,7 @@ public class BoardInputHandler : MonoBehaviour
         HandleWordSelection(m_board.GetWordGrid().GetWordAtLocation(m_currentHoverPosition));
     }
 
-    public void HandleWordSelection(GridWord word)
+    public void HandleWordSelection(GridWord_old word)
     {
         Debug.Log("Solution word: " + word.SolutionWord);
         if (m_currentSelectedWord != null && word != m_currentSelectedWord && word != null && !m_currentSelectedWord.IsValidated)
@@ -229,14 +229,14 @@ public class BoardInputHandler : MonoBehaviour
         }
     }
 
-    private void SetNewWordSelection(GridWord word)
+    private void SetNewWordSelection(GridWord_old word)
     {
         m_currentSelectedWord = word;
         SetupInputFieldForWord(word);
         UpdateTileStatesForSelection(word);
     }
 
-    private void SetupInputFieldForWord(GridWord word)
+    private void SetupInputFieldForWord(GridWord_old word)
     {
         var unlockedTiles = word.GetAllLetterCurrentWordPositions()
             .Where(kvp => !m_board.IsTileLocked(kvp.Key))
@@ -253,7 +253,7 @@ public class BoardInputHandler : MonoBehaviour
         m_inputField.caretPosition = m_inputField.text.Length;
     }
 
-    private void UpdateTileStatesForSelection(GridWord word)
+    private void UpdateTileStatesForSelection(GridWord_old word)
     {
         foreach (var position in word.GetAllLetterSolutionPositions().Keys)
         {

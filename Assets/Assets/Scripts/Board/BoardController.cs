@@ -1,4 +1,5 @@
 using Crossatro.Events;
+using Crossatro.Grid;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -85,7 +86,7 @@ namespace Crossatro.Board
                 return;
             }
 
-            if (_grid == null)
+            if (grid == null)
             {
                 Debug.LogError("[BoardController] Cannot initialize with null grid!");
                 return;
@@ -138,14 +139,14 @@ namespace Crossatro.Board
         {
             if (_grid == null ) return;
 
-            _grid.OnValidateAllWorlds += HandleAllWordsValidated;
+            _grid.OnValidateAllWords += HandleAllWordsValidated;
         }
 
         private void UnsubscribeFromGridEvents()
         {
             if (_grid == null ) return;
 
-            _grid.OnValidateAllWorlds -= HandleAllWordsValidated;
+            _grid.OnValidateAllWords -= HandleAllWordsValidated;
         }
 
         private void SetupInputField()
@@ -364,7 +365,12 @@ namespace Crossatro.Board
 
                 foreach (GridWord intersectiongWord in wordAtPos)
                 {
+                    // Set the letter on the crossing word
                     intersectiongWord.SetLetterAtLocation(pos, letter);
+
+                    // Lock this position so it can't be modified from others words
+                    intersectiongWord.ValidatePosition(pos);
+                    
                 }
 
                 // Update the tile's layer to Validate
@@ -530,7 +536,17 @@ namespace Crossatro.Board
             var words = _grid.GetAllWordAtLocation(position);
             if (words == null) return false;
 
-            return words.Any(w => w.IsValidated);
+            foreach (GridWord word in words)
+            {
+                // Fully validated word => Lock all positions
+                if (word.IsValidated) return true;
+
+                // Individually validated letter => Lock letter position
+                if (word.IsPositionValidated(position)) return true;
+            }
+
+            return false;
+            //return words.Any(w => w.IsValidated);
         }
 
         /// <summary>
@@ -542,7 +558,8 @@ namespace Crossatro.Board
         {
             return word.GetAllLetterCurrentWordPositions()
                 .Where(kvp => !IsPositionLocked(kvp.Key))
-                .Select(kvp => kvp.Key) 
+                .Select(kvp => kvp.Key)
+                .OrderBy(pos => word.IsRow ? pos.x: -pos.y)
                 .ToList();
         }
 

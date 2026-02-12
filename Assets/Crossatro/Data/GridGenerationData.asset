@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 970f6aec6cf30db4eaf4800e3ac99bc3, type: 3}
   m_Name: GridGenerationData
   m_EditorClassIdentifier: 
-  <NumWordsToGenerate>k__BackingField: 5
+  <NumWordsToGenerate>k__BackingField: 15
   FileName: WordsNew.json
   Database:
     words:

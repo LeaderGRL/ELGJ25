@@ -7,16 +7,16 @@ using Random = System.Random;
 public static class CharacterPlacementGenerator
 {
     private static Random rng = new Random();
-    public static CrossWordsGameGrid GenerateCharPlacements(WordDatabaseJSON possibleWords,  int wordNumber, string anagram)
+    public static CrossWordsGameGrid_old GenerateCharPlacements(WordDatabaseJSON possibleWords,  int wordNumber, string anagram)
     {
         List<WordData> wordsShuffled = possibleWords.words.OrderBy(_ => rng.Next()).ToList();
         Dictionary<Vector2, char> result = new();
-        List <GridWord> addedWords = new();
+        List <GridWord_old> addedWords = new();
         List<int> addedWordsIndexs = new List<int>();
         
         bool isRow = true;
         
-        GridWord wordToAdd = new GridWord();
+        GridWord_old wordToAdd = new GridWord_old();
         wordToAdd.SolutionWord = wordsShuffled[0].word;
         wordToAdd.IsRow = isRow;
         wordToAdd.StartPosition = Vector2.zero;
@@ -53,7 +53,7 @@ public static class CharacterPlacementGenerator
                 {
                     int index = UnityEngine.Random.Range(0, possibleStartPositions.Count);
                     Vector2 startPos = possibleStartPositions[index];
-                    var wordToAddLoop = new GridWord();
+                    var wordToAddLoop = new GridWord_old();
                     
                     wordToAddLoop.SolutionWord = wordsShuffled[i].word;
                     wordToAddLoop.IsRow = isRow;
@@ -80,7 +80,7 @@ public static class CharacterPlacementGenerator
             i++;
         }
 
-        CrossWordsGameGrid crossWordsGameGrid = new CrossWordsGameGrid(addedWords);
+        CrossWordsGameGrid_old crossWordsGameGrid = new CrossWordsGameGrid_old(addedWords);
 
         return crossWordsGameGrid;
     }

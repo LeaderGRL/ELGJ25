@@ -229,7 +229,7 @@ namespace Crossatro.Board
         /// <param name="clueText">Clue text to display</param>
         public void ShowCluePopup(Vector2 gridPosition, string clueText)
         {
-            if (_cluePopup != null) return;
+            if (_cluePopup == null) return;
 
             // Calculate world position above the tile
             Vector3 tileWorldPos = Tile.GridToWorldPosition(gridPosition);

@@ -14,12 +14,12 @@ public class CrossWordGridGenerator : MonoBehaviour
 
     [SerializeField] private int m_shopTilePercentageApparition = 100/25;
 
-    private CrossWordsGameGrid m_crossWordsGameGrid;
+    private CrossWordsGameGrid_old m_crossWordsGameGrid;
 
     public Board m_board;
     public bool IsStarted { get; private set; } = false;
 
-    public event Action<CrossWordsGameGrid> OnEndGridGeneration = null;
+    public event Action<CrossWordsGameGrid_old> OnEndGridGeneration = null;
 
     private void Awake()
     {
@@ -73,14 +73,14 @@ public class CrossWordGridGenerator : MonoBehaviour
         OnEndGridGeneration?.Invoke(m_crossWordsGameGrid);
     }
 
-    private void OnValidateAllWordsCallback(GridWord lastWord)
+    private void OnValidateAllWordsCallback(GridWord_old lastWord)
     {
         //CharacterPlacementGenerator.GenrateCharPlacementsForExistingGrid(
         //    m_generationData.Database, 5, "", m_crossWordsGameGrid, lastWord, (() => OnEndGridGeneration?.Invoke(m_crossWordsGameGrid)));
 
     }
 
-    private void GenerateWord(GridWord newWord)
+    private void GenerateWord(GridWord_old newWord)
     {
         //m_board.ResetDoTweenDelay();
         foreach (var letterLocation in newWord.GetAllLetterSolutionPositions())
@@ -109,7 +109,7 @@ public class CrossWordGridGenerator : MonoBehaviour
 
     }
 
-    public CrossWordsGameGrid GetCrossWordsGameGrid()
+    public CrossWordsGameGrid_old GetCrossWordsGameGrid()
     {
         return m_crossWordsGameGrid;
     }

@@ -3,7 +3,7 @@ using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 
-namespace Crossatro.Board
+namespace Crossatro.Grid
 {
     /// <summary>
     /// Build a crossword grid by selecting and placing words from the database.
@@ -243,7 +243,7 @@ namespace Crossatro.Board
                 Vector2 intersecionPos = CalculateLetterPosition(lastWord.StartPosition, lastIndex, isLastWordRow);
 
                 // Calculate where the new word would start
-                Vector2 startPos = CalculateStartPosition(intersecionPos, newIndex, isLastWordRow);
+                Vector2 startPos = CalculateStartPosition(intersecionPos, newIndex, isRow);
 
                 // Validate the entire word at this position
                 if (IsPlacementValid(newWord, startPos, isRow, intersecionPos))
@@ -311,7 +311,8 @@ namespace Crossatro.Board
                 Vector2 below = new Vector2(letterPos.x, letterPos.y - 1);
 
                 if (letterPos.x != intersectionPos.x)
-                    return false;
+                    if (_placedLetters.ContainsKey(above) || _placedLetters.ContainsKey(below))
+                        return false;
 
                 // Check before first letter
                 if (letterIndex == 0)
@@ -349,7 +350,7 @@ namespace Crossatro.Board
                 // Check after last letter
                 if (letterIndex == wordLength - 1)
                 {
-                    Vector2 below = new Vector2(letterPos.x, letterIndex - 1);
+                    Vector2 below = new Vector2(letterPos.x, letterPos.y - 1);
                     if (_placedLetters.ContainsKey(below)) return false;
                 }
             }
@@ -414,7 +415,7 @@ namespace Crossatro.Board
         /// <param name="word">Word to add to the grid</param>
         private void CommitWord(GridWord word)
         {
-            var letters = word.GetAllLetterCurrentWordPositions();
+            var letters = word.GetAllLetterSolutionPositions();
             foreach (var kvp in letters)
             {
                 _placedLetters[kvp.Key] = kvp.Value;

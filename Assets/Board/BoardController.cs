@@ -110,13 +110,13 @@ public class BoardController : MonoBehaviour
         }
     }
 
-    private void HandleGridGeneration(CrossWordsGameGrid grid)
+    private void HandleGridGeneration(CrossWordsGameGrid_old grid)
     {
         // Subscribe to all words validated event on the new grid
         grid.OnValidateAllWorlds += HandlePuzzleCompletion;
     }
 
-    private void HandlePuzzleCompletion(GridWord lastWord)
+    private void HandlePuzzleCompletion(GridWord_old lastWord)
     {
         Debug.Log($"Board completed with word: {lastWord.SolutionWord}");
         OnBoardCompleted?.Invoke(this);

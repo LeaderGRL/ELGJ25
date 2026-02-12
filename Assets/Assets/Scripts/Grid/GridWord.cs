@@ -145,7 +145,7 @@ namespace Crossatro.Grid
         /// Return a copy to prevent external modification.
         /// </summary>
         /// <returns></returns>
-        public Dictionary<Vector2, char> GetAllLetterSoltutionPosition()
+        public Dictionary<Vector2, char> GetAllLetterSolutionPositions()
         {
             return new Dictionary<Vector2, char>(_solutionPositions);
         }
@@ -190,9 +190,18 @@ namespace Crossatro.Grid
         /// Return a copy to prevent external modification.
         /// </summary>
         /// <returns></returns>
-        public Dictionary<Vector2, char> GetAllLetterCurrentWordPosition()
+        public Dictionary<Vector2, char> GetAllLetterCurrentWordPositions()
         {
             return new Dictionary<Vector2, char>(_currentPositions);
+        }
+
+        /// <summary>
+        /// Get the current letter at a specific position.
+        /// Returns '\0' if position is not part of this word or empty.
+        /// </summary>
+        public char GetCurrentLetterAtLocation(Vector2 position)
+        {
+            return _currentPositions.GetValueOrDefault(position, '\0');
         }
 
         /// <summary>
