@@ -18,7 +18,7 @@ namespace Crossatro.Grid
         /// Maximum iterations before giving up on placing more words.
         /// Prevents infinite loops when no valid placement exists.
         /// </summary>
-        private const int MAX_ITERATIONS = 5000;
+        private const int MAX_ITERATIONS = 10000;
 
         // ============================================================
         // State
@@ -112,10 +112,9 @@ namespace Crossatro.Grid
             // Track which candidate indices we've already placed
             HashSet<int> usedIndices = new HashSet<int> { 0 };
 
-            bool isRow = false;
+            int passesWithoutPlacement = 0;
             int iterations = 0;
             int candidateIndex = 1;
-            bool loopedOnce = false;
 
             while (_placedWords.Count < targetCount && iterations < MAX_ITERATIONS)
             {
@@ -123,41 +122,81 @@ namespace Crossatro.Grid
 
                 if (usedIndices.Contains(candidateIndex))
                 {
-                    candidateIndex++;
-                    if (candidateIndex >= candidates.Count)
-                    {
-                        if (loopedOnce) break;
-                        candidateIndex = 0;
-                        loopedOnce = true;
-                    }
+                    candidateIndex = NextCandidateIndex(candidateIndex, candidates.Count);
                     continue;
                 }
 
-                GridWord lastPlaced = _placedWords[_placedWords.Count - 1];
-                string candidateWord = candidates[candidateIndex].word;
-
-                // Try find a valid placement
-                if (TryPlaceWord(candidates[candidateIndex], lastPlaced, isRow, out GridWord newWord))
+                if (TryPlaceCandidateAgainstGrid(candidates[candidateIndex], out GridWord newWord))
                 {
                     CommitWord(newWord);
                     usedIndices.Add(candidateIndex);
-                    isRow = !isRow;
-                    loopedOnce = false;
+                    passesWithoutPlacement = 0;
                 }
 
-                candidateIndex++;
-                if (candidateIndex >= candidates.Count)
+                candidateIndex = NextCandidateIndex( candidateIndex, candidates.Count); 
+
+                if (candidateIndex == 1)
                 {
-                    if (loopedOnce) break;
-                    candidateIndex = 0;
-                    loopedOnce = true;
+                    passesWithoutPlacement++;
+
+                    // Stop after 2 full passes without placing any word
+                    if (passesWithoutPlacement >= 2) break; 
                 }
             }
 
-           if (iterations > MAX_ITERATIONS)
-           {
+            if (iterations >=  MAX_ITERATIONS)
+            {
                 Debug.LogWarning($"[CrosswordGridBuilder] Hit max iterations ({MAX_ITERATIONS}). " + $"Placed {_placedWords.Count}/{targetCount} words.");
-           }
+            }
+        }
+
+        /// <summary>
+        /// Advance to next candidate index, wrapping around.
+        /// Index 0 is always the first word already placed.
+        /// </summary>
+        /// <param name="current"></param>
+        /// <param name="total"></param>
+        /// <returns></returns>
+        private int NextCandidateIndex(int current, int total)
+        {
+            int next = current + 1;
+            if (next >= total) next = 1;
+            return next;
+        }
+
+        private bool TryPlaceCandidateAgainstGrid(WordData wordData, out GridWord result)
+        {
+            result = null;
+
+            // Shuffle anchor order for variety
+            List<int> anchorOrder = Enumerable.Range(0, _placedWords.Count)
+                .OrderBy(_ => _rng.Next())
+                .ToList();
+
+            foreach (int anchorIndex in anchorOrder)
+            {
+                GridWord anchor = _placedWords[anchorIndex];
+
+                bool newIsRow = !anchor.IsRow;
+
+                // Find shared letters
+                var intersections = FindLetterIntersections(wordData.word, anchor.SolutionWord);
+                if (intersections.Count == 0) continue;
+
+                // Find valid start positions from theses intersections
+                var ValidPositions = FindValidStartPosition(wordData.word, anchor, intersections, newIsRow);
+
+                if (ValidPositions.Count == 0) continue;
+
+                // Pick a random valid position
+                int index = _rng.Next(ValidPositions.Count);
+                Vector2 startPos = ValidPositions[index];
+
+                result = CreateGridWord(wordData, startPos, newIsRow);
+                return true;
+            }
+
+            return false;
         }
 
         /// <summary>

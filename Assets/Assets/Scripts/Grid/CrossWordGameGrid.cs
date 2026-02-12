@@ -245,7 +245,7 @@ namespace Crossatro.Grid
                     offset--;
                 }
                 Vector2 startPosition = new Vector2(location.x + offset, location.y);
-                var word = GetWordWithStartPosition(startPosition, false);
+                var word = GetWordWithStartPosition(startPosition, true);
                 if (word != null)
                 {
                     result.Add(word);
@@ -264,7 +264,7 @@ namespace Crossatro.Grid
                     offset--;
                 }
                 Vector2 startPosition = new Vector2(location.x, location.y - offset);
-                var word = GetWordWithStartPosition(startPosition, true);
+                var word = GetWordWithStartPosition(startPosition, false);
                 if (word != null)
                 {
                     result.Add(word);
