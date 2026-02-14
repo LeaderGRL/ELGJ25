@@ -45,7 +45,7 @@ namespace Crossatro.Turn
     /// <summary>
     /// Published when the phase timer runs out to force phase transision.
     /// </summary>
-    public struct TimerExpieredEvent
+    public struct TimerExpiredEvent
     {
         public TurnPhase Phase;
     }
