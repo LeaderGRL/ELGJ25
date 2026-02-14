@@ -1,3 +1,4 @@
+using Crossatro.Heart;
 using System.Collections;
 using System.Runtime.CompilerServices;
 using UnityEngine;
@@ -79,6 +80,7 @@ namespace Crossatro.Turn
             EventBus.Instance.Subscribe<TimerExpiredEvent>(OnTimerExpired);
             EventBus.Instance.Subscribe<PlayerPassedEvent>(OnPlayerPassed);
             EventBus.Instance.Subscribe<EnemyPhaseCompletedEvent>(OnEnemyPhaseCompleted);
+            EventBus.Instance.Subscribe<HeartDestroyedEvent>(OnHeartDestroyed);
         }
 
         private void UnsubscribeFromEvents()
@@ -86,6 +88,7 @@ namespace Crossatro.Turn
             EventBus.Instance.Unsubscribe<TimerExpiredEvent>(OnTimerExpired);
             EventBus.Instance.Unsubscribe<PlayerPassedEvent>(OnPlayerPassed);
             EventBus.Instance.Unsubscribe<EnemyPhaseCompletedEvent>(OnEnemyPhaseCompleted);
+            EventBus.Instance.Unsubscribe<HeartDestroyedEvent>(OnHeartDestroyed);
         }
 
         // ============================================================
@@ -242,6 +245,13 @@ namespace Crossatro.Turn
 
             Log("Enemy phase completed");
             StartNextTurn();
+        }
+
+        private void OnHeartDestroyed(HeartDestroyedEvent evt)
+        {
+            Log("Game Over");
+            evt.TurnNumber = _turnNumber;
+            TriggerGameOver();
         }
 
         // ============================================================
