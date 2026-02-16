@@ -390,7 +390,7 @@ namespace Crossatro.Board
 
             foreach (char letter in letterPositions.Values)
             {
-                total += LetterWeight.GetLetterWeight(letter);
+                total += LetterWeight_old.GetLetterWeight(letter);
             }
 
             return total;

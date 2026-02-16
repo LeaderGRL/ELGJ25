@@ -34,11 +34,11 @@ namespace Crossatro.Events
         public int Delta;
     }
 
-    public struct PlayerDamagedEvent
-    {
-        public int Damage;
-        public int RemainingHealth;
-    }
+    //public struct PlayerDamagedEvent
+    //{
+    //    public int Damage;
+    //    public int RemainingHealth;
+    //}
 
     public struct CoinsChangedEvent
     {

@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LetterWeight : MonoBehaviour
+public class LetterWeight_old : MonoBehaviour
 {
     public static Dictionary<char, int> Weights = new Dictionary<char, int>
     {

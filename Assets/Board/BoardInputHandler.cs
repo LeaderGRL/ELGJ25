@@ -153,7 +153,7 @@ public class BoardInputHandler : MonoBehaviour
         foreach (var position in m_currentSelectedWord.GetAllLetterSolutionPositions().Keys)
         {
             m_board.UpdateTileState(position, TileState.Validated);
-            m_scoreController.AddScore(LetterWeight.GetLetterWeight(
+            m_scoreController.AddScore(LetterWeight_old.GetLetterWeight(
                 m_currentSelectedWord.GetAllLetterSolutionPositions()[position]
             ));
             m_board.CheckForCoinTile(m_coinController, position);
