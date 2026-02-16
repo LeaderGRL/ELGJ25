@@ -127,7 +127,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     private void SubscribeToEvents()
     {
-        EventBus.Instance.Subscribe<PlayerDamagedEvent>(OnPlayerDamaged);
+        EventBus.Instance.Subscribe<PlayerDamageEvent>(OnPlayerDamaged);
         //EventBus.Instance.Subscribe<BoardCompletedEvent>(OnBoardCompleted)
     }
 
@@ -138,7 +138,7 @@ public class GameManager : MonoBehaviour
     {
         if (EventBus.Instance == null) return;
 
-        EventBus.Instance.Unsubscribe<PlayerDamagedEvent>(OnPlayerDamaged);
+        EventBus.Instance.Unsubscribe<PlayerDamageEvent>(OnPlayerDamaged);
     }
 
     /// <summary>
@@ -332,7 +332,7 @@ public class GameManager : MonoBehaviour
     /// Check if the player died
     /// </summary>
     /// <param name="evt"></param>
-    private void OnPlayerDamaged(PlayerDamagedEvent evt)
+    private void OnPlayerDamaged(PlayerDamageEvent evt)
     {
         if (evt.RemainingHealth <= 0)
         {

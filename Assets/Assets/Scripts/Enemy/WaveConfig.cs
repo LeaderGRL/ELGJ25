@@ -10,7 +10,7 @@ namespace Crossatro.Enemy
     /// Define esnmy spawn waves for a grid.
     /// </summary>
     [CreateAssetMenu(fileName = "WaweConfig", menuName = "Wave Config")]
-    public class WaweConfig: ScriptableObject
+    public class WaveConfig: ScriptableObject
     {
         // ============================================================
         // Wave definitions
@@ -28,12 +28,21 @@ namespace Crossatro.Enemy
         [SerializeField] private int _repeatInterval = 5;
 
         // ============================================================
+        // Delay
+        // ============================================================
+
+        [Header("Delay")]
+        [Tooltip("Delay duration for an enemy to spawn")]
+        [SerializeField] private float _spawnDelay = 0.5f;
+
+        // ============================================================
         // Public accessors
         // ============================================================
 
         public IReadOnlyList<Wave> Waves => _waves;
         public bool RepeatLastWave => _repeatLastWave;
         public int RepeatInterval => _repeatInterval;
+        public float SpawnDelay => _spawnDelay;
 
         /// <summary>
         /// Get all spawn entries for a turn.
