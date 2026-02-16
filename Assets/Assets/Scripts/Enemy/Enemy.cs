@@ -149,6 +149,7 @@ namespace Crossatro.Enemy
         {
             if (_currentPM <= 0) return false;
 
+            return EnemyPathFinding.IsInRange(_currentPosition, heartPosition, CurrentAttackRange);
         }
 
         /// <summary>
