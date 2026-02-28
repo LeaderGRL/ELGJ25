@@ -5,6 +5,10 @@ namespace Crossatro.Board
     [CreateAssetMenu(fileName = "TileAnimationConfig", menuName = "Crossatro/Tile Animation Config")]
     public class TileConfig: ScriptableObject
     {
+        [Header("Size")]
+        [Tooltip("Size of a cell")]
+        [SerializeField] private float _gridCellSize;
+
         [Header("Spawn Animation")]
         [Tooltip("Duration of the scale animation when tile appears")]
         [SerializeField] private float _spawnDuration = 0.5f;
@@ -31,6 +35,7 @@ namespace Crossatro.Board
         // Public Accessors
         // ============================================================
 
+        public float GridCellSize => _gridCellSize;
         public float SpawnDuration => _spawnDuration;
         public float SpawnStaggerDelay => _spawnStaggerDelay;
         public float JumpPower => _jumpPower;

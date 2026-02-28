@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4603976d78cc76e48a653d5cba339c17, type: 3}
   m_Name: TurnConfig
   m_EditorClassIdentifier: Assembly-CSharp::Crossatro.Turn.TurnConfig
-  _playerPhaseDuration: 90
+  _playerPhaseDuration: 10
   _timerTickInterval: 1
   _enemyActionDelay: 0.5
   _enemyPhaseTimeout: 15

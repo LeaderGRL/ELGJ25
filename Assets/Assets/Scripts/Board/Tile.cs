@@ -54,7 +54,7 @@ namespace Crossatro.Board
         /// <returns></returns>
         public static Vector3 GridToWorldPosition(Vector2 gridPos)
         {
-            return new Vector3(gridPos.x * GRID_CELL_SIZE, 0f, gridPos.y * GRID_CELL_SIZE);
+            return new Vector3(gridPos.x, 0f, gridPos.y);
         }
 
         // ============================================================

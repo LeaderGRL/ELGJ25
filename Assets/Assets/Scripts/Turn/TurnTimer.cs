@@ -75,10 +75,11 @@ namespace Crossatro.Turn
         public void Update(float deltaTime)
         {
             if (!_isRunning) return;
-            if (!_isInfinite) return;
+            if (_isInfinite) return;
 
             _timeRemaining -= deltaTime;
             _timeSinceLastTick += deltaTime;
+
 
             // Publish tick at regular interval
             if (_timeSinceLastTick >= _tickInterval)

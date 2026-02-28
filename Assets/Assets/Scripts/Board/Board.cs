@@ -1,9 +1,8 @@
 using DG.Tweening;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Tilemaps;
 
 namespace Crossatro.Board
 {
@@ -185,6 +184,11 @@ namespace Crossatro.Board
         public bool HasTileAt(Vector2 gridPosition)
         {
             return _positionTile.ContainsKey(gridPosition);
+        }
+
+        public HashSet<Vector2> GetAllTilePosition()
+        {
+            return _positionTile.Keys.ToHashSet();
         }
 
         // ============================================================

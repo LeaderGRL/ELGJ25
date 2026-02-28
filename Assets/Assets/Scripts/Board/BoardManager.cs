@@ -1,3 +1,4 @@
+using Crossatro.Enemy;
 using Crossatro.Grid;
 using Unity.Collections;
 using UnityEngine;
@@ -18,6 +19,7 @@ namespace Crossatro.Board
         [SerializeField] private BoardInputHandler _inputHandler;
         [SerializeField] private BoardController _boardController;
         [SerializeField] private TileFactory _tileFactory;
+        [SerializeField] private EnemyManager _enemyManager;
 
         [Header("Grid Generation")]
         [Tooltip("Scriptable object with word database and generation settings")]
@@ -61,6 +63,8 @@ namespace Crossatro.Board
 
             _boardController.Initialize(_grid);
 
+            _enemyManager.Initialize(_board.GetAllTilePosition());
+
             Log($"Board ready! {_grid.Words.Count} words generated.");
             LogWordList();
         }
@@ -98,6 +102,7 @@ namespace Crossatro.Board
                 foreach (var kvp in letterPosition)
                 {
                     Vector2 position = kvp.Key;
+                    Debug.Log("TILE POSITION AHAH :" +  position);
 
                     // Skip if a tile already exist at this position
                     if (_board.HasTileAt(position)) continue;

@@ -1,6 +1,7 @@
 using NUnit.Framework;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEditor;
 using UnityEngine;
 
 namespace Crossatro.Enemy
@@ -34,14 +35,16 @@ namespace Crossatro.Enemy
         /// <param name="isWalkable">Function that return true if a position can be walked on</param>
         /// <param name="maxSearchDepth">Safety limit to prevent infinite search</param>
         /// <returns>List of positions from start to target</returns>
-        public static List<Vector2Int> FindPath(Vector2Int start, Vector2Int target, System.Func<Vector2Int, bool> isWalkable, int maxSearchDepth = 200)
+        public static List<Vector2> FindPath(Vector2 start, Vector2 target, List<Vector2> tilePositions, List<Vector2> blockedPositions, int maxSearchDepth = 200)
         {
-            if (start == target) return new List<Vector2Int>();
+            if (start == target) return new List<Vector2>();
+
+            if (!tilePositions.Contains(start) || !tilePositions.Contains(target)) return new List<Vector2>();
 
             // BFS setup
-            var queue = new Queue<Vector2Int>();
-            var cameFrom = new Dictionary<Vector2Int, Vector2Int>();
-            var visited = new HashSet<Vector2Int>();
+            var queue = new Queue<Vector2>();
+            var cameFrom = new Dictionary<Vector2, Vector2>();
+            var visited = new HashSet<Vector2>();
 
             queue.Enqueue(start);
             visited.Add(start);
@@ -50,16 +53,18 @@ namespace Crossatro.Enemy
 
             while (queue.Count > 0 && nodeExplored < maxSearchDepth)
             {
-                Vector2Int current = queue.Dequeue();
+                Vector2 current = queue.Dequeue();
                 nodeExplored++;
 
                 // Check all 4 neighbors
                 for (int i = 0; i < Directions.Length; i++)
                 {
-                    Vector2Int neighbor = current + Directions[i];
+                    Vector2 neighbor = current + Directions[i];
 
-                    bool canWalk = neighbor == target || isWalkable(neighbor);
-                    if (!canWalk) continue;
+                    if (visited.Contains(neighbor)) continue;
+                    if (!tilePositions.Contains(neighbor)) continue;
+
+                    if (neighbor != target && blockedPositions != null && blockedPositions.Contains(neighbor)) continue;
 
                     visited.Add(neighbor);
                     cameFrom[neighbor] = current;
@@ -74,7 +79,7 @@ namespace Crossatro.Enemy
                 }
             } 
             
-            return new List<Vector2Int>();
+            return new List<Vector2>();
         }
 
         // ============================================================
@@ -86,12 +91,12 @@ namespace Crossatro.Enemy
         /// </summary>
         /// <param name="tilePositions"></param>
         /// <returns></returns>
-        public static Vector2Int FindCenterTile(HashSet<Vector2Int> tilePositions)
+        public static Vector2 FindCenterTile(HashSet<Vector2> tilePositions)
         {
             if (tilePositions.Count == 0)
             {
                 Debug.LogError("[EnemyPathFinding] Cannot find center of empty grid");
-                return Vector2Int.zero;
+                return Vector2.zero;
             }
 
             float sumX = 0;
@@ -107,7 +112,7 @@ namespace Crossatro.Enemy
             float centerY = sumY / tilePositions.Count;
 
             // Find the closest tile to the center
-            Vector2Int closest = Vector2Int.zero;
+            Vector2 closest = Vector2.zero;
             float closestDist = float.MaxValue;
 
             foreach (var pos in tilePositions)
@@ -131,9 +136,9 @@ namespace Crossatro.Enemy
         /// </summary>
         /// <param name="tilePositions"></param>
         /// <returns></returns>
-        public static List<Vector2Int> FindBorderTiles(HashSet<Vector2Int> tilePositions)
+        public static List<Vector2> FindBorderTiles(HashSet<Vector2> tilePositions)
         {
-            var borders = new List<Vector2Int>();
+            var borders = new List<Vector2>();
 
             foreach (var pos in tilePositions)
             {
@@ -151,9 +156,9 @@ namespace Crossatro.Enemy
             return borders;
         }
 
-        public static List<Vector2Int> FindEndpointTiles(HashSet<Vector2Int> tilePositions)
+        public static List<Vector2> FindEndpointTiles(HashSet<Vector2> tilePositions)
         {
-            var endpoints = new List<Vector2Int>();
+            var endpoints = new List<Vector2>();
 
             foreach (var pos in tilePositions)
             {
@@ -180,17 +185,17 @@ namespace Crossatro.Enemy
         /// <param name="count"></param>
         /// <param name="minPathDistance"></param>
         /// <returns></returns>
-        public static List<Vector2Int> SelectSpawnPosition(HashSet<Vector2Int> tilePositions, Vector2Int heartPosition, int count = 10, int minPathDistance = 4)
+        public static List<Vector2> SelectSpawnPosition(HashSet<Vector2> tilePositions, Vector2 heartPosition, int count = 10, int minPathDistance = 4)
         {
             // BFS distances from heart to all reachable tiles
             var distances = BFSDistancesFromHeart(heartPosition, tilePositions);
 
             var endpoints = FindEndpointTiles(tilePositions);
             var border = FindBorderTiles(tilePositions);
-            var endpointSet = new HashSet<Vector2Int>(endpoints);
+            var endpointSet = new HashSet<Vector2>(endpoints);
 
             // Build candidate list
-            var candidates = new List<(Vector2Int pos, int dist, bool isEndPoint)>();
+            var candidates = new List<(Vector2 pos, int dist, bool isEndPoint)>();
 
             foreach (var pos in endpoints)
             {
@@ -227,7 +232,7 @@ namespace Crossatro.Enemy
         /// <param name="a"></param>
         /// <param name="b"></param>
         /// <returns></returns>
-        public static int ManhattanDistance(Vector2Int a, Vector2Int b)
+        public static float ManhattanDistance(Vector2 a, Vector2 b)
         {
             return Mathf.Abs(a.x - b.x) + Mathf.Abs(a.y - b.y);
         }
@@ -239,7 +244,7 @@ namespace Crossatro.Enemy
         /// <param name="target"></param>
         /// <param name="range"></param>
         /// <returns></returns>
-        public static bool IsInRange(Vector2Int position, Vector2Int target, int range)
+        public static bool IsInRange(Vector2 position, Vector2 target, int range)
         {
             return ManhattanDistance(position, target) <= range;
         }
@@ -250,10 +255,10 @@ namespace Crossatro.Enemy
         /// <param name="heartPosition"></param>
         /// <param name="tilePositions"></param>
         /// <returns></returns>
-        public static Dictionary<Vector2Int, int> BFSDistancesFromHeart(Vector2Int heartPosition, HashSet<Vector2Int> tilePositions)
+        public static Dictionary<Vector2, int> BFSDistancesFromHeart(Vector2 heartPosition, HashSet<Vector2> tilePositions)
         {
-            var distances = new Dictionary<Vector2Int, int>();
-            var queue = new Queue<Vector2Int>();
+            var distances = new Dictionary<Vector2, int>();
+            var queue = new Queue<Vector2>();
 
             if (!tilePositions.Contains(heartPosition)) return distances;
 
@@ -262,12 +267,12 @@ namespace Crossatro.Enemy
 
             while (queue.Count > 0)
             {
-                Vector2Int current = queue.Dequeue();
+                Vector2 current = queue.Dequeue();
                 int currentDist = distances[current];
 
                 for (int i = 0; i < Directions.Length; i++)
                 {
-                    Vector2Int neighbor = current + Directions[i];
+                    Vector2 neighbor = current + Directions[i];
 
                     if (!tilePositions.Contains(neighbor)) continue;
                     if (distances.ContainsKey(neighbor)) continue;
@@ -291,10 +296,10 @@ namespace Crossatro.Enemy
         /// <param name="start"></param>
         /// <param name="target"></param>
         /// <returns></returns>
-        private static List<Vector2Int> ReconstructPath(Dictionary<Vector2Int, Vector2Int> cameFrom, Vector2Int start, Vector2Int target)
+        private static List<Vector2> ReconstructPath(Dictionary<Vector2, Vector2> cameFrom, Vector2 start, Vector2 target)
         {
-            var path = new List<Vector2Int>();
-            Vector2Int current = target;
+            var path = new List<Vector2>();
+            Vector2 current = target;
 
             while (current != start)
             {
@@ -307,6 +312,21 @@ namespace Crossatro.Enemy
             return path;
         }
 
+        // ============================================================
+        // Debug
+        // ============================================================
 
+        public static void DrawPath(List<Vector2> path)
+        {
+
+            Debug.Log("DRAW PATH : " + path.Count);
+            Gizmos.color = Color.green;
+
+            foreach (var pos in path)
+            {
+                Gizmos.DrawSphere(new Vector3(pos.x, 1, pos.y), 0.2f);
+                Debug.Log("Draw at : " + pos);
+            }
+        }
     }
 }

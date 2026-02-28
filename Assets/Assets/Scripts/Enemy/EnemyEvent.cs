@@ -6,7 +6,7 @@ namespace Crossatro.Enemy
     public struct EnemySpawnEvent
     {
         public Enemy Enemy;
-        public Vector2Int GridPosition;
+        public Vector2 GridPosition;
         public int TurnNumber;
     }
 
@@ -21,14 +21,14 @@ namespace Crossatro.Enemy
     {
         public Enemy Enemy;
         public int GoldReward;
-        public Vector2Int GridPosition;
+        public Vector2 GridPosition;
     }
 
     public struct EnemyMovedEvent
     {
         public Enemy Enemy;
-        public Vector2Int FromPosition;
-        public Vector2Int ToPosition;
+        public Vector2 FromPosition;
+        public Vector2 ToPosition;
         public int RemainingMovement;
     }
 

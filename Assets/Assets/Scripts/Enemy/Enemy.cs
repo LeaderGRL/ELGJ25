@@ -44,7 +44,7 @@ namespace Crossatro.Enemy
         // ============================================================
 
         [Header("Position")]
-        [SerializeField] private Vector2Int _currentPosition;
+        [SerializeField] private Vector2 _currentPosition;
 
         // ============================================================
         // Properties
@@ -54,7 +54,7 @@ namespace Crossatro.Enemy
         public string Name => _data != null ? _data.Name : "Unknown";
         public int CurrentHp => _currentHp;
         public int MaxHp => _maxHp;
-        public Vector2Int GridPosition => _currentPosition;
+        public Vector2 GridPosition => _currentPosition;
         public int CurrentAttackDamage => _currentAttackDamage;
         public int CurrentAttackRange => _data != null ? _data.BaseAttackDistance : 1;
         public int CurrentPM => _currentPM;
@@ -70,13 +70,16 @@ namespace Crossatro.Enemy
         /// </summary>
         /// <param name="data"></param>
         /// <param name="gridPosition"></param>
-        public void Initialize(EnemyData data, Vector2Int gridPosition)
+        public void Initialize(EnemyData data, Vector2 gridPosition)
         {
             _data = data;
             _currentHp = data.BaseHp;
             _maxHp = _currentHp;
             _currentPosition = gridPosition;
             _isDead = false;
+
+            _currentPosition = gridPosition;
+            transform.position = _currentPosition;
 
             ResetTurnResources();
 
@@ -106,14 +109,14 @@ namespace Crossatro.Enemy
         /// Move along a path, consuming PM for each step.
         /// </summary>
         /// <param name="path">Full path from current position to target</param>
-        private List<Vector2Int> Move(List<Vector2Int> path)
+        public List<Vector2> Move(List<Vector2> path)
         {
-            var moved = new List<Vector2Int>();
+            var moved = new List<Vector2>();
 
             for (int i = 0; i < path.Count && _currentPM > 0; i++)
             {
-                Vector2Int nextPos = path[i];
-                Vector2Int previousPos = _currentPosition;
+                Vector2 nextPos = path[i];
+                Vector2 previousPos = _currentPosition;
 
                 _currentPosition = nextPos;
                 _currentPM--;
@@ -145,7 +148,7 @@ namespace Crossatro.Enemy
         /// Check if enemy can attack the heart from its current position.
         /// </summary>
         /// <param name="heartPosition">Position of the heart to attack</param>
-        private bool CanAttack(Vector2Int heartPosition)
+        private bool CanAttack(Vector2 heartPosition)
         {
             if (_currentPM <= 0) return false;
 
@@ -155,7 +158,7 @@ namespace Crossatro.Enemy
         /// <summary>
         /// Execute an attack against the heart.
         /// </summary>
-        private int Attack(Vector2Int heartPosition)
+        public int Attack(Vector2 heartPosition)
         {
             if (_data == null) return 0;
 

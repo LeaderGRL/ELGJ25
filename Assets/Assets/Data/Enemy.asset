@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a37e013ae62c68143bf16a11b7d380fa, type: 3}
+  m_Name: Enemy
+  m_EditorClassIdentifier: Assembly-CSharp::Crossatro.Enemy.EnemyData
+  _name: Capsule
+  _description: Just a capsule
+  _prefab: {fileID: 4005077159775791810, guid: ae9f55a3af2af3c46acf12cc1dcda201, type: 3}
+  _baseHp: 1000
+  _baseActionPoint: 3
+  _baseMovementPoint: 3
+  _baseAttackDistance: 1
+  _baseAttackDamage: 10
+  _goldReward: 10

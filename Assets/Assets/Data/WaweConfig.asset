@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb5bd48637057a844bbbf91575777f8f, type: 3}
+  m_Name: WaweConfig
+  m_EditorClassIdentifier: Assembly-CSharp::Crossatro.Enemy.WaveConfig
+  _waves:
+  - TurnNumber: 0
+    Spawns:
+    - EnemyData: {fileID: 11400000, guid: ee130ad44a09d4a44a90301386e37493, type: 2}
+      Count: 1
+  - TurnNumber: 1
+    Spawns:
+    - EnemyData: {fileID: 11400000, guid: ee130ad44a09d4a44a90301386e37493, type: 2}
+      Count: 1
+  _repeatLastWave: 0
+  _repeatInterval: 5
+  _spawnDelay: 0.5

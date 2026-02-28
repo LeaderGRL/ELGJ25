@@ -222,8 +222,8 @@ namespace Crossatro.Turn
 
         private void OnTimerExpired(TimerExpiredEvent evt)
         {
-            if (_currentPhase != TurnPhase.PlayerPhase) return;
-            if (_isTransitioning) return;
+            //if (_currentPhase != TurnPhase.PlayerPhase) return;
+            //if (_isTransitioning) return;
 
             Log("Player phase timer expired");
             EndPlayerPhase();
