@@ -118,11 +118,12 @@ namespace Crossatro.Enemy
         private void StartEnemyTurn(int turnNumber)
         {
             if (_waveConfig == null) return;
-
+            
             var spawnEntries = _waveConfig.GetSpawnForTurn(turnNumber);
 
-            if (spawnEntries != null || spawnEntries.Count > 0)
+            if (spawnEntries.Count > 0)
             {
+                Debug.Log("SpawnEntries COUNT : " +  spawnEntries.Count);
                 foreach (var spawnEntry in spawnEntries)
                 {
                     for (var i = 0; i < spawnEntry.Count; i++)
@@ -130,10 +131,12 @@ namespace Crossatro.Enemy
                         StartCoroutine(Spawn(spawnEntry.EnemyData));
                     }
                 }
+                return;
             }
 
             foreach (var enemy in _enemies)
             {
+                enemy.ResetTurnResources();
                 StartCoroutine(ProcessSingleEnemy(enemy));
             }
 
@@ -145,14 +148,13 @@ namespace Crossatro.Enemy
             Debug.Log("[EnemyManager]: Processing single enemy");
             Debug.Log("[EnemyManager]: Enemy position: " + enemy.GridPosition + " and heart position " + _heartPosition);
 
-            _enemyPath = EnemyPathFinding.FindPath(enemy.GridPosition, _heartPosition, _tilePositions.ToList(), _obstaclePositions.ToList());
+            _enemyPath = EnemyPathFinding.FindPath(new Vector2(enemy.GridPosition.x, enemy.GridPosition.z), _heartPosition, _tilePositions.ToList(), _obstaclePositions.ToList());
 
             if (_enemyPath == null) yield break;
 
             if (_debugMode == true)
                 _drawEnemyPathGizmo = true;
 
-            Debug.Log("[EnemyManager]: Drawing enemy path!");
             enemy.Move(_enemyPath);
             enemy.Attack(_heartPosition);
 

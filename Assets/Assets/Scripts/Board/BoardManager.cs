@@ -102,7 +102,6 @@ namespace Crossatro.Board
                 foreach (var kvp in letterPosition)
                 {
                     Vector2 position = kvp.Key;
-                    Debug.Log("TILE POSITION AHAH :" +  position);
 
                     // Skip if a tile already exist at this position
                     if (_board.HasTileAt(position)) continue;

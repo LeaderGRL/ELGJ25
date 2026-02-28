@@ -44,7 +44,7 @@ namespace Crossatro.Enemy
         // ============================================================
 
         [Header("Position")]
-        [SerializeField] private Vector2 _currentPosition;
+        [SerializeField] private Vector3 _currentPosition;
 
         // ============================================================
         // Properties
@@ -54,7 +54,7 @@ namespace Crossatro.Enemy
         public string Name => _data != null ? _data.Name : "Unknown";
         public int CurrentHp => _currentHp;
         public int MaxHp => _maxHp;
-        public Vector2 GridPosition => _currentPosition;
+        public Vector3 GridPosition => _currentPosition;
         public int CurrentAttackDamage => _currentAttackDamage;
         public int CurrentAttackRange => _data != null ? _data.BaseAttackDistance : 1;
         public int CurrentPM => _currentPM;
@@ -75,10 +75,9 @@ namespace Crossatro.Enemy
             _data = data;
             _currentHp = data.BaseHp;
             _maxHp = _currentHp;
-            _currentPosition = gridPosition;
             _isDead = false;
 
-            _currentPosition = gridPosition;
+            _currentPosition = new Vector3(gridPosition.x, 1, gridPosition.y);
             transform.position = _currentPosition;
 
             ResetTurnResources();
@@ -118,10 +117,12 @@ namespace Crossatro.Enemy
                 Vector2 nextPos = path[i];
                 Vector2 previousPos = _currentPosition;
 
-                _currentPosition = nextPos;
+                _currentPosition = new Vector3(nextPos.x, 1, nextPos.y);
                 _currentPM--;
 
                 moved.Add(nextPos);
+
+                transform.position = _currentPosition;
 
                 EventBus.Instance.Publish(new EnemyMovedEvent
                 {
