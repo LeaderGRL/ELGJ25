@@ -60,6 +60,7 @@ namespace Crossatro.Enemy
         public int CurrentPM => _currentPM;
         public int CurrentPA => _currentPA;
         public float HpPercent => MaxHp > 0 ? (float)_currentHp / MaxHp : 0;
+        public bool IsDead => _isDead;
 
         // ============================================================
         // Initialization

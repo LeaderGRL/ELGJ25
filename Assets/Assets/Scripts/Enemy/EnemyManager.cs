@@ -11,7 +11,11 @@ using UnityEngine.UIElements;
 namespace Crossatro.Enemy
 {
     /// <summary>
+    /// Manage all enemies and their phases.
     /// 
+    /// - Enemies spawn in border of the board.
+    /// - Enemies walk on tiles.
+    /// - Enemies use pathfinding to reach the heart.
     /// </summary>
     public class EnemyManager: MonoBehaviour
     {
@@ -19,6 +23,7 @@ namespace Crossatro.Enemy
         // Configuration
         // ============================================================
 
+        [Header("Configuration")]
         [SerializeField] private WaveConfig _waveConfig;
 
         // ============================================================
@@ -36,8 +41,6 @@ namespace Crossatro.Enemy
         private HashSet<Vector2> _obstaclePositions;
         private List<Vector2> _spawnPositions;
         private Vector2 _heartPosition;
-
-        private int _spawnPositionIndex = 0;
 
         private List<Vector2> _enemyPath;
 
@@ -78,6 +81,7 @@ namespace Crossatro.Enemy
             _tilePositions = tilePositions;
 
             _heartPosition = EnemyPathFinding.FindCenterTile(tilePositions);
+            _spawnPositions = EnemyPathFinding.SelectSpawnPosition(_tilePositions, _heartPosition);
 
 
         }
@@ -97,33 +101,27 @@ namespace Crossatro.Enemy
             EventBus.Instance.Unsubscribe<PhaseChangedEvent>(OnPhaseChanged);
             EventBus.Instance.Unsubscribe<TurnStartedEvent>(OnTurnStarted);
         }
-        private IEnumerator Spawn(EnemyData enemy)
-        {
-            var spawnPoints = EnemyPathFinding.SelectSpawnPosition(_tilePositions, _heartPosition);
 
-            var enemyObject = Instantiate(enemy.Prefab, this.transform);
-            var enemyComponent = enemyObject.AddComponent<Enemy>();
-            enemyComponent.Initialize(enemy, spawnPoints[_spawnPositionIndex]);
-            _enemies.Add(enemyComponent);
-            _spawnPositions.Add(spawnPoints[_spawnPositionIndex]);
-            _occupiedPositions.Add(spawnPoints[_spawnPositionIndex]);
+        // ============================================================
+        // Enemy phase execution
+        // ============================================================
 
-            _spawnPositionIndex++;
-
-            Debug.Log("[EnemyManager]: spawn enemy - " + enemy.name);
-
-            yield return new WaitForSeconds(_waveConfig.SpawnDelay);
-        }
-
+        /// <summary>
+        /// process all enemies actions
+        /// - Spawn first
+        /// - Action
+        /// </summary>
+        /// <param name="turnNumber"></param>
         private void StartEnemyTurn(int turnNumber)
         {
             if (_waveConfig == null) return;
-            
+
+            UpdateOccupiedPositions();
+
             var spawnEntries = _waveConfig.GetSpawnForTurn(turnNumber);
 
             if (spawnEntries.Count > 0)
             {
-                Debug.Log("SpawnEntries COUNT : " +  spawnEntries.Count);
                 foreach (var spawnEntry in spawnEntries)
                 {
                     for (var i = 0; i < spawnEntry.Count; i++)
@@ -134,19 +132,27 @@ namespace Crossatro.Enemy
                 return;
             }
 
-            foreach (var enemy in _enemies)
+            var sortedEnemies = SortEnemyByClosestToHeart(_enemies);
+
+            foreach (var enemy in sortedEnemies)
             {
-                enemy.ResetTurnResources();
+                if (enemy.IsDead) continue;
+
                 StartCoroutine(ProcessSingleEnemy(enemy));
             }
 
-
+            EventBus.Instance.Publish(new Turn.EnemyPhaseCompletedEvent
+            {
+                TurnNumber = turnNumber,
+            });
         }
 
         private IEnumerator ProcessSingleEnemy(Enemy enemy)
         {
             Debug.Log("[EnemyManager]: Processing single enemy");
             Debug.Log("[EnemyManager]: Enemy position: " + enemy.GridPosition + " and heart position " + _heartPosition);
+
+            enemy.ResetTurnResources();
 
             _enemyPath = EnemyPathFinding.FindPath(new Vector2(enemy.GridPosition.x, enemy.GridPosition.z), _heartPosition, _tilePositions.ToList(), _obstaclePositions.ToList());
 
@@ -161,12 +167,90 @@ namespace Crossatro.Enemy
             yield return new WaitForSeconds(1f);
         }
 
-        private bool IsWalkable(Vector2 tilePosition)
-        {
-            if (_occupiedPositions.Contains(tilePosition) || _obstaclePositions.Contains(tilePosition))
-                return false;
+        // ============================================================
+        // Spawn
+        // ============================================================
 
-            return true;
+        /// <summary>
+        /// Spawn enemies in the spawn location
+        /// </summary>
+        /// <param name="enemy"></param>
+        /// <returns></returns>
+        private IEnumerator Spawn(EnemyData enemy)
+        {
+
+            var spawnPosition = FindBestSpawnPosition();
+            if (spawnPosition == null)
+                yield break;
+
+            var enemyObject = Instantiate(enemy.Prefab, this.transform);
+            var enemyComponent = enemyObject.AddComponent<Enemy>();
+            enemyComponent.Initialize(enemy, spawnPosition.Value);
+            _enemies.Add(enemyComponent);
+            _spawnPositions.Add(spawnPosition.Value);
+            _occupiedPositions.Add(spawnPosition.Value);
+
+            Debug.Log("[EnemyManager]: spawn enemy - " + enemy.name);
+
+            yield return new WaitForSeconds(_waveConfig.SpawnDelay);
+        }
+
+        /// <summary>
+        /// Choose the best available spawn.
+        /// If there is not available spawn, choose an unoccupied tile.
+        /// </summary>
+        /// <returns>Return spawn position or null if there is no available tile on the board</returns>
+        private Vector2? FindBestSpawnPosition()
+        {
+            // Check if spawn position are available
+            foreach (var pos in _spawnPositions)
+            {
+                if (!_occupiedPositions.Contains(pos) && !_obstaclePositions.Contains(pos))
+                    return pos;
+            }
+
+            // Fallback => Unoccupied tile
+            var borders = EnemyPathFinding.FindBorderTiles(_tilePositions);
+            var shuffled = borders.OrderBy(_ => Random.value);
+            foreach (var pos in shuffled)
+            {
+                if (!_occupiedPositions.Contains(pos) && !_obstaclePositions.Contains(pos) && pos != _heartPosition)
+                    return pos;
+            }
+
+            return null;
+        }
+
+        // ============================================================
+        // Sort
+        // ============================================================
+
+        /// <summary>
+        /// Sort enemies to get the closest to the heart in first.
+        /// </summary>
+        /// <param name="enemies">List of enemies</param>
+        /// <returns>Sorted list of enemies</returns>
+        private List<Enemy> SortEnemyByClosestToHeart(List<Enemy> enemies)
+        {
+            return enemies.Where(e => !e.IsDead)
+                .OrderBy(e => EnemyPathFinding.ManhattanDistance(e.GridPosition, _heartPosition))
+                .ToList();
+        }
+
+        // ============================================================
+        // Cleanup
+        // ============================================================
+
+        /// <summary>
+        /// Update the occupied position list to avoid an enemy from walkin or spawning in another enemy.
+        /// </summary>
+        private void UpdateOccupiedPositions()
+        {
+            _occupiedPositions.Clear();
+            foreach (var enemy in _enemies)
+            {
+                _occupiedPositions.Add(enemy.GridPosition);
+            }
         }
 
         // ============================================================
