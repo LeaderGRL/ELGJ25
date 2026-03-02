@@ -1,3 +1,4 @@
+using Crossatro.Enemy;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
@@ -20,6 +21,11 @@ namespace Crossatro.Grid
         /// </summary>
         private const int MAX_ITERATIONS = 10000;
 
+        /// <summary>
+        /// Number of full passes through the candidate list before giving up.
+        /// </summary>
+        private const int MAX_PASSES = 3;
+
         // ============================================================
         // State
         // ============================================================
@@ -35,6 +41,12 @@ namespace Crossatro.Grid
         /// Words successfully placed to the grid.
         /// </summary>
         private List<GridWord> _placedWords;
+
+        /// <summary>
+        /// Heart position => dedicated tile.
+        /// </summary>
+        private Vector2 _heartPosition;
+        private bool _heartPositionComputed;
 
         // ============================================================
         // Constructor
@@ -70,6 +82,9 @@ namespace Crossatro.Grid
             // Reset state
             _placedLetters = new Dictionary<Vector2, char>();
             _placedWords = new List<GridWord>();
+            _heartPositionComputed = false;
+
+            List<WordData> allWords = database.words.ToList();
 
             // Shuffle the word list
             List<WordData> shuffleWords = database.words
@@ -79,12 +94,33 @@ namespace Crossatro.Grid
             // Place the first word at the origin
             PlaceFirstWord(shuffleWords[0]);
 
+            // Multiple passes to maximize word placement
+            HashSet<string> usedWords = new HashSet<string> { shuffleWords[0].word };
+
             // Try to place remaining words
-            PlaceRemainingWords(shuffleWords, targetWordCount);
+            PlaceRemainingWords(allWords, usedWords, targetWordCount);
+
+            // Compute heart position after grid is built.
+            ComputeHeartPosition();
 
             Debug.Log($"[CrosswordGridBuilder] built grid with " + $"{_placedWords.Count}/{targetWordCount} words");
 
             return new CrossWordsGameGrid(_placedWords);
+        }
+
+        /// <summary>
+        /// Get the computed heart position.
+        /// </summary>
+        /// <returns></returns>
+        public Vector2 GetHeartPosition()
+        {
+            if (!_heartPositionComputed)
+            {
+                Debug.LogWarning("[CrosswordGridBuilder] Heart position not yet computed. Call Build() first.");
+                return Vector2.zero;
+            }
+
+            return _heartPosition;
         }
 
         // ============================================================
@@ -107,47 +143,101 @@ namespace Crossatro.Grid
         /// </summary>
         /// <param name="candidates"></param>
         /// <param name="targetCount"></param>
-        private void PlaceRemainingWords(List<WordData> candidates, int targetCount)
+        private void PlaceRemainingWords(List<WordData> allCandidates, HashSet<string> usedWord, int targetCount)
         {
-            // Track which candidate indices we've already placed
-            HashSet<int> usedIndices = new HashSet<int> { 0 };
-
-            int passesWithoutPlacement = 0;
             int iterations = 0;
-            int candidateIndex = 1;
 
-            while (_placedWords.Count < targetCount && iterations < MAX_ITERATIONS)
+            for (int i = 0; i < MAX_PASSES; i++)
             {
-                iterations++;
+                if (_placedWords.Count >= targetCount) break;
 
-                if (usedIndices.Contains(candidateIndex))
+                // Shuffle unplaced candidates each pass for variety
+                List<WordData> candidates = allCandidates
+                    .Where(w => !usedWord.Contains(w.word))
+                    .OrderBy(_ => _rng.Next())
+                    .ToList();
+
+                foreach (WordData candidate in candidates)
                 {
-                    candidateIndex = NextCandidateIndex(candidateIndex, candidates.Count);
-                    continue;
+                    if (_placedWords.Count >= targetCount) break;
+                    if (iterations++ >= MAX_ITERATIONS) break;
+
+                    // Try to place this word against all existing words
+                    GridWord bestPlacement = FindBestPlacement(candidate);
+
+                    if (bestPlacement != null)
+                    {
+                        CommitWord(bestPlacement);
+                        usedWord.Add(candidate.word);
+                    }
                 }
 
-                if (TryPlaceCandidateAgainstGrid(candidates[candidateIndex], out GridWord newWord))
+                if (iterations >= MAX_ITERATIONS)
                 {
-                    CommitWord(newWord);
-                    usedIndices.Add(candidateIndex);
-                    passesWithoutPlacement = 0;
+                    Debug.LogWarning($"[CrosswordGridBuilder] Hit max iterations on pass {i + 1}." + $"Placed {_placedWords.Count}/{targetCount} words.");
+                    break;
                 }
+            }
+        }
 
-                candidateIndex = NextCandidateIndex( candidateIndex, candidates.Count); 
+        /// <summary>
+        /// Try placing a word against every already placed word.
+        /// Scores each valid placement by how many intersections it creates.
+        /// </summary>
+        /// <param name="candidate"></param>
+        /// <returns>Best placement or null if not found</returns>
+        private GridWord FindBestPlacement(WordData candidate)
+        {
+            var scoredPlacement = new List<(GridWord word, int score)>();
 
-                if (candidateIndex == 1)
+            // Try against every existing word on the grid
+            foreach (GridWord existingWord in _placedWords)
+            {
+                // New word must be perpendicular to existing word
+                bool newIsRow = !existingWord.IsRow;
+
+                var intersections = FindLetterIntersections(candidate.word, existingWord.SolutionWord);
+
+                if (intersections.Count ==  0) continue;
+
+                var validPosition = FindValidStartPosition(candidate.word, existingWord, intersections, newIsRow);
+
+                foreach (Vector2 startPos in validPosition)
                 {
-                    passesWithoutPlacement++;
-
-                    // Stop after 2 full passes without placing any word
-                    if (passesWithoutPlacement >= 2) break; 
+                    GridWord placement = CreateGridWord(candidate, startPos, newIsRow);
+                    int score = ScorePlacement(placement);
+                    scoredPlacement.Add((placement, score));
                 }
             }
 
-            if (iterations >=  MAX_ITERATIONS)
+            if (scoredPlacement.Count == 0) return null;
+
+            // sort by score descending
+            scoredPlacement.Sort((a, b) => b.score.CompareTo(a.score));
+
+            // Pick from the top candidates
+            int topCount = Mathf.Min(3, scoredPlacement.Count);
+            int pick = _rng.Next(topCount);
+            return scoredPlacement[pick].word;
+        }
+        
+        /// <summary>
+        /// Score a potential placement by counting how many existing letters it intersects with.
+        /// </summary>
+        /// <param name="word"></param>
+        /// <returns>number if word intersection</returns>
+        private int ScorePlacement(GridWord word)
+        {
+            int intersections = 0;
+            var positions = word.GetAllLetterSolutionPositions();
+
+            foreach (var kvp in positions)
             {
-                Debug.LogWarning($"[CrosswordGridBuilder] Hit max iterations ({MAX_ITERATIONS}). " + $"Placed {_placedWords.Count}/{targetCount} words.");
+                if (_placedLetters.ContainsKey(kvp.Key))
+                    intersections++;
             }
+
+            return intersections;
         }
 
         /// <summary>
@@ -227,6 +317,95 @@ namespace Crossatro.Grid
 
             result = CreateGridWord(wordData, startPos, isRow);
             return true;
+        }
+
+        // ============================================================
+        // Heart position
+        // ============================================================
+
+        /// <summary>
+        /// Find a position for the heart that is adjacent to a letter 
+        /// and as close as possible from the grid center.
+        /// </summary>
+        private void ComputeHeartPosition()
+        {
+            if (_placedLetters.Count == 0)
+            {
+                _heartPosition = Vector2.zero;
+                _heartPositionComputed = true;
+                return;
+            }
+
+            // Calculate center of mass
+            float sumX = 0f, sumY = 0f;
+            foreach (var pos in _placedLetters.Keys)
+            {
+                sumX += pos.x;
+                sumY += pos.y;
+            }
+
+            float centerX = sumX / _placedLetters.Count;
+            float centerY = sumY / _placedLetters.Count;
+
+            // All occupied positions
+            HashSet<Vector2> occupied = new HashSet<Vector2>(_placedLetters.Keys);
+
+            // Find empty positions adjacent to a least one tile
+            Vector2[] directions = {Vector2.up, Vector2.down, Vector2.left, Vector2.right};
+            HashSet<Vector2> candidates = new HashSet<Vector2>();
+
+            foreach (var pos in _placedLetters.Keys)
+            {
+                foreach (var dir in directions)
+                {
+                    Vector2 neighbor = pos + dir;
+                    if (!occupied.Contains(neighbor))
+                        candidates.Add(neighbor);
+                }
+            }
+
+            if (candidates.Count == 0)
+            {
+                // Fallback: use any adjacent position to first letter
+                Vector2 firstLetter = _placedLetters.Keys.First();
+                _heartPosition = firstLetter + Vector2.up;
+                _heartPositionComputed = true;
+                return;
+            }
+
+            // Score candidates
+            Vector2 bestPos = Vector2.zero;
+            float bestScore = float.MaxValue;
+
+            foreach (var candidate in candidates)
+            {
+                float dx = candidate.x - centerX;
+                float dy = candidate.y - centerY;
+                float distToCenter = dx * dx + dy * dy;
+
+                // Count adjacent tiles
+                int adjacentTiles = 0;
+                foreach (var dir in directions)
+                {
+                    if (occupied.Contains(candidate + dir))
+                        adjacentTiles++;
+                }
+
+                // Score: low distance + bonus for connectivity
+                // Substract adjacentTiles to favor well connected spots
+                float score = distToCenter - (adjacentTiles * 5f);
+
+                if (score < bestScore)
+                {
+                    bestScore = score;
+                    bestPos = candidate;
+                }
+            }
+
+            _heartPosition = bestPos;
+            _heartPositionComputed = true;
+
+            Debug.Log($"[CrosswordGridBuilder] Heart position: {_heartPosition}" + $"(center of mass: ({centerX:F1}, {centerY:F1}))");
         }
 
         // ============================================================
@@ -443,7 +622,7 @@ namespace Crossatro.Grid
             word.StartPosition = startPos;
             word.IsRow = isRow;
             word.Difficulty = wordData.difficulty;
-            word.Description = wordData.description1;
+            word.Clues = wordData.description1;
             word.Initialize();
             return word;
         }

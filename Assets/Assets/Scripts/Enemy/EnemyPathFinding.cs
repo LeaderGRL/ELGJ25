@@ -32,7 +32,8 @@ namespace Crossatro.Enemy
         /// </summary>
         /// <param name="start">Starting grid position</param>
         /// <param name="target">Target grid position</param>
-        /// <param name="isWalkable">Function that return true if a position can be walked on</param>
+        /// <param name="tilePositions">List of all tiles in the board</param>
+        /// <param name="blockedPositions">List of no walkable tile in the board</param>
         /// <param name="maxSearchDepth">Safety limit to prevent infinite search</param>
         /// <returns>List of positions from start to target</returns>
         public static List<Vector2> FindPath(Vector2 start, Vector2 target, List<Vector2> tilePositions, List<Vector2> blockedPositions, int maxSearchDepth = 200)

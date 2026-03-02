@@ -212,7 +212,7 @@ namespace Crossatro.Board
             HighlightSelectedWord();
 
             // Show clue popup above the clicked tile
-            string clue = word.Description ?? "";
+            string clue = word.Clues ?? "";
             _board.ShowCluePopup(clickedPosition, clue);
 
             ConfigureInputField(word);

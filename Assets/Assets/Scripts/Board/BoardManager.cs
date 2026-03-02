@@ -202,7 +202,7 @@ namespace Crossatro.Board
                 Debug.Log($"  {direction} \"{word.SolutionWord}\" " +
                           $"at ({word.StartPosition.x}, {word.StartPosition.y}) " +
                           $"[Diff: {word.Difficulty}] " +
-                          $"Clue: {word.Description}");
+                          $"Clue: {word.Clues}");
             }
             Debug.Log("=======================");
         }
