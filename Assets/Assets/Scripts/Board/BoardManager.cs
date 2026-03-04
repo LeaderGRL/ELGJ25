@@ -94,7 +94,8 @@ namespace Crossatro.Board
 
             var builder = new CrosswordGridBuilder(_seed);
 
-            _grid = builder.BuildRandom(_wordDatabase, width, height, minDifficulty, maxDifficulty).Grid;
+            _buildResult = builder.BuildRandom(_wordDatabase, width, height, minDifficulty, maxDifficulty);
+            _grid = _buildResult.Grid;
         }
 
         

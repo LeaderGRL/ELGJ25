@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Crossatro.Grid.CrosswordDatabase
   _jsonSource: {fileID: 4900000, guid: f1775713c6d20bd4f98cb619eaf8c470, type: 3}
   _logStats: 1
-  _isLoaded: 1
+  _isLoaded: 0

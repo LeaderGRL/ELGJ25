@@ -133,7 +133,7 @@ namespace Crossatro.Grid
                             slots.Add(new Slot
                             {
                                 Id = id++,
-                                StartX = x,
+                                StartX = runStart,
                                 StartY = y,
                                 Length = length,
                                 IsHorizontal = true,
