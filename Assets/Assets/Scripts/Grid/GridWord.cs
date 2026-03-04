@@ -28,7 +28,7 @@ namespace Crossatro.Grid
         /// <summary>
         /// The clue shown to the player
         /// </summary>
-        public string Clues { get; set; }
+        public string Description { get; set; }
 
         /// <summary>
         /// Grid position where the word starts:

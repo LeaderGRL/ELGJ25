@@ -23,7 +23,17 @@ namespace Crossatro.Board
 
         [Header("Grid Generation")]
         [Tooltip("Scriptable object with word database and generation settings")]
-        [SerializeField] private GridGenerationData _gridGenerationData;
+        [SerializeField] private CrosswordDatabase _wordDatabase;
+
+        [Header("Grid Size")]
+        [SerializeField] private int width = 9;
+        [SerializeField] private int height = 9;
+        
+
+        [Header("Difficulty")]
+        [Tooltip("Difficulty range of the words")]
+        [SerializeField] private int minDifficulty = 1;
+        [SerializeField] private int maxDifficulty = 9;
 
         [Header("UI")]
         [Tooltip("InputField for typing words")]
@@ -41,6 +51,8 @@ namespace Crossatro.Board
         // ============================================================
 
         private CrossWordsGameGrid _grid;
+
+        private CrosswordGridBuilder.BuildResult _buildResult;
 
         // ============================================================
         // Lifecycle
@@ -82,7 +94,7 @@ namespace Crossatro.Board
 
             var builder = new CrosswordGridBuilder(_seed);
 
-            _grid = builder.Build(_gridGenerationData.Database, _gridGenerationData.NumWordsToGenerate);
+            _grid = builder.BuildRandom(_wordDatabase, width, height, minDifficulty, maxDifficulty).Grid;
         }
 
         
@@ -115,7 +127,41 @@ namespace Crossatro.Board
                 }
             }
 
+            PlaceHeartTile();
+
             Log($"Place {_board.TileCount} tiles on the board.");
+        }
+
+        /// <summary>
+        /// Place a dedicated heart tile at the computed position.
+        /// </summary>
+        private void PlaceHeartTile()
+        {
+            if (_buildResult == null) return;
+
+            Vector2 heartPos = _buildResult.HeartPosition;
+
+            // Skip if already occupied (shouldn't happen with proper mask)
+            if (_board.HasTileAt(heartPos))
+            {
+                Debug.LogWarning($"[BoardManager] Heart position {heartPos} is already occupied!");
+                return;
+            }
+
+            GameObject heartObj = GameObject.CreatePrimitive(PrimitiveType.Cube);
+            heartObj.name = "HeartTile";
+            heartObj.transform.SetParent(_board.transform);
+            heartObj.transform.localPosition = new Vector3(heartPos.x, 0, heartPos.y);
+            heartObj.transform.localScale = Vector3.one * 0.8f;
+
+            var renderer = heartObj.GetComponent<Renderer>();
+            if (renderer != null)
+            {
+                renderer.material = new Material(Shader.Find("Standard"));
+                renderer.material.color = Color.red;
+            }
+
+            Log($"Heart tile placed at {heartPos}");
         }
 
         // ============================================================
@@ -154,18 +200,18 @@ namespace Crossatro.Board
                 valid = false;
             }
 
-            if (_gridGenerationData == null)
-            {
-                Debug.LogError("[BoardTest] GridGenerationData is not assigned!");
-                valid = false;
-            }
+            //if (_gridGenerationData == null)
+            //{
+            //    Debug.LogError("[BoardTest] GridGenerationData is not assigned!");
+            //    valid = false;
+            //}
 
-            if (_gridGenerationData != null && _gridGenerationData.Database == null)
-            {
-                Debug.LogError("[BoardTest] GridGenerationData has no database loaded! " +
-                               "Click 'Load Database' on the ScriptableObject.");
-                valid = false;
-            }
+            //if (_gridGenerationData != null && _gridGenerationData.Database == null)
+            //{
+            //    Debug.LogError("[BoardTest] GridGenerationData has no database loaded! " +
+            //                   "Click 'Load Database' on the ScriptableObject.");
+            //    valid = false;
+            //}
 
             if (_inputField == null)
             {
@@ -202,7 +248,7 @@ namespace Crossatro.Board
                 Debug.Log($"  {direction} \"{word.SolutionWord}\" " +
                           $"at ({word.StartPosition.x}, {word.StartPosition.y}) " +
                           $"[Diff: {word.Difficulty}] " +
-                          $"Clue: {word.Clues}");
+                          $"Clue: {word.Description}");
             }
             Debug.Log("=======================");
         }

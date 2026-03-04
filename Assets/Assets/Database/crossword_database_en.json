@@ -1,0 +1,10187 @@
+{
+  "language": "en",
+  "words": [
+    {
+      "word": "CAT",
+      "difficulty": 1,
+      "clues": [
+        "Feline pet",
+        "It purrs"
+      ],
+      "themes": [
+        "animals",
+        "pets"
+      ]
+    },
+    {
+      "word": "DOG",
+      "difficulty": 1,
+      "clues": [
+        "Man's best friend",
+        "It barks"
+      ],
+      "themes": [
+        "animals",
+        "pets"
+      ]
+    },
+    {
+      "word": "COW",
+      "difficulty": 1,
+      "clues": [
+        "Farm animal that gives milk",
+        "It moos"
+      ],
+      "themes": [
+        "animals",
+        "farm"
+      ]
+    },
+    {
+      "word": "PIG",
+      "difficulty": 1,
+      "clues": [
+        "Farm animal that oinks",
+        "Source of bacon"
+      ],
+      "themes": [
+        "animals",
+        "farm"
+      ]
+    },
+    {
+      "word": "HEN",
+      "difficulty": 1,
+      "clues": [
+        "Female chicken",
+        "Lays eggs"
+      ],
+      "themes": [
+        "animals",
+        "farm"
+      ]
+    },
+    {
+      "word": "ANT",
+      "difficulty": 1,
+      "clues": [
+        "Tiny insect that lives in colonies",
+        "Picnic pest"
+      ],
+      "themes": [
+        "animals",
+        "insects"
+      ]
+    },
+    {
+      "word": "BEE",
+      "difficulty": 1,
+      "clues": [
+        "Insect that makes honey",
+        "It can sting"
+      ],
+      "themes": [
+        "animals",
+        "insects"
+      ]
+    },
+    {
+      "word": "FLY",
+      "difficulty": 1,
+      "clues": [
+        "Common buzzing insect",
+        "It has wings"
+      ],
+      "themes": [
+        "animals",
+        "insects"
+      ]
+    },
+    {
+      "word": "BAT",
+      "difficulty": 1,
+      "clues": [
+        "Flying mammal",
+        "Nocturnal creature"
+      ],
+      "themes": [
+        "animals"
+      ]
+    },
+    {
+      "word": "FOX",
+      "difficulty": 1,
+      "clues": [
+        "Cunning wild animal",
+        "Red-furred predator"
+      ],
+      "themes": [
+        "animals",
+        "nature"
+      ]
+    },
+    {
+      "word": "RAM",
+      "difficulty": 1,
+      "clues": [
+        "Male sheep",
+        "It has curved horns"
+      ],
+      "themes": [
+        "animals",
+        "farm"
+      ]
+    },
+    {
+      "word": "EEL",
+      "difficulty": 1,
+      "clues": [
+        "Snake-like fish",
+        "Slippery sea creature"
+      ],
+      "themes": [
+        "animals",
+        "ocean"
+      ]
+    },
+    {
+      "word": "OWL",
+      "difficulty": 1,
+      "clues": [
+        "Nocturnal bird of prey",
+        "Known for hooting"
+      ],
+      "themes": [
+        "animals",
+        "birds"
+      ]
+    },
+    {
+      "word": "APE",
+      "difficulty": 1,
+      "clues": [
+        "Large primate",
+        "Gorilla or chimp"
+      ],
+      "themes": [
+        "animals"
+      ]
+    },
+    {
+      "word": "CUB",
+      "difficulty": 1,
+      "clues": [
+        "Young bear or lion",
+        "Baby animal"
+      ],
+      "themes": [
+        "animals"
+      ]
+    },
+    {
+      "word": "PUP",
+      "difficulty": 1,
+      "clues": [
+        "Young dog",
+        "Baby canine"
+      ],
+      "themes": [
+        "animals",
+        "pets"
+      ]
+    },
+    {
+      "word": "COD",
+      "difficulty": 1,
+      "clues": [
+        "Common white fish",
+        "Used in fish and chips"
+      ],
+      "themes": [
+        "animals",
+        "ocean",
+        "food"
+      ]
+    },
+    {
+      "word": "YAK",
+      "difficulty": 1,
+      "clues": [
+        "Long-haired Tibetan bovine",
+        "Himalayan beast of burden"
+      ],
+      "themes": [
+        "animals"
+      ]
+    },
+    {
+      "word": "ARM",
+      "difficulty": 1,
+      "clues": [
+        "Limb used for reaching",
+        "Between shoulder and hand"
+      ],
+      "themes": [
+        "body"
+      ]
+    },
+    {
+      "word": "LEG",
+      "difficulty": 1,
+      "clues": [
+        "Limb used for walking",
+        "It bends at the knee"
+      ],
+      "themes": [
+        "body"
+      ]
+    },
+    {
+      "word": "EYE",
+      "difficulty": 1,
+      "clues": [
+        "Organ of sight",
+        "It can be blue or brown"
+      ],
+      "themes": [
+        "body"
+      ]
+    },
+    {
+      "word": "EAR",
+      "difficulty": 1,
+      "clues": [
+        "Organ of hearing",
+        "It comes in pairs"
+      ],
+      "themes": [
+        "body"
+      ]
+    },
+    {
+      "word": "LIP",
+      "difficulty": 1,
+      "clues": [
+        "Part of the mouth",
+        "Used for kissing"
+      ],
+      "themes": [
+        "body"
+      ]
+    },
+    {
+      "word": "RIB",
+      "difficulty": 1,
+      "clues": [
+        "Bone protecting the chest",
+        "Part of the ribcage"
+      ],
+      "themes": [
+        "body"
+      ]
+    },
+    {
+      "word": "HIP",
+      "difficulty": 1,
+      "clues": [
+        "Joint connecting leg to torso",
+        "Body joint for walking"
+      ],
+      "themes": [
+        "body"
+      ]
+    },
+    {
+      "word": "JAW",
+      "difficulty": 1,
+      "clues": [
+        "Bone of the mouth",
+        "Used for chewing"
+      ],
+      "themes": [
+        "body"
+      ]
+    },
+    {
+      "word": "TOE",
+      "difficulty": 1,
+      "clues": [
+        "Digit on the foot",
+        "You have ten of them"
+      ],
+      "themes": [
+        "body"
+      ]
+    },
+    {
+      "word": "GUM",
+      "difficulty": 1,
+      "clues": [
+        "Tissue around teeth",
+        "Pink mouth tissue"
+      ],
+      "themes": [
+        "body"
+      ]
+    },
+    {
+      "word": "SUN",
+      "difficulty": 1,
+      "clues": [
+        "Star at center of solar system",
+        "Source of daylight"
+      ],
+      "themes": [
+        "nature",
+        "science"
+      ]
+    },
+    {
+      "word": "SKY",
+      "difficulty": 1,
+      "clues": [
+        "Expanse above the earth",
+        "Where clouds drift"
+      ],
+      "themes": [
+        "nature"
+      ]
+    },
+    {
+      "word": "SEA",
+      "difficulty": 1,
+      "clues": [
+        "Large body of salt water",
+        "The ocean"
+      ],
+      "themes": [
+        "nature",
+        "ocean"
+      ]
+    },
+    {
+      "word": "MUD",
+      "difficulty": 1,
+      "clues": [
+        "Wet earth",
+        "Dirt mixed with water"
+      ],
+      "themes": [
+        "nature"
+      ]
+    },
+    {
+      "word": "ICE",
+      "difficulty": 1,
+      "clues": [
+        "Frozen water",
+        "Cold and slippery"
+      ],
+      "themes": [
+        "nature"
+      ]
+    },
+    {
+      "word": "FOG",
+      "difficulty": 1,
+      "clues": [
+        "Thick mist",
+        "Reduces visibility"
+      ],
+      "themes": [
+        "nature",
+        "weather"
+      ]
+    },
+    {
+      "word": "DEW",
+      "difficulty": 1,
+      "clues": [
+        "Morning moisture on grass",
+        "Water droplets at dawn"
+      ],
+      "themes": [
+        "nature",
+        "weather"
+      ]
+    },
+    {
+      "word": "BAY",
+      "difficulty": 1,
+      "clues": [
+        "Coastal inlet",
+        "Body of water partly enclosed by land"
+      ],
+      "themes": [
+        "nature",
+        "geography"
+      ]
+    },
+    {
+      "word": "OAK",
+      "difficulty": 1,
+      "clues": [
+        "Strong hardwood tree",
+        "Grows from an acorn"
+      ],
+      "themes": [
+        "nature",
+        "plants"
+      ]
+    },
+    {
+      "word": "ELM",
+      "difficulty": 1,
+      "clues": [
+        "Shade tree",
+        "Common street tree"
+      ],
+      "themes": [
+        "nature",
+        "plants"
+      ]
+    },
+    {
+      "word": "IVY",
+      "difficulty": 1,
+      "clues": [
+        "Climbing plant",
+        "Covers old buildings"
+      ],
+      "themes": [
+        "nature",
+        "plants"
+      ]
+    },
+    {
+      "word": "ORE",
+      "difficulty": 1,
+      "clues": [
+        "Rock containing metal",
+        "Mined from the earth"
+      ],
+      "themes": [
+        "nature",
+        "science"
+      ]
+    },
+    {
+      "word": "EGG",
+      "difficulty": 1,
+      "clues": [
+        "Breakfast staple",
+        "Laid by a hen"
+      ],
+      "themes": [
+        "food"
+      ]
+    },
+    {
+      "word": "HAM",
+      "difficulty": 1,
+      "clues": [
+        "Cured pork",
+        "Sandwich meat"
+      ],
+      "themes": [
+        "food"
+      ]
+    },
+    {
+      "word": "JAM",
+      "difficulty": 1,
+      "clues": [
+        "Fruit preserve",
+        "Goes on toast"
+      ],
+      "themes": [
+        "food"
+      ]
+    },
+    {
+      "word": "PIE",
+      "difficulty": 1,
+      "clues": [
+        "Baked dish with a crust",
+        "Apple or cherry"
+      ],
+      "themes": [
+        "food"
+      ]
+    },
+    {
+      "word": "TEA",
+      "difficulty": 1,
+      "clues": [
+        "Hot beverage from leaves",
+        "British drink"
+      ],
+      "themes": [
+        "food",
+        "drinks"
+      ]
+    },
+    {
+      "word": "ALE",
+      "difficulty": 1,
+      "clues": [
+        "Type of beer",
+        "Brewed beverage"
+      ],
+      "themes": [
+        "food",
+        "drinks"
+      ]
+    },
+    {
+      "word": "RYE",
+      "difficulty": 1,
+      "clues": [
+        "Grain used in bread",
+        "Type of whiskey"
+      ],
+      "themes": [
+        "food",
+        "plants"
+      ]
+    },
+    {
+      "word": "FIG",
+      "difficulty": 1,
+      "clues": [
+        "Sweet fruit",
+        "Mediterranean treat"
+      ],
+      "themes": [
+        "food",
+        "plants"
+      ]
+    },
+    {
+      "word": "NUT",
+      "difficulty": 1,
+      "clues": [
+        "Hard-shelled seed",
+        "Almond or walnut"
+      ],
+      "themes": [
+        "food"
+      ]
+    },
+    {
+      "word": "OAT",
+      "difficulty": 1,
+      "clues": [
+        "Cereal grain",
+        "Used in porridge"
+      ],
+      "themes": [
+        "food",
+        "plants"
+      ]
+    },
+    {
+      "word": "PEA",
+      "difficulty": 1,
+      "clues": [
+        "Small green vegetable",
+        "Comes in a pod"
+      ],
+      "themes": [
+        "food",
+        "plants"
+      ]
+    },
+    {
+      "word": "YAM",
+      "difficulty": 1,
+      "clues": [
+        "Root vegetable",
+        "Sweet potato relative"
+      ],
+      "themes": [
+        "food",
+        "plants"
+      ]
+    },
+    {
+      "word": "CUP",
+      "difficulty": 1,
+      "clues": [
+        "Drinking vessel",
+        "Holds your coffee"
+      ],
+      "themes": [
+        "objects",
+        "everyday"
+      ]
+    },
+    {
+      "word": "KEY",
+      "difficulty": 1,
+      "clues": [
+        "Opens a lock",
+        "Small metal tool"
+      ],
+      "themes": [
+        "objects",
+        "everyday"
+      ]
+    },
+    {
+      "word": "MAP",
+      "difficulty": 1,
+      "clues": [
+        "Shows geographic locations",
+        "Used for navigation"
+      ],
+      "themes": [
+        "objects",
+        "travel"
+      ]
+    },
+    {
+      "word": "BED",
+      "difficulty": 1,
+      "clues": [
+        "Furniture for sleeping",
+        "Where you rest at night"
+      ],
+      "themes": [
+        "objects",
+        "furniture"
+      ]
+    },
+    {
+      "word": "HAT",
+      "difficulty": 1,
+      "clues": [
+        "Head covering",
+        "Worn for sun protection"
+      ],
+      "themes": [
+        "objects",
+        "clothing"
+      ]
+    },
+    {
+      "word": "BAG",
+      "difficulty": 1,
+      "clues": [
+        "Container for carrying things",
+        "Backpack or purse"
+      ],
+      "themes": [
+        "objects",
+        "everyday"
+      ]
+    },
+    {
+      "word": "BOX",
+      "difficulty": 1,
+      "clues": [
+        "Container with sides",
+        "Used for storage"
+      ],
+      "themes": [
+        "objects",
+        "everyday"
+      ]
+    },
+    {
+      "word": "PEN",
+      "difficulty": 1,
+      "clues": [
+        "Writing instrument with ink",
+        "Mightier than the sword"
+      ],
+      "themes": [
+        "objects",
+        "everyday"
+      ]
+    },
+    {
+      "word": "NET",
+      "difficulty": 1,
+      "clues": [
+        "Mesh for catching",
+        "Used in fishing or tennis"
+      ],
+      "themes": [
+        "objects",
+        "sports"
+      ]
+    },
+    {
+      "word": "JAR",
+      "difficulty": 1,
+      "clues": [
+        "Glass container",
+        "Holds pickles or jelly"
+      ],
+      "themes": [
+        "objects",
+        "everyday"
+      ]
+    },
+    {
+      "word": "MUG",
+      "difficulty": 1,
+      "clues": [
+        "Large drinking cup",
+        "For hot beverages"
+      ],
+      "themes": [
+        "objects",
+        "everyday"
+      ]
+    },
+    {
+      "word": "FAN",
+      "difficulty": 1,
+      "clues": [
+        "Device for cooling air",
+        "Enthusiastic supporter"
+      ],
+      "themes": [
+        "objects",
+        "everyday"
+      ]
+    },
+    {
+      "word": "ROD",
+      "difficulty": 1,
+      "clues": [
+        "Long thin stick",
+        "Used for fishing"
+      ],
+      "themes": [
+        "objects"
+      ]
+    },
+    {
+      "word": "PIN",
+      "difficulty": 1,
+      "clues": [
+        "Thin pointed fastener",
+        "Used in sewing"
+      ],
+      "themes": [
+        "objects",
+        "everyday"
+      ]
+    },
+    {
+      "word": "RUG",
+      "difficulty": 1,
+      "clues": [
+        "Floor covering",
+        "Smaller than a carpet"
+      ],
+      "themes": [
+        "objects",
+        "furniture"
+      ]
+    },
+    {
+      "word": "LID",
+      "difficulty": 1,
+      "clues": [
+        "Cover for a container",
+        "Top of a pot"
+      ],
+      "themes": [
+        "objects",
+        "everyday"
+      ]
+    },
+    {
+      "word": "PAN",
+      "difficulty": 1,
+      "clues": [
+        "Cooking vessel",
+        "Used for frying"
+      ],
+      "themes": [
+        "objects",
+        "cooking"
+      ]
+    },
+    {
+      "word": "POT",
+      "difficulty": 1,
+      "clues": [
+        "Deep cooking vessel",
+        "Used for boiling"
+      ],
+      "themes": [
+        "objects",
+        "cooking"
+      ]
+    },
+    {
+      "word": "CAN",
+      "difficulty": 1,
+      "clues": [
+        "Metal container",
+        "Holds preserved food"
+      ],
+      "themes": [
+        "objects",
+        "everyday"
+      ]
+    },
+    {
+      "word": "AXE",
+      "difficulty": 1,
+      "clues": [
+        "Tool for chopping wood",
+        "Lumberjack's tool"
+      ],
+      "themes": [
+        "objects",
+        "tools"
+      ]
+    },
+    {
+      "word": "SAW",
+      "difficulty": 1,
+      "clues": [
+        "Cutting tool with teeth",
+        "Used for wood"
+      ],
+      "themes": [
+        "objects",
+        "tools"
+      ]
+    },
+    {
+      "word": "TAP",
+      "difficulty": 1,
+      "clues": [
+        "Water faucet",
+        "Turn it for water"
+      ],
+      "themes": [
+        "objects",
+        "everyday"
+      ]
+    },
+    {
+      "word": "RUN",
+      "difficulty": 1,
+      "clues": [
+        "Move fast on foot",
+        "Faster than walking"
+      ],
+      "themes": [
+        "actions"
+      ]
+    },
+    {
+      "word": "HOT",
+      "difficulty": 1,
+      "clues": [
+        "High temperature",
+        "Opposite of cold"
+      ],
+      "themes": [
+        "concepts"
+      ]
+    },
+    {
+      "word": "OLD",
+      "difficulty": 1,
+      "clues": [
+        "Having existed long",
+        "Opposite of new"
+      ],
+      "themes": [
+        "concepts"
+      ]
+    },
+    {
+      "word": "BIG",
+      "difficulty": 1,
+      "clues": [
+        "Large in size",
+        "Opposite of small"
+      ],
+      "themes": [
+        "concepts"
+      ]
+    },
+    {
+      "word": "JOY",
+      "difficulty": 1,
+      "clues": [
+        "Feeling of happiness",
+        "Great delight"
+      ],
+      "themes": [
+        "emotions"
+      ]
+    },
+    {
+      "word": "SAD",
+      "difficulty": 1,
+      "clues": [
+        "Feeling unhappy",
+        "Opposite of happy"
+      ],
+      "themes": [
+        "emotions"
+      ]
+    },
+    {
+      "word": "WAR",
+      "difficulty": 1,
+      "clues": [
+        "Armed conflict",
+        "Opposite of peace"
+      ],
+      "themes": [
+        "history",
+        "concepts"
+      ]
+    },
+    {
+      "word": "LAW",
+      "difficulty": 1,
+      "clues": [
+        "System of rules",
+        "Enforced by courts"
+      ],
+      "themes": [
+        "society"
+      ]
+    },
+    {
+      "word": "AGE",
+      "difficulty": 1,
+      "clues": [
+        "Period of time",
+        "How old you are"
+      ],
+      "themes": [
+        "concepts"
+      ]
+    },
+    {
+      "word": "END",
+      "difficulty": 1,
+      "clues": [
+        "Final part",
+        "Conclusion"
+      ],
+      "themes": [
+        "concepts"
+      ]
+    },
+    {
+      "word": "TOP",
+      "difficulty": 1,
+      "clues": [
+        "Highest point",
+        "Peak or summit"
+      ],
+      "themes": [
+        "concepts"
+      ]
+    },
+    {
+      "word": "GAP",
+      "difficulty": 1,
+      "clues": [
+        "An opening or space",
+        "Distance between things"
+      ],
+      "themes": [
+        "concepts"
+      ]
+    },
+    {
+      "word": "AIM",
+      "difficulty": 1,
+      "clues": [
+        "Point or direct",
+        "Goal or objective"
+      ],
+      "themes": [
+        "concepts"
+      ]
+    },
+    {
+      "word": "MIX",
+      "difficulty": 1,
+      "clues": [
+        "Combine together",
+        "Blend or stir"
+      ],
+      "themes": [
+        "actions"
+      ]
+    },
+    {
+      "word": "ROW",
+      "difficulty": 1,
+      "clues": [
+        "Line of things",
+        "Argument or dispute"
+      ],
+      "themes": [
+        "concepts"
+      ]
+    },
+    {
+      "word": "TAX",
+      "difficulty": 1,
+      "clues": [
+        "Government levy",
+        "Paid on income"
+      ],
+      "themes": [
+        "society",
+        "money"
+      ]
+    },
+    {
+      "word": "RAW",
+      "difficulty": 1,
+      "clues": [
+        "Not cooked",
+        "In natural state"
+      ],
+      "themes": [
+        "concepts",
+        "food"
+      ]
+    },
+    {
+      "word": "DRY",
+      "difficulty": 1,
+      "clues": [
+        "Without moisture",
+        "Opposite of wet"
+      ],
+      "themes": [
+        "concepts"
+      ]
+    },
+    {
+      "word": "WET",
+      "difficulty": 1,
+      "clues": [
+        "Covered in water",
+        "Opposite of dry"
+      ],
+      "themes": [
+        "concepts"
+      ]
+    },
+    {
+      "word": "DIM",
+      "difficulty": 1,
+      "clues": [
+        "Not bright",
+        "Faintly lit"
+      ],
+      "themes": [
+        "concepts"
+      ]
+    },
+    {
+      "word": "RED",
+      "difficulty": 1,
+      "clues": [
+        "Color of blood",
+        "Stop light color"
+      ],
+      "themes": [
+        "colors"
+      ]
+    },
+    {
+      "word": "TAN",
+      "difficulty": 1,
+      "clues": [
+        "Light brown color",
+        "Sun-kissed skin tone"
+      ],
+      "themes": [
+        "colors"
+      ]
+    },
+    {
+      "word": "BEAR",
+      "difficulty": 2,
+      "clues": [
+        "Large furry predator",
+        "Grizzly or polar"
+      ],
+      "themes": [
+        "animals",
+        "nature"
+      ]
+    },
+    {
+      "word": "DEER",
+      "difficulty": 2,
+      "clues": [
+        "Forest animal with antlers",
+        "Bambi's species"
+      ],
+      "themes": [
+        "animals",
+        "nature"
+      ]
+    },
+    {
+      "word": "DUCK",
+      "difficulty": 2,
+      "clues": [
+        "Waterfowl that quacks",
+        "Pond bird"
+      ],
+      "themes": [
+        "animals",
+        "birds"
+      ]
+    },
+    {
+      "word": "FISH",
+      "difficulty": 2,
+      "clues": [
+        "Aquatic creature with fins",
+        "Lives in water"
+      ],
+      "themes": [
+        "animals",
+        "ocean"
+      ]
+    },
+    {
+      "word": "FROG",
+      "difficulty": 2,
+      "clues": [
+        "Amphibian that hops",
+        "It says ribbit"
+      ],
+      "themes": [
+        "animals",
+        "nature"
+      ]
+    },
+    {
+      "word": "GOAT",
+      "difficulty": 2,
+      "clues": [
+        "Farm animal that bleats",
+        "Climbs mountains"
+      ],
+      "themes": [
+        "animals",
+        "farm"
+      ]
+    },
+    {
+      "word": "HAWK",
+      "difficulty": 2,
+      "clues": [
+        "Bird of prey",
+        "Sharp-eyed hunter"
+      ],
+      "themes": [
+        "animals",
+        "birds"
+      ]
+    },
+    {
+      "word": "LAMB",
+      "difficulty": 2,
+      "clues": [
+        "Young sheep",
+        "Symbol of innocence"
+      ],
+      "themes": [
+        "animals",
+        "farm"
+      ]
+    },
+    {
+      "word": "LION",
+      "difficulty": 2,
+      "clues": [
+        "King of the jungle",
+        "African big cat"
+      ],
+      "themes": [
+        "animals",
+        "nature"
+      ]
+    },
+    {
+      "word": "MOLE",
+      "difficulty": 2,
+      "clues": [
+        "Underground mammal",
+        "Digs tunnels"
+      ],
+      "themes": [
+        "animals",
+        "nature"
+      ]
+    },
+    {
+      "word": "SEAL",
+      "difficulty": 2,
+      "clues": [
+        "Marine mammal",
+        "Balances balls on its nose"
+      ],
+      "themes": [
+        "animals",
+        "ocean"
+      ]
+    },
+    {
+      "word": "TOAD",
+      "difficulty": 2,
+      "clues": [
+        "Warty amphibian",
+        "Lives on land more than frogs"
+      ],
+      "themes": [
+        "animals",
+        "nature"
+      ]
+    },
+    {
+      "word": "WOLF",
+      "difficulty": 2,
+      "clues": [
+        "Wild canine",
+        "Howls at the moon"
+      ],
+      "themes": [
+        "animals",
+        "nature"
+      ]
+    },
+    {
+      "word": "WORM",
+      "difficulty": 2,
+      "clues": [
+        "Limbless crawling creature",
+        "Lives in soil"
+      ],
+      "themes": [
+        "animals",
+        "nature"
+      ]
+    },
+    {
+      "word": "CRAB",
+      "difficulty": 2,
+      "clues": [
+        "Crustacean with pincers",
+        "Walks sideways"
+      ],
+      "themes": [
+        "animals",
+        "ocean"
+      ]
+    },
+    {
+      "word": "MOTH",
+      "difficulty": 2,
+      "clues": [
+        "Nocturnal butterfly relative",
+        "Attracted to light"
+      ],
+      "themes": [
+        "animals",
+        "insects"
+      ]
+    },
+    {
+      "word": "WASP",
+      "difficulty": 2,
+      "clues": [
+        "Stinging flying insect",
+        "Yellow and black"
+      ],
+      "themes": [
+        "animals",
+        "insects"
+      ]
+    },
+    {
+      "word": "SWAN",
+      "difficulty": 2,
+      "clues": [
+        "Elegant water bird",
+        "White and graceful"
+      ],
+      "themes": [
+        "animals",
+        "birds"
+      ]
+    },
+    {
+      "word": "CROW",
+      "difficulty": 2,
+      "clues": [
+        "Black intelligent bird",
+        "Known for cawing"
+      ],
+      "themes": [
+        "animals",
+        "birds"
+      ]
+    },
+    {
+      "word": "DOVE",
+      "difficulty": 2,
+      "clues": [
+        "Symbol of peace",
+        "White bird"
+      ],
+      "themes": [
+        "animals",
+        "birds"
+      ]
+    },
+    {
+      "word": "MARE",
+      "difficulty": 2,
+      "clues": [
+        "Female horse",
+        "Mother of a foal"
+      ],
+      "themes": [
+        "animals",
+        "farm"
+      ]
+    },
+    {
+      "word": "COLT",
+      "difficulty": 2,
+      "clues": [
+        "Young male horse",
+        "Baby stallion"
+      ],
+      "themes": [
+        "animals",
+        "farm"
+      ]
+    },
+    {
+      "word": "HARE",
+      "difficulty": 2,
+      "clues": [
+        "Fast wild rabbit",
+        "Won the race against the tortoise... wait"
+      ],
+      "themes": [
+        "animals",
+        "nature"
+      ]
+    },
+    {
+      "word": "SLUG",
+      "difficulty": 2,
+      "clues": [
+        "Slow slimy creature",
+        "Snail without a shell"
+      ],
+      "themes": [
+        "animals",
+        "nature"
+      ]
+    },
+    {
+      "word": "CLAM",
+      "difficulty": 2,
+      "clues": [
+        "Bivalve shellfish",
+        "Happy as a ___"
+      ],
+      "themes": [
+        "animals",
+        "ocean"
+      ]
+    },
+    {
+      "word": "NEWT",
+      "difficulty": 2,
+      "clues": [
+        "Small salamander",
+        "Aquatic amphibian"
+      ],
+      "themes": [
+        "animals",
+        "nature"
+      ]
+    },
+    {
+      "word": "BEEF",
+      "difficulty": 2,
+      "clues": [
+        "Meat from cattle",
+        "Steak source"
+      ],
+      "themes": [
+        "food"
+      ]
+    },
+    {
+      "word": "CAKE",
+      "difficulty": 2,
+      "clues": [
+        "Sweet baked dessert",
+        "Birthday treat"
+      ],
+      "themes": [
+        "food"
+      ]
+    },
+    {
+      "word": "CORN",
+      "difficulty": 2,
+      "clues": [
+        "Yellow cereal crop",
+        "Grows on a cob"
+      ],
+      "themes": [
+        "food",
+        "plants",
+        "farm"
+      ]
+    },
+    {
+      "word": "HERB",
+      "difficulty": 2,
+      "clues": [
+        "Flavoring plant",
+        "Basil or thyme"
+      ],
+      "themes": [
+        "food",
+        "plants"
+      ]
+    },
+    {
+      "word": "LIME",
+      "difficulty": 2,
+      "clues": [
+        "Small green citrus fruit",
+        "Goes in a margarita"
+      ],
+      "themes": [
+        "food"
+      ]
+    },
+    {
+      "word": "MILK",
+      "difficulty": 2,
+      "clues": [
+        "White dairy liquid",
+        "From a cow"
+      ],
+      "themes": [
+        "food",
+        "drinks"
+      ]
+    },
+    {
+      "word": "MINT",
+      "difficulty": 2,
+      "clues": [
+        "Fresh-tasting herb",
+        "Flavor of gum"
+      ],
+      "themes": [
+        "food",
+        "plants"
+      ]
+    },
+    {
+      "word": "PORK",
+      "difficulty": 2,
+      "clues": [
+        "Meat from pig",
+        "Chops or ribs"
+      ],
+      "themes": [
+        "food"
+      ]
+    },
+    {
+      "word": "RICE",
+      "difficulty": 2,
+      "clues": [
+        "Asian staple grain",
+        "Grown in paddies"
+      ],
+      "themes": [
+        "food"
+      ]
+    },
+    {
+      "word": "SALT",
+      "difficulty": 2,
+      "clues": [
+        "White seasoning crystal",
+        "NaCl"
+      ],
+      "themes": [
+        "food",
+        "science"
+      ]
+    },
+    {
+      "word": "SOUP",
+      "difficulty": 2,
+      "clues": [
+        "Liquid food in a bowl",
+        "Chicken noodle, for example"
+      ],
+      "themes": [
+        "food"
+      ]
+    },
+    {
+      "word": "WINE",
+      "difficulty": 2,
+      "clues": [
+        "Fermented grape drink",
+        "Red or white"
+      ],
+      "themes": [
+        "food",
+        "drinks"
+      ]
+    },
+    {
+      "word": "PLUM",
+      "difficulty": 2,
+      "clues": [
+        "Purple stone fruit",
+        "Makes prunes when dried"
+      ],
+      "themes": [
+        "food"
+      ]
+    },
+    {
+      "word": "PEAR",
+      "difficulty": 2,
+      "clues": [
+        "Bell-shaped fruit",
+        "Green or yellow"
+      ],
+      "themes": [
+        "food"
+      ]
+    },
+    {
+      "word": "BEAN",
+      "difficulty": 2,
+      "clues": [
+        "Seed vegetable",
+        "Coffee or kidney"
+      ],
+      "themes": [
+        "food",
+        "plants"
+      ]
+    },
+    {
+      "word": "STEW",
+      "difficulty": 2,
+      "clues": [
+        "Slow-cooked dish",
+        "Hearty meat and vegetable pot"
+      ],
+      "themes": [
+        "food",
+        "cooking"
+      ]
+    },
+    {
+      "word": "BREW",
+      "difficulty": 2,
+      "clues": [
+        "Make beer or tea",
+        "Steep or ferment"
+      ],
+      "themes": [
+        "food",
+        "drinks"
+      ]
+    },
+    {
+      "word": "LOAF",
+      "difficulty": 2,
+      "clues": [
+        "Shaped bread",
+        "Sliced for sandwiches"
+      ],
+      "themes": [
+        "food"
+      ]
+    },
+    {
+      "word": "TUNA",
+      "difficulty": 2,
+      "clues": [
+        "Large ocean fish",
+        "Canned sandwich filling"
+      ],
+      "themes": [
+        "food",
+        "ocean"
+      ]
+    },
+    {
+      "word": "CAVE",
+      "difficulty": 2,
+      "clues": [
+        "Underground hollow",
+        "Home of bats"
+      ],
+      "themes": [
+        "nature",
+        "geography"
+      ]
+    },
+    {
+      "word": "DAWN",
+      "difficulty": 2,
+      "clues": [
+        "Sunrise time",
+        "Break of day"
+      ],
+      "themes": [
+        "nature"
+      ]
+    },
+    {
+      "word": "DUSK",
+      "difficulty": 2,
+      "clues": [
+        "Sunset time",
+        "Twilight"
+      ],
+      "themes": [
+        "nature"
+      ]
+    },
+    {
+      "word": "GALE",
+      "difficulty": 2,
+      "clues": [
+        "Very strong wind",
+        "Near-hurricane force"
+      ],
+      "themes": [
+        "nature",
+        "weather"
+      ]
+    },
+    {
+      "word": "HAIL",
+      "difficulty": 2,
+      "clues": [
+        "Balls of ice from sky",
+        "Frozen precipitation"
+      ],
+      "themes": [
+        "nature",
+        "weather"
+      ]
+    },
+    {
+      "word": "HILL",
+      "difficulty": 2,
+      "clues": [
+        "Small raised landform",
+        "Not quite a mountain"
+      ],
+      "themes": [
+        "nature",
+        "geography"
+      ]
+    },
+    {
+      "word": "LAKE",
+      "difficulty": 2,
+      "clues": [
+        "Inland body of water",
+        "Freshwater reservoir"
+      ],
+      "themes": [
+        "nature",
+        "geography"
+      ]
+    },
+    {
+      "word": "MOON",
+      "difficulty": 2,
+      "clues": [
+        "Earth's natural satellite",
+        "Shines at night"
+      ],
+      "themes": [
+        "nature",
+        "science"
+      ]
+    },
+    {
+      "word": "RAIN",
+      "difficulty": 2,
+      "clues": [
+        "Water falling from clouds",
+        "Wet weather"
+      ],
+      "themes": [
+        "nature",
+        "weather"
+      ]
+    },
+    {
+      "word": "SAND",
+      "difficulty": 2,
+      "clues": [
+        "Tiny rock particles",
+        "Found on beaches"
+      ],
+      "themes": [
+        "nature"
+      ]
+    },
+    {
+      "word": "SNOW",
+      "difficulty": 2,
+      "clues": [
+        "Frozen white precipitation",
+        "Winter covering"
+      ],
+      "themes": [
+        "nature",
+        "weather"
+      ]
+    },
+    {
+      "word": "STAR",
+      "difficulty": 2,
+      "clues": [
+        "Luminous celestial body",
+        "Twinkles at night"
+      ],
+      "themes": [
+        "nature",
+        "science"
+      ]
+    },
+    {
+      "word": "TIDE",
+      "difficulty": 2,
+      "clues": [
+        "Ocean rise and fall",
+        "Caused by the moon"
+      ],
+      "themes": [
+        "nature",
+        "ocean"
+      ]
+    },
+    {
+      "word": "WAVE",
+      "difficulty": 2,
+      "clues": [
+        "Rolling ocean movement",
+        "Surfers ride them"
+      ],
+      "themes": [
+        "nature",
+        "ocean"
+      ]
+    },
+    {
+      "word": "WIND",
+      "difficulty": 2,
+      "clues": [
+        "Moving air",
+        "Blows the trees"
+      ],
+      "themes": [
+        "nature",
+        "weather"
+      ]
+    },
+    {
+      "word": "WOOD",
+      "difficulty": 2,
+      "clues": [
+        "Material from trees",
+        "Used for building"
+      ],
+      "themes": [
+        "nature",
+        "materials"
+      ]
+    },
+    {
+      "word": "CLIFF",
+      "difficulty": 2,
+      "clues": [
+        "Steep rock face",
+        "Edge of a precipice"
+      ],
+      "themes": [
+        "nature",
+        "geography"
+      ]
+    },
+    {
+      "word": "CREEK",
+      "difficulty": 2,
+      "clues": [
+        "Small stream",
+        "Narrow waterway"
+      ],
+      "themes": [
+        "nature",
+        "geography"
+      ]
+    },
+    {
+      "word": "MARSH",
+      "difficulty": 2,
+      "clues": [
+        "Wet grassy land",
+        "Swampy area"
+      ],
+      "themes": [
+        "nature",
+        "geography"
+      ]
+    },
+    {
+      "word": "REEF",
+      "difficulty": 2,
+      "clues": [
+        "Underwater ridge",
+        "Coral formation"
+      ],
+      "themes": [
+        "nature",
+        "ocean"
+      ]
+    },
+    {
+      "word": "POND",
+      "difficulty": 2,
+      "clues": [
+        "Small body of still water",
+        "Smaller than a lake"
+      ],
+      "themes": [
+        "nature",
+        "geography"
+      ]
+    },
+    {
+      "word": "MOSS",
+      "difficulty": 2,
+      "clues": [
+        "Soft green plant on rocks",
+        "Grows in damp places"
+      ],
+      "themes": [
+        "nature",
+        "plants"
+      ]
+    },
+    {
+      "word": "FERN",
+      "difficulty": 2,
+      "clues": [
+        "Leafy shade plant",
+        "Has fronds, no flowers"
+      ],
+      "themes": [
+        "nature",
+        "plants"
+      ]
+    },
+    {
+      "word": "VINE",
+      "difficulty": 2,
+      "clues": [
+        "Climbing plant",
+        "Grapes grow on one"
+      ],
+      "themes": [
+        "nature",
+        "plants"
+      ]
+    },
+    {
+      "word": "TWIG",
+      "difficulty": 2,
+      "clues": [
+        "Small branch",
+        "Thin stick from a tree"
+      ],
+      "themes": [
+        "nature",
+        "plants"
+      ]
+    },
+    {
+      "word": "WEED",
+      "difficulty": 2,
+      "clues": [
+        "Unwanted plant",
+        "Garden nuisance"
+      ],
+      "themes": [
+        "nature",
+        "plants"
+      ]
+    },
+    {
+      "word": "BARK",
+      "difficulty": 2,
+      "clues": [
+        "Tree outer layer",
+        "Rough tree covering"
+      ],
+      "themes": [
+        "nature",
+        "plants"
+      ]
+    },
+    {
+      "word": "ROOT",
+      "difficulty": 2,
+      "clues": [
+        "Underground plant part",
+        "Anchors a tree"
+      ],
+      "themes": [
+        "nature",
+        "plants"
+      ]
+    },
+    {
+      "word": "SEED",
+      "difficulty": 2,
+      "clues": [
+        "Plant embryo",
+        "Grows into a plant"
+      ],
+      "themes": [
+        "nature",
+        "plants"
+      ]
+    },
+    {
+      "word": "STEM",
+      "difficulty": 2,
+      "clues": [
+        "Plant stalk",
+        "Supports leaves and flowers"
+      ],
+      "themes": [
+        "nature",
+        "plants"
+      ]
+    },
+    {
+      "word": "LEAF",
+      "difficulty": 2,
+      "clues": [
+        "Green plant organ",
+        "Falls in autumn"
+      ],
+      "themes": [
+        "nature",
+        "plants"
+      ]
+    },
+    {
+      "word": "BONE",
+      "difficulty": 2,
+      "clues": [
+        "Hard body structure",
+        "Part of the skeleton"
+      ],
+      "themes": [
+        "body"
+      ]
+    },
+    {
+      "word": "CHIN",
+      "difficulty": 2,
+      "clues": [
+        "Lower face part",
+        "Below the mouth"
+      ],
+      "themes": [
+        "body"
+      ]
+    },
+    {
+      "word": "FIST",
+      "difficulty": 2,
+      "clues": [
+        "Clenched hand",
+        "Used for punching"
+      ],
+      "themes": [
+        "body"
+      ]
+    },
+    {
+      "word": "HAIR",
+      "difficulty": 2,
+      "clues": [
+        "Grows on the head",
+        "Can be curly or straight"
+      ],
+      "themes": [
+        "body"
+      ]
+    },
+    {
+      "word": "HEEL",
+      "difficulty": 2,
+      "clues": [
+        "Back of the foot",
+        "Achilles' weak spot"
+      ],
+      "themes": [
+        "body"
+      ]
+    },
+    {
+      "word": "KNEE",
+      "difficulty": 2,
+      "clues": [
+        "Leg joint",
+        "You bend it to sit"
+      ],
+      "themes": [
+        "body"
+      ]
+    },
+    {
+      "word": "LUNG",
+      "difficulty": 2,
+      "clues": [
+        "Breathing organ",
+        "Fills with air"
+      ],
+      "themes": [
+        "body"
+      ]
+    },
+    {
+      "word": "NAIL",
+      "difficulty": 2,
+      "clues": [
+        "Hard covering on fingertip",
+        "You trim them"
+      ],
+      "themes": [
+        "body"
+      ]
+    },
+    {
+      "word": "NECK",
+      "difficulty": 2,
+      "clues": [
+        "Connects head to body",
+        "Supports the head"
+      ],
+      "themes": [
+        "body"
+      ]
+    },
+    {
+      "word": "PALM",
+      "difficulty": 2,
+      "clues": [
+        "Inner hand surface",
+        "Fortune tellers read it"
+      ],
+      "themes": [
+        "body"
+      ]
+    },
+    {
+      "word": "SHIN",
+      "difficulty": 2,
+      "clues": [
+        "Front of the lower leg",
+        "Painful when bumped"
+      ],
+      "themes": [
+        "body"
+      ]
+    },
+    {
+      "word": "SKIN",
+      "difficulty": 2,
+      "clues": [
+        "Body's outer covering",
+        "Largest organ"
+      ],
+      "themes": [
+        "body",
+        "science"
+      ]
+    },
+    {
+      "word": "VEIN",
+      "difficulty": 2,
+      "clues": [
+        "Blood vessel",
+        "Carries blood to the heart"
+      ],
+      "themes": [
+        "body",
+        "science"
+      ]
+    },
+    {
+      "word": "WRIST",
+      "difficulty": 2,
+      "clues": [
+        "Joint between hand and arm",
+        "Where you wear a watch"
+      ],
+      "themes": [
+        "body"
+      ]
+    },
+    {
+      "word": "SPINE",
+      "difficulty": 2,
+      "clues": [
+        "Backbone",
+        "Column of vertebrae"
+      ],
+      "themes": [
+        "body"
+      ]
+    },
+    {
+      "word": "SKULL",
+      "difficulty": 2,
+      "clues": [
+        "Head bone",
+        "Protects the brain"
+      ],
+      "themes": [
+        "body"
+      ]
+    },
+    {
+      "word": "THUMB",
+      "difficulty": 2,
+      "clues": [
+        "Opposable digit",
+        "Not a finger"
+      ],
+      "themes": [
+        "body"
+      ]
+    },
+    {
+      "word": "BRAIN",
+      "difficulty": 2,
+      "clues": [
+        "Organ of thought",
+        "Control center of the body"
+      ],
+      "themes": [
+        "body",
+        "science"
+      ]
+    },
+    {
+      "word": "HEART",
+      "difficulty": 2,
+      "clues": [
+        "Blood-pumping organ",
+        "Symbol of love"
+      ],
+      "themes": [
+        "body",
+        "emotions"
+      ]
+    },
+    {
+      "word": "CHEST",
+      "difficulty": 2,
+      "clues": [
+        "Upper front torso",
+        "Contains heart and lungs"
+      ],
+      "themes": [
+        "body"
+      ]
+    },
+    {
+      "word": "ELBOW",
+      "difficulty": 2,
+      "clues": [
+        "Arm joint",
+        "Bends the arm"
+      ],
+      "themes": [
+        "body"
+      ]
+    },
+    {
+      "word": "ANKLE",
+      "difficulty": 2,
+      "clues": [
+        "Foot-leg joint",
+        "Can be sprained"
+      ],
+      "themes": [
+        "body"
+      ]
+    },
+    {
+      "word": "BELL",
+      "difficulty": 2,
+      "clues": [
+        "Ringing object",
+        "Found in churches"
+      ],
+      "themes": [
+        "objects"
+      ]
+    },
+    {
+      "word": "BOOK",
+      "difficulty": 2,
+      "clues": [
+        "Bound pages with text",
+        "You read it"
+      ],
+      "themes": [
+        "objects",
+        "culture"
+      ]
+    },
+    {
+      "word": "BOOT",
+      "difficulty": 2,
+      "clues": [
+        "Footwear above the ankle",
+        "Worn in rain or snow"
+      ],
+      "themes": [
+        "objects",
+        "clothing"
+      ]
+    },
+    {
+      "word": "BOWL",
+      "difficulty": 2,
+      "clues": [
+        "Round deep dish",
+        "Used for soup or cereal"
+      ],
+      "themes": [
+        "objects",
+        "cooking"
+      ]
+    },
+    {
+      "word": "BULB",
+      "difficulty": 2,
+      "clues": [
+        "Light source",
+        "Screws into a socket"
+      ],
+      "themes": [
+        "objects",
+        "everyday"
+      ]
+    },
+    {
+      "word": "CAGE",
+      "difficulty": 2,
+      "clues": [
+        "Enclosure with bars",
+        "Holds birds or animals"
+      ],
+      "themes": [
+        "objects"
+      ]
+    },
+    {
+      "word": "CARD",
+      "difficulty": 2,
+      "clues": [
+        "Flat stiff paper",
+        "Playing or greeting"
+      ],
+      "themes": [
+        "objects"
+      ]
+    },
+    {
+      "word": "CAPE",
+      "difficulty": 2,
+      "clues": [
+        "Sleeveless cloak",
+        "Superhero's garment"
+      ],
+      "themes": [
+        "objects",
+        "clothing"
+      ]
+    },
+    {
+      "word": "CART",
+      "difficulty": 2,
+      "clues": [
+        "Wheeled vehicle",
+        "Shopping or horse-drawn"
+      ],
+      "themes": [
+        "objects"
+      ]
+    },
+    {
+      "word": "COIN",
+      "difficulty": 2,
+      "clues": [
+        "Metal money",
+        "Penny or dime"
+      ],
+      "themes": [
+        "objects",
+        "money"
+      ]
+    },
+    {
+      "word": "COMB",
+      "difficulty": 2,
+      "clues": [
+        "Hair grooming tool",
+        "Has teeth but doesn't bite"
+      ],
+      "themes": [
+        "objects",
+        "everyday"
+      ]
+    },
+    {
+      "word": "CORD",
+      "difficulty": 2,
+      "clues": [
+        "Thin rope or wire",
+        "Electrical cable"
+      ],
+      "themes": [
+        "objects"
+      ]
+    },
+    {
+      "word": "DOOR",
+      "difficulty": 2,
+      "clues": [
+        "Room entrance",
+        "Open or close it"
+      ],
+      "themes": [
+        "objects",
+        "everyday"
+      ]
+    },
+    {
+      "word": "DRUM",
+      "difficulty": 2,
+      "clues": [
+        "Percussion instrument",
+        "You beat it"
+      ],
+      "themes": [
+        "objects",
+        "music"
+      ]
+    },
+    {
+      "word": "FLAG",
+      "difficulty": 2,
+      "clues": [
+        "National banner",
+        "Flies on a pole"
+      ],
+      "themes": [
+        "objects",
+        "society"
+      ]
+    },
+    {
+      "word": "FORK",
+      "difficulty": 2,
+      "clues": [
+        "Eating utensil with prongs",
+        "Used with knife"
+      ],
+      "themes": [
+        "objects",
+        "cooking"
+      ]
+    },
+    {
+      "word": "GATE",
+      "difficulty": 2,
+      "clues": [
+        "Entrance barrier",
+        "Opens to a yard"
+      ],
+      "themes": [
+        "objects"
+      ]
+    },
+    {
+      "word": "GEAR",
+      "difficulty": 2,
+      "clues": [
+        "Toothed wheel",
+        "Equipment or machinery"
+      ],
+      "themes": [
+        "objects",
+        "technology"
+      ]
+    },
+    {
+      "word": "GIFT",
+      "difficulty": 2,
+      "clues": [
+        "Present for someone",
+        "Wrapped surprise"
+      ],
+      "themes": [
+        "objects"
+      ]
+    },
+    {
+      "word": "HOOK",
+      "difficulty": 2,
+      "clues": [
+        "Curved fastener",
+        "Used for fishing or hanging"
+      ],
+      "themes": [
+        "objects"
+      ]
+    },
+    {
+      "word": "KNOB",
+      "difficulty": 2,
+      "clues": [
+        "Round handle",
+        "On a door or drawer"
+      ],
+      "themes": [
+        "objects",
+        "everyday"
+      ]
+    },
+    {
+      "word": "LAMP",
+      "difficulty": 2,
+      "clues": [
+        "Light source on a table",
+        "Illuminates a room"
+      ],
+      "themes": [
+        "objects",
+        "furniture"
+      ]
+    },
+    {
+      "word": "LOCK",
+      "difficulty": 2,
+      "clues": [
+        "Security device",
+        "Opened with a key"
+      ],
+      "themes": [
+        "objects",
+        "everyday"
+      ]
+    },
+    {
+      "word": "MASK",
+      "difficulty": 2,
+      "clues": [
+        "Face covering",
+        "Worn for disguise or protection"
+      ],
+      "themes": [
+        "objects"
+      ]
+    },
+    {
+      "word": "PIPE",
+      "difficulty": 2,
+      "clues": [
+        "Hollow tube",
+        "Carries water or gas"
+      ],
+      "themes": [
+        "objects"
+      ]
+    },
+    {
+      "word": "PLUG",
+      "difficulty": 2,
+      "clues": [
+        "Electrical connector",
+        "Goes in a socket"
+      ],
+      "themes": [
+        "objects",
+        "everyday"
+      ]
+    },
+    {
+      "word": "PUMP",
+      "difficulty": 2,
+      "clues": [
+        "Fluid moving device",
+        "Air or water mover"
+      ],
+      "themes": [
+        "objects",
+        "tools"
+      ]
+    },
+    {
+      "word": "RING",
+      "difficulty": 2,
+      "clues": [
+        "Circular band",
+        "Worn on a finger"
+      ],
+      "themes": [
+        "objects",
+        "everyday"
+      ]
+    },
+    {
+      "word": "ROPE",
+      "difficulty": 2,
+      "clues": [
+        "Thick twisted cord",
+        "Used for tying or climbing"
+      ],
+      "themes": [
+        "objects"
+      ]
+    },
+    {
+      "word": "SAIL",
+      "difficulty": 2,
+      "clues": [
+        "Fabric catching wind",
+        "Propels a boat"
+      ],
+      "themes": [
+        "objects",
+        "ocean"
+      ]
+    },
+    {
+      "word": "SIGN",
+      "difficulty": 2,
+      "clues": [
+        "Displayed notice",
+        "Stop or yield"
+      ],
+      "themes": [
+        "objects",
+        "everyday"
+      ]
+    },
+    {
+      "word": "SINK",
+      "difficulty": 2,
+      "clues": [
+        "Basin with faucet",
+        "For washing hands"
+      ],
+      "themes": [
+        "objects",
+        "everyday"
+      ]
+    },
+    {
+      "word": "SOAP",
+      "difficulty": 2,
+      "clues": [
+        "Cleaning agent",
+        "Used for washing"
+      ],
+      "themes": [
+        "objects",
+        "everyday"
+      ]
+    },
+    {
+      "word": "SOCK",
+      "difficulty": 2,
+      "clues": [
+        "Foot garment",
+        "Worn inside shoes"
+      ],
+      "themes": [
+        "objects",
+        "clothing"
+      ]
+    },
+    {
+      "word": "TANK",
+      "difficulty": 2,
+      "clues": [
+        "Storage container",
+        "Fish or fuel"
+      ],
+      "themes": [
+        "objects"
+      ]
+    },
+    {
+      "word": "TAPE",
+      "difficulty": 2,
+      "clues": [
+        "Adhesive strip",
+        "Used for sticking"
+      ],
+      "themes": [
+        "objects",
+        "everyday"
+      ]
+    },
+    {
+      "word": "TENT",
+      "difficulty": 2,
+      "clues": [
+        "Portable shelter",
+        "Used for camping"
+      ],
+      "themes": [
+        "objects",
+        "travel"
+      ]
+    },
+    {
+      "word": "TIRE",
+      "difficulty": 2,
+      "clues": [
+        "Rubber wheel covering",
+        "On a car"
+      ],
+      "themes": [
+        "objects",
+        "vehicles"
+      ]
+    },
+    {
+      "word": "TRAY",
+      "difficulty": 2,
+      "clues": [
+        "Flat serving board",
+        "Carries food"
+      ],
+      "themes": [
+        "objects",
+        "cooking"
+      ]
+    },
+    {
+      "word": "TUBE",
+      "difficulty": 2,
+      "clues": [
+        "Hollow cylinder",
+        "Toothpaste container"
+      ],
+      "themes": [
+        "objects"
+      ]
+    },
+    {
+      "word": "VASE",
+      "difficulty": 2,
+      "clues": [
+        "Flower container",
+        "Decorative vessel"
+      ],
+      "themes": [
+        "objects",
+        "furniture"
+      ]
+    },
+    {
+      "word": "WALL",
+      "difficulty": 2,
+      "clues": [
+        "Vertical structure",
+        "Divides rooms"
+      ],
+      "themes": [
+        "objects",
+        "everyday"
+      ]
+    },
+    {
+      "word": "WIRE",
+      "difficulty": 2,
+      "clues": [
+        "Thin metal strand",
+        "Conducts electricity"
+      ],
+      "themes": [
+        "objects",
+        "technology"
+      ]
+    },
+    {
+      "word": "WRAP",
+      "difficulty": 2,
+      "clues": [
+        "Cover by folding",
+        "Gift paper"
+      ],
+      "themes": [
+        "objects"
+      ]
+    },
+    {
+      "word": "BELT",
+      "difficulty": 2,
+      "clues": [
+        "Waist strap",
+        "Holds up pants"
+      ],
+      "themes": [
+        "objects",
+        "clothing"
+      ]
+    },
+    {
+      "word": "COAT",
+      "difficulty": 2,
+      "clues": [
+        "Outer garment",
+        "Worn in cold weather"
+      ],
+      "themes": [
+        "objects",
+        "clothing"
+      ]
+    },
+    {
+      "word": "GOWN",
+      "difficulty": 2,
+      "clues": [
+        "Long formal dress",
+        "Worn at galas"
+      ],
+      "themes": [
+        "objects",
+        "clothing"
+      ]
+    },
+    {
+      "word": "HOOD",
+      "difficulty": 2,
+      "clues": [
+        "Head covering on a jacket",
+        "Protects from rain"
+      ],
+      "themes": [
+        "objects",
+        "clothing"
+      ]
+    },
+    {
+      "word": "VEST",
+      "difficulty": 2,
+      "clues": [
+        "Sleeveless garment",
+        "Worn over a shirt"
+      ],
+      "themes": [
+        "objects",
+        "clothing"
+      ]
+    },
+    {
+      "word": "LACE",
+      "difficulty": 2,
+      "clues": [
+        "Delicate fabric",
+        "Decorative netting"
+      ],
+      "themes": [
+        "objects",
+        "clothing"
+      ]
+    },
+    {
+      "word": "SILK",
+      "difficulty": 2,
+      "clues": [
+        "Smooth luxurious fabric",
+        "Made by silkworms"
+      ],
+      "themes": [
+        "objects",
+        "materials"
+      ]
+    },
+    {
+      "word": "WOOL",
+      "difficulty": 2,
+      "clues": [
+        "Sheep fiber",
+        "Warm knitting material"
+      ],
+      "themes": [
+        "objects",
+        "materials"
+      ]
+    },
+    {
+      "word": "CALM",
+      "difficulty": 2,
+      "clues": [
+        "Peaceful state",
+        "Without agitation"
+      ],
+      "themes": [
+        "emotions"
+      ]
+    },
+    {
+      "word": "BOLD",
+      "difficulty": 2,
+      "clues": [
+        "Brave and daring",
+        "Without fear"
+      ],
+      "themes": [
+        "emotions"
+      ]
+    },
+    {
+      "word": "COLD",
+      "difficulty": 2,
+      "clues": [
+        "Low temperature",
+        "Opposite of hot"
+      ],
+      "themes": [
+        "concepts"
+      ]
+    },
+    {
+      "word": "COOL",
+      "difficulty": 2,
+      "clues": [
+        "Slightly cold",
+        "Also means impressive"
+      ],
+      "themes": [
+        "concepts"
+      ]
+    },
+    {
+      "word": "DARK",
+      "difficulty": 2,
+      "clues": [
+        "Without light",
+        "Opposite of bright"
+      ],
+      "themes": [
+        "concepts"
+      ]
+    },
+    {
+      "word": "DEEP",
+      "difficulty": 2,
+      "clues": [
+        "Far below surface",
+        "Opposite of shallow"
+      ],
+      "themes": [
+        "concepts"
+      ]
+    },
+    {
+      "word": "FAIR",
+      "difficulty": 2,
+      "clues": [
+        "Just and equal",
+        "Light in color"
+      ],
+      "themes": [
+        "concepts"
+      ]
+    },
+    {
+      "word": "FAST",
+      "difficulty": 2,
+      "clues": [
+        "Moving quickly",
+        "Opposite of slow"
+      ],
+      "themes": [
+        "concepts"
+      ]
+    },
+    {
+      "word": "FLAT",
+      "difficulty": 2,
+      "clues": [
+        "Level surface",
+        "Without bumps"
+      ],
+      "themes": [
+        "concepts"
+      ]
+    },
+    {
+      "word": "FREE",
+      "difficulty": 2,
+      "clues": [
+        "Without restriction",
+        "No cost"
+      ],
+      "themes": [
+        "concepts"
+      ]
+    },
+    {
+      "word": "FULL",
+      "difficulty": 2,
+      "clues": [
+        "Completely filled",
+        "Opposite of empty"
+      ],
+      "themes": [
+        "concepts"
+      ]
+    },
+    {
+      "word": "GOOD",
+      "difficulty": 2,
+      "clues": [
+        "Positive quality",
+        "Opposite of bad"
+      ],
+      "themes": [
+        "concepts"
+      ]
+    },
+    {
+      "word": "HARD",
+      "difficulty": 2,
+      "clues": [
+        "Solid and firm",
+        "Difficult"
+      ],
+      "themes": [
+        "concepts"
+      ]
+    },
+    {
+      "word": "HIGH",
+      "difficulty": 2,
+      "clues": [
+        "Far above ground",
+        "Opposite of low"
+      ],
+      "themes": [
+        "concepts"
+      ]
+    },
+    {
+      "word": "KIND",
+      "difficulty": 2,
+      "clues": [
+        "Gentle and caring",
+        "Generous nature"
+      ],
+      "themes": [
+        "emotions"
+      ]
+    },
+    {
+      "word": "LAST",
+      "difficulty": 2,
+      "clues": [
+        "Final one",
+        "At the end"
+      ],
+      "themes": [
+        "concepts"
+      ]
+    },
+    {
+      "word": "LONG",
+      "difficulty": 2,
+      "clues": [
+        "Great in length",
+        "Opposite of short"
+      ],
+      "themes": [
+        "concepts"
+      ]
+    },
+    {
+      "word": "LOST",
+      "difficulty": 2,
+      "clues": [
+        "Cannot be found",
+        "Without direction"
+      ],
+      "themes": [
+        "concepts"
+      ]
+    },
+    {
+      "word": "LOUD",
+      "difficulty": 2,
+      "clues": [
+        "High volume",
+        "Opposite of quiet"
+      ],
+      "themes": [
+        "concepts"
+      ]
+    },
+    {
+      "word": "NEAR",
+      "difficulty": 2,
+      "clues": [
+        "Close by",
+        "Not far"
+      ],
+      "themes": [
+        "concepts"
+      ]
+    },
+    {
+      "word": "OPEN",
+      "difficulty": 2,
+      "clues": [
+        "Not closed",
+        "Accessible"
+      ],
+      "themes": [
+        "concepts"
+      ]
+    },
+    {
+      "word": "PALE",
+      "difficulty": 2,
+      "clues": [
+        "Light in color",
+        "Lacking color"
+      ],
+      "themes": [
+        "concepts"
+      ]
+    },
+    {
+      "word": "PURE",
+      "difficulty": 2,
+      "clues": [
+        "Without contamination",
+        "Clean and unmixed"
+      ],
+      "themes": [
+        "concepts"
+      ]
+    },
+    {
+      "word": "RARE",
+      "difficulty": 2,
+      "clues": [
+        "Uncommon",
+        "Hard to find"
+      ],
+      "themes": [
+        "concepts"
+      ]
+    },
+    {
+      "word": "RICH",
+      "difficulty": 2,
+      "clues": [
+        "Having great wealth",
+        "Opposite of poor"
+      ],
+      "themes": [
+        "concepts",
+        "money"
+      ]
+    },
+    {
+      "word": "SAFE",
+      "difficulty": 2,
+      "clues": [
+        "Free from danger",
+        "Secure"
+      ],
+      "themes": [
+        "concepts"
+      ]
+    },
+    {
+      "word": "SLOW",
+      "difficulty": 2,
+      "clues": [
+        "Not fast",
+        "Taking time"
+      ],
+      "themes": [
+        "concepts"
+      ]
+    },
+    {
+      "word": "SOFT",
+      "difficulty": 2,
+      "clues": [
+        "Yielding to pressure",
+        "Opposite of hard"
+      ],
+      "themes": [
+        "concepts"
+      ]
+    },
+    {
+      "word": "SURE",
+      "difficulty": 2,
+      "clues": [
+        "Certain and confident",
+        "Without doubt"
+      ],
+      "themes": [
+        "concepts"
+      ]
+    },
+    {
+      "word": "TALL",
+      "difficulty": 2,
+      "clues": [
+        "Great in height",
+        "Opposite of short"
+      ],
+      "themes": [
+        "concepts"
+      ]
+    },
+    {
+      "word": "THIN",
+      "difficulty": 2,
+      "clues": [
+        "Not thick",
+        "Slender"
+      ],
+      "themes": [
+        "concepts"
+      ]
+    },
+    {
+      "word": "TINY",
+      "difficulty": 2,
+      "clues": [
+        "Very small",
+        "Miniature"
+      ],
+      "themes": [
+        "concepts"
+      ]
+    },
+    {
+      "word": "TRUE",
+      "difficulty": 2,
+      "clues": [
+        "Factual",
+        "Opposite of false"
+      ],
+      "themes": [
+        "concepts"
+      ]
+    },
+    {
+      "word": "WARM",
+      "difficulty": 2,
+      "clues": [
+        "Mildly hot",
+        "Comfortably heated"
+      ],
+      "themes": [
+        "concepts"
+      ]
+    },
+    {
+      "word": "WEAK",
+      "difficulty": 2,
+      "clues": [
+        "Lacking strength",
+        "Opposite of strong"
+      ],
+      "themes": [
+        "concepts"
+      ]
+    },
+    {
+      "word": "WIDE",
+      "difficulty": 2,
+      "clues": [
+        "Great in breadth",
+        "Opposite of narrow"
+      ],
+      "themes": [
+        "concepts"
+      ]
+    },
+    {
+      "word": "WILD",
+      "difficulty": 2,
+      "clues": [
+        "Untamed",
+        "Living in nature"
+      ],
+      "themes": [
+        "concepts",
+        "nature"
+      ]
+    },
+    {
+      "word": "WISE",
+      "difficulty": 2,
+      "clues": [
+        "Having wisdom",
+        "Sagacious"
+      ],
+      "themes": [
+        "concepts"
+      ]
+    },
+    {
+      "word": "BLUE",
+      "difficulty": 2,
+      "clues": [
+        "Color of the sky",
+        "Feeling melancholy"
+      ],
+      "themes": [
+        "colors",
+        "emotions"
+      ]
+    },
+    {
+      "word": "GOLD",
+      "difficulty": 2,
+      "clues": [
+        "Precious yellow metal",
+        "First place color"
+      ],
+      "themes": [
+        "colors",
+        "materials"
+      ]
+    },
+    {
+      "word": "GRAY",
+      "difficulty": 2,
+      "clues": [
+        "Between black and white",
+        "Cloudy day color"
+      ],
+      "themes": [
+        "colors"
+      ]
+    },
+    {
+      "word": "PINK",
+      "difficulty": 2,
+      "clues": [
+        "Light red color",
+        "Color of roses"
+      ],
+      "themes": [
+        "colors"
+      ]
+    },
+    {
+      "word": "LOVE",
+      "difficulty": 2,
+      "clues": [
+        "Deep affection",
+        "Strongest human emotion"
+      ],
+      "themes": [
+        "emotions"
+      ]
+    },
+    {
+      "word": "FEAR",
+      "difficulty": 2,
+      "clues": [
+        "Feeling of danger",
+        "Afraid"
+      ],
+      "themes": [
+        "emotions"
+      ]
+    },
+    {
+      "word": "HOPE",
+      "difficulty": 2,
+      "clues": [
+        "Expectation of good",
+        "Optimistic feeling"
+      ],
+      "themes": [
+        "emotions"
+      ]
+    },
+    {
+      "word": "RAGE",
+      "difficulty": 2,
+      "clues": [
+        "Intense anger",
+        "Fury"
+      ],
+      "themes": [
+        "emotions"
+      ]
+    },
+    {
+      "word": "ENVY",
+      "difficulty": 2,
+      "clues": [
+        "Jealousy",
+        "Wanting what others have"
+      ],
+      "themes": [
+        "emotions"
+      ]
+    },
+    {
+      "word": "GLEE",
+      "difficulty": 2,
+      "clues": [
+        "Great delight",
+        "Joyful excitement"
+      ],
+      "themes": [
+        "emotions"
+      ]
+    },
+    {
+      "word": "DOOM",
+      "difficulty": 2,
+      "clues": [
+        "Terrible fate",
+        "Destruction ahead"
+      ],
+      "themes": [
+        "concepts"
+      ]
+    },
+    {
+      "word": "FATE",
+      "difficulty": 2,
+      "clues": [
+        "Predetermined destiny",
+        "What is meant to be"
+      ],
+      "themes": [
+        "concepts",
+        "philosophy"
+      ]
+    },
+    {
+      "word": "LUCK",
+      "difficulty": 2,
+      "clues": [
+        "Good fortune",
+        "Chance"
+      ],
+      "themes": [
+        "concepts"
+      ]
+    },
+    {
+      "word": "MYTH",
+      "difficulty": 2,
+      "clues": [
+        "Traditional story",
+        "Ancient legend"
+      ],
+      "themes": [
+        "culture",
+        "history"
+      ]
+    },
+    {
+      "word": "OATH",
+      "difficulty": 2,
+      "clues": [
+        "Solemn promise",
+        "Sworn pledge"
+      ],
+      "themes": [
+        "concepts",
+        "society"
+      ]
+    },
+    {
+      "word": "FAME",
+      "difficulty": 2,
+      "clues": [
+        "Being well known",
+        "Celebrity status"
+      ],
+      "themes": [
+        "concepts",
+        "society"
+      ]
+    },
+    {
+      "word": "EDGE",
+      "difficulty": 2,
+      "clues": [
+        "Border or rim",
+        "Sharp side of a blade"
+      ],
+      "themes": [
+        "concepts"
+      ]
+    },
+    {
+      "word": "FACT",
+      "difficulty": 2,
+      "clues": [
+        "Something true",
+        "Verified information"
+      ],
+      "themes": [
+        "concepts"
+      ]
+    },
+    {
+      "word": "HALF",
+      "difficulty": 2,
+      "clues": [
+        "One of two equal parts",
+        "Fifty percent"
+      ],
+      "themes": [
+        "concepts",
+        "math"
+      ]
+    },
+    {
+      "word": "IDEA",
+      "difficulty": 2,
+      "clues": [
+        "Thought or concept",
+        "Creative notion"
+      ],
+      "themes": [
+        "concepts"
+      ]
+    },
+    {
+      "word": "LIFE",
+      "difficulty": 2,
+      "clues": [
+        "State of being alive",
+        "Opposite of death"
+      ],
+      "themes": [
+        "concepts",
+        "philosophy"
+      ]
+    },
+    {
+      "word": "MIND",
+      "difficulty": 2,
+      "clues": [
+        "Seat of consciousness",
+        "Thinking faculty"
+      ],
+      "themes": [
+        "concepts",
+        "body"
+      ]
+    },
+    {
+      "word": "MOOD",
+      "difficulty": 2,
+      "clues": [
+        "Emotional state",
+        "How you feel"
+      ],
+      "themes": [
+        "emotions"
+      ]
+    },
+    {
+      "word": "NAME",
+      "difficulty": 2,
+      "clues": [
+        "What you are called",
+        "Personal identifier"
+      ],
+      "themes": [
+        "concepts"
+      ]
+    },
+    {
+      "word": "PACE",
+      "difficulty": 2,
+      "clues": [
+        "Speed of movement",
+        "Rate of walking"
+      ],
+      "themes": [
+        "concepts"
+      ]
+    },
+    {
+      "word": "PATH",
+      "difficulty": 2,
+      "clues": [
+        "Way or trail",
+        "Route to follow"
+      ],
+      "themes": [
+        "concepts",
+        "nature"
+      ]
+    },
+    {
+      "word": "PEAK",
+      "difficulty": 2,
+      "clues": [
+        "Mountain top",
+        "Highest point"
+      ],
+      "themes": [
+        "concepts",
+        "nature"
+      ]
+    },
+    {
+      "word": "PLAN",
+      "difficulty": 2,
+      "clues": [
+        "Strategy or design",
+        "Blueprint for action"
+      ],
+      "themes": [
+        "concepts"
+      ]
+    },
+    {
+      "word": "REST",
+      "difficulty": 2,
+      "clues": [
+        "Relaxation",
+        "Taking a break"
+      ],
+      "themes": [
+        "concepts"
+      ]
+    },
+    {
+      "word": "RISK",
+      "difficulty": 2,
+      "clues": [
+        "Chance of harm",
+        "Danger potential"
+      ],
+      "themes": [
+        "concepts"
+      ]
+    },
+    {
+      "word": "ROLE",
+      "difficulty": 2,
+      "clues": [
+        "Part to play",
+        "Function or position"
+      ],
+      "themes": [
+        "concepts"
+      ]
+    },
+    {
+      "word": "RULE",
+      "difficulty": 2,
+      "clues": [
+        "Regulation to follow",
+        "Guideline"
+      ],
+      "themes": [
+        "concepts",
+        "society"
+      ]
+    },
+    {
+      "word": "SIDE",
+      "difficulty": 2,
+      "clues": [
+        "Lateral surface",
+        "Left or right"
+      ],
+      "themes": [
+        "concepts"
+      ]
+    },
+    {
+      "word": "SIZE",
+      "difficulty": 2,
+      "clues": [
+        "How big something is",
+        "Dimensions"
+      ],
+      "themes": [
+        "concepts"
+      ]
+    },
+    {
+      "word": "SOUL",
+      "difficulty": 2,
+      "clues": [
+        "Spiritual essence",
+        "Inner self"
+      ],
+      "themes": [
+        "concepts",
+        "philosophy"
+      ]
+    },
+    {
+      "word": "STEP",
+      "difficulty": 2,
+      "clues": [
+        "Foot movement",
+        "Single action in a process"
+      ],
+      "themes": [
+        "concepts"
+      ]
+    },
+    {
+      "word": "TASK",
+      "difficulty": 2,
+      "clues": [
+        "Job to complete",
+        "Assignment"
+      ],
+      "themes": [
+        "concepts"
+      ]
+    },
+    {
+      "word": "TEAM",
+      "difficulty": 2,
+      "clues": [
+        "Group working together",
+        "Sports squad"
+      ],
+      "themes": [
+        "concepts",
+        "sports"
+      ]
+    },
+    {
+      "word": "TEST",
+      "difficulty": 2,
+      "clues": [
+        "Examination",
+        "Trial to prove something"
+      ],
+      "themes": [
+        "concepts"
+      ]
+    },
+    {
+      "word": "TIME",
+      "difficulty": 2,
+      "clues": [
+        "Duration",
+        "Measured in hours"
+      ],
+      "themes": [
+        "concepts",
+        "science"
+      ]
+    },
+    {
+      "word": "TOOL",
+      "difficulty": 2,
+      "clues": [
+        "Implement for work",
+        "Hammer or wrench"
+      ],
+      "themes": [
+        "objects",
+        "tools"
+      ]
+    },
+    {
+      "word": "TRIP",
+      "difficulty": 2,
+      "clues": [
+        "Journey",
+        "Travel somewhere"
+      ],
+      "themes": [
+        "concepts",
+        "travel"
+      ]
+    },
+    {
+      "word": "TURN",
+      "difficulty": 2,
+      "clues": [
+        "Rotation",
+        "Change direction"
+      ],
+      "themes": [
+        "concepts"
+      ]
+    },
+    {
+      "word": "TYPE",
+      "difficulty": 2,
+      "clues": [
+        "Kind or category",
+        "Sort or variety"
+      ],
+      "themes": [
+        "concepts"
+      ]
+    },
+    {
+      "word": "UNIT",
+      "difficulty": 2,
+      "clues": [
+        "Single item",
+        "Measurement standard"
+      ],
+      "themes": [
+        "concepts",
+        "math"
+      ]
+    },
+    {
+      "word": "VIEW",
+      "difficulty": 2,
+      "clues": [
+        "What you see",
+        "Scenic outlook"
+      ],
+      "themes": [
+        "concepts"
+      ]
+    },
+    {
+      "word": "VOTE",
+      "difficulty": 2,
+      "clues": [
+        "Express choice",
+        "Cast a ballot"
+      ],
+      "themes": [
+        "concepts",
+        "society"
+      ]
+    },
+    {
+      "word": "WAGE",
+      "difficulty": 2,
+      "clues": [
+        "Payment for work",
+        "Salary"
+      ],
+      "themes": [
+        "concepts",
+        "money"
+      ]
+    },
+    {
+      "word": "WISH",
+      "difficulty": 2,
+      "clues": [
+        "Desire or hope",
+        "Make a ___ on a star"
+      ],
+      "themes": [
+        "emotions"
+      ]
+    },
+    {
+      "word": "WORD",
+      "difficulty": 2,
+      "clues": [
+        "Unit of language",
+        "Building block of speech"
+      ],
+      "themes": [
+        "language"
+      ]
+    },
+    {
+      "word": "WORK",
+      "difficulty": 2,
+      "clues": [
+        "Labor or employment",
+        "Effort to accomplish"
+      ],
+      "themes": [
+        "concepts"
+      ]
+    },
+    {
+      "word": "ZONE",
+      "difficulty": 2,
+      "clues": [
+        "Defined area",
+        "Designated region"
+      ],
+      "themes": [
+        "concepts",
+        "geography"
+      ]
+    },
+    {
+      "word": "BANK",
+      "difficulty": 2,
+      "clues": [
+        "Financial institution",
+        "River's edge"
+      ],
+      "themes": [
+        "money",
+        "geography"
+      ]
+    },
+    {
+      "word": "CITY",
+      "difficulty": 2,
+      "clues": [
+        "Large town",
+        "Urban area"
+      ],
+      "themes": [
+        "geography",
+        "society"
+      ]
+    },
+    {
+      "word": "FARM",
+      "difficulty": 2,
+      "clues": [
+        "Agricultural land",
+        "Where crops grow"
+      ],
+      "themes": [
+        "geography",
+        "farm"
+      ]
+    },
+    {
+      "word": "FORT",
+      "difficulty": 2,
+      "clues": [
+        "Military stronghold",
+        "Defensive structure"
+      ],
+      "themes": [
+        "history",
+        "geography"
+      ]
+    },
+    {
+      "word": "HOME",
+      "difficulty": 2,
+      "clues": [
+        "Where you live",
+        "Place of residence"
+      ],
+      "themes": [
+        "everyday",
+        "society"
+      ]
+    },
+    {
+      "word": "JAIL",
+      "difficulty": 2,
+      "clues": [
+        "Prison",
+        "Place of detention"
+      ],
+      "themes": [
+        "society"
+      ]
+    },
+    {
+      "word": "KING",
+      "difficulty": 2,
+      "clues": [
+        "Male ruler",
+        "Wears a crown"
+      ],
+      "themes": [
+        "history",
+        "society"
+      ]
+    },
+    {
+      "word": "LORD",
+      "difficulty": 2,
+      "clues": [
+        "Noble title",
+        "Master or ruler"
+      ],
+      "themes": [
+        "history",
+        "society"
+      ]
+    },
+    {
+      "word": "MALL",
+      "difficulty": 2,
+      "clues": [
+        "Shopping center",
+        "Retail complex"
+      ],
+      "themes": [
+        "society",
+        "everyday"
+      ]
+    },
+    {
+      "word": "MINE",
+      "difficulty": 2,
+      "clues": [
+        "Underground excavation",
+        "Source of ore"
+      ],
+      "themes": [
+        "geography",
+        "society"
+      ]
+    },
+    {
+      "word": "PARK",
+      "difficulty": 2,
+      "clues": [
+        "Green public space",
+        "Place for recreation"
+      ],
+      "themes": [
+        "geography",
+        "everyday"
+      ]
+    },
+    {
+      "word": "PORT",
+      "difficulty": 2,
+      "clues": [
+        "Harbor for ships",
+        "Where boats dock"
+      ],
+      "themes": [
+        "geography",
+        "ocean"
+      ]
+    },
+    {
+      "word": "ROAD",
+      "difficulty": 2,
+      "clues": [
+        "Paved path for vehicles",
+        "Highway"
+      ],
+      "themes": [
+        "geography",
+        "everyday"
+      ]
+    },
+    {
+      "word": "SHOP",
+      "difficulty": 2,
+      "clues": [
+        "Retail store",
+        "Place to buy things"
+      ],
+      "themes": [
+        "society",
+        "everyday"
+      ]
+    },
+    {
+      "word": "TOMB",
+      "difficulty": 2,
+      "clues": [
+        "Burial place",
+        "Where the dead rest"
+      ],
+      "themes": [
+        "history"
+      ]
+    },
+    {
+      "word": "TOWN",
+      "difficulty": 2,
+      "clues": [
+        "Small city",
+        "Community"
+      ],
+      "themes": [
+        "geography",
+        "society"
+      ]
+    },
+    {
+      "word": "ATOM",
+      "difficulty": 2,
+      "clues": [
+        "Smallest unit of an element",
+        "Has protons and neutrons"
+      ],
+      "themes": [
+        "science"
+      ]
+    },
+    {
+      "word": "CELL",
+      "difficulty": 2,
+      "clues": [
+        "Basic unit of life",
+        "Building block of organisms"
+      ],
+      "themes": [
+        "science"
+      ]
+    },
+    {
+      "word": "GENE",
+      "difficulty": 2,
+      "clues": [
+        "Unit of heredity",
+        "DNA segment"
+      ],
+      "themes": [
+        "science"
+      ]
+    },
+    {
+      "word": "HEAT",
+      "difficulty": 2,
+      "clues": [
+        "Thermal energy",
+        "Makes things hot"
+      ],
+      "themes": [
+        "science"
+      ]
+    },
+    {
+      "word": "IRON",
+      "difficulty": 2,
+      "clues": [
+        "Metal element Fe",
+        "Used in construction"
+      ],
+      "themes": [
+        "science",
+        "materials"
+      ]
+    },
+    {
+      "word": "MASS",
+      "difficulty": 2,
+      "clues": [
+        "Amount of matter",
+        "Measured in kilograms"
+      ],
+      "themes": [
+        "science",
+        "math"
+      ]
+    },
+    {
+      "word": "VOLT",
+      "difficulty": 2,
+      "clues": [
+        "Unit of electric potential",
+        "Named after Alessandro"
+      ],
+      "themes": [
+        "science",
+        "technology"
+      ]
+    },
+    {
+      "word": "WATT",
+      "difficulty": 2,
+      "clues": [
+        "Unit of power",
+        "Measures energy rate"
+      ],
+      "themes": [
+        "science",
+        "technology"
+      ]
+    },
+    {
+      "word": "ZERO",
+      "difficulty": 2,
+      "clues": [
+        "Nothing",
+        "The number 0"
+      ],
+      "themes": [
+        "math",
+        "science"
+      ]
+    },
+    {
+      "word": "DATA",
+      "difficulty": 2,
+      "clues": [
+        "Information",
+        "Facts and figures"
+      ],
+      "themes": [
+        "science",
+        "technology"
+      ]
+    },
+    {
+      "word": "CODE",
+      "difficulty": 2,
+      "clues": [
+        "Set of instructions",
+        "Secret writing system"
+      ],
+      "themes": [
+        "technology"
+      ]
+    },
+    {
+      "word": "DISK",
+      "difficulty": 2,
+      "clues": [
+        "Flat circular object",
+        "Storage medium"
+      ],
+      "themes": [
+        "technology"
+      ]
+    },
+    {
+      "word": "LENS",
+      "difficulty": 2,
+      "clues": [
+        "Curved glass for focusing",
+        "In cameras and eyes"
+      ],
+      "themes": [
+        "science",
+        "technology"
+      ]
+    },
+    {
+      "word": "ACID",
+      "difficulty": 2,
+      "clues": [
+        "Low pH substance",
+        "Sour chemical"
+      ],
+      "themes": [
+        "science"
+      ]
+    },
+    {
+      "word": "BASE",
+      "difficulty": 2,
+      "clues": [
+        "High pH substance",
+        "Foundation or bottom"
+      ],
+      "themes": [
+        "science"
+      ]
+    },
+    {
+      "word": "BAND",
+      "difficulty": 2,
+      "clues": [
+        "Musical group",
+        "Rubber strip"
+      ],
+      "themes": [
+        "music",
+        "culture"
+      ]
+    },
+    {
+      "word": "BEAT",
+      "difficulty": 2,
+      "clues": [
+        "Musical rhythm",
+        "Heart pulse"
+      ],
+      "themes": [
+        "music"
+      ]
+    },
+    {
+      "word": "FILM",
+      "difficulty": 2,
+      "clues": [
+        "Movie",
+        "Thin layer"
+      ],
+      "themes": [
+        "culture"
+      ]
+    },
+    {
+      "word": "HARP",
+      "difficulty": 2,
+      "clues": [
+        "Stringed instrument",
+        "Angel's instrument"
+      ],
+      "themes": [
+        "music"
+      ]
+    },
+    {
+      "word": "HORN",
+      "difficulty": 2,
+      "clues": [
+        "Brass instrument",
+        "Animal's head protrusion"
+      ],
+      "themes": [
+        "music",
+        "animals"
+      ]
+    },
+    {
+      "word": "HYMN",
+      "difficulty": 2,
+      "clues": [
+        "Religious song",
+        "Church music"
+      ],
+      "themes": [
+        "music",
+        "culture"
+      ]
+    },
+    {
+      "word": "JAZZ",
+      "difficulty": 2,
+      "clues": [
+        "Music genre from New Orleans",
+        "Improvisational style"
+      ],
+      "themes": [
+        "music",
+        "culture"
+      ]
+    },
+    {
+      "word": "LUTE",
+      "difficulty": 2,
+      "clues": [
+        "Medieval stringed instrument",
+        "Predecessor of guitar"
+      ],
+      "themes": [
+        "music",
+        "history"
+      ]
+    },
+    {
+      "word": "NOTE",
+      "difficulty": 2,
+      "clues": [
+        "Musical sound",
+        "Written message"
+      ],
+      "themes": [
+        "music"
+      ]
+    },
+    {
+      "word": "SONG",
+      "difficulty": 2,
+      "clues": [
+        "Musical composition with lyrics",
+        "You sing it"
+      ],
+      "themes": [
+        "music"
+      ]
+    },
+    {
+      "word": "TALE",
+      "difficulty": 2,
+      "clues": [
+        "Story",
+        "Narrative"
+      ],
+      "themes": [
+        "culture",
+        "language"
+      ]
+    },
+    {
+      "word": "TUNE",
+      "difficulty": 2,
+      "clues": [
+        "Melody",
+        "Musical arrangement"
+      ],
+      "themes": [
+        "music"
+      ]
+    },
+    {
+      "word": "EPIC",
+      "difficulty": 2,
+      "clues": [
+        "Grand narrative",
+        "Heroic and impressive"
+      ],
+      "themes": [
+        "culture",
+        "concepts"
+      ]
+    },
+    {
+      "word": "BALL",
+      "difficulty": 2,
+      "clues": [
+        "Round sports object",
+        "Thrown, kicked, or hit"
+      ],
+      "themes": [
+        "sports"
+      ]
+    },
+    {
+      "word": "CLUB",
+      "difficulty": 2,
+      "clues": [
+        "Golf stick",
+        "Organization or group"
+      ],
+      "themes": [
+        "sports"
+      ]
+    },
+    {
+      "word": "GAME",
+      "difficulty": 2,
+      "clues": [
+        "Competitive activity",
+        "Played for fun"
+      ],
+      "themes": [
+        "sports",
+        "everyday"
+      ]
+    },
+    {
+      "word": "GOAL",
+      "difficulty": 2,
+      "clues": [
+        "Score in soccer",
+        "Aim or objective"
+      ],
+      "themes": [
+        "sports",
+        "concepts"
+      ]
+    },
+    {
+      "word": "GOLF",
+      "difficulty": 2,
+      "clues": [
+        "Club and ball sport",
+        "Played on 18 holes"
+      ],
+      "themes": [
+        "sports"
+      ]
+    },
+    {
+      "word": "POOL",
+      "difficulty": 2,
+      "clues": [
+        "Swimming area",
+        "Billiards game"
+      ],
+      "themes": [
+        "sports",
+        "everyday"
+      ]
+    },
+    {
+      "word": "RACE",
+      "difficulty": 2,
+      "clues": [
+        "Speed competition",
+        "Running contest"
+      ],
+      "themes": [
+        "sports"
+      ]
+    },
+    {
+      "word": "RINK",
+      "difficulty": 2,
+      "clues": [
+        "Ice skating area",
+        "Hockey surface"
+      ],
+      "themes": [
+        "sports"
+      ]
+    },
+    {
+      "word": "SWIM",
+      "difficulty": 2,
+      "clues": [
+        "Move through water",
+        "Pool activity"
+      ],
+      "themes": [
+        "sports"
+      ]
+    },
+    {
+      "word": "YOGA",
+      "difficulty": 2,
+      "clues": [
+        "Mind-body practice",
+        "Stretching and poses"
+      ],
+      "themes": [
+        "sports",
+        "health"
+      ]
+    },
+    {
+      "word": "BOUT",
+      "difficulty": 2,
+      "clues": [
+        "Boxing match",
+        "Short period of activity"
+      ],
+      "themes": [
+        "sports"
+      ]
+    },
+    {
+      "word": "DART",
+      "difficulty": 2,
+      "clues": [
+        "Pointed throwing missile",
+        "Pub game projectile"
+      ],
+      "themes": [
+        "sports"
+      ]
+    },
+    {
+      "word": "SNAKE",
+      "difficulty": 3,
+      "clues": [
+        "Legless reptile",
+        "Slithers on the ground"
+      ],
+      "themes": [
+        "animals",
+        "nature"
+      ]
+    },
+    {
+      "word": "SHARK",
+      "difficulty": 3,
+      "clues": [
+        "Ocean predator with fins",
+        "Great white, for example"
+      ],
+      "themes": [
+        "animals",
+        "ocean"
+      ]
+    },
+    {
+      "word": "WHALE",
+      "difficulty": 3,
+      "clues": [
+        "Largest marine mammal",
+        "Blue or humpback"
+      ],
+      "themes": [
+        "animals",
+        "ocean"
+      ]
+    },
+    {
+      "word": "EAGLE",
+      "difficulty": 3,
+      "clues": [
+        "Large bird of prey",
+        "American national symbol"
+      ],
+      "themes": [
+        "animals",
+        "birds"
+      ]
+    },
+    {
+      "word": "MOUSE",
+      "difficulty": 3,
+      "clues": [
+        "Small rodent",
+        "Computer pointing device"
+      ],
+      "themes": [
+        "animals",
+        "technology"
+      ]
+    },
+    {
+      "word": "HORSE",
+      "difficulty": 3,
+      "clues": [
+        "Large riding animal",
+        "Gallops and neighs"
+      ],
+      "themes": [
+        "animals",
+        "farm"
+      ]
+    },
+    {
+      "word": "TIGER",
+      "difficulty": 3,
+      "clues": [
+        "Striped big cat",
+        "Largest wild cat"
+      ],
+      "themes": [
+        "animals",
+        "nature"
+      ]
+    },
+    {
+      "word": "CAMEL",
+      "difficulty": 3,
+      "clues": [
+        "Desert animal with humps",
+        "Ship of the desert"
+      ],
+      "themes": [
+        "animals",
+        "nature"
+      ]
+    },
+    {
+      "word": "CORAL",
+      "difficulty": 3,
+      "clues": [
+        "Marine organism forming reefs",
+        "Colorful underwater structure"
+      ],
+      "themes": [
+        "animals",
+        "ocean"
+      ]
+    },
+    {
+      "word": "CRANE",
+      "difficulty": 3,
+      "clues": [
+        "Tall wading bird",
+        "Heavy lifting machine"
+      ],
+      "themes": [
+        "animals",
+        "birds",
+        "technology"
+      ]
+    },
+    {
+      "word": "GOOSE",
+      "difficulty": 3,
+      "clues": [
+        "Honking waterfowl",
+        "Lays golden eggs in fables"
+      ],
+      "themes": [
+        "animals",
+        "birds"
+      ]
+    },
+    {
+      "word": "LEMON",
+      "difficulty": 3,
+      "clues": [
+        "Sour yellow citrus",
+        "Makes lemonade"
+      ],
+      "themes": [
+        "food"
+      ]
+    },
+    {
+      "word": "GRAPE",
+      "difficulty": 3,
+      "clues": [
+        "Small wine fruit",
+        "Grows in clusters on a vine"
+      ],
+      "themes": [
+        "food",
+        "plants"
+      ]
+    },
+    {
+      "word": "PEACH",
+      "difficulty": 3,
+      "clues": [
+        "Fuzzy stone fruit",
+        "Sweet and juicy"
+      ],
+      "themes": [
+        "food"
+      ]
+    },
+    {
+      "word": "MELON",
+      "difficulty": 3,
+      "clues": [
+        "Large sweet fruit",
+        "Watermelon or cantaloupe"
+      ],
+      "themes": [
+        "food"
+      ]
+    },
+    {
+      "word": "OLIVE",
+      "difficulty": 3,
+      "clues": [
+        "Small Mediterranean fruit",
+        "Pressed for oil"
+      ],
+      "themes": [
+        "food",
+        "plants"
+      ]
+    },
+    {
+      "word": "ONION",
+      "difficulty": 3,
+      "clues": [
+        "Layered vegetable",
+        "Makes you cry when cut"
+      ],
+      "themes": [
+        "food",
+        "plants"
+      ]
+    },
+    {
+      "word": "BREAD",
+      "difficulty": 3,
+      "clues": [
+        "Baked flour product",
+        "Staple food worldwide"
+      ],
+      "themes": [
+        "food"
+      ]
+    },
+    {
+      "word": "CREAM",
+      "difficulty": 3,
+      "clues": [
+        "Rich dairy product",
+        "Whipped or sour"
+      ],
+      "themes": [
+        "food"
+      ]
+    },
+    {
+      "word": "FEAST",
+      "difficulty": 3,
+      "clues": [
+        "Large elaborate meal",
+        "Banquet"
+      ],
+      "themes": [
+        "food",
+        "culture"
+      ]
+    },
+    {
+      "word": "FLOUR",
+      "difficulty": 3,
+      "clues": [
+        "Milled grain powder",
+        "Base for baking"
+      ],
+      "themes": [
+        "food",
+        "cooking"
+      ]
+    },
+    {
+      "word": "HONEY",
+      "difficulty": 3,
+      "clues": [
+        "Sweet bee product",
+        "Golden natural sweetener"
+      ],
+      "themes": [
+        "food",
+        "nature"
+      ]
+    },
+    {
+      "word": "JUICE",
+      "difficulty": 3,
+      "clues": [
+        "Fruit liquid",
+        "Orange or apple"
+      ],
+      "themes": [
+        "food",
+        "drinks"
+      ]
+    },
+    {
+      "word": "PASTA",
+      "difficulty": 3,
+      "clues": [
+        "Italian wheat food",
+        "Spaghetti or penne"
+      ],
+      "themes": [
+        "food",
+        "culture"
+      ]
+    },
+    {
+      "word": "ROAST",
+      "difficulty": 3,
+      "clues": [
+        "Cook with dry heat",
+        "Sunday dinner"
+      ],
+      "themes": [
+        "food",
+        "cooking"
+      ]
+    },
+    {
+      "word": "SAUCE",
+      "difficulty": 3,
+      "clues": [
+        "Liquid food topping",
+        "Tomato or soy"
+      ],
+      "themes": [
+        "food",
+        "cooking"
+      ]
+    },
+    {
+      "word": "SPICE",
+      "difficulty": 3,
+      "clues": [
+        "Flavor enhancer",
+        "Cinnamon or pepper"
+      ],
+      "themes": [
+        "food",
+        "cooking"
+      ]
+    },
+    {
+      "word": "SUGAR",
+      "difficulty": 3,
+      "clues": [
+        "Sweet crystalline substance",
+        "Sweetener"
+      ],
+      "themes": [
+        "food",
+        "science"
+      ]
+    },
+    {
+      "word": "TOAST",
+      "difficulty": 3,
+      "clues": [
+        "Browned bread",
+        "Breakfast crunchy bread"
+      ],
+      "themes": [
+        "food"
+      ]
+    },
+    {
+      "word": "OCEAN",
+      "difficulty": 3,
+      "clues": [
+        "Vast body of salt water",
+        "Covers most of Earth"
+      ],
+      "themes": [
+        "nature",
+        "ocean"
+      ]
+    },
+    {
+      "word": "RIVER",
+      "difficulty": 3,
+      "clues": [
+        "Flowing body of water",
+        "Nile or Amazon"
+      ],
+      "themes": [
+        "nature",
+        "geography"
+      ]
+    },
+    {
+      "word": "STORM",
+      "difficulty": 3,
+      "clues": [
+        "Violent weather",
+        "Thunder and lightning"
+      ],
+      "themes": [
+        "nature",
+        "weather"
+      ]
+    },
+    {
+      "word": "BEACH",
+      "difficulty": 3,
+      "clues": [
+        "Sandy shore",
+        "Where ocean meets land"
+      ],
+      "themes": [
+        "nature",
+        "geography",
+        "travel"
+      ]
+    },
+    {
+      "word": "CLOUD",
+      "difficulty": 3,
+      "clues": [
+        "Water vapor mass in sky",
+        "Cumulus or cirrus"
+      ],
+      "themes": [
+        "nature",
+        "weather"
+      ]
+    },
+    {
+      "word": "EARTH",
+      "difficulty": 3,
+      "clues": [
+        "Our planet",
+        "Third from the Sun"
+      ],
+      "themes": [
+        "nature",
+        "science"
+      ]
+    },
+    {
+      "word": "FIELD",
+      "difficulty": 3,
+      "clues": [
+        "Open grassy area",
+        "Farming land"
+      ],
+      "themes": [
+        "nature",
+        "geography",
+        "farm"
+      ]
+    },
+    {
+      "word": "FLAME",
+      "difficulty": 3,
+      "clues": [
+        "Burning fire part",
+        "Hot glowing gas"
+      ],
+      "themes": [
+        "nature",
+        "science"
+      ]
+    },
+    {
+      "word": "FLOOD",
+      "difficulty": 3,
+      "clues": [
+        "Water overflow",
+        "When rivers burst banks"
+      ],
+      "themes": [
+        "nature",
+        "weather"
+      ]
+    },
+    {
+      "word": "FROST",
+      "difficulty": 3,
+      "clues": [
+        "Thin ice layer",
+        "Appears on cold mornings"
+      ],
+      "themes": [
+        "nature",
+        "weather"
+      ]
+    },
+    {
+      "word": "GRASS",
+      "difficulty": 3,
+      "clues": [
+        "Green ground covering",
+        "Mowed in lawns"
+      ],
+      "themes": [
+        "nature",
+        "plants"
+      ]
+    },
+    {
+      "word": "GROVE",
+      "difficulty": 3,
+      "clues": [
+        "Small group of trees",
+        "Wooded area"
+      ],
+      "themes": [
+        "nature",
+        "plants"
+      ]
+    },
+    {
+      "word": "STONE",
+      "difficulty": 3,
+      "clues": [
+        "Hard mineral piece",
+        "Natural rock"
+      ],
+      "themes": [
+        "nature",
+        "materials"
+      ]
+    },
+    {
+      "word": "SWAMP",
+      "difficulty": 3,
+      "clues": [
+        "Wet marshy land",
+        "Boggy terrain"
+      ],
+      "themes": [
+        "nature",
+        "geography"
+      ]
+    },
+    {
+      "word": "THORN",
+      "difficulty": 3,
+      "clues": [
+        "Sharp plant spike",
+        "Rose's defense"
+      ],
+      "themes": [
+        "nature",
+        "plants"
+      ]
+    },
+    {
+      "word": "TORCH",
+      "difficulty": 3,
+      "clues": [
+        "Portable fire light",
+        "Burning stick"
+      ],
+      "themes": [
+        "objects",
+        "history"
+      ]
+    },
+    {
+      "word": "TOWER",
+      "difficulty": 3,
+      "clues": [
+        "Tall narrow structure",
+        "Castle feature"
+      ],
+      "themes": [
+        "objects",
+        "history"
+      ]
+    },
+    {
+      "word": "ARMOR",
+      "difficulty": 3,
+      "clues": [
+        "Protective metal suit",
+        "Knight's protection"
+      ],
+      "themes": [
+        "history",
+        "combat"
+      ]
+    },
+    {
+      "word": "ARROW",
+      "difficulty": 3,
+      "clues": [
+        "Pointed projectile",
+        "Shot from a bow"
+      ],
+      "themes": [
+        "history",
+        "combat"
+      ]
+    },
+    {
+      "word": "BLADE",
+      "difficulty": 3,
+      "clues": [
+        "Sharp cutting edge",
+        "Sword or knife part"
+      ],
+      "themes": [
+        "objects",
+        "combat"
+      ]
+    },
+    {
+      "word": "CHAIN",
+      "difficulty": 3,
+      "clues": [
+        "Linked metal rings",
+        "Used for binding"
+      ],
+      "themes": [
+        "objects"
+      ]
+    },
+    {
+      "word": "CHARM",
+      "difficulty": 3,
+      "clues": [
+        "Magical amulet",
+        "Attractiveness"
+      ],
+      "themes": [
+        "objects",
+        "concepts"
+      ]
+    },
+    {
+      "word": "CLOCK",
+      "difficulty": 3,
+      "clues": [
+        "Time-telling device",
+        "Has hands and numbers"
+      ],
+      "themes": [
+        "objects",
+        "everyday"
+      ]
+    },
+    {
+      "word": "COUCH",
+      "difficulty": 3,
+      "clues": [
+        "Sofa",
+        "Living room seating"
+      ],
+      "themes": [
+        "objects",
+        "furniture"
+      ]
+    },
+    {
+      "word": "CROWN",
+      "difficulty": 3,
+      "clues": [
+        "Royal headpiece",
+        "Symbol of monarchy"
+      ],
+      "themes": [
+        "objects",
+        "history"
+      ]
+    },
+    {
+      "word": "FENCE",
+      "difficulty": 3,
+      "clues": [
+        "Boundary barrier",
+        "Around a yard"
+      ],
+      "themes": [
+        "objects"
+      ]
+    },
+    {
+      "word": "FLUTE",
+      "difficulty": 3,
+      "clues": [
+        "Woodwind instrument",
+        "Played sideways"
+      ],
+      "themes": [
+        "music"
+      ]
+    },
+    {
+      "word": "FRAME",
+      "difficulty": 3,
+      "clues": [
+        "Border structure",
+        "Holds a picture"
+      ],
+      "themes": [
+        "objects"
+      ]
+    },
+    {
+      "word": "GLASS",
+      "difficulty": 3,
+      "clues": [
+        "Transparent material",
+        "Drinking vessel"
+      ],
+      "themes": [
+        "objects",
+        "materials"
+      ]
+    },
+    {
+      "word": "GLOBE",
+      "difficulty": 3,
+      "clues": [
+        "Spherical map",
+        "Model of Earth"
+      ],
+      "themes": [
+        "objects",
+        "geography"
+      ]
+    },
+    {
+      "word": "GRILL",
+      "difficulty": 3,
+      "clues": [
+        "Cooking device",
+        "Barbecue"
+      ],
+      "themes": [
+        "objects",
+        "cooking"
+      ]
+    },
+    {
+      "word": "GUARD",
+      "difficulty": 3,
+      "clues": [
+        "Protector",
+        "Security person"
+      ],
+      "themes": [
+        "society",
+        "combat"
+      ]
+    },
+    {
+      "word": "JEWEL",
+      "difficulty": 3,
+      "clues": [
+        "Precious stone",
+        "Gemstone"
+      ],
+      "themes": [
+        "objects",
+        "materials"
+      ]
+    },
+    {
+      "word": "KNIFE",
+      "difficulty": 3,
+      "clues": [
+        "Sharp cutting tool",
+        "Kitchen utensil"
+      ],
+      "themes": [
+        "objects",
+        "cooking"
+      ]
+    },
+    {
+      "word": "LEDGE",
+      "difficulty": 3,
+      "clues": [
+        "Narrow horizontal surface",
+        "Rocky shelf"
+      ],
+      "themes": [
+        "nature",
+        "objects"
+      ]
+    },
+    {
+      "word": "LEVER",
+      "difficulty": 3,
+      "clues": [
+        "Simple machine",
+        "Pivoting bar"
+      ],
+      "themes": [
+        "objects",
+        "science",
+        "tools"
+      ]
+    },
+    {
+      "word": "MEDAL",
+      "difficulty": 3,
+      "clues": [
+        "Award disk",
+        "Gold, silver, or bronze"
+      ],
+      "themes": [
+        "objects",
+        "sports"
+      ]
+    },
+    {
+      "word": "PIANO",
+      "difficulty": 3,
+      "clues": [
+        "Keyboard instrument",
+        "Has 88 keys"
+      ],
+      "themes": [
+        "music"
+      ]
+    },
+    {
+      "word": "PLATE",
+      "difficulty": 3,
+      "clues": [
+        "Flat eating dish",
+        "Dinner surface"
+      ],
+      "themes": [
+        "objects",
+        "cooking"
+      ]
+    },
+    {
+      "word": "PLANK",
+      "difficulty": 3,
+      "clues": [
+        "Flat wood board",
+        "Pirate's walkway"
+      ],
+      "themes": [
+        "objects",
+        "materials"
+      ]
+    },
+    {
+      "word": "POUCH",
+      "difficulty": 3,
+      "clues": [
+        "Small bag",
+        "Kangaroo's pocket"
+      ],
+      "themes": [
+        "objects",
+        "animals"
+      ]
+    },
+    {
+      "word": "PRIZE",
+      "difficulty": 3,
+      "clues": [
+        "Award or reward",
+        "Won in a contest"
+      ],
+      "themes": [
+        "objects",
+        "concepts"
+      ]
+    },
+    {
+      "word": "QUILT",
+      "difficulty": 3,
+      "clues": [
+        "Stitched blanket",
+        "Patchwork bedcover"
+      ],
+      "themes": [
+        "objects",
+        "everyday"
+      ]
+    },
+    {
+      "word": "SCALE",
+      "difficulty": 3,
+      "clues": [
+        "Weighing device",
+        "Fish skin covering"
+      ],
+      "themes": [
+        "objects",
+        "science"
+      ]
+    },
+    {
+      "word": "SHELF",
+      "difficulty": 3,
+      "clues": [
+        "Horizontal storage surface",
+        "For books or objects"
+      ],
+      "themes": [
+        "objects",
+        "furniture"
+      ]
+    },
+    {
+      "word": "SHEET",
+      "difficulty": 3,
+      "clues": [
+        "Flat cloth or paper",
+        "Bed covering"
+      ],
+      "themes": [
+        "objects",
+        "everyday"
+      ]
+    },
+    {
+      "word": "SPEAR",
+      "difficulty": 3,
+      "clues": [
+        "Long pointed weapon",
+        "Ancient hunting tool"
+      ],
+      "themes": [
+        "history",
+        "combat"
+      ]
+    },
+    {
+      "word": "SPOON",
+      "difficulty": 3,
+      "clues": [
+        "Scooping utensil",
+        "Used for soup"
+      ],
+      "themes": [
+        "objects",
+        "cooking"
+      ]
+    },
+    {
+      "word": "STOOL",
+      "difficulty": 3,
+      "clues": [
+        "Backless seat",
+        "Bar seating"
+      ],
+      "themes": [
+        "objects",
+        "furniture"
+      ]
+    },
+    {
+      "word": "STOVE",
+      "difficulty": 3,
+      "clues": [
+        "Cooking appliance",
+        "Has burners"
+      ],
+      "themes": [
+        "objects",
+        "cooking"
+      ]
+    },
+    {
+      "word": "STRAP",
+      "difficulty": 3,
+      "clues": [
+        "Binding strip",
+        "Holds things in place"
+      ],
+      "themes": [
+        "objects"
+      ]
+    },
+    {
+      "word": "SWORD",
+      "difficulty": 3,
+      "clues": [
+        "Long bladed weapon",
+        "Knight's weapon"
+      ],
+      "themes": [
+        "history",
+        "combat"
+      ]
+    },
+    {
+      "word": "WHEEL",
+      "difficulty": 3,
+      "clues": [
+        "Circular rotating device",
+        "Greatest invention"
+      ],
+      "themes": [
+        "objects",
+        "technology"
+      ]
+    },
+    {
+      "word": "WITCH",
+      "difficulty": 3,
+      "clues": [
+        "Magic practitioner",
+        "Halloween character"
+      ],
+      "themes": [
+        "culture",
+        "fantasy"
+      ]
+    },
+    {
+      "word": "ANGLE",
+      "difficulty": 3,
+      "clues": [
+        "Space between two lines",
+        "Measured in degrees"
+      ],
+      "themes": [
+        "math",
+        "science"
+      ]
+    },
+    {
+      "word": "CHART",
+      "difficulty": 3,
+      "clues": [
+        "Visual data display",
+        "Graph or map"
+      ],
+      "themes": [
+        "math",
+        "science"
+      ]
+    },
+    {
+      "word": "COUNT",
+      "difficulty": 3,
+      "clues": [
+        "Number things",
+        "Enumerate"
+      ],
+      "themes": [
+        "math"
+      ]
+    },
+    {
+      "word": "CURVE",
+      "difficulty": 3,
+      "clues": [
+        "Smooth bend",
+        "Not straight"
+      ],
+      "themes": [
+        "math",
+        "concepts"
+      ]
+    },
+    {
+      "word": "EQUAL",
+      "difficulty": 3,
+      "clues": [
+        "Same in value",
+        "Balanced"
+      ],
+      "themes": [
+        "math",
+        "concepts"
+      ]
+    },
+    {
+      "word": "GRAPH",
+      "difficulty": 3,
+      "clues": [
+        "Visual data plot",
+        "X and Y axes"
+      ],
+      "themes": [
+        "math",
+        "science"
+      ]
+    },
+    {
+      "word": "MINUS",
+      "difficulty": 3,
+      "clues": [
+        "Subtraction",
+        "Take away"
+      ],
+      "themes": [
+        "math"
+      ]
+    },
+    {
+      "word": "TOTAL",
+      "difficulty": 3,
+      "clues": [
+        "Complete sum",
+        "Everything added up"
+      ],
+      "themes": [
+        "math",
+        "concepts"
+      ]
+    },
+    {
+      "word": "VALUE",
+      "difficulty": 3,
+      "clues": [
+        "Worth",
+        "Numerical amount"
+      ],
+      "themes": [
+        "math",
+        "concepts"
+      ]
+    },
+    {
+      "word": "WIDTH",
+      "difficulty": 3,
+      "clues": [
+        "Side-to-side measurement",
+        "How wide something is"
+      ],
+      "themes": [
+        "math",
+        "concepts"
+      ]
+    },
+    {
+      "word": "DEPTH",
+      "difficulty": 3,
+      "clues": [
+        "How deep something is",
+        "Distance below surface"
+      ],
+      "themes": [
+        "math",
+        "concepts"
+      ]
+    },
+    {
+      "word": "DIGIT",
+      "difficulty": 3,
+      "clues": [
+        "Single number",
+        "0 through 9"
+      ],
+      "themes": [
+        "math"
+      ]
+    },
+    {
+      "word": "RATIO",
+      "difficulty": 3,
+      "clues": [
+        "Proportional relationship",
+        "Comparison of two numbers"
+      ],
+      "themes": [
+        "math",
+        "science"
+      ]
+    },
+    {
+      "word": "ORGAN",
+      "difficulty": 3,
+      "clues": [
+        "Body part with a function",
+        "Heart, liver, or kidney"
+      ],
+      "themes": [
+        "body",
+        "science"
+      ]
+    },
+    {
+      "word": "NERVE",
+      "difficulty": 3,
+      "clues": [
+        "Signal-carrying fiber",
+        "Part of nervous system"
+      ],
+      "themes": [
+        "body",
+        "science"
+      ]
+    },
+    {
+      "word": "BLOOD",
+      "difficulty": 3,
+      "clues": [
+        "Red body fluid",
+        "Carries oxygen"
+      ],
+      "themes": [
+        "body",
+        "science"
+      ]
+    },
+    {
+      "word": "SWEAT",
+      "difficulty": 3,
+      "clues": [
+        "Body moisture from heat",
+        "Perspiration"
+      ],
+      "themes": [
+        "body"
+      ]
+    },
+    {
+      "word": "TOOTH",
+      "difficulty": 3,
+      "clues": [
+        "Mouth bone for chewing",
+        "Visited by a fairy"
+      ],
+      "themes": [
+        "body"
+      ]
+    },
+    {
+      "word": "MANOR",
+      "difficulty": 3,
+      "clues": [
+        "Large country house",
+        "Lord's estate"
+      ],
+      "themes": [
+        "history",
+        "geography"
+      ]
+    },
+    {
+      "word": "MOAT",
+      "difficulty": 3,
+      "clues": [
+        "Castle water barrier",
+        "Defensive trench"
+      ],
+      "themes": [
+        "history"
+      ]
+    },
+    {
+      "word": "SIEGE",
+      "difficulty": 3,
+      "clues": [
+        "Military blockade",
+        "Surrounding a castle"
+      ],
+      "themes": [
+        "history",
+        "combat"
+      ]
+    },
+    {
+      "word": "TRIBE",
+      "difficulty": 3,
+      "clues": [
+        "Social group",
+        "Indigenous community"
+      ],
+      "themes": [
+        "history",
+        "society"
+      ]
+    },
+    {
+      "word": "FLEET",
+      "difficulty": 3,
+      "clues": [
+        "Group of ships",
+        "Naval force"
+      ],
+      "themes": [
+        "history",
+        "ocean"
+      ]
+    },
+    {
+      "word": "GUILD",
+      "difficulty": 3,
+      "clues": [
+        "Medieval trade association",
+        "Craftsmen's union"
+      ],
+      "themes": [
+        "history",
+        "society"
+      ]
+    },
+    {
+      "word": "REIGN",
+      "difficulty": 3,
+      "clues": [
+        "Period of rule",
+        "Monarch's era"
+      ],
+      "themes": [
+        "history"
+      ]
+    },
+    {
+      "word": "CHIEF",
+      "difficulty": 3,
+      "clues": [
+        "Leader or head",
+        "Tribal leader"
+      ],
+      "themes": [
+        "society"
+      ]
+    },
+    {
+      "word": "QUEEN",
+      "difficulty": 3,
+      "clues": [
+        "Female monarch",
+        "Chess piece"
+      ],
+      "themes": [
+        "history",
+        "society"
+      ]
+    },
+    {
+      "word": "JUDGE",
+      "difficulty": 3,
+      "clues": [
+        "Court official",
+        "Makes legal decisions"
+      ],
+      "themes": [
+        "society"
+      ]
+    },
+    {
+      "word": "MAYOR",
+      "difficulty": 3,
+      "clues": [
+        "City leader",
+        "Head of local government"
+      ],
+      "themes": [
+        "society"
+      ]
+    },
+    {
+      "word": "TRUCE",
+      "difficulty": 3,
+      "clues": [
+        "Temporary peace agreement",
+        "Ceasefire"
+      ],
+      "themes": [
+        "history",
+        "concepts"
+      ]
+    },
+    {
+      "word": "DANCE",
+      "difficulty": 3,
+      "clues": [
+        "Rhythmic movement",
+        "Waltz or tango"
+      ],
+      "themes": [
+        "culture",
+        "sports"
+      ]
+    },
+    {
+      "word": "DRAMA",
+      "difficulty": 3,
+      "clues": [
+        "Theatrical art",
+        "Serious play"
+      ],
+      "themes": [
+        "culture"
+      ]
+    },
+    {
+      "word": "NOVEL",
+      "difficulty": 3,
+      "clues": [
+        "Long fiction book",
+        "Literary work"
+      ],
+      "themes": [
+        "culture",
+        "language"
+      ]
+    },
+    {
+      "word": "OPERA",
+      "difficulty": 3,
+      "clues": [
+        "Sung dramatic work",
+        "Musical theater"
+      ],
+      "themes": [
+        "culture",
+        "music"
+      ]
+    },
+    {
+      "word": "PAINT",
+      "difficulty": 3,
+      "clues": [
+        "Colored liquid for art",
+        "Apply color to canvas"
+      ],
+      "themes": [
+        "culture",
+        "objects"
+      ]
+    },
+    {
+      "word": "POEM",
+      "difficulty": 3,
+      "clues": [
+        "Literary verse work",
+        "Rhyming writing"
+      ],
+      "themes": [
+        "culture",
+        "language"
+      ]
+    },
+    {
+      "word": "STAGE",
+      "difficulty": 3,
+      "clues": [
+        "Performance platform",
+        "Theater area"
+      ],
+      "themes": [
+        "culture"
+      ]
+    },
+    {
+      "word": "VERSE",
+      "difficulty": 3,
+      "clues": [
+        "Line of poetry",
+        "Biblical passage"
+      ],
+      "themes": [
+        "culture",
+        "language"
+      ]
+    },
+    {
+      "word": "COACH",
+      "difficulty": 3,
+      "clues": [
+        "Sports trainer",
+        "Horse-drawn carriage"
+      ],
+      "themes": [
+        "sports"
+      ]
+    },
+    {
+      "word": "MATCH",
+      "difficulty": 3,
+      "clues": [
+        "Competitive game",
+        "Fire-starting stick"
+      ],
+      "themes": [
+        "sports",
+        "objects"
+      ]
+    },
+    {
+      "word": "SCORE",
+      "difficulty": 3,
+      "clues": [
+        "Game points",
+        "Twenty"
+      ],
+      "themes": [
+        "sports",
+        "math"
+      ]
+    },
+    {
+      "word": "TRACK",
+      "difficulty": 3,
+      "clues": [
+        "Running path",
+        "Train rail"
+      ],
+      "themes": [
+        "sports",
+        "travel"
+      ]
+    },
+    {
+      "word": "PUNCH",
+      "difficulty": 3,
+      "clues": [
+        "Hit with fist",
+        "Fruity drink"
+      ],
+      "themes": [
+        "sports",
+        "combat"
+      ]
+    },
+    {
+      "word": "RELAY",
+      "difficulty": 3,
+      "clues": [
+        "Team race",
+        "Pass along"
+      ],
+      "themes": [
+        "sports"
+      ]
+    },
+    {
+      "word": "RUGBY",
+      "difficulty": 3,
+      "clues": [
+        "Contact ball sport",
+        "Similar to American football"
+      ],
+      "themes": [
+        "sports"
+      ]
+    },
+    {
+      "word": "SERVE",
+      "difficulty": 3,
+      "clues": [
+        "Start a tennis point",
+        "Provide food"
+      ],
+      "themes": [
+        "sports",
+        "food"
+      ]
+    },
+    {
+      "word": "CATCH",
+      "difficulty": 3,
+      "clues": [
+        "Grab in the air",
+        "Receiving a thrown ball"
+      ],
+      "themes": [
+        "sports",
+        "actions"
+      ]
+    },
+    {
+      "word": "SCOUT",
+      "difficulty": 3,
+      "clues": [
+        "Explorer",
+        "Talent finder"
+      ],
+      "themes": [
+        "society",
+        "nature"
+      ]
+    },
+    {
+      "word": "CLIMB",
+      "difficulty": 3,
+      "clues": [
+        "Ascend",
+        "Go up"
+      ],
+      "themes": [
+        "sports",
+        "nature",
+        "actions"
+      ]
+    },
+    {
+      "word": "CABLE",
+      "difficulty": 3,
+      "clues": [
+        "Electrical wire bundle",
+        "TV connector"
+      ],
+      "themes": [
+        "technology"
+      ]
+    },
+    {
+      "word": "LASER",
+      "difficulty": 3,
+      "clues": [
+        "Focused light beam",
+        "Cutting or pointing tool"
+      ],
+      "themes": [
+        "technology",
+        "science"
+      ]
+    },
+    {
+      "word": "PIXEL",
+      "difficulty": 3,
+      "clues": [
+        "Screen dot",
+        "Smallest display element"
+      ],
+      "themes": [
+        "technology"
+      ]
+    },
+    {
+      "word": "RADAR",
+      "difficulty": 3,
+      "clues": [
+        "Detection system using radio waves",
+        "Finds planes and ships"
+      ],
+      "themes": [
+        "technology",
+        "science"
+      ]
+    },
+    {
+      "word": "RADIO",
+      "difficulty": 3,
+      "clues": [
+        "Wireless audio device",
+        "Broadcasts music and news"
+      ],
+      "themes": [
+        "technology"
+      ]
+    },
+    {
+      "word": "ROBOT",
+      "difficulty": 3,
+      "clues": [
+        "Mechanical worker",
+        "Programmed machine"
+      ],
+      "themes": [
+        "technology",
+        "science"
+      ]
+    },
+    {
+      "word": "VIRUS",
+      "difficulty": 3,
+      "clues": [
+        "Malicious software",
+        "Infectious microorganism"
+      ],
+      "themes": [
+        "technology",
+        "science"
+      ]
+    },
+    {
+      "word": "EMAIL",
+      "difficulty": 3,
+      "clues": [
+        "Electronic message",
+        "Digital letter"
+      ],
+      "themes": [
+        "technology",
+        "everyday"
+      ]
+    },
+    {
+      "word": "FALCON",
+      "difficulty": 4,
+      "clues": [
+        "Fast hunting bird",
+        "Peregrine, for example"
+      ],
+      "themes": [
+        "animals",
+        "birds"
+      ]
+    },
+    {
+      "word": "PARROT",
+      "difficulty": 4,
+      "clues": [
+        "Colorful talking bird",
+        "Pirate's companion"
+      ],
+      "themes": [
+        "animals",
+        "birds"
+      ]
+    },
+    {
+      "word": "RABBIT",
+      "difficulty": 4,
+      "clues": [
+        "Long-eared hopping animal",
+        "Easter symbol"
+      ],
+      "themes": [
+        "animals"
+      ]
+    },
+    {
+      "word": "SPIDER",
+      "difficulty": 4,
+      "clues": [
+        "Eight-legged arachnid",
+        "Weaves a web"
+      ],
+      "themes": [
+        "animals",
+        "insects"
+      ]
+    },
+    {
+      "word": "TURTLE",
+      "difficulty": 4,
+      "clues": [
+        "Shelled reptile",
+        "Slow and steady"
+      ],
+      "themes": [
+        "animals",
+        "nature"
+      ]
+    },
+    {
+      "word": "DONKEY",
+      "difficulty": 4,
+      "clues": [
+        "Sturdy pack animal",
+        "Stubborn beast of burden"
+      ],
+      "themes": [
+        "animals",
+        "farm"
+      ]
+    },
+    {
+      "word": "JAGUAR",
+      "difficulty": 4,
+      "clues": [
+        "Spotted big cat",
+        "South American predator"
+      ],
+      "themes": [
+        "animals",
+        "nature"
+      ]
+    },
+    {
+      "word": "WALRUS",
+      "difficulty": 4,
+      "clues": [
+        "Tusked marine mammal",
+        "Arctic pinniped"
+      ],
+      "themes": [
+        "animals",
+        "ocean"
+      ]
+    },
+    {
+      "word": "OYSTER",
+      "difficulty": 4,
+      "clues": [
+        "Shelled mollusk",
+        "May contain a pearl"
+      ],
+      "themes": [
+        "animals",
+        "ocean",
+        "food"
+      ]
+    },
+    {
+      "word": "PIGEON",
+      "difficulty": 4,
+      "clues": [
+        "Urban bird",
+        "Carrier of messages"
+      ],
+      "themes": [
+        "animals",
+        "birds"
+      ]
+    },
+    {
+      "word": "SALMON",
+      "difficulty": 4,
+      "clues": [
+        "Pink fish that swims upstream",
+        "Popular seafood"
+      ],
+      "themes": [
+        "animals",
+        "ocean",
+        "food"
+      ]
+    },
+    {
+      "word": "BADGER",
+      "difficulty": 4,
+      "clues": [
+        "Burrowing mammal",
+        "Black and white face markings"
+      ],
+      "themes": [
+        "animals",
+        "nature"
+      ]
+    },
+    {
+      "word": "LIZARD",
+      "difficulty": 4,
+      "clues": [
+        "Small scaly reptile",
+        "Has a detachable tail"
+      ],
+      "themes": [
+        "animals",
+        "nature"
+      ]
+    },
+    {
+      "word": "CANDLE",
+      "difficulty": 4,
+      "clues": [
+        "Wax light source",
+        "Birthday cake decoration"
+      ],
+      "themes": [
+        "objects",
+        "everyday"
+      ]
+    },
+    {
+      "word": "PILLOW",
+      "difficulty": 4,
+      "clues": [
+        "Soft head rest",
+        "Sleep cushion"
+      ],
+      "themes": [
+        "objects",
+        "everyday"
+      ]
+    },
+    {
+      "word": "BASKET",
+      "difficulty": 4,
+      "clues": [
+        "Woven container",
+        "Used for carrying"
+      ],
+      "themes": [
+        "objects",
+        "everyday"
+      ]
+    },
+    {
+      "word": "BUCKET",
+      "difficulty": 4,
+      "clues": [
+        "Open-top container",
+        "Carries water"
+      ],
+      "themes": [
+        "objects",
+        "everyday"
+      ]
+    },
+    {
+      "word": "CARPET",
+      "difficulty": 4,
+      "clues": [
+        "Floor covering",
+        "Wall-to-wall fabric"
+      ],
+      "themes": [
+        "objects",
+        "furniture"
+      ]
+    },
+    {
+      "word": "HAMMER",
+      "difficulty": 4,
+      "clues": [
+        "Hitting tool",
+        "Drives nails"
+      ],
+      "themes": [
+        "objects",
+        "tools"
+      ]
+    },
+    {
+      "word": "MIRROR",
+      "difficulty": 4,
+      "clues": [
+        "Reflective glass",
+        "Shows your reflection"
+      ],
+      "themes": [
+        "objects",
+        "everyday"
+      ]
+    },
+    {
+      "word": "PENCIL",
+      "difficulty": 4,
+      "clues": [
+        "Graphite writing tool",
+        "Has an eraser"
+      ],
+      "themes": [
+        "objects",
+        "everyday"
+      ]
+    },
+    {
+      "word": "RIBBON",
+      "difficulty": 4,
+      "clues": [
+        "Decorative strip",
+        "Tied in a bow"
+      ],
+      "themes": [
+        "objects"
+      ]
+    },
+    {
+      "word": "SADDLE",
+      "difficulty": 4,
+      "clues": [
+        "Horse riding seat",
+        "Leather equestrian gear"
+      ],
+      "themes": [
+        "objects",
+        "animals"
+      ]
+    },
+    {
+      "word": "SHIELD",
+      "difficulty": 4,
+      "clues": [
+        "Defensive barrier",
+        "Knight's protection"
+      ],
+      "themes": [
+        "objects",
+        "history",
+        "combat"
+      ]
+    },
+    {
+      "word": "SHOVEL",
+      "difficulty": 4,
+      "clues": [
+        "Digging tool",
+        "Moves earth"
+      ],
+      "themes": [
+        "objects",
+        "tools"
+      ]
+    },
+    {
+      "word": "SOCKET",
+      "difficulty": 4,
+      "clues": [
+        "Electrical outlet",
+        "Plug receiver"
+      ],
+      "themes": [
+        "objects",
+        "technology"
+      ]
+    },
+    {
+      "word": "SPONGE",
+      "difficulty": 4,
+      "clues": [
+        "Absorbent cleaning tool",
+        "Soaks up water"
+      ],
+      "themes": [
+        "objects",
+        "everyday"
+      ]
+    },
+    {
+      "word": "THREAD",
+      "difficulty": 4,
+      "clues": [
+        "Thin strand for sewing",
+        "Passes through a needle"
+      ],
+      "themes": [
+        "objects",
+        "everyday"
+      ]
+    },
+    {
+      "word": "TICKET",
+      "difficulty": 4,
+      "clues": [
+        "Entry pass",
+        "Proof of purchase for an event"
+      ],
+      "themes": [
+        "objects",
+        "everyday"
+      ]
+    },
+    {
+      "word": "TUNNEL",
+      "difficulty": 4,
+      "clues": [
+        "Underground passage",
+        "Bored through a mountain"
+      ],
+      "themes": [
+        "objects",
+        "geography"
+      ]
+    },
+    {
+      "word": "VALLEY",
+      "difficulty": 4,
+      "clues": [
+        "Low land between hills",
+        "River basin"
+      ],
+      "themes": [
+        "nature",
+        "geography"
+      ]
+    },
+    {
+      "word": "DESERT",
+      "difficulty": 4,
+      "clues": [
+        "Arid sandy region",
+        "Sahara, for example"
+      ],
+      "themes": [
+        "nature",
+        "geography"
+      ]
+    },
+    {
+      "word": "FOREST",
+      "difficulty": 4,
+      "clues": [
+        "Dense tree area",
+        "Woodland"
+      ],
+      "themes": [
+        "nature",
+        "geography"
+      ]
+    },
+    {
+      "word": "ISLAND",
+      "difficulty": 4,
+      "clues": [
+        "Land surrounded by water",
+        "Hawaii or Fiji"
+      ],
+      "themes": [
+        "nature",
+        "geography"
+      ]
+    },
+    {
+      "word": "MEADOW",
+      "difficulty": 4,
+      "clues": [
+        "Grassy field",
+        "Open pasture"
+      ],
+      "themes": [
+        "nature",
+        "geography"
+      ]
+    },
+    {
+      "word": "SUMMIT",
+      "difficulty": 4,
+      "clues": [
+        "Mountain peak",
+        "Highest point"
+      ],
+      "themes": [
+        "nature",
+        "geography"
+      ]
+    },
+    {
+      "word": "CANYON",
+      "difficulty": 4,
+      "clues": [
+        "Deep gorge",
+        "Grand ___ in Arizona"
+      ],
+      "themes": [
+        "nature",
+        "geography"
+      ]
+    },
+    {
+      "word": "LAGOON",
+      "difficulty": 4,
+      "clues": [
+        "Shallow water body",
+        "Separated from ocean by reef"
+      ],
+      "themes": [
+        "nature",
+        "geography"
+      ]
+    },
+    {
+      "word": "PEBBLE",
+      "difficulty": 4,
+      "clues": [
+        "Small smooth stone",
+        "Found on beaches"
+      ],
+      "themes": [
+        "nature"
+      ]
+    },
+    {
+      "word": "BREEZE",
+      "difficulty": 4,
+      "clues": [
+        "Gentle wind",
+        "Light air movement"
+      ],
+      "themes": [
+        "nature",
+        "weather"
+      ]
+    },
+    {
+      "word": "ICICLE",
+      "difficulty": 4,
+      "clues": [
+        "Hanging ice formation",
+        "Drips from eaves in winter"
+      ],
+      "themes": [
+        "nature",
+        "weather"
+      ]
+    },
+    {
+      "word": "SEASON",
+      "difficulty": 4,
+      "clues": [
+        "Time of year",
+        "Spring, summer, fall, winter"
+      ],
+      "themes": [
+        "nature",
+        "concepts"
+      ]
+    },
+    {
+      "word": "SUNSET",
+      "difficulty": 4,
+      "clues": [
+        "Evening sky display",
+        "When the sun goes down"
+      ],
+      "themes": [
+        "nature"
+      ]
+    },
+    {
+      "word": "THIRST",
+      "difficulty": 4,
+      "clues": [
+        "Need for water",
+        "Dehydration feeling"
+      ],
+      "themes": [
+        "body",
+        "concepts"
+      ]
+    },
+    {
+      "word": "TONGUE",
+      "difficulty": 4,
+      "clues": [
+        "Mouth muscle for tasting",
+        "Used for speaking"
+      ],
+      "themes": [
+        "body"
+      ]
+    },
+    {
+      "word": "MUSCLE",
+      "difficulty": 4,
+      "clues": [
+        "Body tissue for movement",
+        "Flexed by bodybuilders"
+      ],
+      "themes": [
+        "body",
+        "science"
+      ]
+    },
+    {
+      "word": "TEMPLE",
+      "difficulty": 4,
+      "clues": [
+        "Place of worship",
+        "Side of the forehead"
+      ],
+      "themes": [
+        "history",
+        "body"
+      ]
+    },
+    {
+      "word": "EMPIRE",
+      "difficulty": 4,
+      "clues": [
+        "Large realm under one ruler",
+        "Roman or British"
+      ],
+      "themes": [
+        "history"
+      ]
+    },
+    {
+      "word": "CASTLE",
+      "difficulty": 4,
+      "clues": [
+        "Fortified medieval residence",
+        "King's home"
+      ],
+      "themes": [
+        "history",
+        "geography"
+      ]
+    },
+    {
+      "word": "KNIGHT",
+      "difficulty": 4,
+      "clues": [
+        "Armored medieval warrior",
+        "Serves a king"
+      ],
+      "themes": [
+        "history",
+        "combat"
+      ]
+    },
+    {
+      "word": "PRINCE",
+      "difficulty": 4,
+      "clues": [
+        "Son of a king",
+        "Male heir to the throne"
+      ],
+      "themes": [
+        "history",
+        "society"
+      ]
+    },
+    {
+      "word": "TREATY",
+      "difficulty": 4,
+      "clues": [
+        "Formal agreement between nations",
+        "Peace document"
+      ],
+      "themes": [
+        "history",
+        "society"
+      ]
+    },
+    {
+      "word": "REVOLT",
+      "difficulty": 4,
+      "clues": [
+        "Uprising",
+        "Rebellion against authority"
+      ],
+      "themes": [
+        "history"
+      ]
+    },
+    {
+      "word": "THRONE",
+      "difficulty": 4,
+      "clues": [
+        "Royal seat",
+        "Symbol of power"
+      ],
+      "themes": [
+        "history",
+        "objects"
+      ]
+    },
+    {
+      "word": "COLONY",
+      "difficulty": 4,
+      "clues": [
+        "Overseas territory",
+        "Settlement under foreign rule"
+      ],
+      "themes": [
+        "history",
+        "society"
+      ]
+    },
+    {
+      "word": "MARKET",
+      "difficulty": 4,
+      "clues": [
+        "Place to buy and sell",
+        "Farmers or stock"
+      ],
+      "themes": [
+        "society",
+        "money"
+      ]
+    },
+    {
+      "word": "PRISON",
+      "difficulty": 4,
+      "clues": [
+        "Place of confinement",
+        "Where criminals are held"
+      ],
+      "themes": [
+        "society"
+      ]
+    },
+    {
+      "word": "CHURCH",
+      "difficulty": 4,
+      "clues": [
+        "Christian worship building",
+        "Has a steeple"
+      ],
+      "themes": [
+        "society",
+        "culture"
+      ]
+    },
+    {
+      "word": "BRIDGE",
+      "difficulty": 4,
+      "clues": [
+        "Structure over water",
+        "Connects two sides"
+      ],
+      "themes": [
+        "objects",
+        "geography"
+      ]
+    },
+    {
+      "word": "SCHOOL",
+      "difficulty": 4,
+      "clues": [
+        "Place of learning",
+        "Where children study"
+      ],
+      "themes": [
+        "society",
+        "everyday"
+      ]
+    },
+    {
+      "word": "PLANET",
+      "difficulty": 4,
+      "clues": [
+        "Celestial body orbiting a star",
+        "Earth is one"
+      ],
+      "themes": [
+        "science"
+      ]
+    },
+    {
+      "word": "MAGNET",
+      "difficulty": 4,
+      "clues": [
+        "Object attracting iron",
+        "Has north and south poles"
+      ],
+      "themes": [
+        "science"
+      ]
+    },
+    {
+      "word": "FOSSIL",
+      "difficulty": 4,
+      "clues": [
+        "Preserved ancient remains",
+        "Dinosaur bone"
+      ],
+      "themes": [
+        "science",
+        "nature"
+      ]
+    },
+    {
+      "word": "GALAXY",
+      "difficulty": 4,
+      "clues": [
+        "Vast star system",
+        "Milky Way"
+      ],
+      "themes": [
+        "science"
+      ]
+    },
+    {
+      "word": "METEOR",
+      "difficulty": 4,
+      "clues": [
+        "Space rock entering atmosphere",
+        "Shooting star"
+      ],
+      "themes": [
+        "science"
+      ]
+    },
+    {
+      "word": "OXYGEN",
+      "difficulty": 4,
+      "clues": [
+        "Breathing gas",
+        "Element O"
+      ],
+      "themes": [
+        "science"
+      ]
+    },
+    {
+      "word": "CARBON",
+      "difficulty": 4,
+      "clues": [
+        "Element of life",
+        "In diamonds and coal"
+      ],
+      "themes": [
+        "science"
+      ]
+    },
+    {
+      "word": "ENERGY",
+      "difficulty": 4,
+      "clues": [
+        "Power to do work",
+        "Kinetic or potential"
+      ],
+      "themes": [
+        "science"
+      ]
+    },
+    {
+      "word": "PHOTON",
+      "difficulty": 4,
+      "clues": [
+        "Light particle",
+        "Quantum of electromagnetic radiation"
+      ],
+      "themes": [
+        "science"
+      ]
+    },
+    {
+      "word": "PROTON",
+      "difficulty": 4,
+      "clues": [
+        "Positive atomic particle",
+        "In the nucleus"
+      ],
+      "themes": [
+        "science"
+      ]
+    },
+    {
+      "word": "ENZYME",
+      "difficulty": 4,
+      "clues": [
+        "Biological catalyst",
+        "Speeds up reactions"
+      ],
+      "themes": [
+        "science"
+      ]
+    },
+    {
+      "word": "GUITAR",
+      "difficulty": 4,
+      "clues": [
+        "Six-stringed instrument",
+        "Acoustic or electric"
+      ],
+      "themes": [
+        "music"
+      ]
+    },
+    {
+      "word": "VIOLIN",
+      "difficulty": 4,
+      "clues": [
+        "Bowed string instrument",
+        "Orchestral soprano"
+      ],
+      "themes": [
+        "music"
+      ]
+    },
+    {
+      "word": "BALLET",
+      "difficulty": 4,
+      "clues": [
+        "Classical dance form",
+        "Performed on pointe"
+      ],
+      "themes": [
+        "culture",
+        "sports"
+      ]
+    },
+    {
+      "word": "POETRY",
+      "difficulty": 4,
+      "clues": [
+        "Literary verse art",
+        "Rhyme and meter"
+      ],
+      "themes": [
+        "culture",
+        "language"
+      ]
+    },
+    {
+      "word": "LEGEND",
+      "difficulty": 4,
+      "clues": [
+        "Famous traditional story",
+        "Mythical hero tale"
+      ],
+      "themes": [
+        "culture",
+        "history"
+      ]
+    },
+    {
+      "word": "TROPHY",
+      "difficulty": 4,
+      "clues": [
+        "Victory award",
+        "Winning cup"
+      ],
+      "themes": [
+        "sports"
+      ]
+    },
+    {
+      "word": "SPRINT",
+      "difficulty": 4,
+      "clues": [
+        "Short fast run",
+        "100-meter dash"
+      ],
+      "themes": [
+        "sports"
+      ]
+    },
+    {
+      "word": "BOXING",
+      "difficulty": 4,
+      "clues": [
+        "Fighting sport with gloves",
+        "Ring combat"
+      ],
+      "themes": [
+        "sports",
+        "combat"
+      ]
+    },
+    {
+      "word": "HOCKEY",
+      "difficulty": 4,
+      "clues": [
+        "Ice puck sport",
+        "Played with sticks"
+      ],
+      "themes": [
+        "sports"
+      ]
+    },
+    {
+      "word": "TENNIS",
+      "difficulty": 4,
+      "clues": [
+        "Racket and ball sport",
+        "Played on a court"
+      ],
+      "themes": [
+        "sports"
+      ]
+    },
+    {
+      "word": "SOCCER",
+      "difficulty": 4,
+      "clues": [
+        "World's most popular sport",
+        "Called football elsewhere"
+      ],
+      "themes": [
+        "sports"
+      ]
+    },
+    {
+      "word": "LEAGUE",
+      "difficulty": 4,
+      "clues": [
+        "Sports organization",
+        "Group of teams"
+      ],
+      "themes": [
+        "sports"
+      ]
+    },
+    {
+      "word": "HELMET",
+      "difficulty": 4,
+      "clues": [
+        "Head protection",
+        "Worn in football or cycling"
+      ],
+      "themes": [
+        "sports",
+        "objects"
+      ]
+    },
+    {
+      "word": "ENGINE",
+      "difficulty": 4,
+      "clues": [
+        "Power machine",
+        "Under the car hood"
+      ],
+      "themes": [
+        "technology"
+      ]
+    },
+    {
+      "word": "FILTER",
+      "difficulty": 4,
+      "clues": [
+        "Straining device",
+        "Removes impurities"
+      ],
+      "themes": [
+        "technology",
+        "science"
+      ]
+    },
+    {
+      "word": "MOBILE",
+      "difficulty": 4,
+      "clues": [
+        "Portable phone",
+        "Cellular device"
+      ],
+      "themes": [
+        "technology",
+        "everyday"
+      ]
+    },
+    {
+      "word": "SCREEN",
+      "difficulty": 4,
+      "clues": [
+        "Display surface",
+        "TV or phone face"
+      ],
+      "themes": [
+        "technology"
+      ]
+    },
+    {
+      "word": "SENSOR",
+      "difficulty": 4,
+      "clues": [
+        "Detection device",
+        "Measures environment"
+      ],
+      "themes": [
+        "technology",
+        "science"
+      ]
+    },
+    {
+      "word": "SIGNAL",
+      "difficulty": 4,
+      "clues": [
+        "Communication indicator",
+        "Radio or visual"
+      ],
+      "themes": [
+        "technology"
+      ]
+    },
+    {
+      "word": "BUTTON",
+      "difficulty": 4,
+      "clues": [
+        "Pressable control",
+        "On a shirt or device"
+      ],
+      "themes": [
+        "technology",
+        "objects"
+      ]
+    },
+    {
+      "word": "BUTTER",
+      "difficulty": 4,
+      "clues": [
+        "Creamy dairy spread",
+        "Made from churning cream"
+      ],
+      "themes": [
+        "food"
+      ]
+    },
+    {
+      "word": "CHEESE",
+      "difficulty": 4,
+      "clues": [
+        "Aged dairy product",
+        "Cheddar or brie"
+      ],
+      "themes": [
+        "food"
+      ]
+    },
+    {
+      "word": "PEPPER",
+      "difficulty": 4,
+      "clues": [
+        "Spicy seasoning",
+        "Black or red"
+      ],
+      "themes": [
+        "food"
+      ]
+    },
+    {
+      "word": "GINGER",
+      "difficulty": 4,
+      "clues": [
+        "Spicy root",
+        "Used in Asian cooking"
+      ],
+      "themes": [
+        "food",
+        "plants"
+      ]
+    },
+    {
+      "word": "CELERY",
+      "difficulty": 4,
+      "clues": [
+        "Crunchy green stalk",
+        "Low-calorie snack"
+      ],
+      "themes": [
+        "food",
+        "plants"
+      ]
+    },
+    {
+      "word": "CARROT",
+      "difficulty": 4,
+      "clues": [
+        "Orange root vegetable",
+        "Rabbits love them"
+      ],
+      "themes": [
+        "food",
+        "plants"
+      ]
+    },
+    {
+      "word": "BANANA",
+      "difficulty": 4,
+      "clues": [
+        "Yellow curved fruit",
+        "Monkey's favorite"
+      ],
+      "themes": [
+        "food"
+      ]
+    },
+    {
+      "word": "CHERRY",
+      "difficulty": 4,
+      "clues": [
+        "Small red stone fruit",
+        "On top of a sundae"
+      ],
+      "themes": [
+        "food"
+      ]
+    },
+    {
+      "word": "MUFFIN",
+      "difficulty": 4,
+      "clues": [
+        "Small round cake",
+        "Blueberry breakfast treat"
+      ],
+      "themes": [
+        "food"
+      ]
+    },
+    {
+      "word": "WAFFLE",
+      "difficulty": 4,
+      "clues": [
+        "Grid-patterned breakfast",
+        "Topped with syrup"
+      ],
+      "themes": [
+        "food"
+      ]
+    },
+    {
+      "word": "TRAVEL",
+      "difficulty": 4,
+      "clues": [
+        "Journey to places",
+        "Exploring the world"
+      ],
+      "themes": [
+        "travel",
+        "concepts"
+      ]
+    },
+    {
+      "word": "ANCHOR",
+      "difficulty": 4,
+      "clues": [
+        "Ship's holding device",
+        "Keeps a boat in place"
+      ],
+      "themes": [
+        "ocean",
+        "objects"
+      ]
+    },
+    {
+      "word": "HARBOR",
+      "difficulty": 4,
+      "clues": [
+        "Protected water area for ships",
+        "Safe port"
+      ],
+      "themes": [
+        "ocean",
+        "geography"
+      ]
+    },
+    {
+      "word": "WEALTH",
+      "difficulty": 4,
+      "clues": [
+        "Abundance of possessions",
+        "Financial prosperity"
+      ],
+      "themes": [
+        "money",
+        "concepts"
+      ]
+    },
+    {
+      "word": "PROFIT",
+      "difficulty": 4,
+      "clues": [
+        "Financial gain",
+        "Revenue minus costs"
+      ],
+      "themes": [
+        "money"
+      ]
+    },
+    {
+      "word": "BUDGET",
+      "difficulty": 4,
+      "clues": [
+        "Financial plan",
+        "Spending allocation"
+      ],
+      "themes": [
+        "money"
+      ]
+    },
+    {
+      "word": "INVEST",
+      "difficulty": 4,
+      "clues": [
+        "Put money to work",
+        "Buy stocks or bonds"
+      ],
+      "themes": [
+        "money"
+      ]
+    },
+    {
+      "word": "POLICY",
+      "difficulty": 4,
+      "clues": [
+        "Plan of action",
+        "Insurance document"
+      ],
+      "themes": [
+        "society",
+        "concepts"
+      ]
+    },
+    {
+      "word": "BALLOT",
+      "difficulty": 4,
+      "clues": [
+        "Voting paper",
+        "Election form"
+      ],
+      "themes": [
+        "society"
+      ]
+    },
+    {
+      "word": "PANTHER",
+      "difficulty": 5,
+      "clues": [
+        "Black big cat",
+        "Leopard or jaguar variant"
+      ],
+      "themes": [
+        "animals",
+        "nature"
+      ]
+    },
+    {
+      "word": "DOLPHIN",
+      "difficulty": 5,
+      "clues": [
+        "Intelligent marine mammal",
+        "Known for acrobatics"
+      ],
+      "themes": [
+        "animals",
+        "ocean"
+      ]
+    },
+    {
+      "word": "PENGUIN",
+      "difficulty": 5,
+      "clues": [
+        "Flightless tuxedo bird",
+        "Antarctic swimmer"
+      ],
+      "themes": [
+        "animals",
+        "birds"
+      ]
+    },
+    {
+      "word": "OCTOPUS",
+      "difficulty": 5,
+      "clues": [
+        "Eight-armed sea creature",
+        "Ink-squirting mollusk"
+      ],
+      "themes": [
+        "animals",
+        "ocean"
+      ]
+    },
+    {
+      "word": "LEOPARD",
+      "difficulty": 5,
+      "clues": [
+        "Spotted big cat",
+        "African and Asian predator"
+      ],
+      "themes": [
+        "animals",
+        "nature"
+      ]
+    },
+    {
+      "word": "BUFFALO",
+      "difficulty": 5,
+      "clues": [
+        "Large wild bovine",
+        "Roams American plains"
+      ],
+      "themes": [
+        "animals",
+        "nature"
+      ]
+    },
+    {
+      "word": "CHEETAH",
+      "difficulty": 5,
+      "clues": [
+        "Fastest land animal",
+        "Spotted sprinter"
+      ],
+      "themes": [
+        "animals",
+        "nature"
+      ]
+    },
+    {
+      "word": "GORILLA",
+      "difficulty": 5,
+      "clues": [
+        "Largest primate",
+        "Chest-beating ape"
+      ],
+      "themes": [
+        "animals",
+        "nature"
+      ]
+    },
+    {
+      "word": "LOBSTER",
+      "difficulty": 5,
+      "clues": [
+        "Large marine crustacean",
+        "Red when cooked"
+      ],
+      "themes": [
+        "animals",
+        "ocean",
+        "food"
+      ]
+    },
+    {
+      "word": "HAMSTER",
+      "difficulty": 5,
+      "clues": [
+        "Small pet rodent",
+        "Runs on a wheel"
+      ],
+      "themes": [
+        "animals",
+        "pets"
+      ]
+    },
+    {
+      "word": "GIRAFFE",
+      "difficulty": 5,
+      "clues": [
+        "Tallest living animal",
+        "Long-necked African mammal"
+      ],
+      "themes": [
+        "animals",
+        "nature"
+      ]
+    },
+    {
+      "word": "VOLCANO",
+      "difficulty": 5,
+      "clues": [
+        "Erupting mountain",
+        "Spews lava and ash"
+      ],
+      "themes": [
+        "nature",
+        "geography"
+      ]
+    },
+    {
+      "word": "GLACIER",
+      "difficulty": 5,
+      "clues": [
+        "Slow-moving ice mass",
+        "Carved valleys over millennia"
+      ],
+      "themes": [
+        "nature",
+        "geography"
+      ]
+    },
+    {
+      "word": "TORNADO",
+      "difficulty": 5,
+      "clues": [
+        "Violent rotating windstorm",
+        "Funnel cloud"
+      ],
+      "themes": [
+        "nature",
+        "weather"
+      ]
+    },
+    {
+      "word": "TSUNAMI",
+      "difficulty": 5,
+      "clues": [
+        "Massive ocean wave",
+        "Triggered by earthquakes"
+      ],
+      "themes": [
+        "nature",
+        "weather",
+        "ocean"
+      ]
+    },
+    {
+      "word": "HORIZON",
+      "difficulty": 5,
+      "clues": [
+        "Where sky meets earth",
+        "Distant visible line"
+      ],
+      "themes": [
+        "nature",
+        "concepts"
+      ]
+    },
+    {
+      "word": "PLATEAU",
+      "difficulty": 5,
+      "clues": [
+        "Flat elevated landform",
+        "High tableland"
+      ],
+      "themes": [
+        "nature",
+        "geography"
+      ]
+    },
+    {
+      "word": "BOULDER",
+      "difficulty": 5,
+      "clues": [
+        "Very large rock",
+        "Massive stone"
+      ],
+      "themes": [
+        "nature"
+      ]
+    },
+    {
+      "word": "CURRENT",
+      "difficulty": 5,
+      "clues": [
+        "Water or air flow",
+        "Electrical flow"
+      ],
+      "themes": [
+        "nature",
+        "science"
+      ]
+    },
+    {
+      "word": "EROSION",
+      "difficulty": 5,
+      "clues": [
+        "Wearing away of land",
+        "By wind or water"
+      ],
+      "themes": [
+        "nature",
+        "science"
+      ]
+    },
+    {
+      "word": "CRYSTAL",
+      "difficulty": 5,
+      "clues": [
+        "Transparent mineral",
+        "Geometric solid structure"
+      ],
+      "themes": [
+        "nature",
+        "science"
+      ]
+    },
+    {
+      "word": "GRAVITY",
+      "difficulty": 5,
+      "clues": [
+        "Force pulling objects down",
+        "Keeps us on Earth"
+      ],
+      "themes": [
+        "science"
+      ]
+    },
+    {
+      "word": "NEUTRON",
+      "difficulty": 5,
+      "clues": [
+        "Neutral atomic particle",
+        "In the nucleus with protons"
+      ],
+      "themes": [
+        "science"
+      ]
+    },
+    {
+      "word": "FORMULA",
+      "difficulty": 5,
+      "clues": [
+        "Mathematical expression",
+        "Scientific recipe"
+      ],
+      "themes": [
+        "science",
+        "math"
+      ]
+    },
+    {
+      "word": "VOLTAGE",
+      "difficulty": 5,
+      "clues": [
+        "Electric potential difference",
+        "Measured in volts"
+      ],
+      "themes": [
+        "science",
+        "technology"
+      ]
+    },
+    {
+      "word": "ELEMENT",
+      "difficulty": 5,
+      "clues": [
+        "Fundamental substance",
+        "Hydrogen or gold"
+      ],
+      "themes": [
+        "science"
+      ]
+    },
+    {
+      "word": "NUCLEUS",
+      "difficulty": 5,
+      "clues": [
+        "Center of an atom",
+        "Contains protons"
+      ],
+      "themes": [
+        "science"
+      ]
+    },
+    {
+      "word": "PROTEIN",
+      "difficulty": 5,
+      "clues": [
+        "Body-building nutrient",
+        "Made of amino acids"
+      ],
+      "themes": [
+        "science",
+        "food"
+      ]
+    },
+    {
+      "word": "MOLECULE",
+      "difficulty": 5,
+      "clues": [
+        "Bonded group of atoms",
+        "Smallest unit of a compound"
+      ],
+      "themes": [
+        "science"
+      ]
+    },
+    {
+      "word": "VACCINE",
+      "difficulty": 5,
+      "clues": [
+        "Disease prevention shot",
+        "Builds immunity"
+      ],
+      "themes": [
+        "science",
+        "health"
+      ]
+    },
+    {
+      "word": "COMPASS",
+      "difficulty": 5,
+      "clues": [
+        "Direction-finding instrument",
+        "Points north"
+      ],
+      "themes": [
+        "objects",
+        "travel"
+      ]
+    },
+    {
+      "word": "LANTERN",
+      "difficulty": 5,
+      "clues": [
+        "Portable light",
+        "Camping illumination"
+      ],
+      "themes": [
+        "objects"
+      ]
+    },
+    {
+      "word": "FURNACE",
+      "difficulty": 5,
+      "clues": [
+        "Heating device",
+        "Burns fuel for warmth"
+      ],
+      "themes": [
+        "objects",
+        "everyday"
+      ]
+    },
+    {
+      "word": "CURTAIN",
+      "difficulty": 5,
+      "clues": [
+        "Window covering",
+        "Fabric drape"
+      ],
+      "themes": [
+        "objects",
+        "furniture"
+      ]
+    },
+    {
+      "word": "CABINET",
+      "difficulty": 5,
+      "clues": [
+        "Storage furniture",
+        "Kitchen cupboard"
+      ],
+      "themes": [
+        "objects",
+        "furniture"
+      ]
+    },
+    {
+      "word": "BLANKET",
+      "difficulty": 5,
+      "clues": [
+        "Warm bed covering",
+        "Cozy wrap"
+      ],
+      "themes": [
+        "objects",
+        "everyday"
+      ]
+    },
+    {
+      "word": "DIAMOND",
+      "difficulty": 5,
+      "clues": [
+        "Hardest gemstone",
+        "Engagement ring stone"
+      ],
+      "themes": [
+        "objects",
+        "materials",
+        "science"
+      ]
+    },
+    {
+      "word": "TRUMPET",
+      "difficulty": 5,
+      "clues": [
+        "Brass instrument",
+        "Jazz horn"
+      ],
+      "themes": [
+        "music"
+      ]
+    },
+    {
+      "word": "CELLO",
+      "difficulty": 5,
+      "clues": [
+        "Large bowed string instrument",
+        "Deep orchestral voice"
+      ],
+      "themes": [
+        "music"
+      ]
+    },
+    {
+      "word": "HARMONY",
+      "difficulty": 5,
+      "clues": [
+        "Musical chord blend",
+        "Pleasing sound combination"
+      ],
+      "themes": [
+        "music"
+      ]
+    },
+    {
+      "word": "GALLERY",
+      "difficulty": 5,
+      "clues": [
+        "Art exhibition space",
+        "Museum wing"
+      ],
+      "themes": [
+        "culture"
+      ]
+    },
+    {
+      "word": "FICTION",
+      "difficulty": 5,
+      "clues": [
+        "Imaginary narrative",
+        "Made-up stories"
+      ],
+      "themes": [
+        "culture",
+        "language"
+      ]
+    },
+    {
+      "word": "SURGEON",
+      "difficulty": 5,
+      "clues": [
+        "Operating doctor",
+        "Performs medical procedures"
+      ],
+      "themes": [
+        "science",
+        "society"
+      ]
+    },
+    {
+      "word": "CAPTAIN",
+      "difficulty": 5,
+      "clues": [
+        "Ship or team leader",
+        "In command"
+      ],
+      "themes": [
+        "society",
+        "ocean"
+      ]
+    },
+    {
+      "word": "LIBERTY",
+      "difficulty": 5,
+      "clues": [
+        "Freedom",
+        "Independence from tyranny"
+      ],
+      "themes": [
+        "society",
+        "concepts"
+      ]
+    },
+    {
+      "word": "JUSTICE",
+      "difficulty": 5,
+      "clues": [
+        "Fairness under law",
+        "What courts pursue"
+      ],
+      "themes": [
+        "society",
+        "concepts"
+      ]
+    },
+    {
+      "word": "CHAPTER",
+      "difficulty": 5,
+      "clues": [
+        "Book section",
+        "Division of a novel"
+      ],
+      "themes": [
+        "culture",
+        "language"
+      ]
+    },
+    {
+      "word": "COURAGE",
+      "difficulty": 5,
+      "clues": [
+        "Bravery",
+        "Facing fear"
+      ],
+      "themes": [
+        "emotions",
+        "concepts"
+      ]
+    },
+    {
+      "word": "DESPAIR",
+      "difficulty": 5,
+      "clues": [
+        "Complete hopelessness",
+        "Deep sorrow"
+      ],
+      "themes": [
+        "emotions"
+      ]
+    },
+    {
+      "word": "ANGUISH",
+      "difficulty": 5,
+      "clues": [
+        "Severe pain or distress",
+        "Mental suffering"
+      ],
+      "themes": [
+        "emotions"
+      ]
+    },
+    {
+      "word": "ECSTASY",
+      "difficulty": 5,
+      "clues": [
+        "Overwhelming joy",
+        "Extreme happiness"
+      ],
+      "themes": [
+        "emotions"
+      ]
+    },
+    {
+      "word": "ANCIENT",
+      "difficulty": 5,
+      "clues": [
+        "Very old",
+        "From long ago"
+      ],
+      "themes": [
+        "history",
+        "concepts"
+      ]
+    },
+    {
+      "word": "CENTURY",
+      "difficulty": 5,
+      "clues": [
+        "One hundred years",
+        "Period of history"
+      ],
+      "themes": [
+        "history",
+        "concepts"
+      ]
+    },
+    {
+      "word": "DYNASTY",
+      "difficulty": 5,
+      "clues": [
+        "Ruling family line",
+        "Succession of monarchs"
+      ],
+      "themes": [
+        "history"
+      ]
+    },
+    {
+      "word": "CRUSADE",
+      "difficulty": 5,
+      "clues": [
+        "Holy war campaign",
+        "Medieval religious expedition"
+      ],
+      "themes": [
+        "history"
+      ]
+    },
+    {
+      "word": "LINEAGE",
+      "difficulty": 5,
+      "clues": [
+        "Line of descent",
+        "Family ancestry"
+      ],
+      "themes": [
+        "history",
+        "society"
+      ]
+    },
+    {
+      "word": "CRICKET",
+      "difficulty": 5,
+      "clues": [
+        "Bat-and-ball sport",
+        "Popular in England and India"
+      ],
+      "themes": [
+        "sports"
+      ]
+    },
+    {
+      "word": "ARCHERY",
+      "difficulty": 5,
+      "clues": [
+        "Bow and arrow sport",
+        "Hitting targets"
+      ],
+      "themes": [
+        "sports",
+        "history"
+      ]
+    },
+    {
+      "word": "JAVELIN",
+      "difficulty": 5,
+      "clues": [
+        "Throwing spear event",
+        "Olympic field sport"
+      ],
+      "themes": [
+        "sports"
+      ]
+    },
+    {
+      "word": "STADIUM",
+      "difficulty": 5,
+      "clues": [
+        "Large sports venue",
+        "Holds thousands of fans"
+      ],
+      "themes": [
+        "sports",
+        "objects"
+      ]
+    },
+    {
+      "word": "REFEREE",
+      "difficulty": 5,
+      "clues": [
+        "Game official",
+        "Enforces rules"
+      ],
+      "themes": [
+        "sports"
+      ]
+    },
+    {
+      "word": "CIRCUIT",
+      "difficulty": 5,
+      "clues": [
+        "Electrical path",
+        "Racing track loop"
+      ],
+      "themes": [
+        "technology",
+        "science"
+      ]
+    },
+    {
+      "word": "NETWORK",
+      "difficulty": 5,
+      "clues": [
+        "Connected system",
+        "Internet or social"
+      ],
+      "themes": [
+        "technology"
+      ]
+    },
+    {
+      "word": "ANTENNA",
+      "difficulty": 5,
+      "clues": [
+        "Signal receiver",
+        "Radio or TV aerial"
+      ],
+      "themes": [
+        "technology"
+      ]
+    },
+    {
+      "word": "BATTERY",
+      "difficulty": 5,
+      "clues": [
+        "Portable power source",
+        "Stores electrical energy"
+      ],
+      "themes": [
+        "technology",
+        "science"
+      ]
+    },
+    {
+      "word": "DISPLAY",
+      "difficulty": 5,
+      "clues": [
+        "Visual output device",
+        "Screen or monitor"
+      ],
+      "themes": [
+        "technology"
+      ]
+    },
+    {
+      "word": "SILICON",
+      "difficulty": 5,
+      "clues": [
+        "Semiconductor element",
+        "Computer chip material"
+      ],
+      "themes": [
+        "technology",
+        "science"
+      ]
+    },
+    {
+      "word": "RECEIPT",
+      "difficulty": 5,
+      "clues": [
+        "Proof of purchase",
+        "Transaction record"
+      ],
+      "themes": [
+        "money",
+        "everyday"
+      ]
+    },
+    {
+      "word": "ANTELOPE",
+      "difficulty": 6,
+      "clues": [
+        "Swift African grazer",
+        "Gazelle relative"
+      ],
+      "themes": [
+        "animals",
+        "nature"
+      ]
+    },
+    {
+      "word": "PELICAN",
+      "difficulty": 6,
+      "clues": [
+        "Bird with a throat pouch",
+        "Coastal fish-catcher"
+      ],
+      "themes": [
+        "animals",
+        "birds"
+      ]
+    },
+    {
+      "word": "SCORPION",
+      "difficulty": 6,
+      "clues": [
+        "Arachnid with a stinging tail",
+        "Desert predator"
+      ],
+      "themes": [
+        "animals",
+        "nature"
+      ]
+    },
+    {
+      "word": "PORPOISE",
+      "difficulty": 6,
+      "clues": [
+        "Small cetacean",
+        "Similar to a dolphin"
+      ],
+      "themes": [
+        "animals",
+        "ocean"
+      ]
+    },
+    {
+      "word": "MANATEE",
+      "difficulty": 6,
+      "clues": [
+        "Gentle sea cow",
+        "Herbivorous marine mammal"
+      ],
+      "themes": [
+        "animals",
+        "ocean"
+      ]
+    },
+    {
+      "word": "CHAMELEON",
+      "difficulty": 6,
+      "clues": [
+        "Color-changing lizard",
+        "Master of camouflage"
+      ],
+      "themes": [
+        "animals",
+        "nature"
+      ]
+    },
+    {
+      "word": "MOSQUITO",
+      "difficulty": 6,
+      "clues": [
+        "Blood-sucking insect",
+        "Carries malaria"
+      ],
+      "themes": [
+        "animals",
+        "insects"
+      ]
+    },
+    {
+      "word": "BLIZZARD",
+      "difficulty": 6,
+      "clues": [
+        "Severe snowstorm",
+        "Whiteout conditions"
+      ],
+      "themes": [
+        "nature",
+        "weather"
+      ]
+    },
+    {
+      "word": "MONSOON",
+      "difficulty": 6,
+      "clues": [
+        "Seasonal heavy rain",
+        "Asian rainy season"
+      ],
+      "themes": [
+        "nature",
+        "weather"
+      ]
+    },
+    {
+      "word": "TUNDRA",
+      "difficulty": 6,
+      "clues": [
+        "Frozen treeless plain",
+        "Arctic biome"
+      ],
+      "themes": [
+        "nature",
+        "geography"
+      ]
+    },
+    {
+      "word": "CAVERN",
+      "difficulty": 6,
+      "clues": [
+        "Large underground chamber",
+        "Deep cave system"
+      ],
+      "themes": [
+        "nature",
+        "geography"
+      ]
+    },
+    {
+      "word": "ESTUARY",
+      "difficulty": 6,
+      "clues": [
+        "Where river meets sea",
+        "Tidal water zone"
+      ],
+      "themes": [
+        "nature",
+        "geography",
+        "ocean"
+      ]
+    },
+    {
+      "word": "MINERAL",
+      "difficulty": 6,
+      "clues": [
+        "Natural inorganic substance",
+        "Quartz or feldspar"
+      ],
+      "themes": [
+        "nature",
+        "science"
+      ]
+    },
+    {
+      "word": "ISOTOPE",
+      "difficulty": 6,
+      "clues": [
+        "Atomic variant",
+        "Same element, different neutrons"
+      ],
+      "themes": [
+        "science"
+      ]
+    },
+    {
+      "word": "CATHODE",
+      "difficulty": 6,
+      "clues": [
+        "Negative electrode",
+        "Receives electrons"
+      ],
+      "themes": [
+        "science",
+        "technology"
+      ]
+    },
+    {
+      "word": "THEOREM",
+      "difficulty": 6,
+      "clues": [
+        "Proven mathematical statement",
+        "Pythagorean, for example"
+      ],
+      "themes": [
+        "math",
+        "science"
+      ]
+    },
+    {
+      "word": "CALCULUS",
+      "difficulty": 6,
+      "clues": [
+        "Advanced math branch",
+        "Derivatives and integrals"
+      ],
+      "themes": [
+        "math",
+        "science"
+      ]
+    },
+    {
+      "word": "ALGEBRA",
+      "difficulty": 6,
+      "clues": [
+        "Math with variables",
+        "Solving for X"
+      ],
+      "themes": [
+        "math",
+        "science"
+      ]
+    },
+    {
+      "word": "FRACTION",
+      "difficulty": 6,
+      "clues": [
+        "Part of a whole number",
+        "Numerator over denominator"
+      ],
+      "themes": [
+        "math"
+      ]
+    },
+    {
+      "word": "INTEGER",
+      "difficulty": 6,
+      "clues": [
+        "Whole number",
+        "No decimal part"
+      ],
+      "themes": [
+        "math"
+      ]
+    },
+    {
+      "word": "DECIMAL",
+      "difficulty": 6,
+      "clues": [
+        "Base-10 number system",
+        "Has a point"
+      ],
+      "themes": [
+        "math"
+      ]
+    },
+    {
+      "word": "EQUATION",
+      "difficulty": 6,
+      "clues": [
+        "Mathematical equality",
+        "Left side equals right"
+      ],
+      "themes": [
+        "math",
+        "science"
+      ]
+    },
+    {
+      "word": "SPECTRUM",
+      "difficulty": 6,
+      "clues": [
+        "Range of wavelengths",
+        "Rainbow of light"
+      ],
+      "themes": [
+        "science"
+      ]
+    },
+    {
+      "word": "CATALYST",
+      "difficulty": 6,
+      "clues": [
+        "Reaction accelerator",
+        "Speeds up without being consumed"
+      ],
+      "themes": [
+        "science"
+      ]
+    },
+    {
+      "word": "BACTERIA",
+      "difficulty": 6,
+      "clues": [
+        "Microscopic organisms",
+        "Single-celled life"
+      ],
+      "themes": [
+        "science"
+      ]
+    },
+    {
+      "word": "MEMBRANE",
+      "difficulty": 6,
+      "clues": [
+        "Thin flexible layer",
+        "Cell boundary"
+      ],
+      "themes": [
+        "science"
+      ]
+    },
+    {
+      "word": "ORGANISM",
+      "difficulty": 6,
+      "clues": [
+        "Living thing",
+        "Any form of life"
+      ],
+      "themes": [
+        "science",
+        "nature"
+      ]
+    },
+    {
+      "word": "PARASITE",
+      "difficulty": 6,
+      "clues": [
+        "Organism living off another",
+        "Takes without giving"
+      ],
+      "themes": [
+        "science",
+        "nature"
+      ]
+    },
+    {
+      "word": "PREDATOR",
+      "difficulty": 6,
+      "clues": [
+        "Hunting animal",
+        "Sits atop food chain"
+      ],
+      "themes": [
+        "science",
+        "nature",
+        "animals"
+      ]
+    },
+    {
+      "word": "CALENDAR",
+      "difficulty": 6,
+      "clues": [
+        "Date tracking system",
+        "Shows months and days"
+      ],
+      "themes": [
+        "objects",
+        "everyday"
+      ]
+    },
+    {
+      "word": "ENVELOPE",
+      "difficulty": 6,
+      "clues": [
+        "Letter container",
+        "Sealed for mailing"
+      ],
+      "themes": [
+        "objects",
+        "everyday"
+      ]
+    },
+    {
+      "word": "SCISSORS",
+      "difficulty": 6,
+      "clues": [
+        "Cutting tool with two blades",
+        "Paper cutter"
+      ],
+      "themes": [
+        "objects",
+        "tools"
+      ]
+    },
+    {
+      "word": "UMBRELLA",
+      "difficulty": 6,
+      "clues": [
+        "Rain protection device",
+        "Portable canopy"
+      ],
+      "themes": [
+        "objects",
+        "everyday"
+      ]
+    },
+    {
+      "word": "BRACELET",
+      "difficulty": 6,
+      "clues": [
+        "Wrist jewelry",
+        "Decorative band"
+      ],
+      "themes": [
+        "objects",
+        "everyday"
+      ]
+    },
+    {
+      "word": "PEDESTAL",
+      "difficulty": 6,
+      "clues": [
+        "Supporting base",
+        "Statue stand"
+      ],
+      "themes": [
+        "objects",
+        "culture"
+      ]
+    },
+    {
+      "word": "TAPESTRY",
+      "difficulty": 6,
+      "clues": [
+        "Woven wall hanging",
+        "Decorative textile art"
+      ],
+      "themes": [
+        "objects",
+        "culture"
+      ]
+    },
+    {
+      "word": "PENDULUM",
+      "difficulty": 6,
+      "clues": [
+        "Swinging weight",
+        "Clock mechanism"
+      ],
+      "themes": [
+        "objects",
+        "science"
+      ]
+    },
+    {
+      "word": "SYMPHONY",
+      "difficulty": 6,
+      "clues": [
+        "Orchestral composition",
+        "Multi-movement work"
+      ],
+      "themes": [
+        "music"
+      ]
+    },
+    {
+      "word": "CONCERTO",
+      "difficulty": 6,
+      "clues": [
+        "Solo instrument with orchestra",
+        "Virtuoso showcase"
+      ],
+      "themes": [
+        "music"
+      ]
+    },
+    {
+      "word": "FOLKLORE",
+      "difficulty": 6,
+      "clues": [
+        "Traditional stories and customs",
+        "Cultural legends"
+      ],
+      "themes": [
+        "culture",
+        "history"
+      ]
+    },
+    {
+      "word": "ARTIFACT",
+      "difficulty": 6,
+      "clues": [
+        "Historical object",
+        "Museum piece"
+      ],
+      "themes": [
+        "culture",
+        "history"
+      ]
+    },
+    {
+      "word": "PORTRAIT",
+      "difficulty": 6,
+      "clues": [
+        "Person's painted image",
+        "Mona Lisa is one"
+      ],
+      "themes": [
+        "culture"
+      ]
+    },
+    {
+      "word": "DIPLOMAT",
+      "difficulty": 6,
+      "clues": [
+        "International negotiator",
+        "Embassy representative"
+      ],
+      "themes": [
+        "society"
+      ]
+    },
+    {
+      "word": "SUFFRAGE",
+      "difficulty": 6,
+      "clues": [
+        "Right to vote",
+        "Democratic privilege"
+      ],
+      "themes": [
+        "society",
+        "history"
+      ]
+    },
+    {
+      "word": "REPUBLIC",
+      "difficulty": 6,
+      "clues": [
+        "Representative government",
+        "Not a monarchy"
+      ],
+      "themes": [
+        "society",
+        "history"
+      ]
+    },
+    {
+      "word": "CONGRESS",
+      "difficulty": 6,
+      "clues": [
+        "Legislative assembly",
+        "Makes laws"
+      ],
+      "themes": [
+        "society"
+      ]
+    },
+    {
+      "word": "MARATHON",
+      "difficulty": 6,
+      "clues": [
+        "Long-distance race",
+        "26.2 miles"
+      ],
+      "themes": [
+        "sports"
+      ]
+    },
+    {
+      "word": "OLYMPIAD",
+      "difficulty": 6,
+      "clues": [
+        "Olympic games period",
+        "Four-year cycle"
+      ],
+      "themes": [
+        "sports",
+        "history"
+      ]
+    },
+    {
+      "word": "FENCING",
+      "difficulty": 6,
+      "clues": [
+        "Sword fighting sport",
+        "Foil, epee, or sabre"
+      ],
+      "themes": [
+        "sports",
+        "combat"
+      ]
+    },
+    {
+      "word": "FIRMWARE",
+      "difficulty": 6,
+      "clues": [
+        "Embedded software",
+        "Device's built-in code"
+      ],
+      "themes": [
+        "technology"
+      ]
+    },
+    {
+      "word": "DOWNLOAD",
+      "difficulty": 6,
+      "clues": [
+        "Transfer data from internet",
+        "Save a file"
+      ],
+      "themes": [
+        "technology"
+      ]
+    },
+    {
+      "word": "DATABASE",
+      "difficulty": 6,
+      "clues": [
+        "Organized data collection",
+        "Structured information store"
+      ],
+      "themes": [
+        "technology"
+      ]
+    },
+    {
+      "word": "DIVIDEND",
+      "difficulty": 6,
+      "clues": [
+        "Shareholder payment",
+        "Investment return"
+      ],
+      "themes": [
+        "money"
+      ]
+    },
+    {
+      "word": "MORTGAGE",
+      "difficulty": 6,
+      "clues": [
+        "Home loan",
+        "Long-term property debt"
+      ],
+      "themes": [
+        "money",
+        "society"
+      ]
+    },
+    {
+      "word": "CURRENCY",
+      "difficulty": 6,
+      "clues": [
+        "Money system",
+        "Dollars or euros"
+      ],
+      "themes": [
+        "money",
+        "society"
+      ]
+    },
+    {
+      "word": "CINNAMON",
+      "difficulty": 6,
+      "clues": [
+        "Warm sweet spice",
+        "From tree bark"
+      ],
+      "themes": [
+        "food",
+        "plants"
+      ]
+    },
+    {
+      "word": "BROCCOLI",
+      "difficulty": 6,
+      "clues": [
+        "Green tree-shaped vegetable",
+        "Nutritious cruciferous plant"
+      ],
+      "themes": [
+        "food",
+        "plants"
+      ]
+    },
+    {
+      "word": "AVOCADO",
+      "difficulty": 6,
+      "clues": [
+        "Green creamy fruit",
+        "Used in guacamole"
+      ],
+      "themes": [
+        "food"
+      ]
+    },
+    {
+      "word": "LINGUINE",
+      "difficulty": 6,
+      "clues": [
+        "Flat Italian pasta",
+        "Wider than spaghetti"
+      ],
+      "themes": [
+        "food",
+        "culture"
+      ]
+    },
+    {
+      "word": "SAPPHIRE",
+      "difficulty": 6,
+      "clues": [
+        "Blue precious gemstone",
+        "September birthstone"
+      ],
+      "themes": [
+        "materials",
+        "science"
+      ]
+    },
+    {
+      "word": "TITANIUM",
+      "difficulty": 6,
+      "clues": [
+        "Strong lightweight metal",
+        "Used in aerospace"
+      ],
+      "themes": [
+        "materials",
+        "science"
+      ]
+    },
+    {
+      "word": "PLATINUM",
+      "difficulty": 6,
+      "clues": [
+        "Precious white metal",
+        "More valuable than gold"
+      ],
+      "themes": [
+        "materials",
+        "science"
+      ]
+    },
+    {
+      "word": "ALBATROSS",
+      "difficulty": 7,
+      "clues": [
+        "Large seabird with huge wingspan",
+        "Symbol of burden"
+      ],
+      "themes": [
+        "animals",
+        "birds",
+        "ocean"
+      ]
+    },
+    {
+      "word": "PORCUPINE",
+      "difficulty": 7,
+      "clues": [
+        "Quill-covered rodent",
+        "Spiny defense animal"
+      ],
+      "themes": [
+        "animals",
+        "nature"
+      ]
+    },
+    {
+      "word": "WOLVERINE",
+      "difficulty": 7,
+      "clues": [
+        "Fierce northern predator",
+        "Largest weasel family member"
+      ],
+      "themes": [
+        "animals",
+        "nature"
+      ]
+    },
+    {
+      "word": "AVALANCHE",
+      "difficulty": 7,
+      "clues": [
+        "Mountain snow slide",
+        "Cascading ice and snow"
+      ],
+      "themes": [
+        "nature",
+        "weather"
+      ]
+    },
+    {
+      "word": "LABYRINTH",
+      "difficulty": 7,
+      "clues": [
+        "Complex maze",
+        "Intricate winding path"
+      ],
+      "themes": [
+        "concepts",
+        "history"
+      ]
+    },
+    {
+      "word": "ALGORITHM",
+      "difficulty": 7,
+      "clues": [
+        "Step-by-step procedure",
+        "Computer problem-solving method"
+      ],
+      "themes": [
+        "technology",
+        "math"
+      ]
+    },
+    {
+      "word": "FREQUENCY",
+      "difficulty": 7,
+      "clues": [
+        "Rate of occurrence",
+        "Measured in hertz"
+      ],
+      "themes": [
+        "science",
+        "technology"
+      ]
+    },
+    {
+      "word": "LONGITUDE",
+      "difficulty": 7,
+      "clues": [
+        "East-west geographic coordinate",
+        "Meridian measurement"
+      ],
+      "themes": [
+        "geography",
+        "science"
+      ]
+    },
+    {
+      "word": "LATITUDE",
+      "difficulty": 7,
+      "clues": [
+        "North-south geographic coordinate",
+        "Parallel measurement"
+      ],
+      "themes": [
+        "geography",
+        "science"
+      ]
+    },
+    {
+      "word": "PENINSULA",
+      "difficulty": 7,
+      "clues": [
+        "Land surrounded by water on three sides",
+        "Florida or Italy"
+      ],
+      "themes": [
+        "geography"
+      ]
+    },
+    {
+      "word": "CONTINENT",
+      "difficulty": 7,
+      "clues": [
+        "Major landmass",
+        "Africa or Asia"
+      ],
+      "themes": [
+        "geography"
+      ]
+    },
+    {
+      "word": "ARCHIPELAGO",
+      "difficulty": 7,
+      "clues": [
+        "Chain of islands",
+        "Japan or Philippines"
+      ],
+      "themes": [
+        "geography",
+        "ocean"
+      ]
+    },
+    {
+      "word": "FIBONACCI",
+      "difficulty": 7,
+      "clues": [
+        "Famous number sequence",
+        "Each number is sum of two before"
+      ],
+      "themes": [
+        "math"
+      ]
+    },
+    {
+      "word": "LOGARITHM",
+      "difficulty": 7,
+      "clues": [
+        "Inverse of exponentiation",
+        "Log base 10 or natural"
+      ],
+      "themes": [
+        "math",
+        "science"
+      ]
+    },
+    {
+      "word": "PARABOLA",
+      "difficulty": 7,
+      "clues": [
+        "U-shaped curve",
+        "Quadratic function graph"
+      ],
+      "themes": [
+        "math"
+      ]
+    },
+    {
+      "word": "SYMMETRY",
+      "difficulty": 7,
+      "clues": [
+        "Balanced proportions",
+        "Mirror image property"
+      ],
+      "themes": [
+        "math",
+        "concepts"
+      ]
+    },
+    {
+      "word": "PERIMETER",
+      "difficulty": 7,
+      "clues": [
+        "Outer boundary length",
+        "Distance around a shape"
+      ],
+      "themes": [
+        "math"
+      ]
+    },
+    {
+      "word": "CYTOPLASM",
+      "difficulty": 7,
+      "clues": [
+        "Cell interior fluid",
+        "Between nucleus and membrane"
+      ],
+      "themes": [
+        "science"
+      ]
+    },
+    {
+      "word": "ECOSYSTEM",
+      "difficulty": 7,
+      "clues": [
+        "Community of living things",
+        "Biological environment"
+      ],
+      "themes": [
+        "science",
+        "nature"
+      ]
+    },
+    {
+      "word": "EVOLUTION",
+      "difficulty": 7,
+      "clues": [
+        "Gradual species change",
+        "Natural selection"
+      ],
+      "themes": [
+        "science",
+        "nature"
+      ]
+    },
+    {
+      "word": "MAGNETISM",
+      "difficulty": 7,
+      "clues": [
+        "Magnetic force",
+        "Attracts iron"
+      ],
+      "themes": [
+        "science"
+      ]
+    },
+    {
+      "word": "RADIATION",
+      "difficulty": 7,
+      "clues": [
+        "Energy emission",
+        "Electromagnetic waves"
+      ],
+      "themes": [
+        "science"
+      ]
+    },
+    {
+      "word": "TURBULENCE",
+      "difficulty": 7,
+      "clues": [
+        "Chaotic fluid motion",
+        "Bumpy air on planes"
+      ],
+      "themes": [
+        "science",
+        "travel"
+      ]
+    },
+    {
+      "word": "BAROMETER",
+      "difficulty": 7,
+      "clues": [
+        "Atmospheric pressure gauge",
+        "Weather prediction tool"
+      ],
+      "themes": [
+        "science",
+        "weather"
+      ]
+    },
+    {
+      "word": "TELESCOPE",
+      "difficulty": 7,
+      "clues": [
+        "Distant viewing instrument",
+        "Used for astronomy"
+      ],
+      "themes": [
+        "science",
+        "technology"
+      ]
+    },
+    {
+      "word": "BINOCULAR",
+      "difficulty": 7,
+      "clues": [
+        "Two-eyed viewing device",
+        "For birdwatching"
+      ],
+      "themes": [
+        "technology",
+        "objects"
+      ]
+    },
+    {
+      "word": "CHANDELIER",
+      "difficulty": 7,
+      "clues": [
+        "Ornate hanging light",
+        "Crystal ceiling fixture"
+      ],
+      "themes": [
+        "objects",
+        "furniture"
+      ]
+    },
+    {
+      "word": "TYPEWRITER",
+      "difficulty": 7,
+      "clues": [
+        "Mechanical writing machine",
+        "Predecessor of computer keyboard"
+      ],
+      "themes": [
+        "objects",
+        "technology"
+      ]
+    },
+    {
+      "word": "SAXOPHONE",
+      "difficulty": 7,
+      "clues": [
+        "Jazz reed instrument",
+        "Invented by Adolphe Sax"
+      ],
+      "themes": [
+        "music"
+      ]
+    },
+    {
+      "word": "XYLOPHONE",
+      "difficulty": 7,
+      "clues": [
+        "Mallet percussion instrument",
+        "Wooden bars"
+      ],
+      "themes": [
+        "music"
+      ]
+    },
+    {
+      "word": "CONDUCTOR",
+      "difficulty": 7,
+      "clues": [
+        "Orchestra leader",
+        "Material that transfers energy"
+      ],
+      "themes": [
+        "music",
+        "science"
+      ]
+    },
+    {
+      "word": "SCULPTURE",
+      "difficulty": 7,
+      "clues": [
+        "Three-dimensional art",
+        "Carved or molded work"
+      ],
+      "themes": [
+        "culture"
+      ]
+    },
+    {
+      "word": "BIOGRAPHY",
+      "difficulty": 7,
+      "clues": [
+        "Person's life story",
+        "Written account of someone"
+      ],
+      "themes": [
+        "culture",
+        "language"
+      ]
+    },
+    {
+      "word": "DEMOCRACY",
+      "difficulty": 7,
+      "clues": [
+        "Government by the people",
+        "Rule through voting"
+      ],
+      "themes": [
+        "society",
+        "history"
+      ]
+    },
+    {
+      "word": "REBELLION",
+      "difficulty": 7,
+      "clues": [
+        "Organized resistance",
+        "Armed uprising"
+      ],
+      "themes": [
+        "history"
+      ]
+    },
+    {
+      "word": "GLADIATOR",
+      "difficulty": 7,
+      "clues": [
+        "Roman arena fighter",
+        "Ancient combat entertainer"
+      ],
+      "themes": [
+        "history",
+        "combat"
+      ]
+    },
+    {
+      "word": "MEDIEVAL",
+      "difficulty": 7,
+      "clues": [
+        "Middle Ages period",
+        "Knights and castles era"
+      ],
+      "themes": [
+        "history"
+      ]
+    },
+    {
+      "word": "DECATHLON",
+      "difficulty": 7,
+      "clues": [
+        "Ten-event athletic contest",
+        "Ultimate track and field challenge"
+      ],
+      "themes": [
+        "sports"
+      ]
+    },
+    {
+      "word": "WRESTLING",
+      "difficulty": 7,
+      "clues": [
+        "Grappling combat sport",
+        "Ancient form of competition"
+      ],
+      "themes": [
+        "sports",
+        "combat"
+      ]
+    },
+    {
+      "word": "BADMINTON",
+      "difficulty": 7,
+      "clues": [
+        "Shuttlecock racket sport",
+        "Played over a high net"
+      ],
+      "themes": [
+        "sports"
+      ]
+    },
+    {
+      "word": "TRIATHLON",
+      "difficulty": 7,
+      "clues": [
+        "Three-discipline race",
+        "Swim, bike, run"
+      ],
+      "themes": [
+        "sports"
+      ]
+    },
+    {
+      "word": "BLUETOOTH",
+      "difficulty": 7,
+      "clues": [
+        "Short-range wireless technology",
+        "Named after a Viking king"
+      ],
+      "themes": [
+        "technology"
+      ]
+    },
+    {
+      "word": "PROCESSOR",
+      "difficulty": 7,
+      "clues": [
+        "Computer brain chip",
+        "Executes instructions"
+      ],
+      "themes": [
+        "technology"
+      ]
+    },
+    {
+      "word": "BANDWIDTH",
+      "difficulty": 7,
+      "clues": [
+        "Data transfer capacity",
+        "Network speed measure"
+      ],
+      "themes": [
+        "technology"
+      ]
+    },
+    {
+      "word": "INFLATION",
+      "difficulty": 7,
+      "clues": [
+        "Rising price levels",
+        "Reduced purchasing power"
+      ],
+      "themes": [
+        "money",
+        "society"
+      ]
+    },
+    {
+      "word": "INSURANCE",
+      "difficulty": 7,
+      "clues": [
+        "Risk protection plan",
+        "Pay premiums for coverage"
+      ],
+      "themes": [
+        "money",
+        "society"
+      ]
+    },
+    {
+      "word": "ASPARAGUS",
+      "difficulty": 7,
+      "clues": [
+        "Green spear vegetable",
+        "Spring delicacy"
+      ],
+      "themes": [
+        "food",
+        "plants"
+      ]
+    },
+    {
+      "word": "CROISSANT",
+      "difficulty": 7,
+      "clues": [
+        "Flaky French pastry",
+        "Crescent-shaped breakfast"
+      ],
+      "themes": [
+        "food",
+        "culture"
+      ]
+    },
+    {
+      "word": "CHOCOLATE",
+      "difficulty": 7,
+      "clues": [
+        "Sweet cocoa treat",
+        "Made from cacao beans"
+      ],
+      "themes": [
+        "food"
+      ]
+    },
+    {
+      "word": "GRATITUDE",
+      "difficulty": 7,
+      "clues": [
+        "Thankful feeling",
+        "Appreciation"
+      ],
+      "themes": [
+        "emotions"
+      ]
+    },
+    {
+      "word": "NOSTALGIA",
+      "difficulty": 7,
+      "clues": [
+        "Longing for the past",
+        "Sentimental yearning"
+      ],
+      "themes": [
+        "emotions"
+      ]
+    },
+    {
+      "word": "SERENITY",
+      "difficulty": 7,
+      "clues": [
+        "Peaceful calm",
+        "Tranquil state"
+      ],
+      "themes": [
+        "emotions"
+      ]
+    },
+    {
+      "word": "RHINOCEROS",
+      "difficulty": 8,
+      "clues": [
+        "Horned thick-skinned mammal",
+        "Nearly extinct large herbivore"
+      ],
+      "themes": [
+        "animals",
+        "nature"
+      ]
+    },
+    {
+      "word": "HIPPOPOTAMUS",
+      "difficulty": 8,
+      "clues": [
+        "Large river mammal",
+        "Third-largest land animal"
+      ],
+      "themes": [
+        "animals",
+        "nature"
+      ]
+    },
+    {
+      "word": "CATERPILLAR",
+      "difficulty": 8,
+      "clues": [
+        "Butterfly larva",
+        "Crawling insect stage"
+      ],
+      "themes": [
+        "animals",
+        "insects"
+      ]
+    },
+    {
+      "word": "CONSTELLATION",
+      "difficulty": 8,
+      "clues": [
+        "Star pattern in sky",
+        "Orion or Cassiopeia"
+      ],
+      "themes": [
+        "science",
+        "nature"
+      ]
+    },
+    {
+      "word": "THERMOMETER",
+      "difficulty": 8,
+      "clues": [
+        "Temperature measuring device",
+        "Mercury or digital"
+      ],
+      "themes": [
+        "science",
+        "objects"
+      ]
+    },
+    {
+      "word": "EQUILIBRIUM",
+      "difficulty": 8,
+      "clues": [
+        "State of balance",
+        "Forces in equal opposition"
+      ],
+      "themes": [
+        "science",
+        "concepts"
+      ]
+    },
+    {
+      "word": "ATMOSPHERIC",
+      "difficulty": 8,
+      "clues": [
+        "Relating to the atmosphere",
+        "Air pressure or conditions"
+      ],
+      "themes": [
+        "science",
+        "nature"
+      ]
+    },
+    {
+      "word": "ARCHAEOLOGY",
+      "difficulty": 8,
+      "clues": [
+        "Study of ancient civilizations",
+        "Digging up the past"
+      ],
+      "themes": [
+        "science",
+        "history"
+      ]
+    },
+    {
+      "word": "CIRCUMFERENCE",
+      "difficulty": 8,
+      "clues": [
+        "Distance around a circle",
+        "Pi times diameter"
+      ],
+      "themes": [
+        "math"
+      ]
+    },
+    {
+      "word": "PERPENDICULAR",
+      "difficulty": 8,
+      "clues": [
+        "At right angles",
+        "90-degree intersection"
+      ],
+      "themes": [
+        "math"
+      ]
+    },
+    {
+      "word": "TRIGONOMETRY",
+      "difficulty": 8,
+      "clues": [
+        "Math of triangles",
+        "Sine, cosine, tangent"
+      ],
+      "themes": [
+        "math",
+        "science"
+      ]
+    },
+    {
+      "word": "CATASTROPHE",
+      "difficulty": 8,
+      "clues": [
+        "Devastating disaster",
+        "Large-scale calamity"
+      ],
+      "themes": [
+        "concepts"
+      ]
+    },
+    {
+      "word": "KALEIDOSCOPE",
+      "difficulty": 8,
+      "clues": [
+        "Colorful pattern viewer",
+        "Tube with mirrors and beads"
+      ],
+      "themes": [
+        "objects"
+      ]
+    },
+    {
+      "word": "ARCHITECTURE",
+      "difficulty": 8,
+      "clues": [
+        "Building design art",
+        "Structural engineering"
+      ],
+      "themes": [
+        "culture",
+        "technology"
+      ]
+    },
+    {
+      "word": "ENCYCLOPEDIA",
+      "difficulty": 8,
+      "clues": [
+        "Comprehensive reference work",
+        "Collection of all knowledge"
+      ],
+      "themes": [
+        "culture",
+        "language"
+      ]
+    },
+    {
+      "word": "CONSTITUTION",
+      "difficulty": 8,
+      "clues": [
+        "Foundational law document",
+        "Framework of government"
+      ],
+      "themes": [
+        "society",
+        "history"
+      ]
+    },
+    {
+      "word": "CIVILIZATION",
+      "difficulty": 8,
+      "clues": [
+        "Advanced human society",
+        "Complex organized culture"
+      ],
+      "themes": [
+        "history",
+        "society"
+      ]
+    },
+    {
+      "word": "ANNIVERSARY",
+      "difficulty": 8,
+      "clues": [
+        "Yearly commemoration",
+        "Date marking an event"
+      ],
+      "themes": [
+        "society",
+        "concepts"
+      ]
+    },
+    {
+      "word": "TRAMPOLINE",
+      "difficulty": 8,
+      "clues": [
+        "Bouncing apparatus",
+        "Jumping recreational device"
+      ],
+      "themes": [
+        "sports",
+        "objects"
+      ]
+    },
+    {
+      "word": "INFRASTRUCTURE",
+      "difficulty": 8,
+      "clues": [
+        "Basic systems and structures",
+        "Roads, bridges, utilities"
+      ],
+      "themes": [
+        "technology",
+        "society"
+      ]
+    },
+    {
+      "word": "CRYPTOCURRENCY",
+      "difficulty": 8,
+      "clues": [
+        "Digital currency",
+        "Bitcoin or Ethereum"
+      ],
+      "themes": [
+        "technology",
+        "money"
+      ]
+    },
+    {
+      "word": "MELANCHOLY",
+      "difficulty": 8,
+      "clues": [
+        "Deep sadness",
+        "Pensive sorrow"
+      ],
+      "themes": [
+        "emotions"
+      ]
+    },
+    {
+      "word": "EXHILARATION",
+      "difficulty": 8,
+      "clues": [
+        "Intense excitement",
+        "Thrilling delight"
+      ],
+      "themes": [
+        "emotions"
+      ]
+    },
+    {
+      "word": "POMEGRANATE",
+      "difficulty": 8,
+      "clues": [
+        "Red fruit with many seeds",
+        "Ancient symbol of fertility"
+      ],
+      "themes": [
+        "food"
+      ]
+    },
+    {
+      "word": "CAULIFLOWER",
+      "difficulty": 8,
+      "clues": [
+        "White tree-shaped vegetable",
+        "Broccoli's pale cousin"
+      ],
+      "themes": [
+        "food",
+        "plants"
+      ]
+    },
+    {
+      "word": "ONOMATOPOEIA",
+      "difficulty": 9,
+      "clues": [
+        "Word imitating a sound",
+        "Buzz, hiss, or splash"
+      ],
+      "themes": [
+        "language"
+      ]
+    },
+    {
+      "word": "METAMORPHOSIS",
+      "difficulty": 9,
+      "clues": [
+        "Dramatic transformation",
+        "Caterpillar to butterfly"
+      ],
+      "themes": [
+        "science",
+        "concepts"
+      ]
+    },
+    {
+      "word": "BIOLUMINESCENCE",
+      "difficulty": 9,
+      "clues": [
+        "Living light production",
+        "Glowing deep-sea creatures"
+      ],
+      "themes": [
+        "science",
+        "ocean"
+      ]
+    },
+    {
+      "word": "ELECTROMAGNETISM",
+      "difficulty": 9,
+      "clues": [
+        "Combined electric and magnetic force",
+        "One of four fundamental forces"
+      ],
+      "themes": [
+        "science"
+      ]
+    },
+    {
+      "word": "PALEONTOLOGY",
+      "difficulty": 9,
+      "clues": [
+        "Study of prehistoric life",
+        "Dinosaur science"
+      ],
+      "themes": [
+        "science",
+        "history"
+      ]
+    },
+    {
+      "word": "PHOTOSYNTHESIS",
+      "difficulty": 9,
+      "clues": [
+        "Plant energy conversion",
+        "Sunlight to sugar"
+      ],
+      "themes": [
+        "science",
+        "nature"
+      ]
+    },
+    {
+      "word": "PNEUMONIA",
+      "difficulty": 9,
+      "clues": [
+        "Lung infection disease",
+        "Causes difficulty breathing"
+      ],
+      "themes": [
+        "science",
+        "health"
+      ]
+    },
+    {
+      "word": "RECONNAISSANCE",
+      "difficulty": 9,
+      "clues": [
+        "Military observation mission",
+        "Scouting enemy territory"
+      ],
+      "themes": [
+        "history",
+        "combat"
+      ]
+    },
+    {
+      "word": "BUREAUCRACY",
+      "difficulty": 9,
+      "clues": [
+        "Complex administrative system",
+        "Government red tape"
+      ],
+      "themes": [
+        "society"
+      ]
+    },
+    {
+      "word": "ENTREPRENEUR",
+      "difficulty": 9,
+      "clues": [
+        "Business founder",
+        "Risk-taking innovator"
+      ],
+      "themes": [
+        "society",
+        "money"
+      ]
+    },
+    {
+      "word": "BIBLIOGRAPHY",
+      "difficulty": 9,
+      "clues": [
+        "List of sources cited",
+        "Reference collection"
+      ],
+      "themes": [
+        "culture",
+        "language"
+      ]
+    },
+    {
+      "word": "CHOREOGRAPHY",
+      "difficulty": 9,
+      "clues": [
+        "Dance composition",
+        "Designing movement sequences"
+      ],
+      "themes": [
+        "culture",
+        "sports"
+      ]
+    },
+    {
+      "word": "QUINTESSENTIAL",
+      "difficulty": 9,
+      "clues": [
+        "Most perfect example",
+        "Purest embodiment"
+      ],
+      "themes": [
+        "language",
+        "concepts"
+      ]
+    },
+    {
+      "word": "SERENDIPITY",
+      "difficulty": 9,
+      "clues": [
+        "Happy accident",
+        "Fortunate unexpected discovery"
+      ],
+      "themes": [
+        "concepts"
+      ]
+    },
+    {
+      "word": "JUXTAPOSITION",
+      "difficulty": 9,
+      "clues": [
+        "Placing side by side for contrast",
+        "Comparing by proximity"
+      ],
+      "themes": [
+        "language",
+        "concepts"
+      ]
+    },
+    {
+      "word": "LABYRINTHINE",
+      "difficulty": 9,
+      "clues": [
+        "Maze-like and complex",
+        "Extremely intricate"
+      ],
+      "themes": [
+        "concepts",
+        "language"
+      ]
+    },
+    {
+      "word": "EPHEMERAL",
+      "difficulty": 9,
+      "clues": [
+        "Lasting very briefly",
+        "Fleeting and transient"
+      ],
+      "themes": [
+        "concepts",
+        "language"
+      ]
+    },
+    {
+      "word": "SURREPTITIOUS",
+      "difficulty": 9,
+      "clues": [
+        "Done secretly",
+        "Stealthy and covert"
+      ],
+      "themes": [
+        "concepts",
+        "language"
+      ]
+    },
+    {
+      "word": "UBIQUITOUS",
+      "difficulty": 9,
+      "clues": [
+        "Found everywhere",
+        "Omnipresent"
+      ],
+      "themes": [
+        "concepts",
+        "language"
+      ]
+    },
+    {
+      "word": "PARADOX",
+      "difficulty": 9,
+      "clues": [
+        "Self-contradictory statement",
+        "Seems impossible but may be true"
+      ],
+      "themes": [
+        "concepts",
+        "philosophy"
+      ]
+    },
+    {
+      "word": "HYPOTHESIS",
+      "difficulty": 9,
+      "clues": [
+        "Testable proposed explanation",
+        "Scientific educated guess"
+      ],
+      "themes": [
+        "science",
+        "concepts"
+      ]
+    },
+    {
+      "word": "ANEMONE",
+      "difficulty": 9,
+      "clues": [
+        "Sea flower creature",
+        "Colorful marine polyp"
+      ],
+      "themes": [
+        "animals",
+        "ocean"
+      ]
+    },
+    {
+      "word": "SURVEILLANCE",
+      "difficulty": 9,
+      "clues": [
+        "Close monitoring",
+        "Security observation"
+      ],
+      "themes": [
+        "technology",
+        "society"
+      ]
+    },
+    {
+      "word": "UNEQUIVOCAL",
+      "difficulty": 9,
+      "clues": [
+        "Absolutely clear",
+        "Leaving no doubt"
+      ],
+      "themes": [
+        "language",
+        "concepts"
+      ]
+    },
+    {
+      "word": "IDIOSYNCRASY",
+      "difficulty": 9,
+      "clues": [
+        "Peculiar individual trait",
+        "Distinctive quirk"
+      ],
+      "themes": [
+        "language",
+        "concepts"
+      ]
+    }
+  ]
+}

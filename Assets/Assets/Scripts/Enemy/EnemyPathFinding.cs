@@ -320,10 +320,8 @@ namespace Crossatro.Enemy
         public static void DrawPath(List<Vector2> path)
         {
             Gizmos.color = Color.green;
-            Debug.Log("Path count : " + path.Count);
             foreach (var pos in path)
             {
-                Debug.Log("PATH POS: " + pos);
                 Gizmos.DrawSphere(new Vector3(pos.x, 1, pos.y), 0.2f);
             }
         }

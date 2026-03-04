@@ -177,6 +177,7 @@ namespace Crossatro.Board
             // Only fire click if we're currently hovering a tile
             if (_currentHoverPosition.HasValue)
             {
+                Debug.Log("[BoardInputHandler] Click at : " + _currentHoverPosition.Value + " position");
                 OnTileClicked?.Invoke(_currentHoverPosition.Value);
             }
         }

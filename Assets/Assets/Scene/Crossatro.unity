@@ -931,7 +931,11 @@ MonoBehaviour:
   _boardController: {fileID: 410430937}
   _tileFactory: {fileID: 2145083444}
   _enemyManager: {fileID: 1185266584}
-  _gridGenerationData: {fileID: 11400000, guid: 676e0537321054a4a94952f418aaec97, type: 2}
+  _wordDatabase: {fileID: 11400000, guid: d2937d42e8b93a5439217d64e4472adb, type: 2}
+  width: 9
+  height: 9
+  minDifficulty: 1
+  maxDifficulty: 9
   _inputField: {fileID: 1526770830}
   _verboseLogging: 1
   _seed: -1

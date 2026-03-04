@@ -30,7 +30,7 @@ namespace Crossatro.Grid
 
         private List<WordEntry> _allWords = new List<WordEntry>();
         private string _language = "en";
-        private bool _isLoaded;
+        [SerializeField] private bool _isLoaded = false;
 
         // Indexes for fast lookup
         private Dictionary<int, List<WordEntry>> _byLength = new Dictionary<int, List<WordEntry>>();
@@ -123,6 +123,7 @@ namespace Crossatro.Grid
         /// </summary>
         private void EnsureLoaded()
         {
+            Debug.Log($"Loaded: {_isLoaded}");
             if (!_isLoaded) Load();
         }
 
@@ -167,7 +168,7 @@ namespace Crossatro.Grid
             return _byTheme.TryGetValue(t, out var list) ? list : new List<WordEntry>();
         }
 
-        public List<WordEntry> GetWordByThemeAndLength(string theme, int length)
+        public List<WordEntry> GetWordsByThemeAndLength(string theme, int length)
         {
             return GetWordsByTheme(theme)
                 .Where(w => w.word.Length == length)
