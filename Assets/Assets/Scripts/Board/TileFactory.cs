@@ -14,6 +14,7 @@ namespace Crossatro.Board
         [Header("Prefabs")]
         [SerializeField] private LetterTile _letterTilePrefab;
         [SerializeField] private CoinTile _coinTilePrefab;
+        [SerializeField] private HeartTile _heartTilePrefab;
 
         [Header("Tile Settings")]
         [Tooltip("Percentage chance that a tile will be a CoinTile")]
@@ -63,6 +64,20 @@ namespace Crossatro.Board
             letterTile.ClearLetter();
             return letterTile;
         }
+
+        public HeartTile CreateHeartTile(Transform parent)
+        {
+            if (_heartTilePrefab == null)
+            {
+                Debug.LogError("[TileFactory] Heart tile prefab is not assigned!");
+                return null;
+            }
+
+            HeartTile heartTile = Instantiate(_heartTilePrefab, parent);
+            return heartTile;
+        }
+
+
 
     }
 }

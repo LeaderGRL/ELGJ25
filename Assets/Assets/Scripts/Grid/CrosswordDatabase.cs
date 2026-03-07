@@ -1,6 +1,7 @@
 using NUnit.Framework;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -30,11 +31,24 @@ namespace Crossatro.Grid
 
         private List<WordEntry> _allWords = new List<WordEntry>();
         private string _language = "en";
-        [SerializeField] private bool _isLoaded = false;
+        [System.NonSerialized] private bool _isLoaded = false;
 
         // Indexes for fast lookup
         private Dictionary<int, List<WordEntry>> _byLength = new Dictionary<int, List<WordEntry>>();
         private Dictionary<string, List<WordEntry>> _byTheme = new Dictionary<string, List<WordEntry>>();
+
+        // ============================================================
+        // Data
+        // ============================================================
+
+        [HideInInspector] [SerializeField] private List<WordEntry> _bakedWords = new List<WordEntry>();
+
+        // ============================================================
+        // State
+        // ============================================================
+
+        [HideInInspector] [SerializeField] private string _bakedLanguage = "fr";
+        [HideInInspector] [SerializeField] private bool _isBaked = false;
 
         // ============================================================
         // Properties
@@ -45,6 +59,15 @@ namespace Crossatro.Grid
         public bool IsLoaded => _isLoaded;
 
         // ============================================================
+        // Lifecycle
+        // ============================================================
+
+        private void OnEnable()
+        {
+            _isLoaded = false;
+        }
+
+        // ============================================================
         // Loading
         // ============================================================
 
@@ -53,58 +76,39 @@ namespace Crossatro.Grid
         /// </summary>
         public void Load()
         {
-            _allWords.Clear();
-            _byLength.Clear();
-            _byTheme.Clear();
-            _isLoaded = false;
-
-            if (_jsonSource == null)
+            if (!_isBaked)
             {
-                Debug.LogError("[CrosswordDatabase] No JSON source assigned!");
+                Debug.LogError("[CrosswordDatabase] Database not baked. Click on the 'Bake JSON to Database' on the inspector.");
                 return;
             }
 
-            // Parse JSON
-            WordDatabaseRoot root = JsonUtility.FromJson<WordDatabaseRoot>(_jsonSource.text);
+            _allWords = new List<WordEntry>(_bakedWords);
+            _language = _bakedLanguage;
+            _byLength = new Dictionary<int, List<WordEntry>>();
+            _byTheme = new Dictionary<string, List<WordEntry>>();
 
-            if (root == null || root.words == null)
+            foreach (var entry in _bakedWords)
             {
-                Debug.LogError("[CrosswordDatabase] Failed to parse JSON!");
-                return;
-            }
-
-            _language = root.language ?? "unknown";
-
-            // Normalize and index words
-            foreach (var entry in root.words)
-            {
-                if (string.IsNullOrEmpty(entry.word)) continue;
-
-                // Normalize => Uppercase + Trim
-                entry.word = entry.word.Trim().ToUpperInvariant();
-
-                // Clamp difficulty
-                entry.difficulty = Mathf.Clamp(entry.difficulty, 1, 9);
-
-                // Ensure list exist
-                if (entry.clues == null) entry.clues = new List<string>();
-                if (entry.themes == null) entry.themes = new List<string>();
-
-                _allWords.Add(entry);
-
-                // Index by length
                 int len = entry.word.Length;
-                if (!_byLength.ContainsKey(len))
-                    _byLength[len] = new List<WordEntry>();
-                _byLength[len].Add(entry);
 
-                // Index by theme
+                if (!_byLength.TryGetValue(len, out var lengthList))
+                {
+                    lengthList = new List<WordEntry>();
+                    _byLength[len] = lengthList;
+                }
+                lengthList.Add(entry);
+
                 foreach (string theme in entry.themes)
                 {
                     string t = theme.Trim().ToLowerInvariant();
-                    if (!_byTheme.ContainsKey(t))
-                        _byTheme[t] = new List<WordEntry>();
-                    _byTheme[t].Add(entry);
+                    if (string.IsNullOrEmpty(t)) continue;
+
+                    if (!_byTheme.TryGetValue(theme, out var themeList))
+                    {
+                        themeList = new List<WordEntry>();
+                        _byTheme[theme] = themeList;
+                    }
+                    themeList.Add(entry);
                 }
             }
 
@@ -112,9 +116,16 @@ namespace Crossatro.Grid
 
             if (_logStats)
             {
-                Debug.Log($"[CrosswordDatabase] Loaded {_allWords.Count} words ({_language}). " +
-                          $"Lengths: {string.Join(", ", _byLength.Keys.OrderBy(k => k).Select(k => $"{k}:{_byLength[k].Count}"))}. " +
-                          $"Themes: {string.Join(", ", _byTheme.Keys.OrderBy(k => k))}.");
+                string lengthInfo = string.Join(", ",
+                    _byLength.Keys.OrderBy(k => k)
+                    .Select(k => k + ":" + _byLength[k].Count));
+
+                string themeInfo = string.Join(", ",
+                    _byTheme.Keys.OrderBy(k => k));
+
+                Debug.Log($"[CrosswordDatabase] Loaded {_allWords.Count} words " +
+                          $"({_language}). Lengths: {lengthInfo}. " +
+                          $"Themes: {themeInfo}.");
             }
         }
 
@@ -123,9 +134,52 @@ namespace Crossatro.Grid
         /// </summary>
         private void EnsureLoaded()
         {
-            Debug.Log($"Loaded: {_isLoaded}");
             if (!_isLoaded) Load();
         }
+
+        // ============================================================
+        // Baking
+        // ============================================================
+
+#if UNITY_EDITOR
+        public void BakeDatabase()
+        {
+            if (_jsonSource == null)
+            {
+                Debug.LogError("[CrosswordDatabase] Database not assigned!");
+                return;
+            }
+
+            WordDatabaseRoot root = JsonUtility.FromJson<WordDatabaseRoot>(_jsonSource.text);
+
+            if (root == null || root.words == null) return;
+
+            _bakedWords.Clear();
+            _bakedLanguage = root.language ?? "unknown";
+
+            foreach (var entry in root.words)
+            {
+                if (string.IsNullOrEmpty(entry.word)) continue; 
+
+                entry.word = entry.word.Trim().ToUpperInvariant();
+                entry.difficulty = Mathf.Clamp(entry.difficulty, 1, 9);
+                entry.clues = entry.clues ?? new List<string>();
+                entry.themes = entry.themes ?? new List<string>();
+
+                for (int i = 0; i < entry.themes.Count; i++)
+                    entry.themes[i] = entry.themes[i].Trim().ToLowerInvariant();
+
+                _bakedWords.Add(entry);
+            }
+
+            _isBaked = true;
+
+            EditorUtility.SetDirty(this);
+            AssetDatabase.SaveAssets();
+
+            Debug.Log($"[CrosswordDatabase] {_bakedWords.Count} words pre calculated and saved.");
+        }
+#endif
 
         // ============================================================
         // Query API

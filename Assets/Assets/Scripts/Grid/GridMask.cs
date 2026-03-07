@@ -249,7 +249,7 @@ namespace Crossatro.Grid
         /// </summary>
         private void OnValidate()
         {
-            _isParsed = true;
+            _isParsed = false;
         }
 
         // ============================================================

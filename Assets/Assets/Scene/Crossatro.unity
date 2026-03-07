@@ -932,13 +932,17 @@ MonoBehaviour:
   _tileFactory: {fileID: 2145083444}
   _enemyManager: {fileID: 1185266584}
   _wordDatabase: {fileID: 11400000, guid: d2937d42e8b93a5439217d64e4472adb, type: 2}
-  width: 9
-  height: 9
-  minDifficulty: 1
-  maxDifficulty: 9
+  _generationMode: 0
+  _mask: {fileID: 11400000, guid: 0c7afe9ed395d3c49b0e58d12c4734a0, type: 2}
+  _gridWidth: 9
+  _gridHeight: 9
+  _theme: 
+  _minDifficulty: 1
+  _maxDifficulty: 9
   _inputField: {fileID: 1526770830}
   _verboseLogging: 1
   _seed: -1
+  _blackRatio: 0.25
 --- !u!4 &1261438862
 Transform:
   m_ObjectHideFlags: 0
@@ -1601,6 +1605,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Crossatro.Board.TileFactory
   _letterTilePrefab: {fileID: -8535348445655952398, guid: b098f3aae61dd8a488c6155da1a73fd1, type: 3}
   _coinTilePrefab: {fileID: 1301520525423802879, guid: 6470ef7b154697545af6d424c05bb406, type: 3}
+  _heartTilePrefab: {fileID: 3040813696525218859, guid: eac9d5ef0c1667f48becb38ef2ab97f8, type: 3}
   _coinTileChance: 5
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

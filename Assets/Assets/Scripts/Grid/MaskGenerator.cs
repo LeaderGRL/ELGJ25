@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Runtime.ExceptionServices;
 using UnityEngine;
 
@@ -24,30 +25,147 @@ namespace Crossatro.Grid
         public static GridMask Generate(int width = 10, int height = 10, int seed = -1, float blackRatio = 0.25f, int minSlotLength = 2)
         {
             var rng = seed >= 0 ? new System.Random(seed) : new System.Random();
+            char[,] grid = GenerateConnectedPattern(width, height, rng, blackRatio);
 
-            // Generate with retries
-            for (int i = 0; i < 50; i++)
-            {
-                char[,] grid = GenerateRandomPattern(width, height, rng, blackRatio);
+            PlaceHeart(grid, width, height, rng);
 
-                // Place heart near center
-                PlaceHeart(grid, width, height);
-
-                // Validation
-                if (ValidateMask(grid, width, height, minSlotLength))
-                    return CreateMaskFromGrid(grid, width, height);
-            }
-
-            Debug.LogWarning("[MaskGenerator] Could not generate valid mask after 50 attempts." +
-                "Using gallback open grid.");
-
-            return GenerateFallback(width, height);
+            return CreateMaskFromGrid(grid, width, height);
         }
 
         // ============================================================
         // Pattern generation
         // ============================================================
-        
+
+        private static char[,] GenerateConnectedPattern(
+           int width, int height, System.Random rng, float blackRatio)
+        {
+            char[,] grid = new char[width, height];
+            for (int y = 0; y < height; y++)
+                for (int x = 0; x < width; x++)
+                    grid[x, y] = '.';
+
+            int totalCells = width * height;
+            int targetBlack = Mathf.RoundToInt(totalCells * blackRatio);
+            int currentBlack = 0;
+            int cx = width / 2;
+            int cy = height / 2;
+
+            var candidates = new List<(int x, int y)>();
+            for (int y = 0; y < height; y++)
+                for (int x = 0; x < width; x++)
+                    if (!(Mathf.Abs(x - cx) <= 1 && Mathf.Abs(y - cy) <= 1))
+                        candidates.Add((x, y));
+
+            for (int i = candidates.Count - 1; i > 0; i--)
+            {
+                int j = rng.Next(i + 1);
+                var temp = candidates[i];
+                candidates[i] = candidates[j];
+                candidates[j] = temp;
+            }
+
+            foreach (var (x, y) in candidates)
+            {
+                if (currentBlack >= targetBlack) break;
+                if (grid[x, y] != '.') continue;
+
+                grid[x, y] = '#';
+
+                bool safe = IsConnected(grid, width, height)
+                         && !CreatesIsolatedCell(grid, x, y, width, height);
+
+                if (safe)
+                    currentBlack++;
+                else
+                    grid[x, y] = '.';
+            }
+
+            return grid;
+        }
+
+        private static bool CreatesIsolatedCell(char[,] grid, int bx, int by, int width, int height)
+        {
+            int[,] dirs = { { 0, 1 }, { 0, -1 }, { 1, 0 }, { -1, 0 } };
+            for (int d = 0; d < 4; d++)
+            {
+                int nx = bx + dirs[d, 0];
+                int ny = by + dirs[d, 1];
+                if (nx < 0 || nx >= width || ny < 0 || ny >= height) continue;
+                if (grid[nx, ny] != '.') continue;
+
+                int hLen = GetRunLength(grid, nx, ny, width, height, true);
+                int vLen = GetRunLength(grid, nx, ny, width, height, false);
+                if (hLen == 1 && vLen == 1) return true;
+            }
+            return false;
+        }
+
+        private static int GetRunLength(
+            char[,] grid, int x, int y, int width, int height, bool horizontal)
+        {
+            if (grid[x, y] != '.') return 0;
+            int len = 1;
+
+            int bx = x, by = y;
+            while (true)
+            {
+                if (horizontal) bx--; else by--;
+                if (bx < 0 || by < 0 || bx >= width || by >= height) break;
+                if (grid[bx, by] != '.') break;
+                len++;
+            }
+            int fx = x, fy = y;
+            while (true)
+            {
+                if (horizontal) fx++; else fy++;
+                if (fx < 0 || fy < 0 || fx >= width || fy >= height) break;
+                if (grid[fx, fy] != '.') break;
+                len++;
+            }
+            return len;
+        }
+
+        private static bool IsConnected(char[,] grid, int width, int height)
+        {
+            int startX = -1, startY = -1;
+            int totalWhite = 0;
+
+            for (int y = 0; y < height; y++)
+                for (int x = 0; x < width; x++)
+                    if (grid[x, y] == '.')
+                    {
+                        totalWhite++;
+                        if (startX < 0) { startX = x; startY = y; }
+                    }
+
+            if (totalWhite <= 1) return true;
+
+            var visited = new bool[width, height];
+            var queue = new Queue<(int x, int y)>();
+            queue.Enqueue((startX, startY));
+            visited[startX, startY] = true;
+            int reachable = 1;
+            int[,] dirs = { { 0, 1 }, { 0, -1 }, { 1, 0 }, { -1, 0 } };
+
+            while (queue.Count > 0)
+            {
+                var (qx, qy) = queue.Dequeue();
+                for (int i = 0; i < 4; i++)
+                {
+                    int nx = qx + dirs[i, 0];
+                    int ny = qy + dirs[i, 1];
+                    if (nx < 0 || nx >= width || ny < 0 || ny >= height) continue;
+                    if (visited[nx, ny]) continue;
+                    if (grid[nx, ny] != '.') continue;
+                    visited[nx, ny] = true;
+                    reachable++;
+                    queue.Enqueue((nx, ny));
+                }
+            }
+
+            return reachable == totalWhite;
+        }
+
         /// <summary>
         /// Generate a random grid pattern.
         /// </summary>
@@ -182,56 +300,84 @@ namespace Crossatro.Grid
         /// <param name=""></param>
         /// <param name="width"></param>
         /// <param name="height"></param>
-        public static void PlaceHeart(char[,] grid, int width, int height)
+        private static void PlaceHeart(char[,] grid, int width, int height, System.Random rng)
         {
             int cx = width / 2;
             int cy = height / 2;
-
-            // Search outward from center for a suitable empty position.
-            // Find a white cell near center and convert it to heart
-            // Or find an adjacent black cell and convert it to heart.
             int bestX = -1, bestY = -1;
             float bestScore = float.MaxValue;
 
-            for (int radius = 0; radius < Mathf.Max(width, height); radius++)
+            for (int radius = 0; radius <= Mathf.Max(width, height); radius++)
             {
-                for (int dy = -radius;  dy <= radius; dy++)
-                {
+                for (int dy = -radius; dy <= radius; dy++)
                     for (int dx = -radius; dx <= radius; dx++)
                     {
                         if (Mathf.Abs(dx) != radius && Mathf.Abs(dy) != radius) continue;
-
                         int x = cx + dx;
                         int y = cy + dy;
+                        if (x < 0 || x >= width || y < 0 || y >= height) continue;
+                        if (grid[x, y] != '.') continue;
 
-                        if (x < 0 || x >= width || y >= height) continue;
+                        grid[x, y] = 'H';
+                        bool ok = IsWhiteStillConnected(grid, width, height);
+                        grid[x, y] = '.';
+                        if (!ok) continue;
 
-                        // Must be a black cell
-                        if (grid[x, y] != '#') continue;
-
-                        // Must have at least one adjacent white cell
                         int adj = CountAdjacentWhite(grid, x, y, width, height);
                         if (adj == 0) continue;
 
                         float dist = dx * dx + dy * dy;
-                        float score = dist - adj * 3f;
-
-                        if (score < bestScore)
-                        {
-                            bestScore = score;
-                            bestX = x;
-                            bestY = y;
-                        }
+                        float score = dist - adj * 2f;
+                        if (score < bestScore) { bestScore = score; bestX = x; bestY = y; }
                     }
-                }
-
                 if (bestX >= 0) break;
             }
 
-            if (bestX >= 0)
-                grid[bestX, bestY] = 'H';
-            else
-                grid[cx, cy] = 'H'; // Fallback
+            if (bestX >= 0) grid[bestX, bestY] = 'H';
+            else grid[cx, cy] = 'H';
+
+            Debug.Log("[MaskGenerator] Heat placed at: " + bestX + "-" + bestY);
+        }
+
+        private static bool IsWhiteStillConnected(char[,] grid, int width, int height)
+        {
+            int startX = -1, startY = -1;
+            int totalWhite = 0;
+
+            for (int y = 0; y < height; y++)
+                for (int x = 0; x < width; x++)
+                    if (grid[x, y] == '.')
+                    {
+                        totalWhite++;
+                        if (startX < 0) { startX = x; startY = y; }
+                    }
+
+            if (totalWhite <= 1) return true;
+
+            var visited = new bool[width, height];
+            var queue = new Queue<(int x, int y)>();
+            queue.Enqueue((startX, startY));
+            visited[startX, startY] = true;
+            int reachable = 1;
+            int[,] dirs = { { 0, 1 }, { 0, -1 }, { 1, 0 }, { -1, 0 } };
+
+            while (queue.Count > 0)
+            {
+                var (qx, qy) = queue.Dequeue();
+                for (int i = 0; i < 4; i++)
+                {
+                    int nx = qx + dirs[i, 0];
+                    int ny = qy + dirs[i, 1];
+                    if (nx < 0 || nx >= width || ny < 0 || ny >= height) continue;
+                    if (visited[nx, ny]) continue;
+                    if (grid[nx, ny] != '.' && grid[nx, ny] != 'H') continue;
+                    visited[nx, ny] = true;
+                    if (grid[nx, ny] == '.') reachable++;
+                    queue.Enqueue((nx, ny));
+                }
+            }
+
+            return reachable == totalWhite;
         }
 
         private static int CountAdjacentWhite(char[,] grid, int x, int y, int width, int height)

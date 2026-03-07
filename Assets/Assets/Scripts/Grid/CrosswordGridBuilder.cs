@@ -138,23 +138,43 @@ namespace Crossatro.Grid
         /// <param name="maxDifficulty">Maximum word difficulty</param>
         /// <param name="theme">Optional theme filter</param>
         /// <param name="blackRatio">Ratio of black cells</param>
-        public BuildResult BuildRandom(
-            CrosswordDatabase database,
-            int width = 9,
-            int height = 9,
-            int minDifficulty = 1,
-            int maxDifficulty = 9,
-            string theme = null,
-            float blackRatio = 0.25f)
+        public BuildResult BuildRandom(CrosswordDatabase database, int width = 9, int height = 9, int minDifficulty = 1, int maxDifficulty = 9, string theme = null, float blackRatio = 0.25f, int maxAttempts = 50)
         {
-            // Generate a random mask
-            GridMask mask = MaskGenerator.Generate(
-                width, height,
-                seed: _seed,
-                blackRatio: blackRatio
-            );
+            BuildResult bestResult = null;
 
-            return Build(mask, database, minDifficulty, maxDifficulty, theme);
+            for (int i = 0; i < maxAttempts; i++)
+            {
+                int maskSeed = _seed >= 0 ? _seed + i : -1;
+
+                // Generate a random mask
+                GridMask mask = MaskGenerator.Generate(
+                    width, height,
+                    seed: maskSeed,
+                    blackRatio: blackRatio
+                );
+
+                var result = Build(mask, database, minDifficulty, maxDifficulty, theme);
+
+                if (result.IsFullySolved)
+                {
+                    Debug.Log($"[CrosswordGridBuilder] Solved on attempt {i + 1}/{maxAttempts}. " +
+                              $"{result.WordCount} words placed.");
+                    return result;
+                }
+
+                if (bestResult == null || result.WordCount > bestResult.WordCount)
+                    bestResult = result;
+
+                Debug.Log($"[CrosswordGridBuilder] Attempt {i + 1}/{maxAttempts} failed " +
+                          $"({result.WordCount} words placed). Retrying with new mask...");
+
+            }
+
+
+            Debug.LogWarning($"[CrosswordGridBuilder] Could not fully solve after {maxAttempts} attempts. " +
+                            $"Using best partial result ({bestResult.WordCount} words).");
+
+            return bestResult;
         }
 
         // ============================================================

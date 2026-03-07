@@ -6,6 +6,17 @@ using UnityEngine;
 namespace Crossatro.Board
 {
     /// <summary>
+    /// How the crossword grid is created.
+    /// </summary>
+    public enum GenerationMode
+    {
+        /// <summary>Auto generate a new random mask each time.</summary>
+        Random,
+        /// <summary>Use a custom GridMask asset.</summary>
+        Custom,
+    }
+
+    /// <summary>
     /// Generate a crossword grid, create tiles and wires all components.
     /// </summary>
     public class BoardManager: MonoBehaviour
@@ -25,15 +36,23 @@ namespace Crossatro.Board
         [Tooltip("Scriptable object with word database and generation settings")]
         [SerializeField] private CrosswordDatabase _wordDatabase;
 
+        [Tooltip("Random = auto generate mask each time. Custom = use the mask below.")]
+        [SerializeField] private GenerationMode _generationMode = GenerationMode.Random;
+
+        [Tooltip("Custom grid mask")]
+        [SerializeField] private GridMask _mask;
+
         [Header("Grid Size")]
-        [SerializeField] private int width = 9;
-        [SerializeField] private int height = 9;
-        
+        [SerializeField] private int _gridWidth = 9;
+        [SerializeField] private int _gridHeight = 9;
+
+        [Tooltip("Optional theme filter (empty = any theme)")]
+        [SerializeField] private string _theme = "";
 
         [Header("Difficulty")]
         [Tooltip("Difficulty range of the words")]
-        [SerializeField] private int minDifficulty = 1;
-        [SerializeField] private int maxDifficulty = 9;
+        [SerializeField] private int _minDifficulty = 1;
+        [SerializeField] private int _maxDifficulty = 9;
 
         [Header("UI")]
         [Tooltip("InputField for typing words")]
@@ -45,6 +64,7 @@ namespace Crossatro.Board
 
         [Tooltip("Seed for grid generation. -1 for random.")]
         [SerializeField] private int _seed = -1;
+        [SerializeField][Range(0, 1)] private float _blackRatio;
 
         // ============================================================
         // State
@@ -75,7 +95,7 @@ namespace Crossatro.Board
 
             _boardController.Initialize(_grid);
 
-            _enemyManager.Initialize(_board.GetAllTilePosition());
+            _enemyManager.Initialize(_board.GetAllTilePosition(), _mask.GetHeartPosition());
 
             Log($"Board ready! {_grid.Words.Count} words generated.");
             LogWordList();
@@ -94,7 +114,25 @@ namespace Crossatro.Board
 
             var builder = new CrosswordGridBuilder(_seed);
 
-            _buildResult = builder.BuildRandom(_wordDatabase, width, height, minDifficulty, maxDifficulty);
+            string theme = string.IsNullOrWhiteSpace(_theme) ? null : _theme;
+
+            if (_generationMode == GenerationMode.Custom && _mask != null)
+            {
+                // Use predefined mask
+                Log($"Using custom mask: {_mask.Width}x{_mask.Height}");
+                _buildResult = builder.Build(_mask, _wordDatabase, _minDifficulty, _maxDifficulty, theme);
+            }
+            else
+            {
+                if (_generationMode == GenerationMode.Custom && _mask == null)
+                    Debug.LogWarning("[BoardManager] Custom mode selected but no mask assigned! " +
+                                     "Falling back to random generation.");
+
+                // Generate random mask
+                Log($"Generating random {_gridWidth}x{_gridHeight} grid " + $"(black ratio: {_blackRatio})");
+                _buildResult = builder.BuildRandom(_wordDatabase, _gridWidth, _gridHeight, _minDifficulty, _maxDifficulty, theme, _blackRatio);
+            }
+
             _grid = _buildResult.Grid;
         }
 
@@ -149,18 +187,10 @@ namespace Crossatro.Board
                 return;
             }
 
-            GameObject heartObj = GameObject.CreatePrimitive(PrimitiveType.Cube);
+            HeartTile heartObj = _tileFactory.CreateHeartTile(_board.transform);
             heartObj.name = "HeartTile";
-            heartObj.transform.SetParent(_board.transform);
             heartObj.transform.localPosition = new Vector3(heartPos.x, 0, heartPos.y);
-            heartObj.transform.localScale = Vector3.one * 0.8f;
-
-            var renderer = heartObj.GetComponent<Renderer>();
-            if (renderer != null)
-            {
-                renderer.material = new Material(Shader.Find("Standard"));
-                renderer.material.color = Color.red;
-            }
+            //heartObj.transform.localScale = Vector3.one;
 
             Log($"Heart tile placed at {heartPos}");
         }
@@ -201,18 +231,11 @@ namespace Crossatro.Board
                 valid = false;
             }
 
-            //if (_gridGenerationData == null)
-            //{
-            //    Debug.LogError("[BoardTest] GridGenerationData is not assigned!");
-            //    valid = false;
-            //}
-
-            //if (_gridGenerationData != null && _gridGenerationData.Database == null)
-            //{
-            //    Debug.LogError("[BoardTest] GridGenerationData has no database loaded! " +
-            //                   "Click 'Load Database' on the ScriptableObject.");
-            //    valid = false;
-            //}
+            if (_wordDatabase == null)
+            {
+                Debug.LogError("[BoardManager] CrosswordDatabase is not assigned!");
+                valid = false;
+            }
 
             if (_inputField == null)
             {

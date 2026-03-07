@@ -71,7 +71,7 @@ namespace Crossatro.Enemy
             UnsubscribeFromEvents();
         }
 
-        public void Initialize(HashSet<Vector2> tilePositions)
+        public void Initialize(HashSet<Vector2> tilePositions, Vector2 heartPosition)
         {
             _spawnPositions = new List<Vector2>();
             _tilePositions = new HashSet<Vector2>();
@@ -79,8 +79,8 @@ namespace Crossatro.Enemy
             _obstaclePositions = new HashSet<Vector2>();
 
             _tilePositions = tilePositions;
+            _heartPosition = heartPosition;
 
-            _heartPosition = EnemyPathFinding.FindCenterTile(tilePositions);
             _spawnPositions = EnemyPathFinding.SelectSpawnPosition(_tilePositions, _heartPosition);
 
 
@@ -278,9 +278,6 @@ namespace Crossatro.Enemy
         {
             if (_drawEnemyPathGizmo == false)
                 return;
-
-            Debug.Log("ON DRAW GIZZ");
-
 
             EnemyPathFinding.DrawPath(_enemyPath);
             Gizmos.color = Color.red;
