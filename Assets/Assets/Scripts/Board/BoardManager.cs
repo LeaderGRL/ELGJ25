@@ -75,6 +75,20 @@ namespace Crossatro.Board
         private CrosswordGridBuilder.BuildResult _buildResult;
 
         // ============================================================
+        // Properties
+        // ============================================================
+
+        /// <summary>
+        /// Heart position in word coordinates.
+        /// </summary>
+        public Vector2 HeartPosition => _buildResult?.HeartPosition ?? Vector2.zero;
+
+        /// <summary>
+        /// Generated or predifined mask.
+        /// </summary>
+        public GridMask Mask => _buildResult?.Mask;
+
+        // ============================================================
         // Lifecycle
         // ============================================================
 
@@ -188,9 +202,10 @@ namespace Crossatro.Board
             }
 
             HeartTile heartObj = _tileFactory.CreateHeartTile(_board.transform);
+            if (heartObj == null) return;
             heartObj.name = "HeartTile";
-            heartObj.transform.localPosition = new Vector3(heartPos.x, 0, heartPos.y);
-            //heartObj.transform.localScale = Vector3.one;
+           
+            _board.PlaceTile(heartPos, heartObj);
 
             Log($"Heart tile placed at {heartPos}");
         }
