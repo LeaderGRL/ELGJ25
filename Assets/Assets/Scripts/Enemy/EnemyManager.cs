@@ -162,8 +162,11 @@ namespace Crossatro.Enemy
             if (_debugMode == true)
                 _drawEnemyPathGizmo = true;
 
-            enemy.Move(_enemyPath);
             enemy.Attack(_heartPosition);
+
+            if (_enemyPath.Count > 0 && _enemyPath[_enemyPath.Count - 1] == _heartPosition)
+                _enemyPath.RemoveAt(_enemyPath.Count - 1);
+            enemy.Move(_enemyPath);
 
             yield return new WaitForSeconds(1f);
         }
@@ -269,6 +272,20 @@ namespace Crossatro.Enemy
         private void OnTurnStarted(TurnStartedEvent evt)
         {
 
+        }
+
+        // ============================================================
+        // Obstacles
+        // ============================================================
+
+        public void AddObstaclePosition(Vector2 pos)
+        {
+            if (_obstaclePositions == null)
+                _obstaclePositions = new HashSet<Vector2>();
+
+            if (_obstaclePositions.Contains(pos)) return;
+
+            _obstaclePositions.Add(pos);
         }
 
         // ============================================================

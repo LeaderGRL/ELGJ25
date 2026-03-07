@@ -41,6 +41,11 @@ namespace Crossatro.Board
         private GridWord _currentSelectedWord;
 
         /// <summary>
+        /// Last position that was clicked.
+        /// </summary>
+        private Vector2? _lastClickedPosition;
+
+        /// <summary>
         /// Timestamp of last processed text input.
         /// </summary>
         private float _lastInputTime;
@@ -187,10 +192,23 @@ namespace Crossatro.Board
         {
             if (_grid == null) return;
 
-            GridWord word = _grid.GetWordAtLocation(gridPosition);
-            if (word == null || word.IsValidated) return;
+           List<GridWord> wordsAtPosition = _grid.GetAllWordAtLocation(gridPosition);
+            if (wordsAtPosition == null ||  wordsAtPosition.Count == 0 ) return;
 
-            SelectWord(word, gridPosition);
+            // Filter out validated words
+            var candidate = wordsAtPosition.FindAll(w => !w.IsValidated);
+            if (candidate.Count == 0 ) return;
+
+            GridWord wordToSelect;
+
+            // Same position clicked + currently selected word => cycle to the other word at the crossing
+            if (_lastClickedPosition.HasValue && _lastClickedPosition.Value == gridPosition && _currentSelectedWord != null && candidate.Count > 1 && candidate.Contains(_currentSelectedWord))
+                wordToSelect = candidate.Find(w => w != _currentSelectedWord);
+            else
+                wordToSelect = candidate[0];
+
+            _lastClickedPosition = gridPosition;
+            SelectWord(wordToSelect, gridPosition);
         }
 
         /// <summary>

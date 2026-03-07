@@ -32,6 +32,10 @@ namespace Crossatro.Board
         [SerializeField] private TileFactory _tileFactory;
         [SerializeField] private EnemyManager _enemyManager;
 
+        // ============================================================
+        // Configuration
+        // ============================================================
+
         [Header("Grid Generation")]
         [Tooltip("Scriptable object with word database and generation settings")]
         [SerializeField] private CrosswordDatabase _wordDatabase;
@@ -54,17 +58,25 @@ namespace Crossatro.Board
         [SerializeField] private int _minDifficulty = 1;
         [SerializeField] private int _maxDifficulty = 9;
 
+        [Tooltip("Seed for grid generation. -1 for random.")]
+        [SerializeField] private int _seed = -1;
+        [SerializeField][Range(0, 1)] private float _blackRatio;
+
+        // ============================================================
+        // UI
+        // ============================================================
+
         [Header("UI")]
         [Tooltip("InputField for typing words")]
         [SerializeField] private TMPro.TMP_InputField _inputField;
 
+        // ============================================================
+        // Debug
+        // ============================================================
+
         [Header("Debug")]
         [Tooltip("Log detailled information during setup")]
         [SerializeField] private bool _verboseLogging = true;
-
-        [Tooltip("Seed for grid generation. -1 for random.")]
-        [SerializeField] private int _seed = -1;
-        [SerializeField][Range(0, 1)] private float _blackRatio;
 
         // ============================================================
         // State
@@ -206,6 +218,7 @@ namespace Crossatro.Board
             heartObj.name = "HeartTile";
            
             _board.PlaceTile(heartPos, heartObj);
+            _enemyManager.AddObstaclePosition(heartPos); // Enemies can't walk on heartTile
 
             Log($"Heart tile placed at {heartPos}");
         }
