@@ -95,7 +95,7 @@ namespace Crossatro.Board
 
             _boardController.Initialize(_grid);
 
-            _enemyManager.Initialize(_board.GetAllTilePosition(), _mask.GetHeartPosition());
+            _enemyManager.Initialize(_board.GetAllTilePosition(), _buildResult.HeartPosition);
 
             Log($"Board ready! {_grid.Words.Count} words generated.");
             LogWordList();

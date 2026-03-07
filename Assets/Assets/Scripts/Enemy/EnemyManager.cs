@@ -73,6 +73,7 @@ namespace Crossatro.Enemy
 
         public void Initialize(HashSet<Vector2> tilePositions, Vector2 heartPosition)
         {
+            Debug.Log("[EnemyManager] heart position: " + heartPosition);
             _spawnPositions = new List<Vector2>();
             _tilePositions = new HashSet<Vector2>();
             _occupiedPositions = new HashSet<Vector2>();
