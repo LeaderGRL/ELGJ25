@@ -214,6 +214,7 @@ MonoBehaviour:
   _board: {fileID: 2145083442}
   _inputHandler: {fileID: 1896048077}
   _inputField: {fileID: 1526770830}
+  _verboseLogging: 1
 --- !u!4 &410430938
 Transform:
   m_ObjectHideFlags: 0
@@ -1059,8 +1060,8 @@ MonoBehaviour:
   _wordDatabase: {fileID: 11400000, guid: d2937d42e8b93a5439217d64e4472adb, type: 2}
   _generationMode: 0
   _mask: {fileID: 11400000, guid: 0c7afe9ed395d3c49b0e58d12c4734a0, type: 2}
-  _gridWidth: 9
-  _gridHeight: 9
+  _gridWidth: 13
+  _gridHeight: 13
   _theme: 
   _minDifficulty: 1
   _maxDifficulty: 9

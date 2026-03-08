@@ -55,6 +55,8 @@ namespace Crossatro.Board
         /// </summary>
         private bool _isInitialized;
 
+        [SerializeField] private bool _verboseLogging = false;
+
         // ============================================================
         // Properties
         // ============================================================
@@ -104,7 +106,7 @@ namespace Crossatro.Board
             SubscribeToGridEvents();
 
             _isInitialized = true;
-            Debug.Log("[BoardController] Initialized");
+            Log("Initialized");
         }
 
         /// <summary>
@@ -219,6 +221,7 @@ namespace Crossatro.Board
         /// <param name="clickedPosition"></param>
         private void SelectWord(GridWord word, Vector2 clickedPosition)
         {
+            Log("click on : " +  word.SolutionWord + " at : " + clickedPosition);
             // If a different word was selected, deselect the previous one
             if (_currentSelectedWord != null && _currentSelectedWord != word)
             {
@@ -262,10 +265,12 @@ namespace Crossatro.Board
             var positions = _currentSelectedWord.GetAllLetterCurrentWordPositions().Keys;
             foreach (Vector2 position in positions )
             {
-                if (!IsPositionLocked(position))
-                {
-                    _board.SetTileState(position, TileState.Selected);
-                }
+                _board.SetTileState(position, TileState.Selected);
+
+                //if (!IsPositionLocked(position))
+                //{
+                //    _board.SetTileState(position, TileState.Selected);
+                //}
             }
         }
 
@@ -363,7 +368,7 @@ namespace Crossatro.Board
 
             PublishWordCompleted(word, letterScore, coinReward);
 
-            Debug.Log($"[BoardController] Correct: \"{word.SolutionWord}\" " + $"(score: {letterScore}, coins: {coinReward}");
+            Log($"Correct: \"{word.SolutionWord}\" " + $"(score: {letterScore}, coins: {coinReward}");
         }
 
         /// <summary>
@@ -439,9 +444,22 @@ namespace Crossatro.Board
         /// </summary>
         private void HandleIncorrectWord()
         {
+            ClearIncorrectWord();
             ClearSelection();
 
-            Debug.Log("[BoardController] Incorrect word!");
+            Log("Incorrect word!");
+        }
+
+        private void ClearIncorrectWord()
+        {
+            if (_currentSelectedWord == null) return;
+
+            var positions = _currentSelectedWord.GetAllLetterCurrentWordPositions().Keys;
+            foreach (Vector2 position in positions)
+            {
+                _currentSelectedWord.SetLetterAtLocation(position, '\0');
+                _board.UpdateTileLetter(position, '\0');
+            }
         }
 
         // ============================================================
@@ -466,7 +484,7 @@ namespace Crossatro.Board
                 _board.SetTileState(pos, TileState.Validated);
             }
 
-            Debug.Log($"[BoardController] Revealed '{letter}' at {revealedPositions.Count} positions");
+            Log($"Revealed '{letter}' at {revealedPositions.Count} positions");
         }
 
         // ============================================================
@@ -591,7 +609,7 @@ namespace Crossatro.Board
         /// <param name="lastWord"></param>
         private void HandleAllWordsValidated(GridWord lastWord)
         {
-            Debug.Log("[BoardController] All words validated!");
+            Log("All words validated!");
 
             _board.HideCluePopup();
 
@@ -634,6 +652,18 @@ namespace Crossatro.Board
                     NewAmount = coins,
                     Delta = coins,
                 });
+            }
+        }
+
+        // ============================================================
+        // Debug
+        // ============================================================
+
+        private void Log(string message)
+        {
+            if (_verboseLogging)
+            {
+                Debug.Log($"[BoardController] {message}");
             }
         }
     }

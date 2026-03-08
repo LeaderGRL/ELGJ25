@@ -335,8 +335,6 @@ namespace Crossatro.Grid
 
             if (bestX >= 0) grid[bestX, bestY] = 'H';
             else grid[cx, cy] = 'H';
-
-            Debug.Log("[MaskGenerator] Heat placed at: " + bestX + "-" + bestY);
         }
 
         private static bool IsWhiteStillConnected(char[,] grid, int width, int height)

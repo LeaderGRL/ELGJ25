@@ -139,6 +139,7 @@ namespace Crossatro.Board
             Log("Generating crossword grid..");
 
             var builder = new CrosswordGridBuilder(_seed);
+            builder.SetDebugMode(_verboseLogging);
 
             string theme = string.IsNullOrWhiteSpace(_theme) ? null : _theme;
 

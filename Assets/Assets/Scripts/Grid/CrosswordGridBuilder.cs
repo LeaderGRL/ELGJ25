@@ -62,6 +62,7 @@ namespace Crossatro.Grid
         private Vector2 _heartPosition;
         private bool _heartPositionComputed;
 
+        private bool _verboseLogging = false;
         // ============================================================
         // Constructor
         // ============================================================
@@ -108,7 +109,7 @@ namespace Crossatro.Grid
 
             // Extract slot from mask
             List<Slot> slots = mask.FindSlots();
-            Debug.Log($"[CrosswordGridBuilder] Mask {mask.Width}x{mask.Height}, " +
+            Log($"Mask {mask.Width}x{mask.Height}, " +
                 $"{slots.Count} slots found.");
 
             if (slots.Count == 0)
@@ -165,7 +166,7 @@ namespace Crossatro.Grid
                 if (bestResult == null || result.WordCount > bestResult.WordCount)
                     bestResult = result;
 
-                Debug.Log($"[CrosswordGridBuilder] Attempt {i + 1}/{maxAttempts} failed " +
+                Log($"[CrosswordGridBuilder] Attempt {i + 1}/{maxAttempts} failed " +
                           $"({result.WordCount} words placed). Retrying with new mask...");
 
             }
@@ -314,6 +315,23 @@ namespace Crossatro.Grid
                                      $"{(theme != null ? $", theme '{theme}'" : "")}). " +
                                      "Solver may struggle or fail.");
                 }
+            }
+        }
+
+        // ============================================================
+        // Debug
+        // ============================================================
+
+        public void SetDebugMode(bool debugMode)
+        {
+            _verboseLogging = debugMode;
+        }
+
+        private void Log(string message)
+        {
+            if (_verboseLogging)
+            {
+                Debug.Log($"[CrosswordGridBuilder] {message}");
             }
         }
     }

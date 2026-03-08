@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: crosswordDatabase 1
   m_EditorClassIdentifier: Assembly-CSharp::Crossatro.Grid.CrosswordDatabase
   _jsonSource: {fileID: 0}
-  _logStats: 1
-  _isLoaded: 0
+  _logStats: 0
   _bakedWords: []
   _bakedLanguage: fr
   _isBaked: 0
