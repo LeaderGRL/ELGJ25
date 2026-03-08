@@ -31,6 +31,7 @@ namespace Crossatro.Board
         [SerializeField] private BoardController _boardController;
         [SerializeField] private TileFactory _tileFactory;
         [SerializeField] private EnemyManager _enemyManager;
+        [SerializeField] private IsometricCamera _isometricCamera;
 
         // ============================================================
         // Configuration
@@ -114,6 +115,8 @@ namespace Crossatro.Board
             if (!ValidateReferences()) return;
 
             GenerateGrid();
+
+            FrameCamera();
 
             PopulateBoardWithTiles();
 
@@ -273,6 +276,30 @@ namespace Crossatro.Board
             }
 
             return valid;
+        }
+
+        // ============================================================
+        // Camera
+        // ============================================================
+
+        /// <summary>
+        /// Frame the isometric camera to show the entire grid.
+        /// Uses mask dimensions so it works before tiles are placed.
+        /// </summary>
+        private void FrameCamera()
+        {
+            if (_isometricCamera == null || _buildResult?.Mask == null) return;
+
+            var mask = _buildResult.Mask;
+
+            Vector3 center = new Vector3(
+                (mask.Width - 1) * 0.5f,
+                0f,
+                -(mask.Height - 1) * 0.5f);
+
+            Vector2 size = new Vector2(mask.Width, mask.Height);
+
+            _isometricCamera.FrameGrid(center, size);
         }
 
         // ============================================================

@@ -119,6 +119,65 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &123519939
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 123519941}
+  - component: {fileID: 123519940}
+  m_Layer: 0
+  m_Name: CameraRig
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &123519940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 123519939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59d533064c6b76d4a89ae2e9f743fad9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::IsometricCamera
+  _camera: {fileID: 2106862757}
+  _pitchAngle: 45
+  _yawAngle: 45
+  _cameraDistance: 30
+  _minZoom: 3
+  _maxZoom: 20
+  _zoomSpeed: 1.5
+  _zoomSmoothing: 8
+  _panSpeed: 0.002
+  _panSmoothing: 10
+  _framingPadding: 2
+  _panButtonAction: {fileID: 3918695557718922875, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  _panDeltaAction: {fileID: -6412483002876952554, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  _zoomAction: {fileID: 3388905114069314891, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+--- !u!4 &123519941
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 123519939}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2106862758}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &239404667 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1478567186042264480, guid: de8a55a035eaa3b4394d1863f957c68b, type: 3}
@@ -1057,6 +1116,7 @@ MonoBehaviour:
   _boardController: {fileID: 410430937}
   _tileFactory: {fileID: 2145083444}
   _enemyManager: {fileID: 1185266584}
+  _isometricCamera: {fileID: 123519940}
   _wordDatabase: {fileID: 11400000, guid: d2937d42e8b93a5439217d64e4472adb, type: 2}
   _generationMode: 0
   _mask: {fileID: 11400000, guid: 0c7afe9ed395d3c49b0e58d12c4734a0, type: 2}
@@ -1704,7 +1764,6 @@ GameObject:
   - component: {fileID: 2106862757}
   - component: {fileID: 2106862756}
   - component: {fileID: 2106862759}
-  - component: {fileID: 2106862760}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1784,7 +1843,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 123519941}
   m_LocalEulerAnglesHint: {x: 33.65, y: 0, z: 0}
 --- !u!114 &2106862759
 MonoBehaviour:
@@ -1830,32 +1889,6 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
---- !u!114 &2106862760
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2106862755}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59d533064c6b76d4a89ae2e9f743fad9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::IsometricCamera
-  _camera: {fileID: 2106862757}
-  _pitchAngle: 45
-  _yawAngle: 45
-  _cameraDistance: 30
-  _minZoom: 3
-  _maxZoom: 20
-  _zoomSpeed: 1.5
-  _zoomSmoothing: 8
-  _panSpeed: 0.002
-  _panSmoothing: 10
-  _framingPadding: 2
-  _panButtonAction: {fileID: 3918695557718922875, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-  _panDeltaAction: {fileID: -6412483002876952554, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-  _zoomAction: {fileID: 3388905114069314891, guid: 052faaac586de48259a63d0c4782560b, type: 3}
 --- !u!1 &2145083441
 GameObject:
   m_ObjectHideFlags: 0
@@ -1926,7 +1959,7 @@ MonoBehaviour:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 2106862758}
+  - {fileID: 123519941}
   - {fileID: 449696055}
   - {fileID: 1976182728}
   - {fileID: 1113269824}
