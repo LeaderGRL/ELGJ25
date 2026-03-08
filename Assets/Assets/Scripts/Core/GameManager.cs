@@ -23,6 +23,13 @@ public class GameManager : MonoBehaviour
     [Header("Services")]
     [SerializeField] private PlayerDataService _playerDataService;
 
+    // ============================================================
+    // Debug
+    // ============================================================
+
+    [Header("Debug")]
+    [SerializeField] private bool _verboseLogging = false;
+
     public enum GameState
     {
         Initializing,
@@ -88,7 +95,9 @@ public class GameManager : MonoBehaviour
         _ = ServiceLocator.Instance;
         _ = EventBus.Instance;
 
-        Debug.Log("[GameManager] Core services initialized");
+        ServiceLocator.Instance.SetDebugMode(_verboseLogging);
+
+        Log("Core services initialized");
     }
 
     /// <summary>
@@ -100,7 +109,7 @@ public class GameManager : MonoBehaviour
         if (_config != null)
         {
             ServiceLocator.Instance.Register(_config);
-            Debug.Log("[GameManager] Registered: GameConfig");
+            Log("Registered: GameConfig");
         }
         else
         {
@@ -110,7 +119,7 @@ public class GameManager : MonoBehaviour
         if (_playerDataService != null)
         {
             ServiceLocator.Instance.Register(_playerDataService);
-            Debug.Log("[GameManager] Registered: PlayerDataService");
+            Log("Registered: PlayerDataService");
         }
         else
         {
@@ -119,7 +128,7 @@ public class GameManager : MonoBehaviour
 
         // Register the GameManager itself so others scripts can access to game state
         ServiceLocator.Instance.Register(this);
-        Debug.Log("[GameManager] All services registered");
+        Log("All services registered");
     }
 
     /// <summary>
@@ -147,7 +156,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     private void StartGame()
     {
-        Debug.Log("[GameManager] Starting game...");
+        Log("Starting game...");
 
         // Initialize player with config values
         if (_playerDataService != null &&  _config != null)
@@ -183,7 +192,7 @@ public class GameManager : MonoBehaviour
             TimeRemaining = _config?.TurnDuration ?? 120f,
         });
 
-        Debug.Log($"[GameManager] Turn {_currentTurn} started");
+        Log($"Turn {_currentTurn} started");
     }
 
     /// <summary>
@@ -209,7 +218,7 @@ public class GameManager : MonoBehaviour
     {
         if (_currentState == newState) return;
 
-        Debug.Log($"[GameManager] State change: {_currentState} -> {newState}");
+        Log($"State change: {_currentState} -> {newState}");
 
         OnExitState(_currentState);
 
@@ -336,7 +345,7 @@ public class GameManager : MonoBehaviour
     {
         if (evt.RemainingHealth <= 0)
         {
-            Debug.Log("[GameManager] Player died!");
+            Log("Player died!");
             TriggerGameOver();
         }
     }
@@ -351,7 +360,19 @@ public class GameManager : MonoBehaviour
 
     private void OnTimerExpired(TimerExpiredEvent evt)
     {
-        Debug.Log("[GameManager] Timer expired!");
+        Log("Timer expired!");
         EndTurn();
+    }
+
+    // ============================================================
+    // Debug
+    // ============================================================
+
+    private void Log(string message)
+    {
+        if (_verboseLogging)
+        {
+            Debug.Log($"[GameManager] {message}");
+        }
     }
 }

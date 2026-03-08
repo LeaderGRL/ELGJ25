@@ -23,7 +23,7 @@ public class Board : MonoBehaviour
     private Vector2 m_currentHoverTile;
     private CrossWordsGameGrid_old _mCrossWordsGameGrid;
     private GridWord_old m_currentSelectedWord;
-    private BoardInputHandler m_inputHandler;
+    private BoardInputHandler_old m_inputHandler;
 
 
     [Header("Events")]
@@ -255,7 +255,7 @@ public class Board : MonoBehaviour
         return -Vector2.one;
     }
 
-    public BoardInputHandler GetInputHandler()
+    public BoardInputHandler_old GetInputHandler()
     {
         return m_inputHandler;
     }

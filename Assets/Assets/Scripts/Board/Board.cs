@@ -24,7 +24,7 @@ namespace Crossatro.Board
         [SerializeField] private GameObject _cluePopup;
 
         [Tooltip("Text component inside de popup displaying the clue")]
-        [SerializeField] private TextMeshPro _cluePopupText;
+        [SerializeField] private TextMeshProUGUI _cluePopupText;
 
         [Tooltip("Height offset above the tile")]
         [SerializeField] private float _popupHeightOffset = 2f;

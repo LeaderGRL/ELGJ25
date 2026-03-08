@@ -10,6 +10,7 @@ public class ServiceLocator: MonoBehaviour
     private static ServiceLocator _instance;
     private readonly Dictionary<Type, object> _services = new();
 
+    private bool _verboseLogging = false;
     public static ServiceLocator Instance
     {
         get
@@ -51,7 +52,7 @@ public class ServiceLocator: MonoBehaviour
         else
         {
             _services.Add(type, service);
-            Debug.Log($"[ServiceLocator] Registered: {type.Name}");
+            Log($"Registered: {type.Name}");
         }
     }
 
@@ -64,7 +65,7 @@ public class ServiceLocator: MonoBehaviour
         var type = typeof(T);
         if ( _services.Remove(type))
         {
-            Debug.Log($"[ServiceLocator] Unregistered: {type.Name}"); ;
+            Log($"Unregistered: {type.Name}"); ;
         }
     }
 
@@ -91,5 +92,22 @@ public class ServiceLocator: MonoBehaviour
     public void ClearAll()
     {
         _services.Clear();
+    }
+
+    // ============================================================
+    // Debug
+    // ============================================================
+
+    public void SetDebugMode(bool debugMode)
+    {
+        _verboseLogging = debugMode;
+    }
+
+    private void Log(string message)
+    {
+        if (_verboseLogging)
+        {
+            Debug.Log($"[ServiceLocator] {message}");
+        }
     }
 }

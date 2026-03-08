@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
-public class BoardInputHandler : MonoBehaviour
+public class BoardInputHandler_old : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private Player m_player;

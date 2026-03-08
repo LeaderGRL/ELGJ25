@@ -119,6 +119,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &239404667 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1478567186042264480, guid: de8a55a035eaa3b4394d1863f957c68b, type: 3}
+  m_PrefabInstance: {fileID: 431687528}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &282012270
 GameObject:
   m_ObjectHideFlags: 0
@@ -268,7 +279,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 880627898281880723, guid: de8a55a035eaa3b4394d1863f957c68b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.27374
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 880627898281880723, guid: de8a55a035eaa3b4394d1863f957c68b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -288,11 +299,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 880627898281880723, guid: de8a55a035eaa3b4394d1863f957c68b, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 4.19183
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 880627898281880723, guid: de8a55a035eaa3b4394d1863f957c68b, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.87021
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 880627898281880723, guid: de8a55a035eaa3b4394d1863f957c68b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -481,7 +492,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Crossatro.Turn.TurnManager
   _turnConfig: {fileID: 11400000, guid: 19872711866a4584680412415ded6aa0, type: 2}
-  _verboseLogging: 1
+  _verboseLogging: 0
 --- !u!4 &841846307
 Transform:
   m_ObjectHideFlags: 0
@@ -901,6 +912,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   _config: {fileID: 11400000, guid: b38cd14d76002594bb6d30b1fae2241e, type: 2}
   _playerDataService: {fileID: 1141016669}
+  _verboseLogging: 0
 --- !u!4 &1113269824
 Transform:
   m_ObjectHideFlags: 0
@@ -994,7 +1006,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Crossatro.Enemy.EnemyManager
   _waveConfig: {fileID: 11400000, guid: 0820d6ada2e47eb449c3be3919295999, type: 2}
-  _debugMode: 1
+  _debugMode: 0
 --- !u!4 &1185266585
 Transform:
   m_ObjectHideFlags: 0
@@ -1055,7 +1067,7 @@ MonoBehaviour:
   _seed: -1
   _blackRatio: 0.25
   _inputField: {fileID: 1526770830}
-  _verboseLogging: 1
+  _verboseLogging: 0
 --- !u!4 &1261438862
 Transform:
   m_ObjectHideFlags: 0
@@ -1713,8 +1725,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Crossatro.Board.Board
   _tileConfig: {fileID: 11400000, guid: 8b302d07f482f6e47b132f7d17499552, type: 2}
   _cluePopup: {fileID: 4361234417605266428, guid: de8a55a035eaa3b4394d1863f957c68b, type: 3}
-  _cluePopupText: {fileID: 0}
-  _popupHeightOffset: 2
+  _cluePopupText: {fileID: 239404667}
+  _popupHeightOffset: 5
 --- !u!4 &2145083443
 Transform:
   m_ObjectHideFlags: 0

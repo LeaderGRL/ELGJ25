@@ -6,7 +6,7 @@ public class BoardController : MonoBehaviour
 {
     [Header("Core Components")]
     [SerializeField] private Board board;
-    [SerializeField] private BoardInputHandler inputHandler;
+    [SerializeField] private BoardInputHandler_old inputHandler;
     [SerializeField] private CrossWordGridGenerator gridGenerator;
 
     [Header("Game Systems")]
@@ -23,7 +23,7 @@ public class BoardController : MonoBehaviour
     public UnityEvent<BoardController> OnBoardCompleted;
 
     public Board Board => board;
-    public BoardInputHandler InputHandler => inputHandler;
+    public BoardInputHandler_old InputHandler => inputHandler;
     public CrossWordGridGenerator GridGenerator => gridGenerator;
     public HealthController HealthController => healthController;
     public CoinController CoinController => coinController;
@@ -71,7 +71,7 @@ public class BoardController : MonoBehaviour
             board = GetComponentInChildren<Board>();
 
         if (inputHandler == null)
-            inputHandler = GetComponentInChildren<BoardInputHandler>();
+            inputHandler = GetComponentInChildren<BoardInputHandler_old>();
 
         if (gridGenerator == null)
             gridGenerator = GetComponentInChildren<CrossWordGridGenerator>();
