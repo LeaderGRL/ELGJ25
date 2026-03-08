@@ -307,16 +307,6 @@ namespace Crossatro.Board
                     _tileConfig.JumpDuration / 2f
                 ).SetEase(Ease.OutQuad)
             );
-
-            PlayTilePopSound();
-        }
-
-        /// <summary>
-        /// Play the pop sound effect via soundmanager
-        /// </summary>
-        private void PlayTilePopSound()
-        {
-
         }
 
         /// <summary>
@@ -380,6 +370,20 @@ namespace Crossatro.Board
 
             letterTile.SetLetter(letter);
             PlayTileJumpAnimation(gridPosition);
+
+            // '\0' mean delating letter => not the same event
+            if (letter == '\0')
+            {
+
+            }
+            else
+            {
+                EventBus.Instance.Publish(new LetterTypedEvent
+                {
+                    Letter = letter,
+                    TilePosition = gridPosition,
+                });
+            }
         }
     }
 }
