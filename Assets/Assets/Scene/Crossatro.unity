@@ -270,6 +270,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b415be85ebd9c354e8f314832059e826, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Crossatro.Board.BoardController
+  _scoreConfig: {fileID: 11400000, guid: a23aea9d58996df4aa6167b19c1957bd, type: 2}
   _board: {fileID: 2145083442}
   _inputHandler: {fileID: 1896048077}
   _inputField: {fileID: 1526770830}

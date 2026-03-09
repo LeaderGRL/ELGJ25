@@ -15,11 +15,9 @@ namespace Crossatro.Enemy
         // Configuration
         // ============================================================
 
-        [Header("Config")]
-        [SerializeField] private EnemyData _data;
+        private EnemyData _data;
 
-        [Header("Debug")]
-        [SerializeField] private bool _verbosLogging = true;
+        private bool _verbosLogging = true;
 
         // ============================================================
         // Stats
@@ -85,6 +83,26 @@ namespace Crossatro.Enemy
             ResetTurnResources();
 
             Log($"Spawned at {gridPosition} ({data.BaseHp} HP, {data.BaseMovementPoint} PM, " + $"{data.BaseActionPoint} PA, range  {data.BaseAttackDistance})");
+        }
+
+        private void OnEnable()
+        {
+            SubscribeToEvents();
+        }
+
+        private void OnDisable()
+        {
+            UnsubscribeFromEvents();
+        }
+
+        private void SubscribeToEvents()
+        {
+            EventBus.Instance.Subscribe<WordCompletedEvent>(OnWordCompleted);
+        }
+
+        private void UnsubscribeFromEvents()
+        {
+            EventBus.Instance.Unsubscribe<WordCompletedEvent>(OnWordCompleted);
         }
 
         // ============================================================
@@ -224,6 +242,17 @@ namespace Crossatro.Enemy
             });
 
             Log("Died!");
+        }
+
+        // ============================================================
+        // Event handler
+        // ============================================================
+
+        private void OnWordCompleted(WordCompletedEvent evt)
+        {
+            if (evt.Damage <= 0) return;
+
+            TakeDamage(evt.Damage);
         }
 
         // ============================================================

@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Crossatro.Combat
 {
     /// <summary>
-    /// LetterWeights degines the point value for each letter.
+    /// LetterWeights defines the point value for each letter.
     /// Used to calculate damage/score when a word is completed.
     /// </summary>
     [CreateAssetMenu(fileName = "LetterWeights", menuName = "Crossatro/Letter Weights")]
@@ -45,15 +45,6 @@ namespace Crossatro.Combat
         [SerializeField]
         private LetterValue[] _letterValue = new LetterValue[26];
 
-        [Header("Multipliers")]
-        [Tooltip("Bonus multiplier for word length")]
-        [SerializeField]
-        private float _lenghtBBonusMultiplier = 1f;
-
-        [Tooltip("Multiplier applied per consecutive word completed by turn")]
-        [SerializeField]
-        private float _comboMultiplier = 2f;
-
         // ============================================================
         // Data
         // ============================================================
@@ -91,25 +82,25 @@ namespace Crossatro.Combat
             // Default French Scrabble point
             var defaults = new Dictionary<char, int>
             {
-                // 1 points
-                { 'E', 1 }, { 'A', 1 }, { 'I', 1}, { 'N', 1}, { 'O', 1},
-                { 'R', 1 }, { 'S', 1 }, { 'T', 1}, { 'U', 1}, { 'L', 1},
+                // 25 pts — common letters
+                { 'E', 25 }, { 'A', 25 }, { 'I', 25 }, { 'N', 25 }, { 'O', 25 },
+                { 'R', 25 }, { 'S', 25 }, { 'T', 25 }, { 'U', 25 }, { 'L', 25 },
 
-                // 2 points
-                { 'D', 2 }, { 'G', 2 }, { 'M', 2 },
+                // 50 pts — medium letters
+                { 'D', 50 }, { 'G', 50 }, { 'M', 50 },
 
-                // 3 points
-                { 'B', 3 }, { 'C', 3 }, { 'P', 3 },
+                // 75 pts — good letters
+                { 'B', 75 }, { 'C', 75 }, { 'P', 75 },
 
-                // 4 points
-                { 'F', 4 }, { 'H', 4}, { 'V', 4 },
+                // 100 pts — high-value letters
+                { 'F', 100 }, { 'H', 100 }, { 'V', 100 },
 
-                // 8 points
-                { 'J', 8 }, { 'Q', 8 },
+                // 200 pts — rare letters
+                { 'J', 200 }, { 'Q', 200 },
 
-                // 10 points
-                { 'K', 10 }, { 'W', 10 }, { 'X', 10 }, { 'Y', 10 }, { 'Z',  10 },
-            };   
+                // 250 pts — epic letters
+                { 'K', 250 }, { 'W', 250 }, { 'X', 250 }, { 'Y', 250 }, { 'Z', 250 },
+            };
 
             for (int i = 0; i < 26; i++)
             {
@@ -160,7 +151,7 @@ namespace Crossatro.Combat
                 BuildLookupDictionnary();
 
             letter = char.ToUpper(letter);
-            return _weightLookup.GetValueOrDefault(letter, 1);
+            return _weightLookup.GetValueOrDefault(letter, 25);
         }
 
         /// <summary>

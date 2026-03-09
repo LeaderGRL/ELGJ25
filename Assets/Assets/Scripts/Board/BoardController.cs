@@ -1,3 +1,4 @@
+using Crossatro.Combat;
 using Crossatro.Events;
 using Crossatro.Grid;
 using Crossatro.Turn;
@@ -18,6 +19,9 @@ namespace Crossatro.Board
         // ============================================================
         // Configuration
         // ============================================================
+
+        [Header("Score Config")]
+        [SerializeField] private ScoreConfig _scoreConfig;
 
         [Header("Board Components")]
         [SerializeField] private Board _board;
@@ -55,6 +59,11 @@ namespace Crossatro.Board
         /// Whether the controller has been initialized.
         /// </summary>
         private bool _isInitialized;
+
+        /// <summary>
+        /// Number of words complete on a turn.
+        /// </summary>
+        private int _wordCombo = 0;
 
         /// <summary>
         /// Wheter is player or enemy phase.
@@ -374,17 +383,17 @@ namespace Crossatro.Board
 
             _board.SetTileStates(letterPosition.Keys, TileState.Validated);
 
-            int letterScore = CalculateLetterScore(letterPosition);
+            //int letterScore = CalculateLetterScore(letterPosition);
             
             int coinReward = CalculateCoinReward(letterPosition.Keys);
 
             word.Validate();
 
+            _wordCombo++;
+
             ClearSelection();
 
-            PublishWordCompleted(word, letterScore, coinReward);
-
-            Log($"Correct: \"{word.SolutionWord}\" " + $"(score: {letterScore}, coins: {coinReward}");
+            PublishWordCompleted(word, coinReward);
         }
 
         /// <summary>
@@ -415,24 +424,6 @@ namespace Crossatro.Board
                 // Update the tile's layer to Validate
                 _board.SetTileState(pos, TileState.Validated);
             }
-        }
-
-
-        /// <summary>
-        /// Calculate the total letter weight score for a word.
-        /// </summary>
-        /// <param name="letterPositions">Position of each tile of a validated word</param>
-        /// <returns></returns>
-        private int CalculateLetterScore(Dictionary<Vector2, char> letterPositions)
-        {
-            int total = 0;
-
-            foreach (char letter in letterPositions.Values)
-            {
-                total += LetterWeight_old.GetLetterWeight(letter);
-            }
-
-            return total;
         }
 
         private int CalculateCoinReward(IEnumerable<Vector2> positions)
@@ -646,19 +637,21 @@ namespace Crossatro.Board
         /// <param name="word">Validated word</param>
         /// <param name="score">Score win with this word</param>
         /// <param name="coins">Coins win with this word</param>
-        private void PublishWordCompleted(GridWord word, int score, int coins)
+        private void PublishWordCompleted(GridWord word, int coins)
         {
-            EventBus.Instance.Publish(new WorldCompletedEvent
+            var scoreResult = DamageCalculator.Calculate(word.SolutionWord, word.Difficulty, 0, _scoreConfig);
+            Log("Word: " + word.SolutionWord + " - Score : " + scoreResult.ToString());
+            EventBus.Instance.Publish(new WordCompletedEvent
             {
                 Word = word.SolutionWord,
-                Damage = score,
+                Damage = scoreResult.FinalScore,
                 Coins = coins,
             });
 
             EventBus.Instance.Publish(new ScoreChangedEvent
             {
-                NewScore = score,
-                Delta = score,
+                NewScore = scoreResult.FinalScore,
+                Delta = scoreResult.FinalScore,
             });
 
             if (coins > 0)
@@ -697,6 +690,8 @@ namespace Crossatro.Board
                     _isPlayerPhase = false;
                     break;
             }
+
+            _wordCombo = 0;
         }
 
         // ============================================================

@@ -6,7 +6,7 @@ namespace Crossatro.Events
     // Words Event
     // ============================================================
 
-    public struct WorldCompletedEvent
+    public struct WordCompletedEvent
     {
         public string Word;
         public int Damage;

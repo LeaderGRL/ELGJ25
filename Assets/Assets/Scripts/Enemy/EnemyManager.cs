@@ -95,12 +95,14 @@ namespace Crossatro.Enemy
         {
             EventBus.Instance.Subscribe<PhaseChangedEvent>(OnPhaseChanged);
             EventBus.Instance.Subscribe<TurnStartedEvent>(OnTurnStarted);
+            EventBus.Instance.Subscribe<EnemyDeathEvent>(OnEnemyDie);
         }
 
         private void UnsubscribeFromEvents()
         {
             EventBus.Instance.Unsubscribe<PhaseChangedEvent>(OnPhaseChanged);
             EventBus.Instance.Unsubscribe<TurnStartedEvent>(OnTurnStarted);
+            EventBus.Instance.Unsubscribe<EnemyDeathEvent>(OnEnemyDie);
         }
 
         // ============================================================
@@ -260,6 +262,10 @@ namespace Crossatro.Enemy
         // Event handler
         // ============================================================
 
+        /// <summary>
+        /// When phase change in the game => From player turn to enemies turn.
+        /// </summary>
+        /// <param name="evt"></param>
         private void OnPhaseChanged(PhaseChangedEvent evt)
         {
             if (evt.NewPhase != TurnPhase.EnemyPhase) return;
@@ -271,6 +277,18 @@ namespace Crossatro.Enemy
         private void OnTurnStarted(TurnStartedEvent evt)
         {
 
+        }
+
+        /// <summary>
+        /// Handle enemies death.
+        /// </summary>
+        /// <param name="evt"></param>
+        private void OnEnemyDie(EnemyDeathEvent evt)
+        {
+            if (evt.Enemy == null) return;
+
+            _enemies.Remove(evt.Enemy);
+            Destroy(evt.Enemy.gameObject);
         }
 
         // ============================================================
