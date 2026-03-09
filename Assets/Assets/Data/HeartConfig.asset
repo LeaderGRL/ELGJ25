@@ -14,3 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Crossatro.Heart.HeartConfig
   _baseHp: 100
   _criticalTreshold: 5
+  _heartMaterial: {fileID: 2100000, guid: c49c33aa6f835dd46b042fa7aefea8dc, type: 2}
+  _hitFeedbackMaterial: {fileID: 2100000, guid: 10cb376c6a2880d4bbb09d7d4f3203f4, type: 2}
+  _hitFeedbackDuration: 0.2

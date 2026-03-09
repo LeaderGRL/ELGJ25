@@ -77,6 +77,7 @@ namespace Crossatro.Enemy
             _currentHp = data.BaseHp;
             _maxHp = _currentHp;
             _isDead = false;
+            _currentAttackDamage = data.BaseAttackDamage;
 
             _currentPosition = new Vector3(gridPosition.x, 1, gridPosition.y);
             transform.position = _currentPosition;
@@ -152,9 +153,10 @@ namespace Crossatro.Enemy
         /// <param name="heartPosition">Position of the heart to attack</param>
         private bool CanAttack(Vector2 heartPosition)
         {
-            if (_currentPM <= 0) return false;
+            //if (_currentPA <= 0) return false;
 
-            return EnemyPathFinding.IsInRange(_currentPosition, heartPosition, CurrentAttackRange);
+            Vector2 gridPos = new Vector2(_currentPosition.x, _currentPosition.z);
+            return EnemyPathFinding.IsInRange(gridPos, heartPosition, CurrentAttackRange);
         }
 
         /// <summary>

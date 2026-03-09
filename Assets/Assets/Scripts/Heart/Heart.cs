@@ -1,3 +1,5 @@
+using Crossatro.Events;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Rendering;
 
@@ -27,6 +29,18 @@ namespace Crossatro.Heart
         [SerializeField] private int _maxHealth;
 
         // ============================================================
+        // Components
+        // ============================================================
+
+        private Renderer _renderer;
+
+        // ============================================================
+        // Debug
+        // ============================================================
+
+        [SerializeField] bool _verboseLogging = false;
+
+        // ============================================================
         // Properties
         // ============================================================
 
@@ -38,6 +52,11 @@ namespace Crossatro.Heart
         // Lifecycle
         // ============================================================
 
+        private void Start()
+        {
+            Initialize();
+        }
+
         public void Initialize()
         {
             if (_heartConfig == null)
@@ -46,8 +65,19 @@ namespace Crossatro.Heart
                 return;
             }
 
+            _renderer = GetComponent<Renderer>();
             _currentHealth = _heartConfig.BaseHp;
             _maxHealth = _currentHealth;
+        }
+
+        private void OnEnable()
+        {
+            SubscribeToEvents();
+        }
+
+        private void OnDisable()
+        {
+            UnsubscribeFromEvents();
         }
 
 
@@ -57,14 +87,12 @@ namespace Crossatro.Heart
 
         private void SubscribeToEvents()
         {
-            //EventBus.Instance.Subscribe<HealthChangedEvent>(OnHealthChanged);
-            //EventBus.Instance.Subscribe<MaxHealthChangedEvent>(OnMaxHealthChanged);
+            EventBus.Instance.Subscribe<PlayerDamageEvent>(OnReceiveDamageEvent);
         }
 
         private void UnsubscribeFromEvents()
         {
-            //EventBus.Instance.Unsubscribe<HealthChangedEvent>(OnHealthChanged);
-            //EventBus.Instance.Unsubscribe<MaxHealthChangedEvent>(OnMaxHealthChanged);
+            EventBus.Instance.Unsubscribe<PlayerDamageEvent>(OnReceiveDamageEvent);
         }
 
         // ============================================================
@@ -86,6 +114,8 @@ namespace Crossatro.Heart
                 HandleDeath(amount);
 
             PublishHealChanged(previousHealth);
+
+            Log("Receive : " + amount + " damage. Previous heal: " +  previousHealth + " - Current heal: " + _currentHealth);
 
             return _currentHealth;
         }
@@ -127,6 +157,31 @@ namespace Crossatro.Heart
             PublishMaxHealChanged(previousMaxHealth);
         }
 
+        // ============================================================
+        // Feedback
+        // ============================================================
+
+        private IEnumerator PlayHitFeedback()
+        {
+            _renderer.material = _heartConfig.HitFeedbackMaterial;
+
+            yield return new WaitForSeconds(_heartConfig.HitFeedbackDuration);
+
+            _renderer.material = _heartConfig.HeartMaterial;
+        }
+
+        // ============================================================
+        // Event handler
+        // ============================================================
+
+        private void OnReceiveDamageEvent(PlayerDamageEvent evt)
+        {
+            if (!IsAlive) return;
+
+            TakeDamage(evt.Damage);
+            StartCoroutine(PlayHitFeedback());
+        }
+
 
         // ============================================================
         // Event publishing
@@ -159,6 +214,18 @@ namespace Crossatro.Heart
                 Damage = damage,
                 TurnNumber = 0
             });
+        }
+
+        // ============================================================
+        // Debug
+        // ============================================================
+
+        private void Log(string message)
+        {
+            if (_verboseLogging)
+            {
+                Debug.Log($"[Heart] {message}");
+            }
         }
     }
 }

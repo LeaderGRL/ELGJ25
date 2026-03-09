@@ -343,11 +343,7 @@ public class GameManager : MonoBehaviour
     /// <param name="evt"></param>
     private void OnPlayerDamaged(PlayerDamageEvent evt)
     {
-        if (evt.RemainingHealth <= 0)
-        {
-            Log("Player died!");
-            TriggerGameOver();
-        }
+        
     }
 
     /// <summary>

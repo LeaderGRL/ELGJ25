@@ -247,7 +247,10 @@ namespace Crossatro.Enemy
         /// <returns></returns>
         public static bool IsInRange(Vector2 position, Vector2 target, int range)
         {
-            return ManhattanDistance(position, target) <= range;
+            var distance = ManhattanDistance(position, target) <= range;
+            Debug.Log("[EnemyPathfindign] enemy is at " + distance + " from the heart");
+            return distance;
+
         }
 
         /// <summary>

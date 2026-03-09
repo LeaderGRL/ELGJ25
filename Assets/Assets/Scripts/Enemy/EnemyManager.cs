@@ -155,14 +155,13 @@ namespace Crossatro.Enemy
 
             enemy.ResetTurnResources();
 
-            _enemyPath = EnemyPathFinding.FindPath(new Vector2(enemy.GridPosition.x, enemy.GridPosition.z), _heartPosition, _tilePositions.ToList(), _obstaclePositions.ToList());
-
-            if (_enemyPath == null) yield break;
-
             if (_debugMode == true)
                 _drawEnemyPathGizmo = true;
 
             enemy.Attack(_heartPosition);
+
+            _enemyPath = EnemyPathFinding.FindPath(new Vector2(enemy.GridPosition.x, enemy.GridPosition.z), _heartPosition, _tilePositions.ToList(), _obstaclePositions.ToList());
+            if (_enemyPath == null) yield break;
 
             if (_enemyPath.Count > 0 && _enemyPath[_enemyPath.Count - 1] == _heartPosition)
                 _enemyPath.RemoveAt(_enemyPath.Count - 1);

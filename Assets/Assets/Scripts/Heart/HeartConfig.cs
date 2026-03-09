@@ -24,11 +24,19 @@ namespace Crossatro.Heart
         /// </summary>
         [SerializeField] private int _criticalTreshold;
 
+        [Header("FeedBack")]
+        [SerializeField] private Material _heartMaterial;
+        [SerializeField] private Material _hitFeedbackMaterial;
+        [SerializeField] private float _hitFeedbackDuration = 0.2f;
+
         // ============================================================
         // API
         // ============================================================
 
         public int BaseHp => _baseHp;
         public int CriticalTreshold => _criticalTreshold;
+        public Material HeartMaterial => _heartMaterial;
+        public Material HitFeedbackMaterial => _hitFeedbackMaterial;
+        public float HitFeedbackDuration => _hitFeedbackDuration;
     }
 }

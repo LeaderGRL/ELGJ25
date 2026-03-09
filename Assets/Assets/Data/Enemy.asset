@@ -18,6 +18,6 @@ MonoBehaviour:
   _baseHp: 1000
   _baseActionPoint: 3
   _baseMovementPoint: 3
-  _baseAttackDistance: 1
+  _baseAttackDistance: 2
   _baseAttackDamage: 10
   _goldReward: 10
