@@ -487,7 +487,7 @@ Transform:
   m_GameObject: {fileID: 449696053}
   serializedVersion: 2
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalPosition: {x: 0, y: 3.0452187, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1120,8 +1120,8 @@ MonoBehaviour:
   _wordDatabase: {fileID: 11400000, guid: d2937d42e8b93a5439217d64e4472adb, type: 2}
   _generationMode: 0
   _mask: {fileID: 11400000, guid: 0c7afe9ed395d3c49b0e58d12c4734a0, type: 2}
-  _gridWidth: 13
-  _gridHeight: 13
+  _gridWidth: 10
+  _gridHeight: 10
   _theme: 
   _minDifficulty: 1
   _maxDifficulty: 9
@@ -1788,8 +1788,8 @@ Camera:
   m_GameObject: {fileID: 2106862755}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.26415092, g: 0.012459947, b: 0.16661003, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1951,7 +1951,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5aa3e8f9cdac2f429d42b0abbc80bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Crossatro.Board.TileFactory
-  _letterTilePrefab: {fileID: -8535348445655952398, guid: b098f3aae61dd8a488c6155da1a73fd1, type: 3}
+  _letterTilePrefab: {fileID: 1249876239965994089, guid: 077c95771f03b6d46a82b5ff4b03bf84, type: 3}
   _coinTilePrefab: {fileID: 1301520525423802879, guid: 6470ef7b154697545af6d424c05bb406, type: 3}
   _heartTilePrefab: {fileID: 3040813696525218859, guid: eac9d5ef0c1667f48becb38ef2ab97f8, type: 3}
   _coinTileChance: 5

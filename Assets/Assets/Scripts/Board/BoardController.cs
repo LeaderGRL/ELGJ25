@@ -1,5 +1,6 @@
 using Crossatro.Events;
 using Crossatro.Grid;
+using Crossatro.Turn;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -55,6 +56,14 @@ namespace Crossatro.Board
         /// </summary>
         private bool _isInitialized;
 
+        /// <summary>
+        /// Wheter is player or enemy phase.
+        /// </summary>
+        private bool _isPlayerPhase;
+
+        /// <summary>
+        /// Used to debug
+        /// </summary>
         [SerializeField] private bool _verboseLogging = false;
 
         // ============================================================
@@ -133,6 +142,8 @@ namespace Crossatro.Board
             if (_inputHandler == null ) return;
 
             _inputHandler.OnTileClicked += HandleTileClicked;
+
+            EventBus.Instance.Subscribe<PhaseChangedEvent>(OnPhaseChangedEvent);
         }
 
         private void UnsubscribeFromInputEvents()
@@ -140,6 +151,9 @@ namespace Crossatro.Board
             if (_inputHandler == null) return;
 
             _inputHandler.OnTileClicked -= HandleTileClicked;
+
+            EventBus.Instance.Unsubscribe<PhaseChangedEvent>(OnPhaseChangedEvent);
+
         }
 
         private void SubscribeToGridEvents()
@@ -193,6 +207,8 @@ namespace Crossatro.Board
         private void HandleTileClicked(Vector2 gridPosition)
         {
             if (_grid == null) return;
+
+            if (_isPlayerPhase == false ) return;
 
            List<GridWord> wordsAtPosition = _grid.GetAllWordAtLocation(gridPosition);
             if (wordsAtPosition == null ||  wordsAtPosition.Count == 0 ) return;
@@ -652,6 +668,34 @@ namespace Crossatro.Board
                     NewAmount = coins,
                     Delta = coins,
                 });
+            }
+        }
+
+        // ============================================================
+        // Event Handler
+        // ============================================================
+
+        /// <summary>
+        /// Check if its player or enemy phase to able or disable fonctionnalities.
+        /// </summary>
+        /// <param name="evt"></param>
+        private void OnPhaseChangedEvent(PhaseChangedEvent evt)
+        {
+            switch (evt.NewPhase)
+            {
+                case TurnPhase.PlayerPhase:
+                    _isPlayerPhase = true;
+                    break;
+                case TurnPhase.EnemyPhase:
+                    _isPlayerPhase = false;
+                    ClearSelection();
+                    break;
+                case TurnPhase.GameOver:
+                    _isPlayerPhase = false;
+                    break;
+                default:
+                    _isPlayerPhase = false;
+                    break;
             }
         }
 
