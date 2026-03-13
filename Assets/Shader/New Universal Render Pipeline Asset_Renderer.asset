@@ -1,5 +1,21 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7550285506069782607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32742085a2f5bb24487d71dca312b934, type: 3}
+  m_Name: RetroVHSFeature
+  m_EditorClassIdentifier: Assembly-CSharp::RetroVHSFeature
+  m_Active: 1
+  settings:
+    vhsMaterial: {fileID: 2100000, guid: 3c074f34c48bb34489864a00029d0820, type: 2}
+    renderPassEvent: 600
 --- !u!114 &-1175256037953810426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,7 +130,9 @@ MonoBehaviour:
   - {fileID: -861035825165895007}
   - {fileID: 6863895149208488517}
   - {fileID: 5600812375641534553}
-  m_RendererFeatureMap: 0650a139dca6b0efc3cba2556ba9a334a1fa199e7afc0cf4454a19904574415f59b0b9672e15ba4d
+  - {fileID: 4422049925527112080}
+  - {fileID: -7550285506069782607}
+  m_RendererFeatureMap: 0650a139dca6b0efc3cba2556ba9a334a1fa199e7afc0cf4454a19904574415f59b0b9672e15ba4d9009166efa465e3db11feed955ff3797
   m_UseNativeRenderPass: 0
   xrSystemData: {fileID: 0}
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
@@ -185,6 +203,22 @@ MonoBehaviour:
       restoreCamera: 1
       offset: {x: 0, y: 0, z: 0, w: 0}
       cameraFieldOfView: 60
+--- !u!114 &4422049925527112080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53f1d580351489341b44b4679e695091, type: 3}
+  m_Name: BarrelDistortionFeature
+  m_EditorClassIdentifier: Assembly-CSharp::BarrelDistortionFeature
+  m_Active: 1
+  settings:
+    distortionMaterial: {fileID: 2100000, guid: 29b55f3f2259c2e4d954130c962bff2c, type: 2}
+    renderPassEvent: 600
 --- !u!114 &5600812375641534553
 MonoBehaviour:
   m_ObjectHideFlags: 0
