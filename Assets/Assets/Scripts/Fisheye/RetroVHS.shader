@@ -28,10 +28,15 @@ Shader "Custom/RetroVHS"
         _FlickerSpeed ("Flicker Speed", Range(0.0, 50.0)) = 15.0
 
         // Color Grading
+        _ColorGradingIntensity ("Color Grading Intensity", Range(0.0, 1.0)) = 1.0
         _Saturation ("Saturation", Range(0.0, 2.0)) = 0.85
         _ColorTint ("Color Tint", Color) = (0.9, 1.0, 0.95, 1.0)
         _Brightness ("Brightness", Range(0.5, 2.0)) = 1.0
         _Contrast ("Contrast", Range(0.5, 2.0)) = 1.1
+
+        // Color Preservation
+        _NoiseColorBlend ("Noise Color Blend", Range(0.0, 1.0)) = 0.0
+        _ScanlinePreserveColor ("Scanline Preserve Color", Range(0.0, 1.0)) = 0.0
 
         // Interlacing
         _InterlaceIntensity ("Interlace Intensity", Range(0.0, 1.0)) = 0.1
@@ -95,6 +100,9 @@ Shader "Custom/RetroVHS"
             float4 _ColorTint;
             float _Brightness;
             float _Contrast;
+            float _ColorGradingIntensity;
+            float _NoiseColorBlend;
+            float _ScanlinePreserveColor;
 
             float _InterlaceIntensity;
             float _InterlaceSpeed;
@@ -220,7 +228,15 @@ Shader "Custom/RetroVHS"
                 col = lerp(col, bleed, _PhosphorBleed);
 
                 // --- Scanlines ---
-                col *= Scanline(uv);
+                // _ScanlinePreserveColor: 0 = classic darken, 1 = luminance-only darken (preserves saturation)
+                float scanMul = Scanline(uv);
+                half3 colAfterScan = col * scanMul;
+                // Luminance-preserving mode: darken luminance but restore original saturation
+                float lumaPreScan = dot(col, half3(0.299, 0.587, 0.114));
+                float lumaPostScan = dot(colAfterScan, half3(0.299, 0.587, 0.114));
+                float lumaRatio = (lumaPreScan > 0.001) ? (lumaPostScan / lumaPreScan) : 1.0;
+                half3 colPreserveScan = col * lumaRatio;
+                col = lerp(colAfterScan, colPreserveScan, _ScanlinePreserveColor);
 
                 // --- Interlacing (darken every other line, alternating each frame) ---
                 float screenY = uv.y * _ScreenParams.y;
@@ -228,14 +244,21 @@ Shader "Custom/RetroVHS"
                 col *= 1.0 - _InterlaceIntensity * interlace;
 
                 // --- Static noise overlay ---
-                float noise = StaticNoise(uv);
-                col = lerp(col, half3(noise, noise, noise), _NoiseIntensity);
+                // _NoiseColorBlend: 0 = gray noise (classic, washes out color), 1 = noise tinted by pixel color
+                float noiseVal = StaticNoise(uv);
+                half3 grayNoise = half3(noiseVal, noiseVal, noiseVal);
+                half3 coloredNoise = col * noiseVal; // Noise modulates existing color instead of replacing it
+                half3 noiseColor = lerp(grayNoise, coloredNoise, _NoiseColorBlend);
+                col = lerp(col, noiseColor, _NoiseIntensity);
 
                 // --- Screen flicker ---
                 float flicker = 1.0 + (Hash(floor(_Time.y * _FlickerSpeed)) - 0.5) * _FlickerIntensity;
                 col *= flicker;
 
                 // --- Color grading ---
+                // _ColorGradingIntensity: 0 = bypass all grading (preserve original colors), 1 = full grading
+                half3 colBeforeGrade = col;
+
                 // Saturation
                 float luma = dot(col, half3(0.299, 0.587, 0.114));
                 col = lerp(half3(luma, luma, luma), col, _Saturation);
@@ -246,6 +269,9 @@ Shader "Custom/RetroVHS"
                 // Brightness and contrast
                 col = (col - 0.5) * _Contrast + 0.5;
                 col *= _Brightness;
+
+                // Blend between original and graded
+                col = lerp(colBeforeGrade, col, _ColorGradingIntensity);
 
                 return half4(saturate(col), 1.0);
             }

@@ -3,10 +3,6 @@ using UnityEngine;
 /// <summary>
 /// Runtime controller for the RetroVHS CRT/VHS effect.
 /// Updates material properties every frame for live tweaking.
-/// Includes presets inspired by different retro aesthetics.
-///
-/// Attach to any GameObject (typically the camera).
-/// Assign the SAME material used in RetroVHSFeature.
 /// </summary>
 [ExecuteInEditMode]
 public class RetroVHSController : MonoBehaviour
@@ -16,47 +12,55 @@ public class RetroVHSController : MonoBehaviour
     public Material vhsMaterial;
 
     [Header("=== Scanlines ===")]
-    [Range(0f, 1f)]   public float scanlineIntensity = 0.3f;
+    [Range(0f, 1f)] public float scanlineIntensity = 0.3f;
     [Range(50f, 1500f)] public float scanlineCount = 400f;
-    [Range(0f, 10f)]  public float scanlineSpeed = 0.5f;
+    [Range(0f, 10f)] public float scanlineSpeed = 0.5f;
 
     [Header("=== Noise / Static ===")]
-    [Range(0f, 1f)]   public float noiseIntensity = 0.1f;
-    [Range(0f, 50f)]  public float noiseSpeed = 15f;
+    [Range(0f, 1f)] public float noiseIntensity = 0.1f;
+    [Range(0f, 50f)] public float noiseSpeed = 15f;
 
     [Header("=== Horizontal Glitch ===")]
     [Range(0f, 0.1f)] public float glitchIntensity = 0.01f;
-    [Range(0f, 20f)]  public float glitchSpeed = 5f;
+    [Range(0f, 20f)] public float glitchSpeed = 5f;
     [Range(0.001f, 0.2f)] public float glitchBlockSize = 0.05f;
 
     [Header("=== VHS RGB Offset ===")]
     [Range(0f, 0.02f)] public float rgbOffsetIntensity = 0.005f;
 
     [Header("=== Phosphor / Color Bleed ===")]
-    [Range(0f, 10f)]  public float colorBleedAmount = 2f;
-    [Range(0f, 1f)]   public float phosphorBleed = 0.3f;
+    [Range(0f, 10f)] public float colorBleedAmount = 2f;
+    [Range(0f, 1f)] public float phosphorBleed = 0.3f;
 
     [Header("=== Flicker ===")]
     [Range(0f, 0.2f)] public float flickerIntensity = 0.03f;
-    [Range(0f, 50f)]  public float flickerSpeed = 15f;
+    [Range(0f, 50f)] public float flickerSpeed = 15f;
 
     [Header("=== Color Grading ===")]
-    [Range(0f, 2f)]   public float saturation = 0.85f;
+    [Tooltip("0 = no color grading (preserve original colors), 1 = full grading")]
+    [Range(0f, 1f)] public float colorGradingIntensity = 1f;
+    [Range(0f, 2f)] public float saturation = 0.85f;
     public Color colorTint = new Color(0.9f, 1f, 0.95f, 1f);
     [Range(0.5f, 2f)] public float brightness = 1f;
     [Range(0.5f, 2f)] public float contrast = 1.1f;
 
+    [Header("=== Color Preservation ===")]
+    [Tooltip("0 = gray noise (washes out), 1 = noise tinted by pixel color")]
+    [Range(0f, 1f)] public float noiseColorBlend = 0f;
+    [Tooltip("0 = classic scanline darken, 1 = luminance-only darken (preserves color saturation)")]
+    [Range(0f, 1f)] public float scanlinePreserveColor = 0f;
+
     [Header("=== Interlacing ===")]
-    [Range(0f, 1f)]   public float interlaceIntensity = 0.1f;
-    [Range(0f, 10f)]  public float interlaceSpeed = 1f;
+    [Range(0f, 1f)] public float interlaceIntensity = 0.1f;
+    [Range(0f, 10f)] public float interlaceSpeed = 1f;
 
     [Header("=== VHS Jitter ===")]
     [Range(0f, 0.02f)] public float jitterIntensity = 0.002f;
-    [Range(0f, 30f)]  public float jitterSpeed = 8f;
+    [Range(0f, 30f)] public float jitterSpeed = 8f;
 
     [Header("=== Tape Wrinkle ===")]
     [Range(0f, 0.05f)] public float wrinkleIntensity = 0.01f;
-    [Range(0f, 5f)]   public float wrinkleSpeed = 0.8f;
+    [Range(0f, 5f)] public float wrinkleSpeed = 0.8f;
     [Range(0.01f, 0.3f)] public float wrinkleSize = 0.05f;
 
     [Header("=== Presets ===")]
@@ -114,6 +118,9 @@ public class RetroVHSController : MonoBehaviour
         vhsMaterial.SetColor("_ColorTint", colorTint);
         vhsMaterial.SetFloat("_Brightness", brightness);
         vhsMaterial.SetFloat("_Contrast", contrast);
+        vhsMaterial.SetFloat("_ColorGradingIntensity", colorGradingIntensity);
+        vhsMaterial.SetFloat("_NoiseColorBlend", noiseColorBlend);
+        vhsMaterial.SetFloat("_ScanlinePreserveColor", scanlinePreserveColor);
 
         vhsMaterial.SetFloat("_InterlaceIntensity", interlaceIntensity);
         vhsMaterial.SetFloat("_InterlaceSpeed", interlaceSpeed);
@@ -159,6 +166,9 @@ public class RetroVHSController : MonoBehaviour
                 wrinkleIntensity = 0.005f;
                 wrinkleSpeed = 0.6f;
                 wrinkleSize = 0.04f;
+                colorGradingIntensity = 1f;
+                noiseColorBlend = 0.3f;
+                scanlinePreserveColor = 0.5f;
                 break;
 
             case VHSPreset.CleanCRT:
@@ -187,6 +197,9 @@ public class RetroVHSController : MonoBehaviour
                 wrinkleIntensity = 0f;
                 wrinkleSpeed = 0f;
                 wrinkleSize = 0.05f;
+                colorGradingIntensity = 0.5f;
+                noiseColorBlend = 0.5f;
+                scanlinePreserveColor = 0.8f;
                 break;
 
             case VHSPreset.DirtyVHS:
@@ -215,6 +228,9 @@ public class RetroVHSController : MonoBehaviour
                 wrinkleIntensity = 0.025f;
                 wrinkleSpeed = 1.2f;
                 wrinkleSize = 0.08f;
+                colorGradingIntensity = 1f;
+                noiseColorBlend = 0f;
+                scanlinePreserveColor = 0f;
                 break;
 
             case VHSPreset.GlitchHeavy:
@@ -243,6 +259,9 @@ public class RetroVHSController : MonoBehaviour
                 wrinkleIntensity = 0.04f;
                 wrinkleSpeed = 2f;
                 wrinkleSize = 0.03f;
+                colorGradingIntensity = 0.8f;
+                noiseColorBlend = 0.2f;
+                scanlinePreserveColor = 0.3f;
                 break;
 
             case VHSPreset.Vaporwave:
@@ -271,6 +290,9 @@ public class RetroVHSController : MonoBehaviour
                 wrinkleIntensity = 0.003f;
                 wrinkleSpeed = 0.4f;
                 wrinkleSize = 0.06f;
+                colorGradingIntensity = 1f;
+                noiseColorBlend = 0.6f;
+                scanlinePreserveColor = 0.7f;
                 break;
 
             case VHSPreset.SecurityCam:
@@ -299,6 +321,9 @@ public class RetroVHSController : MonoBehaviour
                 wrinkleIntensity = 0.015f;
                 wrinkleSpeed = 0.5f;
                 wrinkleSize = 0.1f;
+                colorGradingIntensity = 1f;
+                noiseColorBlend = 0f;
+                scanlinePreserveColor = 0f;
                 break;
         }
     }
@@ -334,22 +359,24 @@ public class RetroVHSController : MonoBehaviour
             saturation, brightness, contrast,
             interlaceIntensity, interlaceSpeed,
             jitterIntensity, jitterSpeed,
-            wrinkleIntensity, wrinkleSpeed, wrinkleSize
+            wrinkleIntensity, wrinkleSpeed, wrinkleSize,
+            colorGradingIntensity, noiseColorBlend, scanlinePreserveColor
         };
     }
 
     private void RestoreState(float[] s)
     {
-        scanlineIntensity = s[0];  scanlineCount = s[1];  scanlineSpeed = s[2];
-        noiseIntensity = s[3];     noiseSpeed = s[4];
-        glitchIntensity = s[5];    glitchSpeed = s[6];    glitchBlockSize = s[7];
+        scanlineIntensity = s[0]; scanlineCount = s[1]; scanlineSpeed = s[2];
+        noiseIntensity = s[3]; noiseSpeed = s[4];
+        glitchIntensity = s[5]; glitchSpeed = s[6]; glitchBlockSize = s[7];
         rgbOffsetIntensity = s[8];
-        colorBleedAmount = s[9];   phosphorBleed = s[10];
-        flickerIntensity = s[11];  flickerSpeed = s[12];
-        saturation = s[13];        brightness = s[14];    contrast = s[15];
+        colorBleedAmount = s[9]; phosphorBleed = s[10];
+        flickerIntensity = s[11]; flickerSpeed = s[12];
+        saturation = s[13]; brightness = s[14]; contrast = s[15];
         interlaceIntensity = s[16]; interlaceSpeed = s[17];
-        jitterIntensity = s[18];   jitterSpeed = s[19];
-        wrinkleIntensity = s[20];  wrinkleSpeed = s[21];  wrinkleSize = s[22];
+        jitterIntensity = s[18]; jitterSpeed = s[19];
+        wrinkleIntensity = s[20]; wrinkleSpeed = s[21]; wrinkleSize = s[22];
+        colorGradingIntensity = s[23]; noiseColorBlend = s[24]; scanlinePreserveColor = s[25];
     }
 
     private System.Collections.IEnumerator LerpToState(float[] target, Color targetTint, float duration)

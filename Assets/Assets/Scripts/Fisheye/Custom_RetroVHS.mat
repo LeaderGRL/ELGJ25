@@ -27,6 +27,7 @@ Material:
     m_Floats:
     - _Brightness: 1
     - _ColorBleedAmount: 2
+    - _ColorGradingIntensity: 0
     - _Contrast: 1.1
     - _FlickerIntensity: 0.03
     - _FlickerSpeed: 15
@@ -37,6 +38,7 @@ Material:
     - _InterlaceSpeed: 1
     - _JitterIntensity: 0.0016
     - _JitterSpeed: 8
+    - _NoiseColorBlend: 1
     - _NoiseIntensity: 0.065
     - _NoiseSpeed: 15
     - _PhosphorBleed: 0.3
@@ -44,11 +46,12 @@ Material:
     - _Saturation: 0.85
     - _ScanlineCount: 427
     - _ScanlineIntensity: 0.112
+    - _ScanlinePreserveColor: 1
     - _ScanlineSpeed: 0.42
     - _WrinkleIntensity: 0.0054
     - _WrinkleSize: 0.036
     - _WrinkleSpeed: 0.66
     m_Colors:
-    - _ColorTint: {r: 0.9, g: 1, b: 0.95, a: 1}
+    - _ColorTint: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

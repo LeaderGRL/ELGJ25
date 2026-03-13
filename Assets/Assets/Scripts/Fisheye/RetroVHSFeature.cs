@@ -6,15 +6,6 @@ using UnityEngine.Rendering.RenderGraphModule.Util;
 
 /// <summary>
 /// URP Renderer Feature for the RetroVHS CRT/VHS post-processing effect.
-/// Uses the Unity 6 Render Graph API (AddBlitPass).
-///
-/// SETUP:
-/// 1. Create a Material using "Custom/RetroVHS" shader.
-/// 2. On your URP Renderer Asset → Add Renderer Feature → RetroVHS Feature.
-/// 3. Assign the material.
-/// 4. Attach RetroVHSController to your camera for runtime control + presets.
-/// 5. This pass runs AFTER barrel distortion so both effects stack.
-/// </summary>
 public class RetroVHSFeature : ScriptableRendererFeature
 {
     [System.Serializable]
