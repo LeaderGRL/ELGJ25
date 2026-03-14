@@ -2,7 +2,6 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
 
-
 [RequireComponent(typeof(Graphic))]
 [ExecuteInEditMode]
 [DisallowMultipleComponent]

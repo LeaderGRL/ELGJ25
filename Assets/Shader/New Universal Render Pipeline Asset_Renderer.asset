@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32742085a2f5bb24487d71dca312b934, type: 3}
   m_Name: RetroVHSFeature
   m_EditorClassIdentifier: Assembly-CSharp::RetroVHSFeature
-  m_Active: 1
+  m_Active: 0
   settings:
     vhsMaterial: {fileID: 2100000, guid: 3c074f34c48bb34489864a00029d0820, type: 2}
     renderPassEvent: 600
@@ -215,7 +215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53f1d580351489341b44b4679e695091, type: 3}
   m_Name: BarrelDistortionFeature
   m_EditorClassIdentifier: Assembly-CSharp::BarrelDistortionFeature
-  m_Active: 1
+  m_Active: 0
   settings:
     distortionMaterial: {fileID: 2100000, guid: 29b55f3f2259c2e4d954130c962bff2c, type: 2}
     renderPassEvent: 600
